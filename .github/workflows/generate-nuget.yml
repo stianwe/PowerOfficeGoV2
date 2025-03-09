@@ -63,7 +63,7 @@ jobs:
         uses: openapi-generators/openapitools-generator-action@v1
         with:
           generator: csharp
-          command-args: --input-spec-root-directory specs --artifact-id PowerOfficeGoV2 --package-name PowerOfficeGoV2 --artifact-version 0.0.1 --release-note 'Initial publish' --git-host GitHub.com --git-repo-id PowerOfficeGoV2 --git-user-id stianwe
+          command-args: --input-spec-root-directory specs --artifact-id PowerOfficeGoV2 --package-name PowerOfficeGoV2 --artifact-version 0.0.1 --release-note Initial\ publish --git-host GitHub.com --git-repo-id PowerOfficeGoV2 --git-user-id stianwe
 
       - name: Build the generated client
         run: |
