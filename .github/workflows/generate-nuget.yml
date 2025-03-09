@@ -13,7 +13,12 @@ jobs:
     steps:
         # Do we even need this step?
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 9 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'  # Use the latest .NET 9 SDK
 
       - name: Generate C# Client for AccountingSettings
         uses: openapi-generators/openapitools-generator-action@v1
