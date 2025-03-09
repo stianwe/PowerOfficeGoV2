@@ -1,0 +1,93 @@
+name: Generate C# Client
+
+on:
+  push:
+    branches:
+      - main  # Trigger on pushes to the main branch
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  generate-client:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js (required for swagger-combine)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Use a compatible Node.js version
+
+      - name: Install swagger-combine
+        run: npm install -g swagger-combine
+
+      - name: Combine OpenAPI specs
+        run: |
+          # Create a swagger-combine configuration file
+          echo '{
+            "apis": [
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/accountingsettings.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/accounttransactions.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientadmin.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientbankaccounts.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientIntegrationInformation.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactbankaccounts.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactdeliveryaddresses.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactgroups.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactpersons.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customdimensions.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customerledger.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customers.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/departments.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/employees.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/enterprises.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/incomingInvoices.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/journalentryvouchers.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/locations.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/onboarding.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/organizationsettings.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/outgoingInvoices.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/payroll.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/products.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/projects.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/quality.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salarylines.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salesOrders.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salessettings.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/supplierledger.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/suppliers.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/trialbalance.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherapproval.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherdocumentation.json" },
+              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherposting.json" }
+            ]
+          }' > swagger-combine-config.json
+
+          # Combine the OpenAPI specs
+          swagger-combine swagger-combine-config.json -o combined-openapi.yaml
+
+      - name: Generate C# Client using openapitools-generator-action
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp  # Use the C# generator
+          openapi-file: ./combined-openapi.yaml  # Use the combined OpenAPI spec
+          additional-properties: |
+            nullableReferenceTypes=true
+            optionalEmitDefaultValues=true
+
+      - name: Build the generated client
+        run: |
+          cd ./csharp-client
+          dotnet build
+
+      - name: Pack the generated client into a NuGet package
+        run: |
+          cd ./csharp-client
+          dotnet pack -c Release -o ./nupkg
+
+      - name: Upload NuGet package as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-nuget-package
+          path: ./csharp-client/nupkg
