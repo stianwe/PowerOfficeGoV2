@@ -3,7 +3,7 @@ name: Generate C# Client
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
+      - main
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
@@ -11,70 +11,213 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+        # Do we even need this step?
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js (required for swagger-combine)
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'  # Use a compatible Node.js version
-
-      - name: Install swagger-combine
-        run: npm install -g swagger-combine
-
-      - name: Combine OpenAPI specs
-        run: |
-          # Create a swagger-combine configuration file
-          echo '{
-            "apis": [
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/accountingsettings.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/accounttransactions.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientadmin.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientbankaccounts.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientIntegrationInformation.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactbankaccounts.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactdeliveryaddresses.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactgroups.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactpersons.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customdimensions.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customerledger.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customers.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/departments.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/employees.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/enterprises.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/incomingInvoices.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/journalentryvouchers.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/locations.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/onboarding.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/organizationsettings.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/outgoingInvoices.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/payroll.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/products.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/projects.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/quality.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salarylines.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salesOrders.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salessettings.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/supplierledger.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/suppliers.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/trialbalance.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherapproval.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherdocumentation.json" },
-              { "url": "https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherposting.json" }
-            ]
-          }' > swagger-combine-config.json
-
-          # Combine the OpenAPI specs
-          swagger-combine swagger-combine-config.json -o combined-openapi.yaml
-
-      - name: Generate C# Client using openapitools-generator-action
+      - name: Generate C# Client for AccountingSettings
         uses: openapi-generators/openapitools-generator-action@v1
         with:
-          generator: csharp  # Use the C# generator
-          openapi-file: ./combined-openapi.yaml  # Use the combined OpenAPI spec
-          additional-properties: |
-            nullableReferenceTypes=true
-            optionalEmitDefaultValues=true
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/accountingsettings.json
+
+      - name: Generate C# Client for AccountintTransactions
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/accounttransactions.json
+
+      - name: Generate C# Client for ClientAdmin
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientadmin.json
+
+      - name: Generate C# Client for ClientBankAccounts
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientbankaccounts.json
+
+      - name: Generate C# Client for ClientIntegrationInformation
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/clientIntegrationInformation.json
+
+      - name: Generate C# Client for ContactBankAccounts
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactbankaccounts.json
+
+      - name: Generate C# Client for ContactDeliveryAddresses
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactdeliveryaddresses.json
+
+      - name: Generate C# Client for ContactGroups
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactgroups.json
+
+      - name: Generate C# Client for ContactPersons
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/contactpersons.json
+
+      - name: Generate C# Client for CustomDimensions
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customdimensions.json
+
+      - name: Generate C# Client for CustomerLedger
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customerledger.json
+
+      - name: Generate C# Client for Customers
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/customers.json
+
+      - name: Generate C# Client for Departments
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/departments.json
+
+      - name: Generate C# Client for Employees
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/employees.json
+
+      - name: Generate C# Client for Enterprises
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/enterprises.json
+
+      - name: Generate C# Client for IncomingInvoices
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/incomingInvoices.json
+
+      - name: Generate C# Client for JournalentryVouchers
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/journalentryvouchers.json
+
+      - name: Generate C# Client for Locations
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/locations.json
+
+      - name: Generate C# Client for Onboarding
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/onboarding.json
+
+      - name: Generate C# Client for OrganizationSettings
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/organizationsettings.json
+
+      - name: Generate C# Client for OutgoingInvoices
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/outgoingInvoices.json
+
+      - name: Generate C# Client for Payroll
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/payroll.json
+
+      - name: Generate C# Client for Products
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/products.json
+
+      - name: Generate C# Client for Projects
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/projects.json
+
+      - name: Generate C# Client for Quality
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/quality.json
+
+      - name: Generate C# Client for SalaryLines
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salarylines.json
+
+      - name: Generate C# Client for SalesOrders
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salesOrders.json
+
+      - name: Generate C# Client for SalesSettings
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/salessettings.json
+
+      - name: Generate C# Client for SupplierLedger
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/supplierledger.json
+
+      - name: Generate C# Client for Suppliers
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/suppliers.json
+
+      - name: Generate C# Client for TrialBalance
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/trialbalance.json
+
+      - name: Generate C# Client for VoucherApproval
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherapproval.json
+
+      - name: Generate C# Client for VoucherDocumentation
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherdocumentation.json
+
+      - name: Generate C# Client for VoucherPosting
+        uses: openapi-generators/openapitools-generator-action@v1
+        with:
+          generator: csharp
+          openapi-url: https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherposting.json
 
       - name: Build the generated client
         run: |
