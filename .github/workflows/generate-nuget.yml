@@ -71,15 +71,14 @@ jobs:
           }' > swagger-combine-config.json
 
           # Combine the OpenAPI specs
-          swagger-combine swagger-combine-config.json -o combined-openapi.yaml
+          swagger-combine swagger-combine-config.json -o combined-openapi.json
 
       - name: Generate C# Client using openapitools-generator-action
         uses: openapi-generators/openapitools-generator-action@v1
         with:
           generator: csharp
-          openapi-file: ./combined-openapi.yaml
-        env:
-          JAVA_OPTS: DmaxYamlCodePoints=99999999
+          openapi-file: ./combined-openapi.json
+          command-args:  --skip-validate-spec # Spec is too big
 
       - name: Build the generated client
         run: |
