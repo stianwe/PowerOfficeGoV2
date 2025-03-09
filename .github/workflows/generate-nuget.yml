@@ -78,7 +78,6 @@ jobs:
         with:
           generator: csharp
           openapi-file: ./combined-openapi.json
-          command-args:  --skip-validate-spec # Spec is too big
 
       - name: Build the generated client
         run: |
