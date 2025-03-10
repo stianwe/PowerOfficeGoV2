@@ -6,17 +6,17 @@
     <AssemblyName>PowerOfficeGoV2</AssemblyName>
     <PackageId>PowerOfficeGoV2</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
+    <Authors>Stian Weie &lt;stianwe@gmail.com&gt;</Authors>
     <Company>OpenAPI</Company>
     <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
+    <Description>A library for interacting with the PowerOffice V2 API</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>PowerOfficeGoV2</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\PowerOfficeGoV2.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/stianwe/PowerOfficeGoV2.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Minor update</PackageReleaseNotes>
+    <PackageReleaseNotes>Include utility service for handling auth and toggling live/demo api</PackageReleaseNotes>
     <Nullable>enable</Nullable>
     <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
   </PropertyGroup>
