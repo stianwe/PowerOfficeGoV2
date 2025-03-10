@@ -158,7 +158,7 @@ Endpoints do not require authorization.
 - packageCompany: OpenAPI
 - packageCopyright: No Copyright
 - packageDescription: A library generated from a OpenAPI doc
-- packageGuid: {E7A53FE7-0EBF-452F-B99F-C2159AC863C9}
+- packageGuid: {E4EF6EC9-257D-48F9-B737-57C9E41A3A79}
 - packageName: PowerOfficeGoV2
 - packageTags: 
 - packageTitle: OpenAPI Library

@@ -1,4 +1,5 @@
 #!/bin/bash
+rm -rf specs
 mkdir -p specs
 cd specs
 
@@ -39,3 +40,6 @@ wget https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/vouche
 
 cd ..
 openapi-generator generate --generator-name csharp --input-spec-root-directory specs --artifact-id PowerOfficeGoV2 --package-name PowerOfficeGoV2
+
+rm -rf
+specs
