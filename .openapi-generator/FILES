@@ -1,5 +1,3 @@
-PowerOfficeGoV2.sln
-README.md
 api/openapi.yaml
 appveyor.yml
 docs/apis/AccessRolesApi.md
@@ -391,9 +389,7 @@ src/PowerOfficeGoV2/Client/RateLimitProvider`1.cs
 src/PowerOfficeGoV2/Client/TokenBase.cs
 src/PowerOfficeGoV2/Client/TokenContainer`1.cs
 src/PowerOfficeGoV2/Client/TokenProvider`1.cs
-src/PowerOfficeGoV2/Extensions/IHostBuilderExtensions.cs
 src/PowerOfficeGoV2/Extensions/IHttpClientBuilderExtensions.cs
-src/PowerOfficeGoV2/Extensions/IServiceCollectionExtensions.cs
 src/PowerOfficeGoV2/Model/AccessRoleDto.cs
 src/PowerOfficeGoV2/Model/AccountTransactionDto.cs
 src/PowerOfficeGoV2/Model/AccountType.cs
@@ -616,4 +612,3 @@ src/PowerOfficeGoV2/Model/YearEndVoucherLineDto.cs
 src/PowerOfficeGoV2/Model/YearEndVoucherLinePostDto.cs
 src/PowerOfficeGoV2/Model/YearEndVoucherPostDto.cs
 src/PowerOfficeGoV2/PowerOfficeGoV2.csproj
-src/PowerOfficeGoV2/README.md

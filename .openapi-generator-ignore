@@ -23,3 +23,8 @@
 #!docs/README.md
 
 .gitignore
+README.md
+src/PowerOfficeGoV2/README.md
+src/PowerOfficeGoV2/Extensions/IHostBuilderExtensions.cs
+src/PowerOfficeGoV2/Extensions/IServiceCollectionExtensions.cs
+PowerOfficeGoV2.sln
