@@ -31,7 +31,7 @@ namespace PowerOfficeGoV2.Extensions
             {
                 HostConfiguration config = new HostConfiguration(services);
 
-                IServiceCollectionExtensions.AddApi(services, config);
+                IServiceCollectionExtensions.AddPowerOfficeGoApi(services, config);
             });
 
             return builder;
@@ -50,7 +50,7 @@ namespace PowerOfficeGoV2.Extensions
 
                 options(context, services, config);
 
-                IServiceCollectionExtensions.AddApi(services, config);
+                IServiceCollectionExtensions.AddPowerOfficeGoApi(services, config);
             });
 
             return builder;

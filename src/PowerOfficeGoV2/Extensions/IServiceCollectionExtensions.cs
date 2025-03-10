@@ -25,10 +25,10 @@ namespace PowerOfficeGoV2.Extensions
         /// Add the api to your host builder.
         /// </summary>
         /// <param name="services"></param>
-        public static void AddApi(this IServiceCollection services)
+        public static void AddPowerOfficeGoApi(this IServiceCollection services)
         {
             HostConfiguration config = new(services);
-            AddApi(services, config);
+            AddPowerOfficeGoApi(services, config);
         }
 
         /// <summary>
@@ -36,19 +36,20 @@ namespace PowerOfficeGoV2.Extensions
         /// </summary>
         /// <param name="services"></param>
         /// <param name="options"></param>
-        public static void AddApi(this IServiceCollection services, Action<HostConfiguration> options)
+        public static void AddPowerOfficeGoApi(this IServiceCollection services, Action<HostConfiguration> options)
         {
             HostConfiguration config = new(services);
             options(config);
-            AddApi(services, config);
+            AddPowerOfficeGoApi(services, config);
         }
 
-        internal static void AddApi(IServiceCollection services, HostConfiguration host)
+        internal static void AddPowerOfficeGoApi(IServiceCollection services, HostConfiguration host)
         {
             if (!host.HttpClientsAdded)
                 host.AddApiHttpClients();
 
             services.AddSingleton<CookieContainer>();
+            services.AddScoped<IPowerOfficeGoApiService, PowerOfficeGoApiService>();
 
             // ensure that a token provider was provided for this token type
             // if not, default to RateLimitProvider
