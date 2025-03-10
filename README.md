@@ -30,7 +30,7 @@ public class YourService
     
     public async Task YourMethodAsync()
     {
-        var vouchersApi = powerOfficeGoApiService.GetApiAsync<JournalEntryVouchersApi>(...);
+        var vouchersApi = _powerOfficeGoApiService.GetApiAsync<JournalEntryVouchersApi>(...);
         var vouchersResponse = await vouchersApi.JournalEntryVouchersGetAsync();
         var vouchers = vouchersResponse.Ok();
     }
