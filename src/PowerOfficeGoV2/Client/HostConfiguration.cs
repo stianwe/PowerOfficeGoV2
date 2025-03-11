@@ -29,6 +29,11 @@ namespace PowerOfficeGoV2.Client
         private readonly IServiceCollection _services;
         private readonly JsonSerializerOptions _jsonOptions = new JsonSerializerOptions();
 
+        /// <summary>
+        /// Whether to use PowerOfficeGo demo API or live API.
+        /// </summary>
+        public bool UseDemoApi { get; set; } = false;
+
         internal bool HttpClientsAdded { get; private set; }
 
         /// <summary>

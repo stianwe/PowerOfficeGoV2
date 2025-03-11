@@ -407,6 +407,8 @@ namespace PowerOfficeGoV2.Client
 
             throw new JsonException("The specified discriminator was not found.");
         }
+        
+        public static bool UseDemoApi { get; internal set; } = false;
 
         /// <summary>
         /// The base path of the API
@@ -421,7 +423,7 @@ namespace PowerOfficeGoV2.Client
         /// <summary>
         /// The context path of the API
         /// </summary>
-        public const string CONTEXT_PATH = "";
+        public static string CONTEXT_PATH => UseDemoApi ? "/Demo/v2" : "/v2";
 
         /// <summary>
         /// The host of the API

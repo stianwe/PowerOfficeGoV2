@@ -30,10 +30,9 @@ public interface IPowerOfficeGoApiService
     /// <param name="clientKey">Client key obtained when setting the integration up with a client.</param>
     /// <param name="subscriptionKey">Subscription key obtained when creating the PowerOfficeGo extensions</param>
     /// <param name="applicationKey">Application key obtained when creating the PowerOfficeGo extensions</param>
-    /// <param name="useDemoApi">Whether to use the live API or the demo API</param>
     /// <typeparam name="T">The type of the api, e.g. JournalEntryVouchersApi</typeparam>
     /// <returns>The api implementation or null if it could not be resolved</returns>
-    Task<T?> GetApiAsync<T>(string clientKey, string subscriptionKey, string applicationKey, bool useDemoApi = false) where T: class;
+    Task<T?> GetApiAsync<T>(string clientKey, string subscriptionKey, string applicationKey) where T: class;
     
     /// <summary>
     /// Gets the api implementation specified with type parameter T, configured with a bearer token which will be obtained
@@ -48,10 +47,9 @@ public interface IPowerOfficeGoApiService
     /// </summary>
     /// <param name="bearerToken">Already obtained bearer token.</param>
     /// <param name="subscriptionKey">Subscription key obtained when creating the PowerOfficeGo extensions</param>
-    /// <param name="useDemoApi">Whether to use the live API or the demo API</param>
     /// <typeparam name="T">The type of the api, e.g. JournalEntryVouchersApi</typeparam>
     /// <returns>The api implementation or null if it could not be resolved</returns>
-    Task<T?> GetApiAsync<T>(string bearerToken, string subscriptionKey, bool useDemoApi = false) where T: class;
+    Task<T?> GetApiAsync<T>(string bearerToken, string subscriptionKey) where T: class;
 }
 
 /// <see cref="IPowerOfficeGoApiService"/>
@@ -63,20 +61,24 @@ public class PowerOfficeGoApiService : IPowerOfficeGoApiService
     
     private readonly IServiceProvider _serviceProvider;
     
+    /// <summary>
+    /// Initializes a new instance of <see cref="PowerOfficeGoApiService"/>.
+    /// </summary>
+    /// <param name="serviceProvider"></param>
     public PowerOfficeGoApiService(IServiceProvider serviceProvider)
     {
         _serviceProvider = serviceProvider;
     }
 
     /// <inheritdoc />
-    public async Task<T?> GetApiAsync<T>(string clientKey, string subscriptionKey, string applicationKey, bool useDemoApi = false) where T: class
+    public async Task<T?> GetApiAsync<T>(string clientKey, string subscriptionKey, string applicationKey) where T: class
     {
-        var token = await GetTokenAsync(clientKey, subscriptionKey, applicationKey, useDemoApi);
-        return await GetApiAsync<T>(token.AccessToken, subscriptionKey, useDemoApi);
+        var token = await GetTokenAsync(clientKey, subscriptionKey, applicationKey);
+        return await GetApiAsync<T>(token.AccessToken, subscriptionKey);
     }
     
     /// <inheritdoc />
-    public Task<T?> GetApiAsync<T>(string bearerToken, string subscriptionKey, bool useDemoApi = false) where T: class
+    public Task<T?> GetApiAsync<T>(string bearerToken, string subscriptionKey) where T: class
     {
         var type = typeof(T);
         var eventsType = Type.GetType(type.AssemblyQualifiedName?.Replace(type.FullName!, type.FullName + "Events") ?? string.Empty);
@@ -87,7 +89,7 @@ public class PowerOfficeGoApiService : IPowerOfficeGoApiService
 
         var httpClient = new HttpClient
         {
-            BaseAddress = new Uri(useDemoApi ? V2DemoBaseUrl : V2LiveBaseUrl),
+            BaseAddress = new Uri(ClientUtils.UseDemoApi ? V2DemoBaseUrl : V2LiveBaseUrl),
         };
         httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", bearerToken);
         httpClient.DefaultRequestHeaders.Add(SubscriptionKeyHeaderName, subscriptionKey);
@@ -104,9 +106,9 @@ public class PowerOfficeGoApiService : IPowerOfficeGoApiService
         return Task.FromResult((T?) Activator.CreateInstance(type, args));
     }
     
-    private async Task<TokenResponse> GetTokenAsync(string clientKey, string subscriptionKey, string applicationKey, bool useDemoApi)
+    private async Task<TokenResponse> GetTokenAsync(string clientKey, string subscriptionKey, string applicationKey)
     {
-        var uri = new Uri(useDemoApi ? "https://goapi.poweroffice.net/demo/oauth/Token" : "https://goapi.poweroffice.net/oauth/Token");
+        var uri = new Uri(ClientUtils.UseDemoApi ? "https://goapi.poweroffice.net/demo/oauth/Token" : "https://goapi.poweroffice.net/oauth/Token");
         var request = new HttpRequestMessage(HttpMethod.Post, uri);
         request.Headers.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes($"{applicationKey}:{clientKey}")));
         request.Headers.Add("Ocp-Apim-Subscription-Key", subscriptionKey);

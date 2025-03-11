@@ -46,10 +46,13 @@ namespace PowerOfficeGoV2.Extensions
         internal static void AddPowerOfficeGoApi(IServiceCollection services, HostConfiguration host)
         {
             if (!host.HttpClientsAdded)
+            {
                 host.AddApiHttpClients();
+            }
 
             services.AddSingleton<CookieContainer>();
             services.AddScoped<IPowerOfficeGoApiService, PowerOfficeGoApiService>();
+            ClientUtils.UseDemoApi = host.UseDemoApi;
 
             // ensure that a token provider was provided for this token type
             // if not, default to RateLimitProvider

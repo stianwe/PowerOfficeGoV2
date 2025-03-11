@@ -14,7 +14,11 @@ using PowerOfficeGoV2.Extensions;
 ...
 
 var builder = WebApplication.CreateBuilder(args); 
-builder.Services.AddPowerOfficeGoApi();
+builder.Services.AddPowerOfficeGoApi(options => 
+{
+    // Use the PowerOfficeGo demo api (for demo clients). Default is false.
+    options.UseDemoApi = true;
+});
 
 ...
 ```
