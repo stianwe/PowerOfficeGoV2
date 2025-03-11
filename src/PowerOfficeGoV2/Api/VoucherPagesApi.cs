@@ -94,9 +94,10 @@ namespace PowerOfficeGoV2.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The identifier of the voucher.</param>
         /// <param name="file"> (optional)</param>
+        /// <param name="fileName"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IJournalEntryVouchersIdVoucherPagesPostApiResponse"/>&gt;</returns>
-        Task<IJournalEntryVouchersIdVoucherPagesPostApiResponse> JournalEntryVouchersIdVoucherPagesPostAsync(Guid id, Option<System.IO.Stream> file = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IJournalEntryVouchersIdVoucherPagesPostApiResponse> JournalEntryVouchersIdVoucherPagesPostAsync(Guid id, Option<System.IO.Stream> file = default, Option<string> fileName = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add a page to a voucher. (Auth roles: JournalEntryVoucher_Full)
@@ -106,9 +107,10 @@ namespace PowerOfficeGoV2.Api
         /// </remarks>
         /// <param name="id">The identifier of the voucher.</param>
         /// <param name="file"> (optional)</param>
+        /// <param name="fileName"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IJournalEntryVouchersIdVoucherPagesPostApiResponse"/>?&gt;</returns>
-        Task<IJournalEntryVouchersIdVoucherPagesPostApiResponse?> JournalEntryVouchersIdVoucherPagesPostOrDefaultAsync(Guid id, Option<System.IO.Stream> file = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IJournalEntryVouchersIdVoucherPagesPostApiResponse?> JournalEntryVouchersIdVoucherPagesPostOrDefaultAsync(Guid id, Option<System.IO.Stream> file = default, Option<string> fileName = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -945,13 +947,14 @@ namespace PowerOfficeGoV2.Api
         /// </summary>
         /// <param name="id">The identifier of the voucher.</param>
         /// <param name="file"> (optional)</param>
+        /// <param name="fileName"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IJournalEntryVouchersIdVoucherPagesPostApiResponse"/>&gt;</returns>
-        public async Task<IJournalEntryVouchersIdVoucherPagesPostApiResponse?> JournalEntryVouchersIdVoucherPagesPostOrDefaultAsync(Guid id, Option<System.IO.Stream> file = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IJournalEntryVouchersIdVoucherPagesPostApiResponse?> JournalEntryVouchersIdVoucherPagesPostOrDefaultAsync(Guid id, Option<System.IO.Stream> file = default, Option<string> fileName = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
-                return await JournalEntryVouchersIdVoucherPagesPostAsync(id, file, cancellationToken).ConfigureAwait(false);
+                return await JournalEntryVouchersIdVoucherPagesPostAsync(id, file, fileName, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception)
             {
@@ -965,9 +968,10 @@ namespace PowerOfficeGoV2.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">The identifier of the voucher.</param>
         /// <param name="file"> (optional)</param>
+        /// <param name="fileName"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IJournalEntryVouchersIdVoucherPagesPostApiResponse"/>&gt;</returns>
-        public async Task<IJournalEntryVouchersIdVoucherPagesPostApiResponse> JournalEntryVouchersIdVoucherPagesPostAsync(Guid id, Option<System.IO.Stream> file = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IJournalEntryVouchersIdVoucherPagesPostApiResponse> JournalEntryVouchersIdVoucherPagesPostAsync(Guid id, Option<System.IO.Stream> file = default, Option<string> fileName = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -985,25 +989,14 @@ namespace PowerOfficeGoV2.Api
                     uriBuilderLocalVar.Path = ClientUtils.CONTEXT_PATH + "/JournalEntryVouchers/{id}/VoucherPages";
                     uriBuilderLocalVar.Path = uriBuilderLocalVar.Path.Replace("%7Bid%7D", Uri.EscapeDataString(id.ToString()));
 
-                    MultipartContent multipartContentLocalVar = new MultipartContent();
+                    var content = new MultipartFormDataContent();
+                    var fileContent = new StreamContent(file);
+                    fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/octet-stream");
+                    content.Add(fileContent, "file", fileName.IsSet ? fileName.Value : "Attachment.pdf");
 
-                    httpRequestMessageLocalVar.Content = multipartContentLocalVar;
-
-                    List<KeyValuePair<string?, string?>> formParameterLocalVars = new List<KeyValuePair<string?, string?>>();
-
-                    multipartContentLocalVar.Add(new FormUrlEncodedContent(formParameterLocalVars));                    if (file.IsSet)
-                        multipartContentLocalVar.Add(new StreamContent(file.Value));
+                    httpRequestMessageLocalVar.Content = content;
 
                     httpRequestMessageLocalVar.RequestUri = uriBuilderLocalVar.Uri;
-
-                    string[] contentTypes = new string[] {
-                        "multipart/form-data"
-                    };
-
-                    string? contentTypeLocalVar = ClientUtils.SelectHeaderContentType(contentTypes);
-
-                    if (contentTypeLocalVar != null && httpRequestMessageLocalVar.Content != null)
-                        httpRequestMessageLocalVar.Content.Headers.ContentType = new MediaTypeHeaderValue(contentTypeLocalVar);
 
                     string[] acceptLocalVars = new string[] {
                         "application/json"
