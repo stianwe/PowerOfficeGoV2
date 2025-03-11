@@ -146,7 +146,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetDepartmentsApiResponse"/>&gt;</returns>
-        Task<IGetDepartmentsApiResponse> GetDepartmentsAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<Guid> createdFromImportJournalId = default, Option<bool> isActive = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<long> managerEmployeeNo = default, Option<string> name = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetDepartmentsApiResponse> GetDepartmentsAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<Guid> createdFromImportJournalId = default, Option<bool> isActive = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<long> managerEmployeeNo = default, Option<string> name = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Departments can be divisions of an organization. The usages may also be that of a dimension separating specific  areas of activity for reporting purposes. (Auth roles: Department,Department_Full)
@@ -164,7 +164,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetDepartmentsApiResponse"/>?&gt;</returns>
-        Task<IGetDepartmentsApiResponse?> GetDepartmentsOrDefaultAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<Guid> createdFromImportJournalId = default, Option<bool> isActive = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<long> managerEmployeeNo = default, Option<string> name = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetDepartmentsApiResponse?> GetDepartmentsOrDefaultAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<Guid> createdFromImportJournalId = default, Option<bool> isActive = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<long> managerEmployeeNo = default, Option<string> name = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -1695,7 +1695,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatGetDepartments(ref Option<string> codes, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<Guid> createdFromImportJournalId, ref Option<bool> isActive, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<long> managerEmployeeNo, ref Option<string> name, Option<ResourceParameters> resourceParameter);
+        partial void FormatGetDepartments(ref Option<string> codes, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<Guid> createdFromImportJournalId, ref Option<bool> isActive, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<long> managerEmployeeNo, ref Option<string> name, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1728,7 +1728,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="managerEmployeeNo"></param>
         /// <param name="name"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterGetDepartmentsDefaultImplementation(IGetDepartmentsApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<Guid> createdFromImportJournalId, Option<bool> isActive, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<long> managerEmployeeNo, Option<string> name, Option<ResourceParameters> resourceParameter)
+        private void AfterGetDepartmentsDefaultImplementation(IGetDepartmentsApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<Guid> createdFromImportJournalId, Option<bool> isActive, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<long> managerEmployeeNo, Option<string> name, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterGetDepartments(ref suppressDefaultLog, apiResponseLocalVar, codes, createdDateTimeOffsetGreaterThan, createdFromImportJournalId, isActive, lastChangedDateTimeOffsetGreaterThan, managerEmployeeNo, name, resourceParameter);
@@ -1749,7 +1749,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="managerEmployeeNo"></param>
         /// <param name="name"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterGetDepartments(ref bool suppressDefaultLog, IGetDepartmentsApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<Guid> createdFromImportJournalId, Option<bool> isActive, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<long> managerEmployeeNo, Option<string> name, Option<ResourceParameters> resourceParameter);
+        partial void AfterGetDepartments(ref bool suppressDefaultLog, IGetDepartmentsApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<Guid> createdFromImportJournalId, Option<bool> isActive, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<long> managerEmployeeNo, Option<string> name, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1765,7 +1765,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="managerEmployeeNo"></param>
         /// <param name="name"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorGetDepartmentsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<Guid> createdFromImportJournalId, Option<bool> isActive, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<long> managerEmployeeNo, Option<string> name, Option<ResourceParameters> resourceParameter)
+        private void OnErrorGetDepartmentsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<Guid> createdFromImportJournalId, Option<bool> isActive, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<long> managerEmployeeNo, Option<string> name, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorGetDepartments(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, codes, createdDateTimeOffsetGreaterThan, createdFromImportJournalId, isActive, lastChangedDateTimeOffsetGreaterThan, managerEmployeeNo, name, resourceParameter);
@@ -1788,7 +1788,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="managerEmployeeNo"></param>
         /// <param name="name"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorGetDepartments(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<Guid> createdFromImportJournalId, Option<bool> isActive, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<long> managerEmployeeNo, Option<string> name, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorGetDepartments(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<Guid> createdFromImportJournalId, Option<bool> isActive, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<long> managerEmployeeNo, Option<string> name, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Departments can be divisions of an organization. The usages may also be that of a dimension separating specific  areas of activity for reporting purposes. (Auth roles: Department,Department_Full) 
@@ -1803,7 +1803,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetDepartmentsApiResponse"/>&gt;</returns>
-        public async Task<IGetDepartmentsApiResponse?> GetDepartmentsOrDefaultAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<Guid> createdFromImportJournalId = default, Option<bool> isActive = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<long> managerEmployeeNo = default, Option<string> name = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetDepartmentsApiResponse?> GetDepartmentsOrDefaultAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<Guid> createdFromImportJournalId = default, Option<bool> isActive = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<long> managerEmployeeNo = default, Option<string> name = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -1829,7 +1829,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetDepartmentsApiResponse"/>&gt;</returns>
-        public async Task<IGetDepartmentsApiResponse> GetDepartmentsAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<Guid> createdFromImportJournalId = default, Option<bool> isActive = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<long> managerEmployeeNo = default, Option<string> name = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetDepartmentsApiResponse> GetDepartmentsAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<Guid> createdFromImportJournalId = default, Option<bool> isActive = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<long> managerEmployeeNo = default, Option<string> name = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

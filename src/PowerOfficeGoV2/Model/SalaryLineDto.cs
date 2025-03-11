@@ -73,7 +73,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="vatCodeId">The VAT code identifier.  Relevant to set if the salary line is set with a pay item that have a processing type related to expense refund subject of VAT.</param>
         /// <param name="workDriveExceedsKilometerLimit">Value indicating whether this his salary line relate to work drive that exceeds the kilometer limit or not.  Relevant only for pay items with the processing type FreeCarStandardRule.  Default to false if not set.</param>
         [JsonConstructor]
-        public SalaryLineDto(Option<long?> accountId = default, Option<double?> amount = default, Option<double?> carListPrice = default, Option<DateOnly?> carRegistrationDate = default, Option<string?> carRegistrationNo = default, Option<string?> cid = default, Option<string?> comment = default, Option<CommuterPersonType?> commuterPersonType = default, Option<DateTime?> createdDateTimeOffset = default, Option<DeductionType?> deductionType = default, Option<long?> departmentId = default, Option<long?> employeeId = default, Option<string?> externalImportReference = default, Option<DateOnly?> fromDate = default, Option<double?> homeWorkKilometers = default, Option<long?> id = default, Option<int?> incomeYear = default, Option<bool?> isCarPool = default, Option<bool?> isDeletedByUser = default, Option<bool?> isLocked = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<double?> maxAmount = default, Option<string?> memberNo = default, Option<double?> minAmount = default, Option<int?> number = default, Option<long?> oppositeAccountId = default, Option<Guid?> payItemId = default, Option<double?> privateDrivenKilometers = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> rate = default, Option<double?> startAmount = default, Option<long?> supplierAccountId = default, Option<long?> supplierBankAccountId = default, Option<TaxRuleType?> taxRule = default, Option<DateOnly?> toDate = default, Option<bool?> useRemittance = default, Option<int?> vatCodeId = default, Option<bool?> workDriveExceedsKilometerLimit = default)
+        public SalaryLineDto(Option<long?> accountId = default, Option<double?> amount = default, Option<double?> carListPrice = default, Option<DateTimeOffset?> carRegistrationDate = default, Option<string?> carRegistrationNo = default, Option<string?> cid = default, Option<string?> comment = default, Option<CommuterPersonType?> commuterPersonType = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<DeductionType?> deductionType = default, Option<long?> departmentId = default, Option<long?> employeeId = default, Option<string?> externalImportReference = default, Option<DateTimeOffset?> fromDate = default, Option<double?> homeWorkKilometers = default, Option<long?> id = default, Option<int?> incomeYear = default, Option<bool?> isCarPool = default, Option<bool?> isDeletedByUser = default, Option<bool?> isLocked = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<double?> maxAmount = default, Option<string?> memberNo = default, Option<double?> minAmount = default, Option<int?> number = default, Option<long?> oppositeAccountId = default, Option<Guid?> payItemId = default, Option<double?> privateDrivenKilometers = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> rate = default, Option<double?> startAmount = default, Option<long?> supplierAccountId = default, Option<long?> supplierBankAccountId = default, Option<TaxRuleType?> taxRule = default, Option<DateTimeOffset?> toDate = default, Option<bool?> useRemittance = default, Option<int?> vatCodeId = default, Option<bool?> workDriveExceedsKilometerLimit = default)
         {
             AccountIdOption = accountId;
             AmountOption = amount;
@@ -208,7 +208,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> CarRegistrationDateOption { get; private set; }
+        public Option<DateTimeOffset?> CarRegistrationDateOption { get; private set; }
 
         /// <summary>
         /// The registration date of the car.  Relevant to set only for certain pay items with car/work car related processing types.
@@ -216,7 +216,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The registration date of the car.  Relevant to set only for certain pay items with car/work car related processing types.</value>
         /* <example>Fri Jul 01 02:00:00 CEST 2022</example> */
         [JsonPropertyName("CarRegistrationDate")]
-        public DateOnly? CarRegistrationDate { get { return this.CarRegistrationDateOption; } set { this.CarRegistrationDateOption = new(value); } }
+        public DateTimeOffset? CarRegistrationDate { get { return this.CarRegistrationDateOption; } set { this.CarRegistrationDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of CarRegistrationNo
@@ -268,7 +268,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp when the salary line entity was created.
@@ -276,7 +276,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp when the salary line entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of DepartmentId
@@ -328,7 +328,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> FromDateOption { get; private set; }
+        public Option<DateTimeOffset?> FromDateOption { get; private set; }
 
         /// <summary>
         /// The from-date.  Relevant to set only for certain pay items that have deduction processing types, and if the deduction is relevant only for a certain time period.
@@ -336,7 +336,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The from-date.  Relevant to set only for certain pay items that have deduction processing types, and if the deduction is relevant only for a certain time period.</value>
         /* <example>Fri Jul 01 02:00:00 CEST 2022</example> */
         [JsonPropertyName("FromDate")]
-        public DateOnly? FromDate { get { return this.FromDateOption; } set { this.FromDateOption = new(value); } }
+        public DateTimeOffset? FromDate { get { return this.FromDateOption; } set { this.FromDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of HomeWorkKilometers
@@ -433,7 +433,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp when the salary line entity was updated.
@@ -441,7 +441,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp when the salary line entity was updated.</value>
         /* <example>2021-09-30T08:07:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of MaxAmount
@@ -643,7 +643,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ToDateOption { get; private set; }
+        public Option<DateTimeOffset?> ToDateOption { get; private set; }
 
         /// <summary>
         /// The to-date.  Relevant to set only for certain pay items that have deduction processing types, and if the deduction is relevant only for a certain time period.
@@ -651,7 +651,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The to-date.  Relevant to set only for certain pay items that have deduction processing types, and if the deduction is relevant only for a certain time period.</value>
         /* <example>Sun Jul 31 02:00:00 CEST 2022</example> */
         [JsonPropertyName("ToDate")]
-        public DateOnly? ToDate { get { return this.ToDateOption; } set { this.ToDateOption = new(value); } }
+        public DateTimeOffset? ToDate { get { return this.ToDateOption; } set { this.ToDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of UseRemittance
@@ -810,24 +810,24 @@ namespace PowerOfficeGoV2.Model
             Option<long?> accountId = default;
             Option<double?> amount = default;
             Option<double?> carListPrice = default;
-            Option<DateOnly?> carRegistrationDate = default;
+            Option<DateTimeOffset?> carRegistrationDate = default;
             Option<string?> carRegistrationNo = default;
             Option<string?> cid = default;
             Option<string?> comment = default;
             Option<CommuterPersonType?> commuterPersonType = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<DeductionType?> deductionType = default;
             Option<long?> departmentId = default;
             Option<long?> employeeId = default;
             Option<string?> externalImportReference = default;
-            Option<DateOnly?> fromDate = default;
+            Option<DateTimeOffset?> fromDate = default;
             Option<double?> homeWorkKilometers = default;
             Option<long?> id = default;
             Option<int?> incomeYear = default;
             Option<bool?> isCarPool = default;
             Option<bool?> isDeletedByUser = default;
             Option<bool?> isLocked = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<double?> maxAmount = default;
             Option<string?> memberNo = default;
             Option<double?> minAmount = default;
@@ -842,7 +842,7 @@ namespace PowerOfficeGoV2.Model
             Option<long?> supplierAccountId = default;
             Option<long?> supplierBankAccountId = default;
             Option<TaxRuleType?> taxRule = default;
-            Option<DateOnly?> toDate = default;
+            Option<DateTimeOffset?> toDate = default;
             Option<bool?> useRemittance = default;
             Option<int?> vatCodeId = default;
             Option<bool?> workDriveExceedsKilometerLimit = default;
@@ -876,7 +876,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CarRegistrationDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                carRegistrationDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                carRegistrationDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CarRegistrationNo":
                             carRegistrationNo = new Option<string?>(utf8JsonReader.GetString());
@@ -894,7 +894,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "DeductionType":
                             string? deductionTypeRawValue = utf8JsonReader.GetString();
@@ -914,7 +914,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "FromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                fromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                fromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "HomeWorkKilometers":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -942,7 +942,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "MaxAmount":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -1002,7 +1002,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ToDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                toDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                toDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "UseRemittance":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

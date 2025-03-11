@@ -62,7 +62,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="startDate">The start date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).</param>
         /// <param name="subLedgerNumberSeriesId">The Id of the subledgerseries this employee belong in.  Relevant if the client have multiple employee subledger series, and if so highly relevant in POST calls if the integrating party does not set Number but lets Go assign the next available Number.  In such cases, Go will create the employee in the default subledger series, unless this property is set.</param>
         [JsonConstructor]
-        public EmployeePostDto(Option<List<long>?> contactGroupIds = default, Option<DateOnly?> dateOfBirth = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<string?> emailAddress = default, Option<DateOnly?> endDate = default, Option<string?> externalImportReference = default, Option<long?> externalNumber = default, string? firstName = default, Option<Gender?> gender = default, Option<DateOnly?> hiredDate = default, Option<string?> internationalIdCountryCode = default, Option<string?> internationalIdNumber = default, Option<bool?> internationalIdReportToAltinn = default, Option<InternationalIdType?> internationalIdType = default, Option<bool?> isArchived = default, Option<string?> jobTitle = default, string? lastName = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<ContactAddressPostDto?> mailAddress = default, Option<long?> managerEmployeeId = default, Option<long?> managerEmployeeNo = default, Option<string?> nationalIdNumber = default, Option<long?> number = default, Option<string?> phoneNumber = default, Option<DateOnly?> startDate = default, Option<Guid?> subLedgerNumberSeriesId = default)
+        public EmployeePostDto(Option<List<long>?> contactGroupIds = default, Option<DateTimeOffset?> dateOfBirth = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<string?> emailAddress = default, Option<DateTimeOffset?> endDate = default, Option<string?> externalImportReference = default, Option<long?> externalNumber = default, string? firstName = default, Option<Gender?> gender = default, Option<DateTimeOffset?> hiredDate = default, Option<string?> internationalIdCountryCode = default, Option<string?> internationalIdNumber = default, Option<bool?> internationalIdReportToAltinn = default, Option<InternationalIdType?> internationalIdType = default, Option<bool?> isArchived = default, Option<string?> jobTitle = default, string? lastName = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<ContactAddressPostDto?> mailAddress = default, Option<long?> managerEmployeeId = default, Option<long?> managerEmployeeNo = default, Option<string?> nationalIdNumber = default, Option<long?> number = default, Option<string?> phoneNumber = default, Option<DateTimeOffset?> startDate = default, Option<Guid?> subLedgerNumberSeriesId = default)
         {
             ContactGroupIdsOption = contactGroupIds;
             DateOfBirthOption = dateOfBirth;
@@ -142,7 +142,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> DateOfBirthOption { get; private set; }
+        public Option<DateTimeOffset?> DateOfBirthOption { get; private set; }
 
         /// <summary>
         /// The date of birth of the employee.
@@ -150,7 +150,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date of birth of the employee.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("DateOfBirth")]
-        public DateOnly? DateOfBirth { get { return this.DateOfBirthOption; } set { this.DateOfBirthOption = new(value); } }
+        public DateTimeOffset? DateOfBirth { get { return this.DateOfBirthOption; } set { this.DateOfBirthOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DepartmentCode
@@ -202,7 +202,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> EndDateOption { get; private set; }
+        public Option<DateTimeOffset?> EndDateOption { get; private set; }
 
         /// <summary>
         /// The end date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).
@@ -210,7 +210,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The end date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("EndDate")]
-        public DateOnly? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
+        public DateTimeOffset? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExternalImportReference
@@ -255,7 +255,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> HiredDateOption { get; private set; }
+        public Option<DateTimeOffset?> HiredDateOption { get; private set; }
 
         /// <summary>
         /// The date the employee was hired.
@@ -263,7 +263,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date the employee was hired.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("HiredDate")]
-        public DateOnly? HiredDate { get { return this.HiredDateOption; } set { this.HiredDateOption = new(value); } }
+        public DateTimeOffset? HiredDate { get { return this.HiredDateOption; } set { this.HiredDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of InternationalIdCountryCode
@@ -471,14 +471,14 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> StartDateOption { get; private set; }
+        public Option<DateTimeOffset?> StartDateOption { get; private set; }
 
         /// <summary>
         /// The start date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).
         /// </summary>
         /// <value>The start date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).</value>
         [JsonPropertyName("StartDate")]
-        public DateOnly? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
+        public DateTimeOffset? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SubLedgerNumberSeriesId
@@ -589,16 +589,16 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<List<long>?> contactGroupIds = default;
-            Option<DateOnly?> dateOfBirth = default;
+            Option<DateTimeOffset?> dateOfBirth = default;
             Option<string?> departmentCode = default;
             Option<long?> departmentId = default;
             Option<string?> emailAddress = default;
-            Option<DateOnly?> endDate = default;
+            Option<DateTimeOffset?> endDate = default;
             Option<string?> externalImportReference = default;
             Option<long?> externalNumber = default;
             Option<string?> firstName = default;
             Option<Gender?> gender = default;
-            Option<DateOnly?> hiredDate = default;
+            Option<DateTimeOffset?> hiredDate = default;
             Option<string?> internationalIdCountryCode = default;
             Option<string?> internationalIdNumber = default;
             Option<bool?> internationalIdReportToAltinn = default;
@@ -614,7 +614,7 @@ namespace PowerOfficeGoV2.Model
             Option<string?> nationalIdNumber = default;
             Option<long?> number = default;
             Option<string?> phoneNumber = default;
-            Option<DateOnly?> startDate = default;
+            Option<DateTimeOffset?> startDate = default;
             Option<Guid?> subLedgerNumberSeriesId = default;
 
             while (utf8JsonReader.Read())
@@ -638,7 +638,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "DateOfBirth":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                dateOfBirth = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                dateOfBirth = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "DepartmentCode":
                             departmentCode = new Option<string?>(utf8JsonReader.GetString());
@@ -652,7 +652,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "EndDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                endDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                endDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ExternalImportReference":
                             externalImportReference = new Option<string?>(utf8JsonReader.GetString());
@@ -671,7 +671,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "HiredDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                hiredDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                hiredDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "InternationalIdCountryCode":
                             internationalIdCountryCode = new Option<string?>(utf8JsonReader.GetString());
@@ -729,7 +729,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "StartDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                startDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                startDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "SubLedgerNumberSeriesId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

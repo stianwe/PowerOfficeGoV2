@@ -42,7 +42,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="lastChangedDateTimeOffset">The timestamp when the employment entity was last changed.</param>
         /// <param name="startDate">The start date of the employment.</param>
         [JsonConstructor]
-        public EmploymentLightDto(Option<DateTime?> createdDateTimeOffset = default, Option<long?> employeeId = default, Option<EmploymentFormType?> employmentForm = default, Option<DateOnly?> endDate = default, Option<long?> enterpriseId = default, Option<long?> id = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<DateOnly?> startDate = default)
+        public EmploymentLightDto(Option<DateTimeOffset?> createdDateTimeOffset = default, Option<long?> employeeId = default, Option<EmploymentFormType?> employmentForm = default, Option<DateTimeOffset?> endDate = default, Option<long?> enterpriseId = default, Option<long?> id = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<DateTimeOffset?> startDate = default)
         {
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
             EmployeeIdOption = employeeId;
@@ -75,7 +75,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp when the employment entity was created.
@@ -83,7 +83,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp when the employment entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of EmployeeId
@@ -105,7 +105,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> EndDateOption { get; }
+        public Option<DateTimeOffset?> EndDateOption { get; }
 
         /// <summary>
         /// The end date of the employment.
@@ -113,7 +113,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The end date of the employment.</value>
         /* <example>Sun Jul 31 02:00:00 CEST 2022</example> */
         [JsonPropertyName("EndDate")]
-        public DateOnly? EndDate { get { return this.EndDateOption; } }
+        public DateTimeOffset? EndDate { get { return this.EndDateOption; } }
 
         /// <summary>
         /// Used to track the state of EnterpriseId
@@ -150,7 +150,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp when the employment entity was last changed.
@@ -158,14 +158,14 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp when the employment entity was last changed.</value>
         /* <example>2021-09-30T09:33:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of StartDate
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> StartDateOption { get; }
+        public Option<DateTimeOffset?> StartDateOption { get; }
 
         /// <summary>
         /// The start date of the employment.
@@ -173,7 +173,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of the employment.</value>
         /* <example>Fri Jan 01 01:00:00 CET 2021</example> */
         [JsonPropertyName("StartDate")]
-        public DateOnly? StartDate { get { return this.StartDateOption; } }
+        public DateTimeOffset? StartDate { get { return this.StartDateOption; } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -248,14 +248,14 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<long?> employeeId = default;
             Option<EmploymentFormType?> employmentForm = default;
-            Option<DateOnly?> endDate = default;
+            Option<DateTimeOffset?> endDate = default;
             Option<long?> enterpriseId = default;
             Option<long?> id = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
-            Option<DateOnly?> startDate = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> startDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -274,7 +274,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "EmployeeId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -287,7 +287,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "EndDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                endDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                endDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "EnterpriseId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -299,11 +299,11 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "StartDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                startDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                startDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

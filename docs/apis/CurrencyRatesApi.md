@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="currencyratesget"></a>
 # **CurrencyRatesGet**
-> CurrencyRateDto CurrencyRatesGet (string fromCurrency, string toCurrency, DateTime asOnDate)
+> CurrencyRateDto CurrencyRatesGet (string fromCurrency, string toCurrency, DateTimeOffset asOnDate)
 
 Get currency rate. (Auth roles: CommonServices,CommonServices_Full)
 
@@ -33,7 +33,7 @@ namespace Example
             var apiInstance = new CurrencyRatesApi(config);
             var fromCurrency = "fromCurrency_example";  // string | 
             var toCurrency = "toCurrency_example";  // string | 
-            var asOnDate = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime | 
+            var asOnDate = DateTimeOffset.Parse("2013-10-20T19:20:30+01:00");  // DateTimeOffset | 
 
             try
             {
@@ -78,7 +78,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **fromCurrency** | **string** |  |  |
 | **toCurrency** | **string** |  |  |
-| **asOnDate** | **DateTime** |  |  |
+| **asOnDate** | **DateTimeOffset** |  |  |
 
 ### Return type
 

@@ -78,7 +78,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISalesOrdersGetApiResponse"/>&gt;</returns>
-        Task<ISalesOrdersGetApiResponse> SalesOrdersGetAsync(Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<OrderStatus> orderStatus = default, Option<string> projectCodes = default, Option<bool> showInherited = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISalesOrdersGetApiResponse> SalesOrdersGetAsync(Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<OrderStatus> orderStatus = default, Option<string> projectCodes = default, Option<bool> showInherited = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the orders from the client. (Auth roles: SalesOrders,SalesOrders_Full)
@@ -97,7 +97,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISalesOrdersGetApiResponse"/>?&gt;</returns>
-        Task<ISalesOrdersGetApiResponse?> SalesOrdersGetOrDefaultAsync(Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<OrderStatus> orderStatus = default, Option<string> projectCodes = default, Option<bool> showInherited = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISalesOrdersGetApiResponse?> SalesOrdersGetOrDefaultAsync(Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<OrderStatus> orderStatus = default, Option<string> projectCodes = default, Option<bool> showInherited = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete an sales order entity with a given id. (Auth roles: SalesOrders_Full)
@@ -746,7 +746,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatSalesOrdersGet(ref Option<string> customerNos, ref Option<string> departmentCodes, ref Option<bool> includeSubProject, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<bool> onlyCreatedByCurrentIntegration, ref Option<OrderStatus> orderStatus, ref Option<string> projectCodes, ref Option<bool> showInherited, Option<ResourceParameters> resourceParameter);
+        partial void FormatSalesOrdersGet(ref Option<string> customerNos, ref Option<string> departmentCodes, ref Option<bool> includeSubProject, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<bool> onlyCreatedByCurrentIntegration, ref Option<OrderStatus> orderStatus, ref Option<string> projectCodes, ref Option<bool> showInherited, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -784,7 +784,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="projectCodes"></param>
         /// <param name="showInherited"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterSalesOrdersGetDefaultImplementation(ISalesOrdersGetApiResponse apiResponseLocalVar, Option<string> customerNos, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyCreatedByCurrentIntegration, Option<OrderStatus> orderStatus, Option<string> projectCodes, Option<bool> showInherited, Option<ResourceParameters> resourceParameter)
+        private void AfterSalesOrdersGetDefaultImplementation(ISalesOrdersGetApiResponse apiResponseLocalVar, Option<string> customerNos, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyCreatedByCurrentIntegration, Option<OrderStatus> orderStatus, Option<string> projectCodes, Option<bool> showInherited, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterSalesOrdersGet(ref suppressDefaultLog, apiResponseLocalVar, customerNos, departmentCodes, includeSubProject, lastChangedDateTimeOffsetGreaterThan, onlyCreatedByCurrentIntegration, orderStatus, projectCodes, showInherited, resourceParameter);
@@ -806,7 +806,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="projectCodes"></param>
         /// <param name="showInherited"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterSalesOrdersGet(ref bool suppressDefaultLog, ISalesOrdersGetApiResponse apiResponseLocalVar, Option<string> customerNos, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyCreatedByCurrentIntegration, Option<OrderStatus> orderStatus, Option<string> projectCodes, Option<bool> showInherited, Option<ResourceParameters> resourceParameter);
+        partial void AfterSalesOrdersGet(ref bool suppressDefaultLog, ISalesOrdersGetApiResponse apiResponseLocalVar, Option<string> customerNos, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyCreatedByCurrentIntegration, Option<OrderStatus> orderStatus, Option<string> projectCodes, Option<bool> showInherited, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -823,7 +823,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="projectCodes"></param>
         /// <param name="showInherited"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorSalesOrdersGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> customerNos, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyCreatedByCurrentIntegration, Option<OrderStatus> orderStatus, Option<string> projectCodes, Option<bool> showInherited, Option<ResourceParameters> resourceParameter)
+        private void OnErrorSalesOrdersGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> customerNos, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyCreatedByCurrentIntegration, Option<OrderStatus> orderStatus, Option<string> projectCodes, Option<bool> showInherited, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorSalesOrdersGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, customerNos, departmentCodes, includeSubProject, lastChangedDateTimeOffsetGreaterThan, onlyCreatedByCurrentIntegration, orderStatus, projectCodes, showInherited, resourceParameter);
@@ -847,7 +847,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="projectCodes"></param>
         /// <param name="showInherited"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorSalesOrdersGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> customerNos, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyCreatedByCurrentIntegration, Option<OrderStatus> orderStatus, Option<string> projectCodes, Option<bool> showInherited, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorSalesOrdersGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> customerNos, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyCreatedByCurrentIntegration, Option<OrderStatus> orderStatus, Option<string> projectCodes, Option<bool> showInherited, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the orders from the client. (Auth roles: SalesOrders,SalesOrders_Full) Orders can be in either draft or confirmed state, but neither are sent and posted invoices yet (they are considered outgoing invoice drafts).  The returned objects are a lightweight version of an sales order, not containing any line details.  Multiple filtering options.
@@ -863,7 +863,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISalesOrdersGetApiResponse"/>&gt;</returns>
-        public async Task<ISalesOrdersGetApiResponse?> SalesOrdersGetOrDefaultAsync(Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<OrderStatus> orderStatus = default, Option<string> projectCodes = default, Option<bool> showInherited = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISalesOrdersGetApiResponse?> SalesOrdersGetOrDefaultAsync(Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<OrderStatus> orderStatus = default, Option<string> projectCodes = default, Option<bool> showInherited = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -890,7 +890,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISalesOrdersGetApiResponse"/>&gt;</returns>
-        public async Task<ISalesOrdersGetApiResponse> SalesOrdersGetAsync(Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<OrderStatus> orderStatus = default, Option<string> projectCodes = default, Option<bool> showInherited = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISalesOrdersGetApiResponse> SalesOrdersGetAsync(Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<OrderStatus> orderStatus = default, Option<string> projectCodes = default, Option<bool> showInherited = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

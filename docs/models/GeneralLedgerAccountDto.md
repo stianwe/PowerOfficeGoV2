@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **IsDepartmentRequired** | **bool** | Value indicating whether department is a required property to set on transactions on this account. | [optional] 
 **IsProjectRequired** | **bool** | Value indicating whether project is a required property to set on transactions on this account. | [optional] 
 **IsVatCodeLocked** | **bool** | Value indicating whether the account is locked to a VAT code. If true, only VatCode can be used on transactions on this account. | [optional] 
-**LastChangedDateTimeOffset** | **DateTime** | The timestamp when the last change in settings for this account occurred. | [optional] [readonly] 
+**LastChangedDateTimeOffset** | **DateTimeOffset** | The timestamp when the last change in settings for this account occurred. | [optional] [readonly] 
 **Name** | **string** | The name of the account. | [optional] 
 **Unit1** | **UnitOfMeasureType** |  | [optional] 
 **Unit2** | **UnitOfMeasureType** |  | [optional] 

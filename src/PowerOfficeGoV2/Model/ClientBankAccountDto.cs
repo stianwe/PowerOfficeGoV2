@@ -52,7 +52,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="lastChangedDateTimeOffset">The timestamp of the last change of the client bank account. UTC time.</param>
         /// <param name="overdraftLimit">The overdraft limit for the bank account, if set. Available only for bank accounts with overdraft enabled.</param>
         [JsonConstructor]
-        public ClientBankAccountDto(string bankAccountNumber, string bicSwift, string countryCode, Option<bool?> activeIncomingPaymentService = default, Option<bool?> activeOutgoingPaymentServices = default, Option<AgricultureDepartment?> agricultureDepartment = default, Option<bool?> allowOverdraft = default, Option<string?> bankName = default, Option<DateTime?> createdDateTimeOffset = default, Option<string?> currencyCode = default, Option<long?> generalLedgerAccountId = default, Option<long?> generalLedgerAccountNo = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isClientTrustAccount = default, Option<bool?> isPrimaryAccount = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<double?> overdraftLimit = default)
+        public ClientBankAccountDto(string bankAccountNumber, string bicSwift, string countryCode, Option<bool?> activeIncomingPaymentService = default, Option<bool?> activeOutgoingPaymentServices = default, Option<AgricultureDepartment?> agricultureDepartment = default, Option<bool?> allowOverdraft = default, Option<string?> bankName = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<string?> currencyCode = default, Option<long?> generalLedgerAccountId = default, Option<long?> generalLedgerAccountNo = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isClientTrustAccount = default, Option<bool?> isPrimaryAccount = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<double?> overdraftLimit = default)
         {
             BankAccountNumber = bankAccountNumber;
             BicSwift = bicSwift;
@@ -179,7 +179,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the created date of the client bank account. UTC time.
@@ -187,7 +187,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the created date of the client bank account. UTC time.</value>
         /* <example>2024-03-04T11:11:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CurrencyCode
@@ -299,7 +299,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of the client bank account. UTC time.
@@ -307,7 +307,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of the client bank account. UTC time.</value>
         /* <example>2024-03-04T11:11:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of OverdraftLimit
@@ -447,7 +447,7 @@ namespace PowerOfficeGoV2.Model
             Option<AgricultureDepartment?> agricultureDepartment = default;
             Option<bool?> allowOverdraft = default;
             Option<string?> bankName = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<string?> currencyCode = default;
             Option<long?> generalLedgerAccountId = default;
             Option<long?> generalLedgerAccountNo = default;
@@ -455,7 +455,7 @@ namespace PowerOfficeGoV2.Model
             Option<bool?> isActive = default;
             Option<bool?> isClientTrustAccount = default;
             Option<bool?> isPrimaryAccount = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<double?> overdraftLimit = default;
 
             while (utf8JsonReader.Read())
@@ -504,7 +504,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CurrencyCode":
                             currencyCode = new Option<string?>(utf8JsonReader.GetString());
@@ -535,7 +535,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "OverdraftLimit":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

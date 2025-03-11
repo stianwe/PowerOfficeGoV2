@@ -59,7 +59,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="unitOfMeasureCode">unitOfMeasureCode</param>
         /// <param name="unitPrice">The sales price per unit of the product.  If null, the product will inherit the unit price from the product group.</param>
         [JsonConstructor]
-        public ProductDto(Option<string?> code = default, Option<DateTime?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<string?> description = default, Option<string?> gtin = default, Option<long?> id = default, Option<bool?> isArchived = default, Option<bool?> isStockItem = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> name = default, Option<long?> optionalSalesAccount = default, Option<AgricultureDepartment?> optionalSalesAccountAgricultureDepartment = default, Option<long?> optionalSalesAccountId = default, Option<string?> productGroupCode = default, Option<long?> productGroupId = default, Option<ProductType?> productType = default, Option<long?> standardSalesAccount = default, Option<AgricultureDepartment?> standardSalesAccountAgricultureDepartment = default, Option<long?> standardSalesAccountId = default, Option<double?> stockAvailable = default, Option<double?> stockOnHand = default, Option<DateTime?> stockOnHandLastChangedDatetimeOffset = default, Option<double?> unitCost = default, Option<UnitOfMeasureType?> unitOfMeasureCode = default, Option<double?> unitPrice = default)
+        public ProductDto(Option<string?> code = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<string?> description = default, Option<string?> gtin = default, Option<long?> id = default, Option<bool?> isArchived = default, Option<bool?> isStockItem = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> name = default, Option<long?> optionalSalesAccount = default, Option<AgricultureDepartment?> optionalSalesAccountAgricultureDepartment = default, Option<long?> optionalSalesAccountId = default, Option<string?> productGroupCode = default, Option<long?> productGroupId = default, Option<ProductType?> productType = default, Option<long?> standardSalesAccount = default, Option<AgricultureDepartment?> standardSalesAccountAgricultureDepartment = default, Option<long?> standardSalesAccountId = default, Option<double?> stockAvailable = default, Option<double?> stockOnHand = default, Option<DateTimeOffset?> stockOnHandLastChangedDatetimeOffset = default, Option<double?> unitCost = default, Option<UnitOfMeasureType?> unitOfMeasureCode = default, Option<double?> unitPrice = default)
         {
             CodeOption = code;
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
@@ -163,7 +163,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp the product was created.
@@ -171,7 +171,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp the product was created.</value>
         /* <example>2023-07-03T10:53:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CreatedFromImportJournalId
@@ -268,7 +268,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// Timestamp of the last change of the product.  Changes in total stock does not affect the product&#39;s last changed property.  Use the total stock last changed property if needed.
@@ -276,7 +276,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>Timestamp of the last change of the product.  Changes in total stock does not affect the product&#39;s last changed property.  Use the total stock last changed property if needed.</value>
         /* <example>2023-07-03T11:02:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -418,7 +418,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> StockOnHandLastChangedDatetimeOffsetOption { get; }
+        public Option<DateTimeOffset?> StockOnHandLastChangedDatetimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of the product stock on hand.  If relevant, the detailed changes can be retrieved using the product stock entry endpoint.
@@ -426,7 +426,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of the product stock on hand.  If relevant, the detailed changes can be retrieved using the product stock entry endpoint.</value>
         /* <example>2023-07-03T11:02:00.123456700Z</example> */
         [JsonPropertyName("StockOnHandLastChangedDatetimeOffset")]
-        public DateTime? StockOnHandLastChangedDatetimeOffset { get { return this.StockOnHandLastChangedDatetimeOffsetOption; } }
+        public DateTimeOffset? StockOnHandLastChangedDatetimeOffset { get { return this.StockOnHandLastChangedDatetimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of UnitCost
@@ -556,14 +556,14 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<string?> code = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<Guid?> createdFromImportJournalId = default;
             Option<string?> description = default;
             Option<string?> gtin = default;
             Option<long?> id = default;
             Option<bool?> isArchived = default;
             Option<bool?> isStockItem = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> name = default;
             Option<long?> optionalSalesAccount = default;
             Option<AgricultureDepartment?> optionalSalesAccountAgricultureDepartment = default;
@@ -576,7 +576,7 @@ namespace PowerOfficeGoV2.Model
             Option<long?> standardSalesAccountId = default;
             Option<double?> stockAvailable = default;
             Option<double?> stockOnHand = default;
-            Option<DateTime?> stockOnHandLastChangedDatetimeOffset = default;
+            Option<DateTimeOffset?> stockOnHandLastChangedDatetimeOffset = default;
             Option<double?> unitCost = default;
             Option<UnitOfMeasureType?> unitOfMeasureCode = default;
             Option<double?> unitPrice = default;
@@ -601,7 +601,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CreatedFromImportJournalId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -627,7 +627,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Name":
                             name = new Option<string?>(utf8JsonReader.GetString());
@@ -680,7 +680,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "StockOnHandLastChangedDatetimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                stockOnHandLastChangedDatetimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
+                                stockOnHandLastChangedDatetimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "UnitCost":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

@@ -297,7 +297,7 @@ No authorization required
 
 <a id="getcustomdimension"></a>
 # **GetCustomDimension**
-> List&lt;CustomDimensionDto&gt; GetCustomDimension (string codes = null, DateTime createdDateTimeOffsetGreaterThan = null, string ordinal = null, string externalImportReference = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;CustomDimensionDto&gt; GetCustomDimension (string codes = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, string ordinal = null, string externalImportReference = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Gets the custom dimensions on the client. (Auth roles: CustomDimension,CustomDimension_Full)
 
@@ -319,10 +319,10 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new CustomDimensionsApi(config);
             var codes = 1, ABC, 10B;  // string | Filter by custom dimension codes. Search string should be in the form of 1, ABC, 10B (codes separated by comma).                  If filter string is null or whitespace, query is returned as is. Note that the codes are not unique across dim1-dim3,                  meaning that you might potentially get 3 objects returned if the code you filter on are used on all custom dimensions.                  Filter on the dimension ordinal to return values for only one of the custom dimensions. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2021-09-25 08:03:00;  // DateTime | Filter on the created date property.                  This filtering will return all custom dimensions with a created date greater than the timestamp provided.                  Can be used when polling for new custom dimensions from Go. Blank means no filter. Date not inclusive, and in UTC time. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2021-09-25 08:03:00;  // DateTimeOffset | Filter on the created date property.                  This filtering will return all custom dimensions with a created date greater than the timestamp provided.                  Can be used when polling for new custom dimensions from Go. Blank means no filter. Date not inclusive, and in UTC time. (optional) 
             var ordinal = 1;  // string | Filter on the custom dimension ordinal (i.e. 1=dim1, 2=dim2 or 3=dim3), returning only values within the specific custom dimension ordinal. (optional) 
             var externalImportReference = ABC123, DEF456;  // string | Filter by external import references. Search string should be in the form of 1, ABC, 10B (codes separated by comma). (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = DateTime.Parse("2013-10-20T19:20:30+01:00");  // DateTime | Filter on the last change date property.                  This filtering will return all custom dimension objects with a last changed date greater than the timestamp provided.                  Can be used when polling for new or changed custom dimension objects from Go. Blank means no filter. Date not inclusive, and in UTC time. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = DateTimeOffset.Parse("2013-10-20T19:20:30+01:00");  // DateTimeOffset | Filter on the last change date property.                  This filtering will return all custom dimension objects with a last changed date greater than the timestamp provided.                  Can be used when polling for new or changed custom dimension objects from Go. Blank means no filter. Date not inclusive, and in UTC time. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -367,10 +367,10 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **codes** | **string** | Filter by custom dimension codes. Search string should be in the form of 1, ABC, 10B (codes separated by comma).                  If filter string is null or whitespace, query is returned as is. Note that the codes are not unique across dim1-dim3,                  meaning that you might potentially get 3 objects returned if the code you filter on are used on all custom dimensions.                  Filter on the dimension ordinal to return values for only one of the custom dimensions. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter on the created date property.                  This filtering will return all custom dimensions with a created date greater than the timestamp provided.                  Can be used when polling for new custom dimensions from Go. Blank means no filter. Date not inclusive, and in UTC time. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter on the created date property.                  This filtering will return all custom dimensions with a created date greater than the timestamp provided.                  Can be used when polling for new custom dimensions from Go. Blank means no filter. Date not inclusive, and in UTC time. | [optional]  |
 | **ordinal** | **string** | Filter on the custom dimension ordinal (i.e. 1&#x3D;dim1, 2&#x3D;dim2 or 3&#x3D;dim3), returning only values within the specific custom dimension ordinal. | [optional]  |
 | **externalImportReference** | **string** | Filter by external import references. Search string should be in the form of 1, ABC, 10B (codes separated by comma). | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter on the last change date property.                  This filtering will return all custom dimension objects with a last changed date greater than the timestamp provided.                  Can be used when polling for new or changed custom dimension objects from Go. Blank means no filter. Date not inclusive, and in UTC time. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter on the last change date property.                  This filtering will return all custom dimension objects with a last changed date greater than the timestamp provided.                  Can be used when polling for new or changed custom dimension objects from Go. Blank means no filter. Date not inclusive, and in UTC time. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

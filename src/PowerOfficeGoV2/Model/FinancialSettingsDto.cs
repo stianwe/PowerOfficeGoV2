@@ -43,7 +43,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="lastChangedDateTimeOffset">The last changed timestamp. Last changed will update when the settings are created, or whenever the settings are changed.</param>
         /// <param name="useTrustAccountManagement">A value indication whether the client use the trust account management functionality in Go.  Default to false, as the funcionality is optional for law firms, brokers and other firms subject of trust accounts.  If true, the client have dedicated trust bank accounts, and use projects in account transactions.</param>
         [JsonConstructor]
-        public FinancialSettingsDto(Option<DateOnly?> conversionDate = default, Option<string?> currencyCode = default, Option<long?> currencyGainsAccountId = default, Option<long?> currencyGainsAccountNo = default, Option<long?> currencyLossAccountId = default, Option<long?> currencyLossAccountNo = default, Option<Months?> financialYearEndMonth = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<bool?> useTrustAccountManagement = default)
+        public FinancialSettingsDto(Option<DateTimeOffset?> conversionDate = default, Option<string?> currencyCode = default, Option<long?> currencyGainsAccountId = default, Option<long?> currencyGainsAccountNo = default, Option<long?> currencyLossAccountId = default, Option<long?> currencyLossAccountNo = default, Option<Months?> financialYearEndMonth = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<bool?> useTrustAccountManagement = default)
         {
             ConversionDateOption = conversionDate;
             CurrencyCodeOption = currencyCode;
@@ -77,7 +77,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ConversionDateOption { get; }
+        public Option<DateTimeOffset?> ConversionDateOption { get; }
 
         /// <summary>
         /// The start date of processing in Go. This is the date the client started using Go. Transactions can only be posted on or after this date. The date can also be used to identify the date of the startbalance in Go, which will be this date -1 day
@@ -85,7 +85,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of processing in Go. This is the date the client started using Go. Transactions can only be posted on or after this date. The date can also be used to identify the date of the startbalance in Go, which will be this date -1 day</value>
         /* <example>Sat Jan 01 01:00:00 CET 2022</example> */
         [JsonPropertyName("ConversionDate")]
-        public DateOnly? ConversionDate { get { return this.ConversionDateOption; } }
+        public DateTimeOffset? ConversionDate { get { return this.ConversionDateOption; } }
 
         /// <summary>
         /// Used to track the state of CurrencyCode
@@ -167,7 +167,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The last changed timestamp. Last changed will update when the settings are created, or whenever the settings are changed.
@@ -175,7 +175,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The last changed timestamp. Last changed will update when the settings are created, or whenever the settings are changed.</value>
         /* <example>2022-06-01T11:34:56.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of UseTrustAccountManagement
@@ -255,14 +255,14 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateOnly?> conversionDate = default;
+            Option<DateTimeOffset?> conversionDate = default;
             Option<string?> currencyCode = default;
             Option<long?> currencyGainsAccountId = default;
             Option<long?> currencyGainsAccountNo = default;
             Option<long?> currencyLossAccountId = default;
             Option<long?> currencyLossAccountNo = default;
             Option<Months?> financialYearEndMonth = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<bool?> useTrustAccountManagement = default;
 
             while (utf8JsonReader.Read())
@@ -282,7 +282,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "ConversionDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                conversionDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                conversionDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CurrencyCode":
                             currencyCode = new Option<string?>(utf8JsonReader.GetString());
@@ -310,7 +310,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "UseTrustAccountManagement":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

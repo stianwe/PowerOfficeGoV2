@@ -84,7 +84,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="purchaseOrderNo">The purchase order number for this project.  If set, this purchase order number will also default appear on invoices when billing this project.</param>
         /// <param name="startDate">The start date of the project.</param>
         [JsonConstructor]
-        public ProjectPostDto(Option<bool?> allowAllActivities = default, Option<bool?> allowAllEmployees = default, Option<bool?> attachExpenseVouchersWhenBilling = default, Option<double?> billableRate = default, Option<BillableRateSpecification?> billableRateSpecification = default, Option<string?> brandingThemeCode = default, Option<long?> brandingThemeId = default, Option<double?> budgetedBillableRate = default, Option<double?> budgetedCostOfGoods = default, Option<double?> budgetedHours = default, Option<double?> budgetedOtherOperatingExpenses = default, Option<double?> budgetedPayrollExpenses = default, Option<double?> budgetedRevenueHours = default, Option<double?> budgetedTotalRevenue = default, Option<string?> code = default, Option<long?> contactPersonId = default, Option<string?> contractNo = default, Option<long?> customerId = default, Option<long?> customerNo = default, Option<string?> deliveryTerm = default, Option<long?> deliveryTermId = default, Option<bool?> denyTimeTracking = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<DateOnly?> endDate = default, Option<string?> expenseMarkupDescription = default, Option<bool?> expenseMarkupEnabled = default, Option<double?> expenseMarkupFactor = default, Option<long?> externalNumber = default, Option<double?> fixedPrice = default, Option<string?> hourlyRateMarkupDescription = default, Option<bool?> hourlyRateMarkupEnabled = default, Option<double?> hourlyRateMarkupFactor = default, Option<bool?> isActive = default, Option<bool?> isBillable = default, Option<bool?> isInternal = default, Option<string?> locationCode = default, Option<long?> locationId = default, string? name = default, Option<string?> parentProjectCode = default, Option<long?> parentProjectId = default, Option<long?> paymentTermId = default, Option<int?> paymentTerms = default, Option<int?> progress = default, Option<ProjectBillingMethod?> projectBillingMethod = default, Option<long?> projectManagerEmployeeId = default, Option<long?> projectManagerEmployeeNo = default, Option<ProjectStatusType?> projectStatus = default, Option<string?> purchaseOrderNo = default, Option<DateOnly?> startDate = default)
+        public ProjectPostDto(Option<bool?> allowAllActivities = default, Option<bool?> allowAllEmployees = default, Option<bool?> attachExpenseVouchersWhenBilling = default, Option<double?> billableRate = default, Option<BillableRateSpecification?> billableRateSpecification = default, Option<string?> brandingThemeCode = default, Option<long?> brandingThemeId = default, Option<double?> budgetedBillableRate = default, Option<double?> budgetedCostOfGoods = default, Option<double?> budgetedHours = default, Option<double?> budgetedOtherOperatingExpenses = default, Option<double?> budgetedPayrollExpenses = default, Option<double?> budgetedRevenueHours = default, Option<double?> budgetedTotalRevenue = default, Option<string?> code = default, Option<long?> contactPersonId = default, Option<string?> contractNo = default, Option<long?> customerId = default, Option<long?> customerNo = default, Option<string?> deliveryTerm = default, Option<long?> deliveryTermId = default, Option<bool?> denyTimeTracking = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<DateTimeOffset?> endDate = default, Option<string?> expenseMarkupDescription = default, Option<bool?> expenseMarkupEnabled = default, Option<double?> expenseMarkupFactor = default, Option<long?> externalNumber = default, Option<double?> fixedPrice = default, Option<string?> hourlyRateMarkupDescription = default, Option<bool?> hourlyRateMarkupEnabled = default, Option<double?> hourlyRateMarkupFactor = default, Option<bool?> isActive = default, Option<bool?> isBillable = default, Option<bool?> isInternal = default, Option<string?> locationCode = default, Option<long?> locationId = default, string? name = default, Option<string?> parentProjectCode = default, Option<long?> parentProjectId = default, Option<long?> paymentTermId = default, Option<int?> paymentTerms = default, Option<int?> progress = default, Option<ProjectBillingMethod?> projectBillingMethod = default, Option<long?> projectManagerEmployeeId = default, Option<long?> projectManagerEmployeeNo = default, Option<ProjectStatusType?> projectStatus = default, Option<string?> purchaseOrderNo = default, Option<DateTimeOffset?> startDate = default)
         {
             AllowAllActivitiesOption = allowAllActivities;
             AllowAllEmployeesOption = allowAllEmployees;
@@ -530,7 +530,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> EndDateOption { get; private set; }
+        public Option<DateTimeOffset?> EndDateOption { get; private set; }
 
         /// <summary>
         /// The end date of the project.  Only date is used, time is ignored.
@@ -538,7 +538,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The end date of the project.  Only date is used, time is ignored.</value>
         /* <example>Fri Jan 06 01:00:00 CET 2023</example> */
         [JsonPropertyName("EndDate")]
-        public DateOnly? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
+        public DateTimeOffset? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExpenseMarkupDescription
@@ -868,7 +868,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> StartDateOption { get; private set; }
+        public Option<DateTimeOffset?> StartDateOption { get; private set; }
 
         /// <summary>
         /// The start date of the project.
@@ -876,7 +876,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of the project.</value>
         /* <example>Wed Oct 26 02:00:00 CEST 2022</example> */
         [JsonPropertyName("StartDate")]
-        public DateOnly? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
+        public DateTimeOffset? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -1019,7 +1019,7 @@ namespace PowerOfficeGoV2.Model
             Option<bool?> denyTimeTracking = default;
             Option<string?> departmentCode = default;
             Option<long?> departmentId = default;
-            Option<DateOnly?> endDate = default;
+            Option<DateTimeOffset?> endDate = default;
             Option<string?> expenseMarkupDescription = default;
             Option<bool?> expenseMarkupEnabled = default;
             Option<double?> expenseMarkupFactor = default;
@@ -1044,7 +1044,7 @@ namespace PowerOfficeGoV2.Model
             Option<long?> projectManagerEmployeeNo = default;
             Option<ProjectStatusType?> projectStatus = default;
             Option<string?> purchaseOrderNo = default;
-            Option<DateOnly?> startDate = default;
+            Option<DateTimeOffset?> startDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -1155,7 +1155,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "EndDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                endDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                endDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ExpenseMarkupDescription":
                             expenseMarkupDescription = new Option<string?>(utf8JsonReader.GetString());
@@ -1251,7 +1251,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "StartDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                startDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                startDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

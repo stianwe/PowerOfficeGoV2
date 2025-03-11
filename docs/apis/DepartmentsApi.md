@@ -383,7 +383,7 @@ No authorization required
 
 <a id="getdepartments"></a>
 # **GetDepartments**
-> List&lt;DepartmentDto&gt; GetDepartments (string codes = null, DateTime createdDateTimeOffsetGreaterThan = null, Guid createdFromImportJournalId = null, bool isActive = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, long managerEmployeeNo = null, string name = null, ResourceParameters resourceParameter = null)
+> List&lt;DepartmentDto&gt; GetDepartments (string codes = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, Guid createdFromImportJournalId = null, bool isActive = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, long managerEmployeeNo = null, string name = null, ResourceParameters resourceParameter = null)
 
 Departments can be divisions of an organization. The usages may also be that of a dimension separating specific  areas of activity for reporting purposes. (Auth roles: Department,Department_Full)
 
@@ -405,10 +405,10 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new DepartmentsApi(config);
             var codes = 10, 20;  // string | Filter by department codes. SearchString should be in the form of \"1, ABC, 10B\" (codes separated by comma). If filterString is null or whitespace, query is returned as is. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Find departments created after this timestamp. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Find departments created after this timestamp. (optional) 
             var createdFromImportJournalId = f575b4b0-55be-4b56-b01f-44b204df82c5;  // Guid | Find departments created by importJournal with ID. (optional) 
             var isActive = true;  // bool | Filter by isActive. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Find departments that have been changed after this timestamp. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Find departments that have been changed after this timestamp. (optional) 
             var managerEmployeeNo = 123;  // long | Filter by department manager via their employee number. (optional) 
             var name = Sales;  // string | Filter by department name. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
@@ -455,10 +455,10 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **codes** | **string** | Filter by department codes. SearchString should be in the form of \&quot;1, ABC, 10B\&quot; (codes separated by comma). If filterString is null or whitespace, query is returned as is. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Find departments created after this timestamp. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Find departments created after this timestamp. | [optional]  |
 | **createdFromImportJournalId** | **Guid** | Find departments created by importJournal with ID. | [optional]  |
 | **isActive** | **bool** | Filter by isActive. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Find departments that have been changed after this timestamp. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Find departments that have been changed after this timestamp. | [optional]  |
 | **managerEmployeeNo** | **long** | Filter by department manager via their employee number. | [optional]  |
 | **name** | **string** | Filter by department name. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |

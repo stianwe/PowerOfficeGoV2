@@ -46,7 +46,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="projectId">The id of the project associated with the voucher header.  The lines will inherit the project from the voucher head if not specified on the lines.</param>
         /// <param name="voucherDate">The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher.</param>
         [JsonConstructor]
-        public BankJournalEntryVoucherDto(Option<List<BankJournalEntryVoucherLineDto>?> bankVoucherLines = default, Option<string?> currencyCode = default, Option<long?> departmentId = default, Option<string?> description = default, Option<long?> dim1Id = default, Option<long?> dim2Id = default, Option<long?> dim3Id = default, Option<Guid?> id = default, Option<long?> locationId = default, Option<List<VoucherPage>?> pages = default, Option<long?> projectId = default, Option<DateOnly?> voucherDate = default)
+        public BankJournalEntryVoucherDto(Option<List<BankJournalEntryVoucherLineDto>?> bankVoucherLines = default, Option<string?> currencyCode = default, Option<long?> departmentId = default, Option<string?> description = default, Option<long?> dim1Id = default, Option<long?> dim2Id = default, Option<long?> dim3Id = default, Option<Guid?> id = default, Option<long?> locationId = default, Option<List<VoucherPage>?> pages = default, Option<long?> projectId = default, Option<DateTimeOffset?> voucherDate = default)
         {
             BankVoucherLinesOption = bankVoucherLines;
             CurrencyCodeOption = currencyCode;
@@ -233,7 +233,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> VoucherDateOption { get; private set; }
+        public Option<DateTimeOffset?> VoucherDateOption { get; private set; }
 
         /// <summary>
         /// The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher.
@@ -241,7 +241,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher.</value>
         /* <example>Wed Mar 20 01:00:00 CET 2024</example> */
         [JsonPropertyName("VoucherDate")]
-        public DateOnly? VoucherDate { get { return this.VoucherDateOption; } set { this.VoucherDateOption = new(value); } }
+        public DateTimeOffset? VoucherDate { get { return this.VoucherDateOption; } set { this.VoucherDateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -328,7 +328,7 @@ namespace PowerOfficeGoV2.Model
             Option<long?> locationId = default;
             Option<List<VoucherPage>?> pages = default;
             Option<long?> projectId = default;
-            Option<DateOnly?> voucherDate = default;
+            Option<DateTimeOffset?> voucherDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -389,7 +389,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "VoucherDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                voucherDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                voucherDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

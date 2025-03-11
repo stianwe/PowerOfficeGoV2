@@ -43,7 +43,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="lastChangedDateTimeOffset">The timestamp when the employment salary entity was last changed.</param>
         /// <param name="remunerationType">remunerationType</param>
         [JsonConstructor]
-        public EmploymentSalaryDto(Option<double?> annualSalary = default, Option<DateTime?> createdDateTimeOffset = default, Option<long?> employeeId = default, Option<long?> employmentId = default, Option<DateOnly?> fromDate = default, Option<double?> hourlyRate = default, Option<long?> id = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<SalaryRemunerationType?> remunerationType = default)
+        public EmploymentSalaryDto(Option<double?> annualSalary = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<long?> employeeId = default, Option<long?> employmentId = default, Option<DateTimeOffset?> fromDate = default, Option<double?> hourlyRate = default, Option<long?> id = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<SalaryRemunerationType?> remunerationType = default)
         {
             AnnualSalaryOption = annualSalary;
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
@@ -92,7 +92,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp when the employment salary entity was created.
@@ -100,7 +100,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp when the employment salary entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of EmployeeId
@@ -137,7 +137,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> FromDateOption { get; private set; }
+        public Option<DateTimeOffset?> FromDateOption { get; private set; }
 
         /// <summary>
         /// The from-date for the effect of the employment salary.
@@ -145,7 +145,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The from-date for the effect of the employment salary.</value>
         /* <example>Fri Jan 01 01:00:00 CET 2021</example> */
         [JsonPropertyName("FromDate")]
-        public DateOnly? FromDate { get { return this.FromDateOption; } set { this.FromDateOption = new(value); } }
+        public DateTimeOffset? FromDate { get { return this.FromDateOption; } set { this.FromDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of HourlyRate
@@ -182,7 +182,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp when the employment salary entity was last changed.
@@ -190,7 +190,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp when the employment salary entity was last changed.</value>
         /* <example>2021-09-30T09:33:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -262,13 +262,13 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<double?> annualSalary = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<long?> employeeId = default;
             Option<long?> employmentId = default;
-            Option<DateOnly?> fromDate = default;
+            Option<DateTimeOffset?> fromDate = default;
             Option<double?> hourlyRate = default;
             Option<long?> id = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<SalaryRemunerationType?> remunerationType = default;
 
             while (utf8JsonReader.Read())
@@ -292,7 +292,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "EmployeeId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -304,7 +304,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "FromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                fromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                fromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "HourlyRate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -316,7 +316,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "RemunerationType":
                             string? remunerationTypeRawValue = utf8JsonReader.GetString();

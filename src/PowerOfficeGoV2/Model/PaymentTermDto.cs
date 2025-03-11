@@ -41,7 +41,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="lastChangedDateTimeOffset">The timestamp of the last changed date of the payment term. UTC time.</param>
         /// <param name="name">The name of the payment term.  Max length is 128 characters.</param>
         [JsonConstructor]
-        public PaymentTermDto(Option<DateTime?> createdDateTimeOffset = default, Option<int?> creditDays = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isDefault = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> name = default)
+        public PaymentTermDto(Option<DateTimeOffset?> createdDateTimeOffset = default, Option<int?> creditDays = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isDefault = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> name = default)
         {
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
             CreditDaysOption = creditDays;
@@ -60,7 +60,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the created date of the payment term. UTC time.
@@ -68,7 +68,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the created date of the payment term. UTC time.</value>
         /* <example>2023-05-19T08:51:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CreditDays
@@ -135,7 +135,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last changed date of the payment term. UTC time.
@@ -143,7 +143,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last changed date of the payment term. UTC time.</value>
         /* <example>2023-05-19T08:52:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -228,12 +228,12 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<int?> creditDays = default;
             Option<long?> id = default;
             Option<bool?> isActive = default;
             Option<bool?> isDefault = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> name = default;
 
             while (utf8JsonReader.Read())
@@ -253,7 +253,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CreditDays":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -273,7 +273,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Name":
                             name = new Option<string?>(utf8JsonReader.GetString());

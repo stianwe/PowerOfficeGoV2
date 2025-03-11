@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="enterprisesget"></a>
 # **EnterprisesGet**
-> List&lt;EnterpriseDto&gt; EnterprisesGet (string enterpriseNos = null, DateTime createdDateTimeOffsetGreaterThan = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;EnterpriseDto&gt; EnterprisesGet (string enterpriseNos = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Get the enterprises registered for the client. Enterprises are primarily used for payroll reporting in Go.  A company may have more than one enterprise if the company have operations in different industries. (Auth roles: Enterprises,Enterprises_Full)
 
@@ -30,8 +30,8 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new EnterprisesApi(config);
             var enterpriseNos = 980858073, 980858074;  // string | Filter by enterprise number. Search string should be separated by comma. If filter string is null or whitespace, query is returned as is. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2024-08-26T11:05:00.1234567Z;  // DateTime | Filter by the enterprise created timestamp property. This filtering will return all enterprises with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-08-27T10:14:00.1234567Z;  // DateTime | Filter by the enterprise last changed timestamp property. This filtering will return all enterprises with a last changed timestamp greater than the timestamp provided. Timestamp not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2024-08-26T11:05:00.1234567Z;  // DateTimeOffset | Filter by the enterprise created timestamp property. This filtering will return all enterprises with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-08-27T10:14:00.1234567Z;  // DateTimeOffset | Filter by the enterprise last changed timestamp property. This filtering will return all enterprises with a last changed timestamp greater than the timestamp provided. Timestamp not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -76,8 +76,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **enterpriseNos** | **string** | Filter by enterprise number. Search string should be separated by comma. If filter string is null or whitespace, query is returned as is. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter by the enterprise created timestamp property. This filtering will return all enterprises with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the enterprise last changed timestamp property. This filtering will return all enterprises with a last changed timestamp greater than the timestamp provided. Timestamp not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the enterprise created timestamp property. This filtering will return all enterprises with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the enterprise last changed timestamp property. This filtering will return all enterprises with a last changed timestamp greater than the timestamp provided. Timestamp not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

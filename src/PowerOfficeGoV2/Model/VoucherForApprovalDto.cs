@@ -38,7 +38,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="id">A value that uniquely identifies this voucher.  The Id is assigned by Go when the entry is created, and will persist when/if the voucher is posted.</param>
         /// <param name="originatedFromEhf">A value indicating whether the voucher was received to Go by EHF. If true, the voucher have an xml file associated with it.</param>
         [JsonConstructor]
-        public VoucherForApprovalDto(Option<ApprovalVoucherType?> approvalVoucherType = default, Option<DateTime?> availableFromDateTimeOffset = default, Option<Guid?> id = default, Option<bool?> originatedFromEhf = default)
+        public VoucherForApprovalDto(Option<ApprovalVoucherType?> approvalVoucherType = default, Option<DateTimeOffset?> availableFromDateTimeOffset = default, Option<Guid?> id = default, Option<bool?> originatedFromEhf = default)
         {
             ApprovalVoucherTypeOption = approvalVoucherType;
             AvailableFromDateTimeOffsetOption = availableFromDateTimeOffset;
@@ -67,7 +67,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> AvailableFromDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> AvailableFromDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of when the voucher was made available to the integrating party.
@@ -75,7 +75,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of when the voucher was made available to the integrating party.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("AvailableFromDateTimeOffset")]
-        public DateTime? AvailableFromDateTimeOffset { get { return this.AvailableFromDateTimeOffsetOption; } }
+        public DateTimeOffset? AvailableFromDateTimeOffset { get { return this.AvailableFromDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of Id
@@ -162,7 +162,7 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<ApprovalVoucherType?> approvalVoucherType = default;
-            Option<DateTime?> availableFromDateTimeOffset = default;
+            Option<DateTimeOffset?> availableFromDateTimeOffset = default;
             Option<Guid?> id = default;
             Option<bool?> originatedFromEhf = default;
 
@@ -188,7 +188,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "AvailableFromDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                availableFromDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                availableFromDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Id":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

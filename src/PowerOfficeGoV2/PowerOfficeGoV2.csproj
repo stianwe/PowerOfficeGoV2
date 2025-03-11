@@ -12,11 +12,12 @@
     <Description>A library for interacting with the PowerOffice V2 API</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>PowerOfficeGoV2</RootNamespace>
-    <Version>1.1.1</Version>
+    <Version>1.1.2</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\PowerOfficeGoV2.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/stianwe/PowerOfficeGoV2.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Make UseDemoApi configurable during DI</PackageReleaseNotes>
+    <PackageReleaseNotes>Make UseDemoApi configurable during DI.
+Don't use DateOnly as the API sometimes returns time part even where DateOnly is specified.</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Nullable>enable</Nullable>

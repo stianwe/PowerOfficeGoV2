@@ -50,7 +50,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="productRacialCode">The race of the animal, required on sale of live animals</param>
         /// <param name="productRegistrationId">Registration number</param>
         [JsonConstructor]
-        public AgricultureDetails(Option<int?> agriculturalIndustryCode = default, Option<bool?> isMainProductLine = default, Option<int?> productAdditionSubtractionCode = default, Option<string?> productAnimalId = default, Option<string?> productChassisId = default, Option<int?> productCode = default, Option<DateOnly?> productDateOfBirth = default, Option<int?> productDetailCode = default, Option<bool?> productEcological = default, Option<LivestockGender?> productGender = default, Option<string?> productGtinNumber = default, Option<bool?> productHasForestCertificationCode = default, Option<string?> productMachineType = default, Option<int?> productQualityCode = default, Option<string?> productRacialCode = default, Option<string?> productRegistrationId = default)
+        public AgricultureDetails(Option<int?> agriculturalIndustryCode = default, Option<bool?> isMainProductLine = default, Option<int?> productAdditionSubtractionCode = default, Option<string?> productAnimalId = default, Option<string?> productChassisId = default, Option<int?> productCode = default, Option<DateTimeOffset?> productDateOfBirth = default, Option<int?> productDetailCode = default, Option<bool?> productEcological = default, Option<LivestockGender?> productGender = default, Option<string?> productGtinNumber = default, Option<bool?> productHasForestCertificationCode = default, Option<string?> productMachineType = default, Option<int?> productQualityCode = default, Option<string?> productRacialCode = default, Option<string?> productRegistrationId = default)
         {
             AgriculturalIndustryCodeOption = agriculturalIndustryCode;
             IsMainProductLineOption = isMainProductLine;
@@ -175,14 +175,14 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ProductDateOfBirthOption { get; private set; }
+        public Option<DateTimeOffset?> ProductDateOfBirthOption { get; private set; }
 
         /// <summary>
         /// Date of birth of the animal, required when information is related to live cattle
         /// </summary>
         /// <value>Date of birth of the animal, required when information is related to live cattle</value>
         [JsonPropertyName("ProductDateOfBirth")]
-        public DateOnly? ProductDateOfBirth { get { return this.ProductDateOfBirthOption; } set { this.ProductDateOfBirthOption = new(value); } }
+        public DateTimeOffset? ProductDateOfBirth { get { return this.ProductDateOfBirthOption; } set { this.ProductDateOfBirthOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ProductDetailCode
@@ -404,7 +404,7 @@ namespace PowerOfficeGoV2.Model
             Option<string?> productAnimalId = default;
             Option<string?> productChassisId = default;
             Option<int?> productCode = default;
-            Option<DateOnly?> productDateOfBirth = default;
+            Option<DateTimeOffset?> productDateOfBirth = default;
             Option<int?> productDetailCode = default;
             Option<bool?> productEcological = default;
             Option<LivestockGender?> productGender = default;
@@ -454,7 +454,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ProductDateOfBirth":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                productDateOfBirth = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                productDateOfBirth = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ProductDetailCode":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

@@ -53,7 +53,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ITrialBalanceGetApiResponse"/>&gt;</returns>
-        Task<ITrialBalanceGetApiResponse> TrialBalanceGetAsync(DateOnly date, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<string> departmentCodes = default, Option<bool> hideAccountsWithZeroBalance = default, Option<bool> includeSubProject = default, Option<string> productCode = default, Option<string> projectCode = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ITrialBalanceGetApiResponse> TrialBalanceGetAsync(DateTimeOffset date, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<string> departmentCodes = default, Option<bool> hideAccountsWithZeroBalance = default, Option<bool> includeSubProject = default, Option<string> productCode = default, Option<string> projectCode = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the trial balance at a specific date (inclusive). Multiple filtering options (Auth roles: TrialBalance,TrialBalance_Full)
@@ -72,7 +72,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ITrialBalanceGetApiResponse"/>?&gt;</returns>
-        Task<ITrialBalanceGetApiResponse?> TrialBalanceGetOrDefaultAsync(DateOnly date, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<string> departmentCodes = default, Option<bool> hideAccountsWithZeroBalance = default, Option<bool> includeSubProject = default, Option<string> productCode = default, Option<string> projectCode = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ITrialBalanceGetApiResponse?> TrialBalanceGetOrDefaultAsync(DateTimeOffset date, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<string> departmentCodes = default, Option<bool> hideAccountsWithZeroBalance = default, Option<bool> includeSubProject = default, Option<string> productCode = default, Option<string> projectCode = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -195,7 +195,7 @@ namespace PowerOfficeGoV2.Api
             Events = trialBalanceApiEvents;
         }
 
-        partial void FormatTrialBalanceGet(ref DateOnly date, ref Option<string> accountNos, ref Option<string> agricultureDepartments, ref Option<string> departmentCodes, ref Option<bool> hideAccountsWithZeroBalance, ref Option<bool> includeSubProject, ref Option<string> productCode, ref Option<string> projectCode, Option<ResourceParameters> resourceParameter);
+        partial void FormatTrialBalanceGet(ref DateTimeOffset date, ref Option<string> accountNos, ref Option<string> agricultureDepartments, ref Option<string> departmentCodes, ref Option<bool> hideAccountsWithZeroBalance, ref Option<bool> includeSubProject, ref Option<string> productCode, ref Option<string> projectCode, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -241,7 +241,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="productCode"></param>
         /// <param name="projectCode"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterTrialBalanceGetDefaultImplementation(ITrialBalanceGetApiResponse apiResponseLocalVar, DateOnly date, Option<string> accountNos, Option<string> agricultureDepartments, Option<string> departmentCodes, Option<bool> hideAccountsWithZeroBalance, Option<bool> includeSubProject, Option<string> productCode, Option<string> projectCode, Option<ResourceParameters> resourceParameter)
+        private void AfterTrialBalanceGetDefaultImplementation(ITrialBalanceGetApiResponse apiResponseLocalVar, DateTimeOffset date, Option<string> accountNos, Option<string> agricultureDepartments, Option<string> departmentCodes, Option<bool> hideAccountsWithZeroBalance, Option<bool> includeSubProject, Option<string> productCode, Option<string> projectCode, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterTrialBalanceGet(ref suppressDefaultLog, apiResponseLocalVar, date, accountNos, agricultureDepartments, departmentCodes, hideAccountsWithZeroBalance, includeSubProject, productCode, projectCode, resourceParameter);
@@ -263,7 +263,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="productCode"></param>
         /// <param name="projectCode"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterTrialBalanceGet(ref bool suppressDefaultLog, ITrialBalanceGetApiResponse apiResponseLocalVar, DateOnly date, Option<string> accountNos, Option<string> agricultureDepartments, Option<string> departmentCodes, Option<bool> hideAccountsWithZeroBalance, Option<bool> includeSubProject, Option<string> productCode, Option<string> projectCode, Option<ResourceParameters> resourceParameter);
+        partial void AfterTrialBalanceGet(ref bool suppressDefaultLog, ITrialBalanceGetApiResponse apiResponseLocalVar, DateTimeOffset date, Option<string> accountNos, Option<string> agricultureDepartments, Option<string> departmentCodes, Option<bool> hideAccountsWithZeroBalance, Option<bool> includeSubProject, Option<string> productCode, Option<string> projectCode, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -280,7 +280,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="productCode"></param>
         /// <param name="projectCode"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorTrialBalanceGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly date, Option<string> accountNos, Option<string> agricultureDepartments, Option<string> departmentCodes, Option<bool> hideAccountsWithZeroBalance, Option<bool> includeSubProject, Option<string> productCode, Option<string> projectCode, Option<ResourceParameters> resourceParameter)
+        private void OnErrorTrialBalanceGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset date, Option<string> accountNos, Option<string> agricultureDepartments, Option<string> departmentCodes, Option<bool> hideAccountsWithZeroBalance, Option<bool> includeSubProject, Option<string> productCode, Option<string> projectCode, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorTrialBalanceGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, date, accountNos, agricultureDepartments, departmentCodes, hideAccountsWithZeroBalance, includeSubProject, productCode, projectCode, resourceParameter);
@@ -304,7 +304,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="productCode"></param>
         /// <param name="projectCode"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorTrialBalanceGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly date, Option<string> accountNos, Option<string> agricultureDepartments, Option<string> departmentCodes, Option<bool> hideAccountsWithZeroBalance, Option<bool> includeSubProject, Option<string> productCode, Option<string> projectCode, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorTrialBalanceGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset date, Option<string> accountNos, Option<string> agricultureDepartments, Option<string> departmentCodes, Option<bool> hideAccountsWithZeroBalance, Option<bool> includeSubProject, Option<string> productCode, Option<string> projectCode, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the trial balance at a specific date (inclusive). Multiple filtering options (Auth roles: TrialBalance,TrialBalance_Full) 
@@ -320,7 +320,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ITrialBalanceGetApiResponse"/>&gt;</returns>
-        public async Task<ITrialBalanceGetApiResponse?> TrialBalanceGetOrDefaultAsync(DateOnly date, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<string> departmentCodes = default, Option<bool> hideAccountsWithZeroBalance = default, Option<bool> includeSubProject = default, Option<string> productCode = default, Option<string> projectCode = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ITrialBalanceGetApiResponse?> TrialBalanceGetOrDefaultAsync(DateTimeOffset date, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<string> departmentCodes = default, Option<bool> hideAccountsWithZeroBalance = default, Option<bool> includeSubProject = default, Option<string> productCode = default, Option<string> projectCode = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -347,7 +347,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ITrialBalanceGetApiResponse"/>&gt;</returns>
-        public async Task<ITrialBalanceGetApiResponse> TrialBalanceGetAsync(DateOnly date, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<string> departmentCodes = default, Option<bool> hideAccountsWithZeroBalance = default, Option<bool> includeSubProject = default, Option<string> productCode = default, Option<string> projectCode = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ITrialBalanceGetApiResponse> TrialBalanceGetAsync(DateTimeOffset date, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<string> departmentCodes = default, Option<bool> hideAccountsWithZeroBalance = default, Option<bool> includeSubProject = default, Option<string> productCode = default, Option<string> projectCode = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

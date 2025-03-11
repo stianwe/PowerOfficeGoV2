@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **ManualVoucherLines** | [**List&lt;ManualJournalEntryVoucherLineDto&gt;**](ManualJournalEntryVoucherLineDto.md) | The lines of the manual voucher | [optional] 
 **Pages** | [**List&lt;VoucherPage&gt;**](VoucherPage.md) | A collection of voucher pages associated with this voucher. | [optional] [readonly] 
 **ProjectId** | **long** | The id of the project associated with the voucher header.  The lines will inherit the project from the voucher head if not specified on the lines. | [optional] 
-**VoucherDate** | **DateOnly** | The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher. | [optional] 
+**VoucherDate** | **DateTimeOffset** | The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -389,7 +389,7 @@ No authorization required
 
 <a id="getgeneralledgeraccounts"></a>
 # **GetGeneralLedgerAccounts**
-> List&lt;GeneralLedgerAccountDto&gt; GetGeneralLedgerAccounts (string accountNos = null, string agricultureDepartments = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;GeneralLedgerAccountDto&gt; GetGeneralLedgerAccounts (string accountNos = null, string agricultureDepartments = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Get a list of general ledger accounts. (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
 
@@ -412,7 +412,7 @@ namespace Example
             var apiInstance = new GeneralLedgerAccountsApi(config);
             var accountNos = 1000-1999, 2500, 3000-;  // string | Filter by account numbers. Separate by comma [,] to filter on multiple account numbers. A range of numbers can be specified using dash/hyphen [-]. For example \"1000-1999, 2500, 3000-\" will result in accounts with account numbers from and including 1000 to 1999, 2500, 3000 and all above will be returned. If null or whitespace, the filter is not used. (optional) 
             var agricultureDepartments = farming, private, otherIndustries;  // string | Filter by agriculture departments. Separate by comma [,] to filter on multiple agriculture departments. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by last changed timestamp. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by last changed timestamp. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -458,7 +458,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **accountNos** | **string** | Filter by account numbers. Separate by comma [,] to filter on multiple account numbers. A range of numbers can be specified using dash/hyphen [-]. For example \&quot;1000-1999, 2500, 3000-\&quot; will result in accounts with account numbers from and including 1000 to 1999, 2500, 3000 and all above will be returned. If null or whitespace, the filter is not used. | [optional]  |
 | **agricultureDepartments** | **string** | Filter by agriculture departments. Separate by comma [,] to filter on multiple agriculture departments. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by last changed timestamp. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by last changed timestamp. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

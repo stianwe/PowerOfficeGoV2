@@ -40,7 +40,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="lastChangedDateTimeOffset">Last changed date time offset. Date in UTC time.</param>
         /// <param name="salesOrderId">Id of the sales order the attachment belongs to.</param>
         [JsonConstructor]
-        public SalesOrderAttachmentDto(Option<DateTime?> createdDateTimeOffset = default, Option<string?> fileName = default, Option<long?> fileSize = default, Option<long?> id = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<Guid?> salesOrderId = default)
+        public SalesOrderAttachmentDto(Option<DateTimeOffset?> createdDateTimeOffset = default, Option<string?> fileName = default, Option<long?> fileSize = default, Option<long?> id = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<Guid?> salesOrderId = default)
         {
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
             FileNameOption = fileName;
@@ -58,7 +58,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// Created date time offset. Date in UTC time.
@@ -66,7 +66,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>Created date time offset. Date in UTC time.</value>
         /* <example>2023-12-20T14:32:15.132079600Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of FileName
@@ -118,7 +118,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// Last changed date time offset. Date in UTC time.
@@ -126,7 +126,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>Last changed date time offset. Date in UTC time.</value>
         /* <example>2023-12-20T14:32:15.132079600Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of SalesOrderId
@@ -203,11 +203,11 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<string?> fileName = default;
             Option<long?> fileSize = default;
             Option<long?> id = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<Guid?> salesOrderId = default;
 
             while (utf8JsonReader.Read())
@@ -227,7 +227,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "FileName":
                             fileName = new Option<string?>(utf8JsonReader.GetString());
@@ -242,7 +242,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "SalesOrderId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

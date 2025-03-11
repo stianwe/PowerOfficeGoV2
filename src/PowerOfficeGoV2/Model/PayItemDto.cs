@@ -63,7 +63,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="taxDeduction">taxDeduction</param>
         /// <param name="tradeUnionBasis">Value indicating whether this pay item should be included in the calculation of trade union basis.</param>
         [JsonConstructor]
-        public PayItemDto(Option<long?> accountId = default, Option<BenefitType?> benefit = default, Option<BenefitDescriptionType?> benefitDescription = default, Option<string?> code = default, Option<DateTime?> createdDateTimeOffset = default, Option<Guid?> deductionPayItemId = default, Option<bool?> earnedContinentalShelf = default, Option<bool?> earnedSupportVessel = default, Option<string?> earningsCountryCode = default, Option<bool?> employerContributionBasis = default, Option<FnoReportingType?> fnoReporting = default, Option<bool?> fullTaxOnHalfTaxPayrolls = default, Option<bool?> holidayPayBasis = default, Option<Guid?> id = default, Option<bool?> includeInIncomeReport = default, Option<bool?> isActive = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> name = default, Option<long?> oppositeAccountId = default, Option<bool?> pensionBasis = default, Option<double?> percentage = default, Option<PostingType?> postingType = default, Option<ProcessingType?> processingType = default, Option<double?> rate = default, Option<RoundingPrecisionType?> roundingPrecision = default, Option<SpecialIncomeConditionType?> specialIncomeCondition = default, Option<string?> taxCountryCode = default, Option<TaxDeductionType?> taxDeduction = default, Option<bool?> tradeUnionBasis = default)
+        public PayItemDto(Option<long?> accountId = default, Option<BenefitType?> benefit = default, Option<BenefitDescriptionType?> benefitDescription = default, Option<string?> code = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<Guid?> deductionPayItemId = default, Option<bool?> earnedContinentalShelf = default, Option<bool?> earnedSupportVessel = default, Option<string?> earningsCountryCode = default, Option<bool?> employerContributionBasis = default, Option<FnoReportingType?> fnoReporting = default, Option<bool?> fullTaxOnHalfTaxPayrolls = default, Option<bool?> holidayPayBasis = default, Option<Guid?> id = default, Option<bool?> includeInIncomeReport = default, Option<bool?> isActive = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> name = default, Option<long?> oppositeAccountId = default, Option<bool?> pensionBasis = default, Option<double?> percentage = default, Option<PostingType?> postingType = default, Option<ProcessingType?> processingType = default, Option<double?> rate = default, Option<RoundingPrecisionType?> roundingPrecision = default, Option<SpecialIncomeConditionType?> specialIncomeCondition = default, Option<string?> taxCountryCode = default, Option<TaxDeductionType?> taxDeduction = default, Option<bool?> tradeUnionBasis = default)
         {
             AccountIdOption = accountId;
             BenefitOption = benefit;
@@ -238,7 +238,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp the pay item entity was created.
@@ -246,7 +246,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp the pay item entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of DeductionPayItemId
@@ -402,7 +402,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of the pay item.
@@ -410,7 +410,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of the pay item.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -617,7 +617,7 @@ namespace PowerOfficeGoV2.Model
             Option<BenefitType?> benefit = default;
             Option<BenefitDescriptionType?> benefitDescription = default;
             Option<string?> code = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<Guid?> deductionPayItemId = default;
             Option<bool?> earnedContinentalShelf = default;
             Option<bool?> earnedSupportVessel = default;
@@ -629,7 +629,7 @@ namespace PowerOfficeGoV2.Model
             Option<Guid?> id = default;
             Option<bool?> includeInIncomeReport = default;
             Option<bool?> isActive = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> name = default;
             Option<long?> oppositeAccountId = default;
             Option<bool?> pensionBasis = default;
@@ -677,7 +677,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "DeductionPayItemId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -725,7 +725,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Name":
                             name = new Option<string?>(utf8JsonReader.GetString());

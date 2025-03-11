@@ -106,7 +106,7 @@ No authorization required
 
 <a id="getproducts"></a>
 # **GetProducts**
-> List&lt;ProductDto&gt; GetProducts (string codes = null, DateTime createdDateTimeOffsetGreaterThan = null, bool isArchived = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, DateTime stockOnHandLastChangedDatetimeOffsetGreaterThan = null, string names = null, string productGroupCodes = null, ProductType type = null, ResourceParameters resourceParameter = null)
+> List&lt;ProductDto&gt; GetProducts (string codes = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, bool isArchived = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, DateTimeOffset stockOnHandLastChangedDatetimeOffsetGreaterThan = null, string names = null, string productGroupCodes = null, ProductType type = null, ResourceParameters resourceParameter = null)
 
 Get the products from the client. (Auth roles: Product,Product_Full)
 
@@ -130,10 +130,10 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new ProductsApi(config);
             var codes = 1, ABC, 10B;  // string | Filter by product group codes. Search string should be in the form of \"1, ABC, 10B\" (codes separated by comma). If filter string is null or whitespace, query is returned as is. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2023-07-03 14:28:00.1234567Z;  // DateTime | Find product groups created after this timestamp. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2023-07-03 14:28:00.1234567Z;  // DateTimeOffset | Find product groups created after this timestamp. (optional) 
             var isArchived = false;  // bool | Gets a value indicating whether the product is archived (set inactive). Archived products will be unavailable for usage in the GUI. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-07-03 14:28:00.1234567Z;  // DateTime | Find products that have been changed after this timestamp. (optional) 
-            var stockOnHandLastChangedDatetimeOffsetGreaterThan = 2023-07-03 14:28:00.1234567Z;  // DateTime | Find products that have stock on hand changed after this timestamp. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-07-03 14:28:00.1234567Z;  // DateTimeOffset | Find products that have been changed after this timestamp. (optional) 
+            var stockOnHandLastChangedDatetimeOffsetGreaterThan = 2023-07-03 14:28:00.1234567Z;  // DateTimeOffset | Find products that have stock on hand changed after this timestamp. (optional) 
             var names = iphone, galaxy, pixel;  // string | Filter by product name. Filter should be a comma separated string. (optional) 
             var productGroupCodes = 12315, 12345;  // string | Filter by product group codes. Search string should be in the form of \"12315, 12345, 22134\" (codes separated by comma). If filter string is null or whitespace, query is returned as is. (optional) 
             var type = service;  // ProductType | Filter products by type. Available values: Product, Service (optional) 
@@ -181,10 +181,10 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **codes** | **string** | Filter by product group codes. Search string should be in the form of \&quot;1, ABC, 10B\&quot; (codes separated by comma). If filter string is null or whitespace, query is returned as is. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Find product groups created after this timestamp. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Find product groups created after this timestamp. | [optional]  |
 | **isArchived** | **bool** | Gets a value indicating whether the product is archived (set inactive). Archived products will be unavailable for usage in the GUI. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Find products that have been changed after this timestamp. | [optional]  |
-| **stockOnHandLastChangedDatetimeOffsetGreaterThan** | **DateTime** | Find products that have stock on hand changed after this timestamp. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Find products that have been changed after this timestamp. | [optional]  |
+| **stockOnHandLastChangedDatetimeOffsetGreaterThan** | **DateTimeOffset** | Find products that have stock on hand changed after this timestamp. | [optional]  |
 | **names** | **string** | Filter by product name. Filter should be a comma separated string. | [optional]  |
 | **productGroupCodes** | **string** | Filter by product group codes. Search string should be in the form of \&quot;12315, 12345, 22134\&quot; (codes separated by comma). If filter string is null or whitespace, query is returned as is. | [optional]  |
 | **type** | **ProductType** | Filter products by type. Available values: Product, Service | [optional]  |

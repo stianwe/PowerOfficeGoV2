@@ -44,7 +44,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="municipality">The number of the municipality this enterprise belong to.</param>
         /// <param name="name">The name of the enterprise.</param>
         [JsonConstructor]
-        public EnterpriseDto(Option<DateTime?> createdDateTimeOffset = default, Option<EmployerContributionRule?> employerContributionRule = default, Option<EmployerContributionZone?> employerContributionZone = default, Option<string?> enterpriseNo = default, Option<long?> id = default, Option<bool?> isDefault = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<AddressDto?> mailAddress = default, Option<string?> municipality = default, Option<string?> name = default)
+        public EnterpriseDto(Option<DateTimeOffset?> createdDateTimeOffset = default, Option<EmployerContributionRule?> employerContributionRule = default, Option<EmployerContributionZone?> employerContributionZone = default, Option<string?> enterpriseNo = default, Option<long?> id = default, Option<bool?> isDefault = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<AddressDto?> mailAddress = default, Option<string?> municipality = default, Option<string?> name = default)
         {
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
             EmployerContributionRuleOption = employerContributionRule;
@@ -92,7 +92,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// Gets the timestamp the enterprise entity was created.
@@ -100,7 +100,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>Gets the timestamp the enterprise entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of EnterpriseNo
@@ -152,14 +152,14 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp the enterprise was last changed.
         /// </summary>
         /// <value>The timestamp the enterprise was last changed.</value>
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of MailAddress
@@ -269,13 +269,13 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<EmployerContributionRule?> employerContributionRule = default;
             Option<EmployerContributionZone?> employerContributionZone = default;
             Option<string?> enterpriseNo = default;
             Option<long?> id = default;
             Option<bool?> isDefault = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<AddressDto?> mailAddress = default;
             Option<string?> municipality = default;
             Option<string?> name = default;
@@ -297,7 +297,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "EmployerContributionRule":
                             string? employerContributionRuleRawValue = utf8JsonReader.GetString();
@@ -322,7 +322,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "MailAddress":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

@@ -46,8 +46,6 @@ namespace PowerOfficeGoV2.Client
             _jsonOptions.Converters.Add(new JsonStringEnumConverter());
             _jsonOptions.Converters.Add(new DateTimeJsonConverter());
             _jsonOptions.Converters.Add(new DateTimeNullableJsonConverter());
-            _jsonOptions.Converters.Add(new DateOnlyJsonConverter());
-            _jsonOptions.Converters.Add(new DateOnlyNullableJsonConverter());
             _jsonOptions.Converters.Add(new AccessRoleDtoJsonConverter());
             _jsonOptions.Converters.Add(new AccountTransactionDtoJsonConverter());
             _jsonOptions.Converters.Add(new AccountTypeJsonConverter());

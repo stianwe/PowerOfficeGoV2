@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="trialbalanceget"></a>
 # **TrialBalanceGet**
-> List&lt;TrialBalanceLineDto&gt; TrialBalanceGet (DateOnly date, string accountNos = null, string agricultureDepartments = null, string departmentCodes = null, bool hideAccountsWithZeroBalance = null, bool includeSubProject = null, string productCode = null, string projectCode = null, ResourceParameters resourceParameter = null)
+> List&lt;TrialBalanceLineDto&gt; TrialBalanceGet (DateTimeOffset date, string accountNos = null, string agricultureDepartments = null, string departmentCodes = null, bool hideAccountsWithZeroBalance = null, bool includeSubProject = null, string productCode = null, string projectCode = null, ResourceParameters resourceParameter = null)
 
 Gets the trial balance at a specific date (inclusive). Multiple filtering options (Auth roles: TrialBalance,TrialBalance_Full)
 
@@ -29,7 +29,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080";
             var apiInstance = new TrialBalanceApi(config);
-            var date = 2021-01-01;  // DateOnly | The specific date (inclusive) to get trial balance for. Note that (date time) offsets (if provided) is not taken into account, only date is used.
+            var date = 2021-01-01;  // DateTimeOffset | The specific date (inclusive) to get trial balance for. Note that (date time) offsets (if provided) is not taken into account, only date is used.
             var accountNos = 1000-1999, 2500, 3000-;  // string | Filter by account numbers. Separate by comma [,] to filter on multiple account numbers. A range of numbers can be specified using dash/hyphen [-]. For example \"1000-1999, 2500, 3000-\" will result in transactions with account numbers from and including 1000 to 1999, 2500, 3000 and all above will be returned. If null or whitespace, the filter is not used. (optional) 
             var agricultureDepartments = Finance;  // string | Filter by agriculture departments. Separate by comma [,] to filter on multiple names. If null or whitespace, all transactions with or without agriculture departments are returned (filter is not used). (optional) 
             var departmentCodes = 1, 3, 4;  // string | Filter by department codes. Separate by comma [,] to filter on multiple codes. If -1, then all transactions without department codes are returned. If null or whitespace, all transactions with or without department codes are returned (filter is not used). (optional) 
@@ -80,7 +80,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **date** | **DateOnly** | The specific date (inclusive) to get trial balance for. Note that (date time) offsets (if provided) is not taken into account, only date is used. |  |
+| **date** | **DateTimeOffset** | The specific date (inclusive) to get trial balance for. Note that (date time) offsets (if provided) is not taken into account, only date is used. |  |
 | **accountNos** | **string** | Filter by account numbers. Separate by comma [,] to filter on multiple account numbers. A range of numbers can be specified using dash/hyphen [-]. For example \&quot;1000-1999, 2500, 3000-\&quot; will result in transactions with account numbers from and including 1000 to 1999, 2500, 3000 and all above will be returned. If null or whitespace, the filter is not used. | [optional]  |
 | **agricultureDepartments** | **string** | Filter by agriculture departments. Separate by comma [,] to filter on multiple names. If null or whitespace, all transactions with or without agriculture departments are returned (filter is not used). | [optional]  |
 | **departmentCodes** | **string** | Filter by department codes. Separate by comma [,] to filter on multiple codes. If -1, then all transactions without department codes are returned. If null or whitespace, all transactions with or without department codes are returned (filter is not used). | [optional]  |

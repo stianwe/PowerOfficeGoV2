@@ -55,7 +55,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetIncomingInvoiceListItemApiResponse"/>&gt;</returns>
-        Task<IGetIncomingInvoiceListItemApiResponse> GetIncomingInvoiceListItemAsync(Option<DateOnly> fromDate = default, Option<DateOnly> toDate = default, Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<bool> onlyUnpaidInvoices = default, Option<string> projectCodes = default, Option<string> supplierNos = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetIncomingInvoiceListItemApiResponse> GetIncomingInvoiceListItemAsync(Option<DateTimeOffset> fromDate = default, Option<DateTimeOffset> toDate = default, Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<bool> onlyUnpaidInvoices = default, Option<string> projectCodes = default, Option<string> supplierNos = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the posted incoming invoices from the client. The returned objects are a lightweight version of a supplier invoice (or credit note), not containing the cost transaction lines. Use the endpoint AccountTransactions if all voucher lines are needed. Multiple filtering options. (Auth roles: IncomingInvoice,IncomingInvoice_Full)
@@ -76,7 +76,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetIncomingInvoiceListItemApiResponse"/>?&gt;</returns>
-        Task<IGetIncomingInvoiceListItemApiResponse?> GetIncomingInvoiceListItemOrDefaultAsync(Option<DateOnly> fromDate = default, Option<DateOnly> toDate = default, Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<bool> onlyUnpaidInvoices = default, Option<string> projectCodes = default, Option<string> supplierNos = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetIncomingInvoiceListItemApiResponse?> GetIncomingInvoiceListItemOrDefaultAsync(Option<DateTimeOffset> fromDate = default, Option<DateTimeOffset> toDate = default, Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<bool> onlyUnpaidInvoices = default, Option<string> projectCodes = default, Option<string> supplierNos = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get an IncomingInvoiceListItem by Id (Auth roles: IncomingInvoice,IncomingInvoice_Full)
@@ -284,7 +284,7 @@ namespace PowerOfficeGoV2.Api
             Events = incomingInvoicesApiEvents;
         }
 
-        partial void FormatGetIncomingInvoiceListItem(ref Option<DateOnly> fromDate, ref Option<DateOnly> toDate, ref Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan, ref Option<string> departmentCodes, ref Option<bool> includeSubProject, ref Option<bool> onlyUnpaidInvoices, ref Option<string> projectCodes, ref Option<string> supplierNos, ref Option<string> voucherNos, ref Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void FormatGetIncomingInvoiceListItem(ref Option<DateTimeOffset> fromDate, ref Option<DateTimeOffset> toDate, ref Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan, ref Option<string> departmentCodes, ref Option<bool> includeSubProject, ref Option<bool> onlyUnpaidInvoices, ref Option<string> projectCodes, ref Option<string> supplierNos, ref Option<string> voucherNos, ref Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -332,7 +332,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="voucherNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterGetIncomingInvoiceListItemDefaultImplementation(IGetIncomingInvoiceListItemApiResponse apiResponseLocalVar, Option<DateOnly> fromDate, Option<DateOnly> toDate, Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<bool> onlyUnpaidInvoices, Option<string> projectCodes, Option<string> supplierNos, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
+        private void AfterGetIncomingInvoiceListItemDefaultImplementation(IGetIncomingInvoiceListItemApiResponse apiResponseLocalVar, Option<DateTimeOffset> fromDate, Option<DateTimeOffset> toDate, Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<bool> onlyUnpaidInvoices, Option<string> projectCodes, Option<string> supplierNos, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterGetIncomingInvoiceListItem(ref suppressDefaultLog, apiResponseLocalVar, fromDate, toDate, balanceLastChangedDateTimeOffsetGreaterThan, departmentCodes, includeSubProject, onlyUnpaidInvoices, projectCodes, supplierNos, voucherNos, voucherTypes, resourceParameter);
@@ -356,7 +356,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="voucherNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterGetIncomingInvoiceListItem(ref bool suppressDefaultLog, IGetIncomingInvoiceListItemApiResponse apiResponseLocalVar, Option<DateOnly> fromDate, Option<DateOnly> toDate, Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<bool> onlyUnpaidInvoices, Option<string> projectCodes, Option<string> supplierNos, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void AfterGetIncomingInvoiceListItem(ref bool suppressDefaultLog, IGetIncomingInvoiceListItemApiResponse apiResponseLocalVar, Option<DateTimeOffset> fromDate, Option<DateTimeOffset> toDate, Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<bool> onlyUnpaidInvoices, Option<string> projectCodes, Option<string> supplierNos, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -375,7 +375,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="voucherNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorGetIncomingInvoiceListItemDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateOnly> fromDate, Option<DateOnly> toDate, Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<bool> onlyUnpaidInvoices, Option<string> projectCodes, Option<string> supplierNos, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
+        private void OnErrorGetIncomingInvoiceListItemDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> fromDate, Option<DateTimeOffset> toDate, Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<bool> onlyUnpaidInvoices, Option<string> projectCodes, Option<string> supplierNos, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorGetIncomingInvoiceListItem(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, fromDate, toDate, balanceLastChangedDateTimeOffsetGreaterThan, departmentCodes, includeSubProject, onlyUnpaidInvoices, projectCodes, supplierNos, voucherNos, voucherTypes, resourceParameter);
@@ -401,7 +401,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="voucherNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorGetIncomingInvoiceListItem(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateOnly> fromDate, Option<DateOnly> toDate, Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<bool> onlyUnpaidInvoices, Option<string> projectCodes, Option<string> supplierNos, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorGetIncomingInvoiceListItem(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> fromDate, Option<DateTimeOffset> toDate, Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<bool> onlyUnpaidInvoices, Option<string> projectCodes, Option<string> supplierNos, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the posted incoming invoices from the client. The returned objects are a lightweight version of a supplier invoice (or credit note), not containing the cost transaction lines. Use the endpoint AccountTransactions if all voucher lines are needed. Multiple filtering options. (Auth roles: IncomingInvoice,IncomingInvoice_Full) 
@@ -419,7 +419,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetIncomingInvoiceListItemApiResponse"/>&gt;</returns>
-        public async Task<IGetIncomingInvoiceListItemApiResponse?> GetIncomingInvoiceListItemOrDefaultAsync(Option<DateOnly> fromDate = default, Option<DateOnly> toDate = default, Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<bool> onlyUnpaidInvoices = default, Option<string> projectCodes = default, Option<string> supplierNos = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetIncomingInvoiceListItemApiResponse?> GetIncomingInvoiceListItemOrDefaultAsync(Option<DateTimeOffset> fromDate = default, Option<DateTimeOffset> toDate = default, Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<bool> onlyUnpaidInvoices = default, Option<string> projectCodes = default, Option<string> supplierNos = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -448,7 +448,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetIncomingInvoiceListItemApiResponse"/>&gt;</returns>
-        public async Task<IGetIncomingInvoiceListItemApiResponse> GetIncomingInvoiceListItemAsync(Option<DateOnly> fromDate = default, Option<DateOnly> toDate = default, Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<bool> onlyUnpaidInvoices = default, Option<string> projectCodes = default, Option<string> supplierNos = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetIncomingInvoiceListItemApiResponse> GetIncomingInvoiceListItemAsync(Option<DateTimeOffset> fromDate = default, Option<DateTimeOffset> toDate = default, Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<bool> onlyUnpaidInvoices = default, Option<string> projectCodes = default, Option<string> supplierNos = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

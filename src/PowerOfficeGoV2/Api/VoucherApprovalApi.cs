@@ -46,7 +46,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="availableFromDateTimeOffsetGreaterThan">Filter vouchers based on when it became available with timestamp greater than the provided timestamp. Can be used as one way of getting changes in new vouchers available sins last called.  Timestamp not inclusive.                Vouchers sent to the integration for approval may be removed from the list by the system, indicating they are no longer available for approval. Utilizing the availableFromDateTimeOffset  parameter allows for retrieving new vouchers since the last call. However, it does not provide visibility into vouchers that have been removed from the list. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IVoucherApprovalGetApiResponse"/>&gt;</returns>
-        Task<IVoucherApprovalGetApiResponse> VoucherApprovalGetAsync(Option<ResourceParameters> resourceParameter = default, Option<DateTime> availableFromDateTimeOffsetGreaterThan = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IVoucherApprovalGetApiResponse> VoucherApprovalGetAsync(Option<ResourceParameters> resourceParameter = default, Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List the vouchers that are sent to the integration for approval. The voucher details can be retrieved using the JournalEntryVoucher with the corresponding voucher types. (Auth roles: VoucherApproval_Full)
@@ -58,7 +58,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="availableFromDateTimeOffsetGreaterThan">Filter vouchers based on when it became available with timestamp greater than the provided timestamp. Can be used as one way of getting changes in new vouchers available sins last called.  Timestamp not inclusive.                Vouchers sent to the integration for approval may be removed from the list by the system, indicating they are no longer available for approval. Utilizing the availableFromDateTimeOffset  parameter allows for retrieving new vouchers since the last call. However, it does not provide visibility into vouchers that have been removed from the list. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IVoucherApprovalGetApiResponse"/>?&gt;</returns>
-        Task<IVoucherApprovalGetApiResponse?> VoucherApprovalGetOrDefaultAsync(Option<ResourceParameters> resourceParameter = default, Option<DateTime> availableFromDateTimeOffsetGreaterThan = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IVoucherApprovalGetApiResponse?> VoucherApprovalGetOrDefaultAsync(Option<ResourceParameters> resourceParameter = default, Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Approve, reject or return a voucher update back to the client. (Auth roles: VoucherApproval_Full)
@@ -262,7 +262,7 @@ namespace PowerOfficeGoV2.Api
             Events = voucherApprovalApiEvents;
         }
 
-        partial void FormatVoucherApprovalGet(Option<ResourceParameters> resourceParameter, ref Option<DateTime> availableFromDateTimeOffsetGreaterThan);
+        partial void FormatVoucherApprovalGet(Option<ResourceParameters> resourceParameter, ref Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan);
 
         /// <summary>
         /// Validates the request parameters
@@ -281,7 +281,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="resourceParameter"></param>
         /// <param name="availableFromDateTimeOffsetGreaterThan"></param>
-        private void AfterVoucherApprovalGetDefaultImplementation(IVoucherApprovalGetApiResponse apiResponseLocalVar, Option<ResourceParameters> resourceParameter, Option<DateTime> availableFromDateTimeOffsetGreaterThan)
+        private void AfterVoucherApprovalGetDefaultImplementation(IVoucherApprovalGetApiResponse apiResponseLocalVar, Option<ResourceParameters> resourceParameter, Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan)
         {
             bool suppressDefaultLog = false;
             AfterVoucherApprovalGet(ref suppressDefaultLog, apiResponseLocalVar, resourceParameter, availableFromDateTimeOffsetGreaterThan);
@@ -296,7 +296,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="apiResponseLocalVar"></param>
         /// <param name="resourceParameter"></param>
         /// <param name="availableFromDateTimeOffsetGreaterThan"></param>
-        partial void AfterVoucherApprovalGet(ref bool suppressDefaultLog, IVoucherApprovalGetApiResponse apiResponseLocalVar, Option<ResourceParameters> resourceParameter, Option<DateTime> availableFromDateTimeOffsetGreaterThan);
+        partial void AfterVoucherApprovalGet(ref bool suppressDefaultLog, IVoucherApprovalGetApiResponse apiResponseLocalVar, Option<ResourceParameters> resourceParameter, Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -306,7 +306,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="resourceParameter"></param>
         /// <param name="availableFromDateTimeOffsetGreaterThan"></param>
-        private void OnErrorVoucherApprovalGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<ResourceParameters> resourceParameter, Option<DateTime> availableFromDateTimeOffsetGreaterThan)
+        private void OnErrorVoucherApprovalGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<ResourceParameters> resourceParameter, Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorVoucherApprovalGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, resourceParameter, availableFromDateTimeOffsetGreaterThan);
@@ -323,7 +323,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="pathLocalVar"></param>
         /// <param name="resourceParameter"></param>
         /// <param name="availableFromDateTimeOffsetGreaterThan"></param>
-        partial void OnErrorVoucherApprovalGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<ResourceParameters> resourceParameter, Option<DateTime> availableFromDateTimeOffsetGreaterThan);
+        partial void OnErrorVoucherApprovalGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<ResourceParameters> resourceParameter, Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan);
 
         /// <summary>
         /// List the vouchers that are sent to the integration for approval. The voucher details can be retrieved using the JournalEntryVoucher with the corresponding voucher types. (Auth roles: VoucherApproval_Full) 
@@ -332,7 +332,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="availableFromDateTimeOffsetGreaterThan">Filter vouchers based on when it became available with timestamp greater than the provided timestamp. Can be used as one way of getting changes in new vouchers available sins last called.  Timestamp not inclusive.                Vouchers sent to the integration for approval may be removed from the list by the system, indicating they are no longer available for approval. Utilizing the availableFromDateTimeOffset  parameter allows for retrieving new vouchers since the last call. However, it does not provide visibility into vouchers that have been removed from the list. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IVoucherApprovalGetApiResponse"/>&gt;</returns>
-        public async Task<IVoucherApprovalGetApiResponse?> VoucherApprovalGetOrDefaultAsync(Option<ResourceParameters> resourceParameter = default, Option<DateTime> availableFromDateTimeOffsetGreaterThan = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IVoucherApprovalGetApiResponse?> VoucherApprovalGetOrDefaultAsync(Option<ResourceParameters> resourceParameter = default, Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -352,7 +352,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="availableFromDateTimeOffsetGreaterThan">Filter vouchers based on when it became available with timestamp greater than the provided timestamp. Can be used as one way of getting changes in new vouchers available sins last called.  Timestamp not inclusive.                Vouchers sent to the integration for approval may be removed from the list by the system, indicating they are no longer available for approval. Utilizing the availableFromDateTimeOffset  parameter allows for retrieving new vouchers since the last call. However, it does not provide visibility into vouchers that have been removed from the list. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IVoucherApprovalGetApiResponse"/>&gt;</returns>
-        public async Task<IVoucherApprovalGetApiResponse> VoucherApprovalGetAsync(Option<ResourceParameters> resourceParameter = default, Option<DateTime> availableFromDateTimeOffsetGreaterThan = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IVoucherApprovalGetApiResponse> VoucherApprovalGetAsync(Option<ResourceParameters> resourceParameter = default, Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

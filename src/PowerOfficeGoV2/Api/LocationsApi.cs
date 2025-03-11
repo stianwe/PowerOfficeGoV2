@@ -70,7 +70,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetLocationsApiResponse"/>&gt;</returns>
-        Task<IGetLocationsApiResponse> GetLocationsAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> codes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetLocationsApiResponse> GetLocationsAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> codes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the locations available on the client. Multiple filtering options. (Auth roles: Location,Location_Full)
@@ -83,7 +83,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetLocationsApiResponse"/>?&gt;</returns>
-        Task<IGetLocationsApiResponse?> GetLocationsOrDefaultAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> codes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetLocationsApiResponse?> GetLocationsOrDefaultAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> codes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes a location by ID. (Auth roles: Location_Full)
@@ -798,7 +798,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatGetLocations(ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<string> codes, Option<ResourceParameters> resourceParameter);
+        partial void FormatGetLocations(ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<string> codes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -822,7 +822,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="codes"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterGetLocationsDefaultImplementation(IGetLocationsApiResponse apiResponseLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> codes, Option<ResourceParameters> resourceParameter)
+        private void AfterGetLocationsDefaultImplementation(IGetLocationsApiResponse apiResponseLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> codes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterGetLocations(ref suppressDefaultLog, apiResponseLocalVar, createdDateTimeOffsetGreaterThan, codes, resourceParameter);
@@ -838,7 +838,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="codes"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterGetLocations(ref bool suppressDefaultLog, IGetLocationsApiResponse apiResponseLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> codes, Option<ResourceParameters> resourceParameter);
+        partial void AfterGetLocations(ref bool suppressDefaultLog, IGetLocationsApiResponse apiResponseLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> codes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -849,7 +849,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="codes"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorGetLocationsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> codes, Option<ResourceParameters> resourceParameter)
+        private void OnErrorGetLocationsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> codes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorGetLocations(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createdDateTimeOffsetGreaterThan, codes, resourceParameter);
@@ -867,7 +867,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="codes"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorGetLocations(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> codes, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorGetLocations(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> codes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the locations available on the client. Multiple filtering options. (Auth roles: Location,Location_Full) The usage of locations is typically that of a dimension separating specific areas of activity for reporting purposes, especially relevant for projects.
@@ -877,7 +877,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetLocationsApiResponse"/>&gt;</returns>
-        public async Task<IGetLocationsApiResponse?> GetLocationsOrDefaultAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> codes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetLocationsApiResponse?> GetLocationsOrDefaultAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> codes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -898,7 +898,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetLocationsApiResponse"/>&gt;</returns>
-        public async Task<IGetLocationsApiResponse> GetLocationsAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> codes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetLocationsApiResponse> GetLocationsAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> codes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

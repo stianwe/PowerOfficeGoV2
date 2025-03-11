@@ -105,7 +105,7 @@ No authorization required
 
 <a id="payitemsget"></a>
 # **PayItemsGet**
-> List&lt;PayItemDto&gt; PayItemsGet (string codes = null, DateTime createdDateTimeOffsetGreaterThan = null, bool isActive = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;PayItemDto&gt; PayItemsGet (string codes = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, bool isActive = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Get all pay items for the client. (Auth roles: PayItem,PayItem_Full)
 
@@ -129,9 +129,9 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new PayItemsApi(config);
             var codes = 10, 20, 30;  // string | Filter by pay item codes. Separate by comma [,] to filter on multiple pay items. If null or whitespace, all pay items are returned (filter is not used). (optional) 
-            var createdDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by created timestamp property. This filtering will return all pay items with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by created timestamp property. This filtering will return all pay items with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
             var isActive = true;  // bool | Filter pay items based on active status. True to only get pay items with active status, false to only get pay items with inactive status. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by the last changed timestamp property. This filtering will return all pay items with a last changed timestamp greater than the timestamp provided. Can be used when polling for new or updated entries. Timestamp not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by the last changed timestamp property. This filtering will return all pay items with a last changed timestamp greater than the timestamp provided. Can be used when polling for new or updated entries. Timestamp not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -176,9 +176,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **codes** | **string** | Filter by pay item codes. Separate by comma [,] to filter on multiple pay items. If null or whitespace, all pay items are returned (filter is not used). | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter by created timestamp property. This filtering will return all pay items with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by created timestamp property. This filtering will return all pay items with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
 | **isActive** | **bool** | Filter pay items based on active status. True to only get pay items with active status, false to only get pay items with inactive status. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the last changed timestamp property. This filtering will return all pay items with a last changed timestamp greater than the timestamp provided. Can be used when polling for new or updated entries. Timestamp not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the last changed timestamp property. This filtering will return all pay items with a last changed timestamp greater than the timestamp provided. Can be used when polling for new or updated entries. Timestamp not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

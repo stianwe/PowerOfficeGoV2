@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="voucherapprovalget"></a>
 # **VoucherApprovalGet**
-> List&lt;VoucherForApprovalDto&gt; VoucherApprovalGet (ResourceParameters resourceParameter = null, DateTime availableFromDateTimeOffsetGreaterThan = null)
+> List&lt;VoucherForApprovalDto&gt; VoucherApprovalGet (ResourceParameters resourceParameter = null, DateTimeOffset availableFromDateTimeOffsetGreaterThan = null)
 
 List the vouchers that are sent to the integration for approval. The voucher details can be retrieved using the JournalEntryVoucher with the corresponding voucher types. (Auth roles: VoucherApproval_Full)
 
@@ -31,7 +31,7 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new VoucherApprovalApi(config);
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
-            var availableFromDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter vouchers based on when it became available with timestamp greater than the provided timestamp. Can be used as one way of getting changes in new vouchers available sins last called.  Timestamp not inclusive.                Vouchers sent to the integration for approval may be removed from the list by the system, indicating they are no longer available for approval. Utilizing the availableFromDateTimeOffset  parameter allows for retrieving new vouchers since the last call. However, it does not provide visibility into vouchers that have been removed from the list. (optional) 
+            var availableFromDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter vouchers based on when it became available with timestamp greater than the provided timestamp. Can be used as one way of getting changes in new vouchers available sins last called.  Timestamp not inclusive.                Vouchers sent to the integration for approval may be removed from the list by the system, indicating they are no longer available for approval. Utilizing the availableFromDateTimeOffset  parameter allows for retrieving new vouchers since the last call. However, it does not provide visibility into vouchers that have been removed from the list. (optional) 
 
             try
             {
@@ -75,7 +75,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
-| **availableFromDateTimeOffsetGreaterThan** | **DateTime** | Filter vouchers based on when it became available with timestamp greater than the provided timestamp. Can be used as one way of getting changes in new vouchers available sins last called.  Timestamp not inclusive.                Vouchers sent to the integration for approval may be removed from the list by the system, indicating they are no longer available for approval. Utilizing the availableFromDateTimeOffset  parameter allows for retrieving new vouchers since the last call. However, it does not provide visibility into vouchers that have been removed from the list. | [optional]  |
+| **availableFromDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter vouchers based on when it became available with timestamp greater than the provided timestamp. Can be used as one way of getting changes in new vouchers available sins last called.  Timestamp not inclusive.                Vouchers sent to the integration for approval may be removed from the list by the system, indicating they are no longer available for approval. Utilizing the availableFromDateTimeOffset  parameter allows for retrieving new vouchers since the last call. However, it does not provide visibility into vouchers that have been removed from the list. | [optional]  |
 
 ### Return type
 

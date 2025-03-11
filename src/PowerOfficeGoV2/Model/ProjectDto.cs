@@ -88,7 +88,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="purchaseOrderNo">The purchase order number for this project.  If set, this purchase order number will also default appear on invoices when billing this project.</param>
         /// <param name="startDate">The start date of the project.</param>
         [JsonConstructor]
-        public ProjectDto(Option<bool?> allowAllActivities = default, Option<bool?> allowAllEmployees = default, Option<bool?> attachExpenseVouchersWhenBilling = default, Option<double?> billableRate = default, Option<BillableRateSpecification?> billableRateSpecification = default, Option<string?> brandingThemeCode = default, Option<long?> brandingThemeId = default, Option<double?> budgetedBillableRate = default, Option<double?> budgetedCostOfGoods = default, Option<double?> budgetedHours = default, Option<double?> budgetedOtherOperatingExpenses = default, Option<double?> budgetedPayrollExpenses = default, Option<double?> budgetedRevenueHours = default, Option<double?> budgetedTotalRevenue = default, Option<string?> code = default, Option<long?> contactPersonId = default, Option<string?> contractNo = default, Option<DateTime?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<long?> customerId = default, Option<long?> customerNo = default, Option<string?> deliveryTerm = default, Option<long?> deliveryTermId = default, Option<bool?> denyTimeTracking = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<DateOnly?> endDate = default, Option<string?> expenseMarkupDescription = default, Option<bool?> expenseMarkupEnabled = default, Option<double?> expenseMarkupFactor = default, Option<long?> externalNumber = default, Option<double?> fixedPrice = default, Option<string?> hourlyRateMarkupDescription = default, Option<bool?> hourlyRateMarkupEnabled = default, Option<double?> hourlyRateMarkupFactor = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isBillable = default, Option<bool?> isInternal = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<string?> name = default, Option<string?> parentProjectCode = default, Option<long?> parentProjectId = default, Option<long?> paymentTermId = default, Option<int?> paymentTerms = default, Option<int?> progress = default, Option<ProjectBillingMethod?> projectBillingMethod = default, Option<long?> projectManagerEmployeeId = default, Option<long?> projectManagerEmployeeNo = default, Option<ProjectStatusType?> projectStatus = default, Option<string?> purchaseOrderNo = default, Option<DateOnly?> startDate = default)
+        public ProjectDto(Option<bool?> allowAllActivities = default, Option<bool?> allowAllEmployees = default, Option<bool?> attachExpenseVouchersWhenBilling = default, Option<double?> billableRate = default, Option<BillableRateSpecification?> billableRateSpecification = default, Option<string?> brandingThemeCode = default, Option<long?> brandingThemeId = default, Option<double?> budgetedBillableRate = default, Option<double?> budgetedCostOfGoods = default, Option<double?> budgetedHours = default, Option<double?> budgetedOtherOperatingExpenses = default, Option<double?> budgetedPayrollExpenses = default, Option<double?> budgetedRevenueHours = default, Option<double?> budgetedTotalRevenue = default, Option<string?> code = default, Option<long?> contactPersonId = default, Option<string?> contractNo = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<long?> customerId = default, Option<long?> customerNo = default, Option<string?> deliveryTerm = default, Option<long?> deliveryTermId = default, Option<bool?> denyTimeTracking = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<DateTimeOffset?> endDate = default, Option<string?> expenseMarkupDescription = default, Option<bool?> expenseMarkupEnabled = default, Option<double?> expenseMarkupFactor = default, Option<long?> externalNumber = default, Option<double?> fixedPrice = default, Option<string?> hourlyRateMarkupDescription = default, Option<bool?> hourlyRateMarkupEnabled = default, Option<double?> hourlyRateMarkupFactor = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isBillable = default, Option<bool?> isInternal = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<string?> name = default, Option<string?> parentProjectCode = default, Option<long?> parentProjectId = default, Option<long?> paymentTermId = default, Option<int?> paymentTerms = default, Option<int?> progress = default, Option<ProjectBillingMethod?> projectBillingMethod = default, Option<long?> projectManagerEmployeeId = default, Option<long?> projectManagerEmployeeNo = default, Option<ProjectStatusType?> projectStatus = default, Option<string?> purchaseOrderNo = default, Option<DateTimeOffset?> startDate = default)
         {
             AllowAllActivitiesOption = allowAllActivities;
             AllowAllEmployeesOption = allowAllEmployees;
@@ -433,7 +433,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp the project entity was created.
@@ -441,7 +441,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp the project entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CreatedFromImportJournalId
@@ -568,7 +568,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> EndDateOption { get; private set; }
+        public Option<DateTimeOffset?> EndDateOption { get; private set; }
 
         /// <summary>
         /// The end date of the project.  Only date is used, time is ignored.
@@ -576,7 +576,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The end date of the project.  Only date is used, time is ignored.</value>
         /* <example>Fri Jan 06 01:00:00 CET 2023</example> */
         [JsonPropertyName("EndDate")]
-        public DateOnly? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
+        public DateTimeOffset? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExpenseMarkupDescription
@@ -763,7 +763,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of the project.
@@ -771,7 +771,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of the project.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of LocationCode
@@ -943,7 +943,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> StartDateOption { get; private set; }
+        public Option<DateTimeOffset?> StartDateOption { get; private set; }
 
         /// <summary>
         /// The start date of the project.
@@ -951,7 +951,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of the project.</value>
         /* <example>Wed Oct 26 02:00:00 CEST 2022</example> */
         [JsonPropertyName("StartDate")]
-        public DateOnly? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
+        public DateTimeOffset? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -1101,7 +1101,7 @@ namespace PowerOfficeGoV2.Model
             Option<string?> code = default;
             Option<long?> contactPersonId = default;
             Option<string?> contractNo = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<Guid?> createdFromImportJournalId = default;
             Option<long?> customerId = default;
             Option<long?> customerNo = default;
@@ -1110,7 +1110,7 @@ namespace PowerOfficeGoV2.Model
             Option<bool?> denyTimeTracking = default;
             Option<string?> departmentCode = default;
             Option<long?> departmentId = default;
-            Option<DateOnly?> endDate = default;
+            Option<DateTimeOffset?> endDate = default;
             Option<string?> expenseMarkupDescription = default;
             Option<bool?> expenseMarkupEnabled = default;
             Option<double?> expenseMarkupFactor = default;
@@ -1123,7 +1123,7 @@ namespace PowerOfficeGoV2.Model
             Option<bool?> isActive = default;
             Option<bool?> isBillable = default;
             Option<bool?> isInternal = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> locationCode = default;
             Option<long?> locationId = default;
             Option<string?> name = default;
@@ -1137,7 +1137,7 @@ namespace PowerOfficeGoV2.Model
             Option<long?> projectManagerEmployeeNo = default;
             Option<ProjectStatusType?> projectStatus = default;
             Option<string?> purchaseOrderNo = default;
-            Option<DateOnly?> startDate = default;
+            Option<DateTimeOffset?> startDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -1222,7 +1222,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CreatedFromImportJournalId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -1256,7 +1256,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "EndDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                endDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                endDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ExpenseMarkupDescription":
                             expenseMarkupDescription = new Option<string?>(utf8JsonReader.GetString());
@@ -1306,7 +1306,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "LocationCode":
                             locationCode = new Option<string?>(utf8JsonReader.GetString());
@@ -1360,7 +1360,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "StartDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                startDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                startDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

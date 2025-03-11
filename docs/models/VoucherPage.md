@@ -5,7 +5,7 @@ Represents a page of a voucher.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CreatedDateTimeOffset** | **DateTime** | The creation date and time of the voucher page. | [optional] [readonly] 
+**CreatedDateTimeOffset** | **DateTimeOffset** | The creation date and time of the voucher page. | [optional] [readonly] 
 **Id** | **long** | The identifier of the voucher page. | [optional] [readonly] 
 **VoucherId** | **Guid** | The identifier of the voucher draft the page belongs to. | [optional] [readonly] 
 

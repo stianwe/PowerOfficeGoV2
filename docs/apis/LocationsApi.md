@@ -106,7 +106,7 @@ No authorization required
 
 <a id="getlocations"></a>
 # **GetLocations**
-> List&lt;LocationDto&gt; GetLocations (DateTime createdDateTimeOffsetGreaterThan = null, string codes = null, ResourceParameters resourceParameter = null)
+> List&lt;LocationDto&gt; GetLocations (DateTimeOffset createdDateTimeOffsetGreaterThan = null, string codes = null, ResourceParameters resourceParameter = null)
 
 Gets the locations available on the client. Multiple filtering options. (Auth roles: Location,Location_Full)
 
@@ -129,7 +129,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080";
             var apiInstance = new LocationsApi(config);
-            var createdDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by created timestamp. This filtering will return all location objects with a created timestamp greater than the timestamp provided. Can be used when polling for new location objects from Go. Blank means no filter. Date not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by created timestamp. This filtering will return all location objects with a created timestamp greater than the timestamp provided. Can be used when polling for new location objects from Go. Blank means no filter. Date not inclusive. (optional) 
             var codes = "codes_example";  // string | Filter by location codes. Separate by comma [,] to filter on multiple codes. If null or whitespace, the filter is not used. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
@@ -174,7 +174,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter by created timestamp. This filtering will return all location objects with a created timestamp greater than the timestamp provided. Can be used when polling for new location objects from Go. Blank means no filter. Date not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by created timestamp. This filtering will return all location objects with a created timestamp greater than the timestamp provided. Can be used when polling for new location objects from Go. Blank means no filter. Date not inclusive. | [optional]  |
 | **codes** | **string** | Filter by location codes. Separate by comma [,] to filter on multiple codes. If null or whitespace, the filter is not used. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 

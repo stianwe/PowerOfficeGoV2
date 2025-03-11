@@ -126,7 +126,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactBankAccountsGetApiResponse"/>&gt;</returns>
-        Task<IContactBankAccountsGetApiResponse> ContactBankAccountsGetAsync(Option<string> bankAccountNumbers = default, Option<string> contactIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IContactBankAccountsGetApiResponse> ContactBankAccountsGetAsync(Option<string> bankAccountNumbers = default, Option<string> contactIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the bank accounts set on the client contacts (customer/employee/supplier). (Auth roles: ContactBankAccount, ContactBankAccount_Full, Customer, Customer_Full, Supplier, Supplier_Full, Employee, Employee_Full)
@@ -141,7 +141,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactBankAccountsGetApiResponse"/>?&gt;</returns>
-        Task<IContactBankAccountsGetApiResponse?> ContactBankAccountsGetOrDefaultAsync(Option<string> bankAccountNumbers = default, Option<string> contactIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IContactBankAccountsGetApiResponse?> ContactBankAccountsGetOrDefaultAsync(Option<string> bankAccountNumbers = default, Option<string> contactIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get a contact bank account given contact id and bank account id (customer/employee/supplier). (Auth roles: ContactBankAccount, ContactBankAccount_Full, Customer, Customer_Full, Supplier, Supplier_Full, Employee, Employee_Full)
@@ -1521,7 +1521,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatContactBankAccountsGet(ref Option<string> bankAccountNumbers, ref Option<string> contactIds, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void FormatContactBankAccountsGet(ref Option<string> bankAccountNumbers, ref Option<string> contactIds, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1551,7 +1551,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterContactBankAccountsGetDefaultImplementation(IContactBankAccountsGetApiResponse apiResponseLocalVar, Option<string> bankAccountNumbers, Option<string> contactIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void AfterContactBankAccountsGetDefaultImplementation(IContactBankAccountsGetApiResponse apiResponseLocalVar, Option<string> bankAccountNumbers, Option<string> contactIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterContactBankAccountsGet(ref suppressDefaultLog, apiResponseLocalVar, bankAccountNumbers, contactIds, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1569,7 +1569,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterContactBankAccountsGet(ref bool suppressDefaultLog, IContactBankAccountsGetApiResponse apiResponseLocalVar, Option<string> bankAccountNumbers, Option<string> contactIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void AfterContactBankAccountsGet(ref bool suppressDefaultLog, IContactBankAccountsGetApiResponse apiResponseLocalVar, Option<string> bankAccountNumbers, Option<string> contactIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1582,7 +1582,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorContactBankAccountsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> bankAccountNumbers, Option<string> contactIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void OnErrorContactBankAccountsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> bankAccountNumbers, Option<string> contactIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorContactBankAccountsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, bankAccountNumbers, contactIds, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1602,7 +1602,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorContactBankAccountsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> bankAccountNumbers, Option<string> contactIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorContactBankAccountsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> bankAccountNumbers, Option<string> contactIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the bank accounts set on the client contacts (customer/employee/supplier). (Auth roles: ContactBankAccount, ContactBankAccount_Full, Customer, Customer_Full, Supplier, Supplier_Full, Employee, Employee_Full) Queries can be done independent of the contact objects, but the response is coupled with the contact access privileges. Multiple filtering options.              Bank accounts set on contacts are used for payments and information purposes.
@@ -1614,7 +1614,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactBankAccountsGetApiResponse"/>&gt;</returns>
-        public async Task<IContactBankAccountsGetApiResponse?> ContactBankAccountsGetOrDefaultAsync(Option<string> bankAccountNumbers = default, Option<string> contactIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IContactBankAccountsGetApiResponse?> ContactBankAccountsGetOrDefaultAsync(Option<string> bankAccountNumbers = default, Option<string> contactIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -1637,7 +1637,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactBankAccountsGetApiResponse"/>&gt;</returns>
-        public async Task<IContactBankAccountsGetApiResponse> ContactBankAccountsGetAsync(Option<string> bankAccountNumbers = default, Option<string> contactIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IContactBankAccountsGetApiResponse> ContactBankAccountsGetAsync(Option<string> bankAccountNumbers = default, Option<string> contactIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

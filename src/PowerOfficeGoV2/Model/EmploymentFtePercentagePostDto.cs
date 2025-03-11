@@ -36,7 +36,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="fromDate">The from-date for the effect of the employment full-time equivalent (FTE) percentage.</param>
         /// <param name="ftePercentage">The percentage of full-time equivalent (FTE) employment.  The value should be between 0 and 100 (reflects as 0% or 100% in the GUI).</param>
         [JsonConstructor]
-        public EmploymentFtePercentagePostDto(DateOnly? fromDate = default, double? ftePercentage = default)
+        public EmploymentFtePercentagePostDto(DateTimeOffset? fromDate = default, double? ftePercentage = default)
         {
             FromDate = fromDate;
             FtePercentage = ftePercentage;
@@ -51,7 +51,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The from-date for the effect of the employment full-time equivalent (FTE) percentage.</value>
         /* <example>Fri Jan 01 01:00:00 CET 2021</example> */
         [JsonPropertyName("FromDate")]
-        public DateOnly? FromDate { get; set; }
+        public DateTimeOffset? FromDate { get; set; }
 
         /// <summary>
         /// The percentage of full-time equivalent (FTE) employment.  The value should be between 0 and 100 (reflects as 0% or 100% in the GUI).
@@ -113,7 +113,7 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateOnly?> fromDate = default;
+            Option<DateTimeOffset?> fromDate = default;
             Option<double?> ftePercentage = default;
 
             while (utf8JsonReader.Read())
@@ -133,7 +133,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "FromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                fromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                fromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "FtePercentage":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

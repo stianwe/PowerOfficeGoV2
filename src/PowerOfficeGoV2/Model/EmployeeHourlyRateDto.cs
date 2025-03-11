@@ -39,7 +39,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="validFromDate">The date from which this rate is to be used from.</param>
         /// <param name="validToDate">The date from which this rate is no longer in use.</param>
         [JsonConstructor]
-        public EmployeeHourlyRateDto(Option<double?> billableRate = default, Option<double?> costRate = default, Option<long?> id = default, Option<DateOnly?> validFromDate = default, Option<DateOnly?> validToDate = default)
+        public EmployeeHourlyRateDto(Option<double?> billableRate = default, Option<double?> costRate = default, Option<long?> id = default, Option<DateTimeOffset?> validFromDate = default, Option<DateTimeOffset?> validToDate = default)
         {
             BillableRateOption = billableRate;
             CostRateOption = costRate;
@@ -101,7 +101,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ValidFromDateOption { get; private set; }
+        public Option<DateTimeOffset?> ValidFromDateOption { get; private set; }
 
         /// <summary>
         /// The date from which this rate is to be used from.
@@ -109,14 +109,14 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date from which this rate is to be used from.</value>
         /* <example>Fri Jul 01 02:00:00 CEST 2022</example> */
         [JsonPropertyName("ValidFromDate")]
-        public DateOnly? ValidFromDate { get { return this.ValidFromDateOption; } set { this.ValidFromDateOption = new(value); } }
+        public DateTimeOffset? ValidFromDate { get { return this.ValidFromDateOption; } set { this.ValidFromDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ValidToDate
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ValidToDateOption { get; }
+        public Option<DateTimeOffset?> ValidToDateOption { get; }
 
         /// <summary>
         /// The date from which this rate is no longer in use.
@@ -124,7 +124,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date from which this rate is no longer in use.</value>
         /* <example>Fri Jul 15 02:00:00 CEST 2022</example> */
         [JsonPropertyName("ValidToDate")]
-        public DateOnly? ValidToDate { get { return this.ValidToDateOption; } }
+        public DateTimeOffset? ValidToDate { get { return this.ValidToDateOption; } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -189,8 +189,8 @@ namespace PowerOfficeGoV2.Model
             Option<double?> billableRate = default;
             Option<double?> costRate = default;
             Option<long?> id = default;
-            Option<DateOnly?> validFromDate = default;
-            Option<DateOnly?> validToDate = default;
+            Option<DateTimeOffset?> validFromDate = default;
+            Option<DateTimeOffset?> validToDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -221,11 +221,11 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ValidFromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                validFromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                validFromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ValidToDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                validToDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                validToDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

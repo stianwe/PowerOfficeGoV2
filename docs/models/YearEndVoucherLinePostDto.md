@@ -5,7 +5,7 @@ Base journal entry voucher line properties shared among all voucher types.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PostingDate** | **DateOnly** | The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency  conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions. | 
+**PostingDate** | **DateTimeOffset** | The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency  conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions. | 
 **AccountId** | **long** | The id of the general ledger account or the subledger account to post the amount. | 
 **CurrencyAmount** | **double** | The amount on the line, in the currency specified by the currency code of the voucher or the currency of the voucher line if available.  Gross amounts should be provided, along with the relevant vat code. The amount must be a positive or negative number not 0. | [optional] 
 **CurrencyCode** | **string** | The currency code of the voucher line. Will inherit the currency code of the voucher head if not set.  The line currency amounts will be determined in the currency specified on the line. Currencies active on the  client can be queried using the AccountingSettings service. Currency codes follow the ISO4217 standard. | [optional] 

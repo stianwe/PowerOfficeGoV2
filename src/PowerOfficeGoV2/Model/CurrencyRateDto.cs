@@ -39,7 +39,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="rateDate">The date of the currency rate</param>
         /// <param name="reverseExchangeRate">The reverse exchange rate</param>
         [JsonConstructor]
-        internal CurrencyRateDto(Option<string?> currencyCode = default, Option<int?> exchangeBase = default, Option<double?> exchangeRate = default, Option<DateOnly?> rateDate = default, Option<double?> reverseExchangeRate = default)
+        internal CurrencyRateDto(Option<string?> currencyCode = default, Option<int?> exchangeBase = default, Option<double?> exchangeRate = default, Option<DateTimeOffset?> rateDate = default, Option<double?> reverseExchangeRate = default)
         {
             CurrencyCodeOption = currencyCode;
             ExchangeBaseOption = exchangeBase;
@@ -100,7 +100,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> RateDateOption { get; }
+        public Option<DateTimeOffset?> RateDateOption { get; }
 
         /// <summary>
         /// The date of the currency rate
@@ -108,7 +108,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date of the currency rate</value>
         /* <example>Thu Oct 17 02:00:00 CEST 2024</example> */
         [JsonPropertyName("RateDate")]
-        public DateOnly? RateDate { get { return this.RateDateOption; } }
+        public DateTimeOffset? RateDate { get { return this.RateDateOption; } }
 
         /// <summary>
         /// Used to track the state of ReverseExchangeRate
@@ -183,7 +183,7 @@ namespace PowerOfficeGoV2.Model
             Option<string?> currencyCode = default;
             Option<int?> exchangeBase = default;
             Option<double?> exchangeRate = default;
-            Option<DateOnly?> rateDate = default;
+            Option<DateTimeOffset?> rateDate = default;
             Option<double?> reverseExchangeRate = default;
 
             while (utf8JsonReader.Read())
@@ -214,7 +214,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "RateDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                rateDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                rateDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ReverseExchangeRate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

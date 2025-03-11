@@ -37,7 +37,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="costRate">The hourly cost rate for timetransactions registered for this employee.  Must be a positive number.  This cost rate have no direct relation to payroll settings, and is primarily used for reporting purposes on timetracking entries.</param>
         /// <param name="validFromDate">The date from which this rate is to be used from.</param>
         [JsonConstructor]
-        public EmployeeHourlyRatePostDto(Option<double?> billableRate = default, Option<double?> costRate = default, DateOnly? validFromDate = default)
+        public EmployeeHourlyRatePostDto(Option<double?> billableRate = default, Option<double?> costRate = default, DateTimeOffset? validFromDate = default)
         {
             BillableRateOption = billableRate;
             CostRateOption = costRate;
@@ -83,7 +83,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date from which this rate is to be used from.</value>
         /* <example>Fri Jul 01 02:00:00 CEST 2022</example> */
         [JsonPropertyName("ValidFromDate")]
-        public DateOnly? ValidFromDate { get; set; }
+        public DateTimeOffset? ValidFromDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -140,7 +140,7 @@ namespace PowerOfficeGoV2.Model
 
             Option<double?> billableRate = default;
             Option<double?> costRate = default;
-            Option<DateOnly?> validFromDate = default;
+            Option<DateTimeOffset?> validFromDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -167,7 +167,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ValidFromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                validFromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                validFromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

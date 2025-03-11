@@ -43,7 +43,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="resultAccountNo">The account number of the result account used for the posting of the accrued revenue  (norwegian: resultatkonto benyttet for periodiseringen).  Note that if ResultAccountId is set as well in the request, ResultAccountId takes precedence and ResultAccountNo is ignored.</param>
         /// <param name="toDate">The end date of the accrual.</param>
         [JsonConstructor]
-        public SalesOrderAccrualPostDto(Option<AgricultureDepartment?> balanceAccountAgricultureDepartment = default, Option<long?> balanceAccountId = default, Option<long?> balanceAccountNo = default, Option<DateOnly?> fromDate = default, Option<bool?> isActive = default, Option<AgricultureDepartment?> resultAccountAgricultureDepartment = default, Option<long?> resultAccountId = default, Option<long?> resultAccountNo = default, Option<DateOnly?> toDate = default)
+        public SalesOrderAccrualPostDto(Option<AgricultureDepartment?> balanceAccountAgricultureDepartment = default, Option<long?> balanceAccountId = default, Option<long?> balanceAccountNo = default, Option<DateTimeOffset?> fromDate = default, Option<bool?> isActive = default, Option<AgricultureDepartment?> resultAccountAgricultureDepartment = default, Option<long?> resultAccountId = default, Option<long?> resultAccountNo = default, Option<DateTimeOffset?> toDate = default)
         {
             BalanceAccountAgricultureDepartmentOption = balanceAccountAgricultureDepartment;
             BalanceAccountIdOption = balanceAccountId;
@@ -120,7 +120,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> FromDateOption { get; private set; }
+        public Option<DateTimeOffset?> FromDateOption { get; private set; }
 
         /// <summary>
         /// The start date of the accrual.
@@ -128,7 +128,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of the accrual.</value>
         /* <example>Sun Jan 01 01:00:00 CET 2023</example> */
         [JsonPropertyName("FromDate")]
-        public DateOnly? FromDate { get { return this.FromDateOption; } set { this.FromDateOption = new(value); } }
+        public DateTimeOffset? FromDate { get { return this.FromDateOption; } set { this.FromDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of IsActive
@@ -180,7 +180,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ToDateOption { get; private set; }
+        public Option<DateTimeOffset?> ToDateOption { get; private set; }
 
         /// <summary>
         /// The end date of the accrual.
@@ -188,7 +188,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The end date of the accrual.</value>
         /* <example>Sun Dec 31 01:00:00 CET 2023</example> */
         [JsonPropertyName("ToDate")]
-        public DateOnly? ToDate { get { return this.ToDateOption; } set { this.ToDateOption = new(value); } }
+        public DateTimeOffset? ToDate { get { return this.ToDateOption; } set { this.ToDateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -257,12 +257,12 @@ namespace PowerOfficeGoV2.Model
             Option<AgricultureDepartment?> balanceAccountAgricultureDepartment = default;
             Option<long?> balanceAccountId = default;
             Option<long?> balanceAccountNo = default;
-            Option<DateOnly?> fromDate = default;
+            Option<DateTimeOffset?> fromDate = default;
             Option<bool?> isActive = default;
             Option<AgricultureDepartment?> resultAccountAgricultureDepartment = default;
             Option<long?> resultAccountId = default;
             Option<long?> resultAccountNo = default;
-            Option<DateOnly?> toDate = default;
+            Option<DateTimeOffset?> toDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -294,7 +294,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "FromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                fromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                fromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "IsActive":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -315,7 +315,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ToDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                toDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                toDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

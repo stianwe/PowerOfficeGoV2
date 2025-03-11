@@ -48,7 +48,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEnterprisesGetApiResponse"/>&gt;</returns>
-        Task<IEnterprisesGetApiResponse> EnterprisesGetAsync(Option<string> enterpriseNos = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IEnterprisesGetApiResponse> EnterprisesGetAsync(Option<string> enterpriseNos = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get the enterprises registered for the client. Enterprises are primarily used for payroll reporting in Go.  A company may have more than one enterprise if the company have operations in different industries. (Auth roles: Enterprises,Enterprises_Full)
@@ -62,7 +62,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEnterprisesGetApiResponse"/>?&gt;</returns>
-        Task<IEnterprisesGetApiResponse?> EnterprisesGetOrDefaultAsync(Option<string> enterpriseNos = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IEnterprisesGetApiResponse?> EnterprisesGetOrDefaultAsync(Option<string> enterpriseNos = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -185,7 +185,7 @@ namespace PowerOfficeGoV2.Api
             Events = enterprisesApiEvents;
         }
 
-        partial void FormatEnterprisesGet(ref Option<string> enterpriseNos, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void FormatEnterprisesGet(ref Option<string> enterpriseNos, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -210,7 +210,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterEnterprisesGetDefaultImplementation(IEnterprisesGetApiResponse apiResponseLocalVar, Option<string> enterpriseNos, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void AfterEnterprisesGetDefaultImplementation(IEnterprisesGetApiResponse apiResponseLocalVar, Option<string> enterpriseNos, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterEnterprisesGet(ref suppressDefaultLog, apiResponseLocalVar, enterpriseNos, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -227,7 +227,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterEnterprisesGet(ref bool suppressDefaultLog, IEnterprisesGetApiResponse apiResponseLocalVar, Option<string> enterpriseNos, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void AfterEnterprisesGet(ref bool suppressDefaultLog, IEnterprisesGetApiResponse apiResponseLocalVar, Option<string> enterpriseNos, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -239,7 +239,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorEnterprisesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> enterpriseNos, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void OnErrorEnterprisesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> enterpriseNos, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorEnterprisesGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, enterpriseNos, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -258,7 +258,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="createdDateTimeOffsetGreaterThan"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorEnterprisesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> enterpriseNos, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorEnterprisesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> enterpriseNos, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Get the enterprises registered for the client. Enterprises are primarily used for payroll reporting in Go.  A company may have more than one enterprise if the company have operations in different industries. (Auth roles: Enterprises,Enterprises_Full) 
@@ -269,7 +269,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEnterprisesGetApiResponse"/>&gt;</returns>
-        public async Task<IEnterprisesGetApiResponse?> EnterprisesGetOrDefaultAsync(Option<string> enterpriseNos = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IEnterprisesGetApiResponse?> EnterprisesGetOrDefaultAsync(Option<string> enterpriseNos = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -291,7 +291,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEnterprisesGetApiResponse"/>&gt;</returns>
-        public async Task<IEnterprisesGetApiResponse> EnterprisesGetAsync(Option<string> enterpriseNos = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IEnterprisesGetApiResponse> EnterprisesGetAsync(Option<string> enterpriseNos = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

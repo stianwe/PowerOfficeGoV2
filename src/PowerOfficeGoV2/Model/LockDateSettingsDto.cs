@@ -35,7 +35,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         /// <param name="lockDate">The lock date on the client. It&#39;s not possible to create accounting entries on this date or any previous date on this client.</param>
         [JsonConstructor]
-        internal LockDateSettingsDto(Option<DateOnly?> lockDate = default)
+        internal LockDateSettingsDto(Option<DateTimeOffset?> lockDate = default)
         {
             LockDateOption = lockDate;
             OnCreated();
@@ -48,7 +48,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> LockDateOption { get; }
+        public Option<DateTimeOffset?> LockDateOption { get; }
 
         /// <summary>
         /// The lock date on the client. It&#39;s not possible to create accounting entries on this date or any previous date on this client.
@@ -56,7 +56,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The lock date on the client. It&#39;s not possible to create accounting entries on this date or any previous date on this client.</value>
         /* <example>Sun Jan 01 01:00:00 CET 2023</example> */
         [JsonPropertyName("LockDate")]
-        public DateOnly? LockDate { get { return this.LockDateOption; } }
+        public DateTimeOffset? LockDate { get { return this.LockDateOption; } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -109,7 +109,7 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateOnly?> lockDate = default;
+            Option<DateTimeOffset?> lockDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -128,7 +128,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "LockDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lockDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                lockDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

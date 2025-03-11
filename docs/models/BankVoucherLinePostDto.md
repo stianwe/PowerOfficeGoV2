@@ -5,7 +5,7 @@ The lines of the bank voucher to be posted
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PostingDate** | **DateOnly** | The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency  conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions. | 
+**PostingDate** | **DateTimeOffset** | The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency  conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions. | 
 **AccountId** | **long** | The id of the general ledger account or the subledger account to post the amount. | 
 **Cid** | **string** | The cid number (norwegian: KID), if present.  Entries with the opposite amounts and the same cid will be matched on the sub-ledger account, if the client use cid and the items are not already matched out. | [optional] 
 **CurrencyAmount** | **double** | The amount on the line, in the currency specified by the currency code of the voucher or the currency of the voucher line if available.  Gross amounts should be provided, along with the relevant vat code. The amount must be a positive or negative number not 0. | [optional] 

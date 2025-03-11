@@ -43,7 +43,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="managerEmployeeNo">The employee number of the manager of the department.</param>
         /// <param name="name">The name of the department</param>
         [JsonConstructor]
-        public DepartmentDto(Option<string?> code = default, Option<DateTime?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<long?> id = default, Option<bool?> isActive = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<long?> managerEmployeeId = default, Option<long?> managerEmployeeNo = default, Option<string?> name = default)
+        public DepartmentDto(Option<string?> code = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<long?> id = default, Option<bool?> isActive = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<long?> managerEmployeeId = default, Option<long?> managerEmployeeNo = default, Option<string?> name = default)
         {
             CodeOption = code;
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
@@ -79,7 +79,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp the department entity was created.
@@ -87,7 +87,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp the department entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CreatedFromImportJournalId
@@ -139,7 +139,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of the department.
@@ -147,7 +147,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of the department.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of ManagerEmployeeId
@@ -259,11 +259,11 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<string?> code = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<Guid?> createdFromImportJournalId = default;
             Option<long?> id = default;
             Option<bool?> isActive = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<long?> managerEmployeeId = default;
             Option<long?> managerEmployeeNo = default;
             Option<string?> name = default;
@@ -288,7 +288,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CreatedFromImportJournalId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -304,7 +304,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ManagerEmployeeId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

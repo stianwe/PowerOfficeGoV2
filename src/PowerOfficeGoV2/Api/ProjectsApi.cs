@@ -79,7 +79,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetProjectsApiResponse"/>&gt;</returns>
-        Task<IGetProjectsApiResponse> GetProjectsAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> excludeArchivedProject = default, Option<bool> includeSubProjects = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> name = default, Option<ProjectBillingMethod> projectBillingMethod = default, Option<string> projectCodes = default, Option<string> projectManagerEmployeeNos = default, Option<ProjectStatusType> status = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetProjectsApiResponse> GetProjectsAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> excludeArchivedProject = default, Option<bool> includeSubProjects = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> name = default, Option<ProjectBillingMethod> projectBillingMethod = default, Option<string> projectCodes = default, Option<string> projectManagerEmployeeNos = default, Option<ProjectStatusType> status = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the projects available on the client. Multiple filtering options. (Auth roles: Project,Project_Full)
@@ -101,7 +101,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetProjectsApiResponse"/>?&gt;</returns>
-        Task<IGetProjectsApiResponse?> GetProjectsOrDefaultAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> excludeArchivedProject = default, Option<bool> includeSubProjects = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> name = default, Option<ProjectBillingMethod> projectBillingMethod = default, Option<string> projectCodes = default, Option<string> projectManagerEmployeeNos = default, Option<ProjectStatusType> status = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetProjectsApiResponse?> GetProjectsOrDefaultAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> excludeArchivedProject = default, Option<bool> includeSubProjects = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> name = default, Option<ProjectBillingMethod> projectBillingMethod = default, Option<string> projectCodes = default, Option<string> projectManagerEmployeeNos = default, Option<ProjectStatusType> status = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a project entity with a given id. (Auth roles: Project_Full)
@@ -828,7 +828,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatGetProjects(ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<string> customerNos, ref Option<string> departmentCodes, ref Option<bool> excludeArchivedProject, ref Option<bool> includeSubProjects, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<string> name, ref Option<ProjectBillingMethod> projectBillingMethod, ref Option<string> projectCodes, ref Option<string> projectManagerEmployeeNos, ref Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter);
+        partial void FormatGetProjects(ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<string> customerNos, ref Option<string> departmentCodes, ref Option<bool> excludeArchivedProject, ref Option<bool> includeSubProjects, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<string> name, ref Option<ProjectBillingMethod> projectBillingMethod, ref Option<string> projectCodes, ref Option<string> projectManagerEmployeeNos, ref Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -877,7 +877,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="projectManagerEmployeeNos"></param>
         /// <param name="status"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterGetProjectsDefaultImplementation(IGetProjectsApiResponse apiResponseLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customerNos, Option<string> departmentCodes, Option<bool> excludeArchivedProject, Option<bool> includeSubProjects, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> name, Option<ProjectBillingMethod> projectBillingMethod, Option<string> projectCodes, Option<string> projectManagerEmployeeNos, Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter)
+        private void AfterGetProjectsDefaultImplementation(IGetProjectsApiResponse apiResponseLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customerNos, Option<string> departmentCodes, Option<bool> excludeArchivedProject, Option<bool> includeSubProjects, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> name, Option<ProjectBillingMethod> projectBillingMethod, Option<string> projectCodes, Option<string> projectManagerEmployeeNos, Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterGetProjects(ref suppressDefaultLog, apiResponseLocalVar, createdDateTimeOffsetGreaterThan, customerNos, departmentCodes, excludeArchivedProject, includeSubProjects, lastChangedDateTimeOffsetGreaterThan, name, projectBillingMethod, projectCodes, projectManagerEmployeeNos, status, resourceParameter);
@@ -902,7 +902,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="projectManagerEmployeeNos"></param>
         /// <param name="status"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterGetProjects(ref bool suppressDefaultLog, IGetProjectsApiResponse apiResponseLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customerNos, Option<string> departmentCodes, Option<bool> excludeArchivedProject, Option<bool> includeSubProjects, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> name, Option<ProjectBillingMethod> projectBillingMethod, Option<string> projectCodes, Option<string> projectManagerEmployeeNos, Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter);
+        partial void AfterGetProjects(ref bool suppressDefaultLog, IGetProjectsApiResponse apiResponseLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customerNos, Option<string> departmentCodes, Option<bool> excludeArchivedProject, Option<bool> includeSubProjects, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> name, Option<ProjectBillingMethod> projectBillingMethod, Option<string> projectCodes, Option<string> projectManagerEmployeeNos, Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -922,7 +922,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="projectManagerEmployeeNos"></param>
         /// <param name="status"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorGetProjectsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customerNos, Option<string> departmentCodes, Option<bool> excludeArchivedProject, Option<bool> includeSubProjects, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> name, Option<ProjectBillingMethod> projectBillingMethod, Option<string> projectCodes, Option<string> projectManagerEmployeeNos, Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter)
+        private void OnErrorGetProjectsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customerNos, Option<string> departmentCodes, Option<bool> excludeArchivedProject, Option<bool> includeSubProjects, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> name, Option<ProjectBillingMethod> projectBillingMethod, Option<string> projectCodes, Option<string> projectManagerEmployeeNos, Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorGetProjects(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createdDateTimeOffsetGreaterThan, customerNos, departmentCodes, excludeArchivedProject, includeSubProjects, lastChangedDateTimeOffsetGreaterThan, name, projectBillingMethod, projectCodes, projectManagerEmployeeNos, status, resourceParameter);
@@ -949,7 +949,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="projectManagerEmployeeNos"></param>
         /// <param name="status"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorGetProjects(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customerNos, Option<string> departmentCodes, Option<bool> excludeArchivedProject, Option<bool> includeSubProjects, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> name, Option<ProjectBillingMethod> projectBillingMethod, Option<string> projectCodes, Option<string> projectManagerEmployeeNos, Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorGetProjects(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customerNos, Option<string> departmentCodes, Option<bool> excludeArchivedProject, Option<bool> includeSubProjects, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> name, Option<ProjectBillingMethod> projectBillingMethod, Option<string> projectCodes, Option<string> projectManagerEmployeeNos, Option<ProjectStatusType> status, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the projects available on the client. Multiple filtering options. (Auth roles: Project,Project_Full) A project may be a standalone project or a subproject.  Subprojects will have the code notation code of main project.code of subproject.  Example: A project with code 10 have a subproject with code 2 in the user interface.  The code of the subprojcet when retrieved from the API will be 10.2 (and because of this, \&quot;.\&quot; (dot) is reserved and cannot be used in project codes)
@@ -968,7 +968,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetProjectsApiResponse"/>&gt;</returns>
-        public async Task<IGetProjectsApiResponse?> GetProjectsOrDefaultAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> excludeArchivedProject = default, Option<bool> includeSubProjects = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> name = default, Option<ProjectBillingMethod> projectBillingMethod = default, Option<string> projectCodes = default, Option<string> projectManagerEmployeeNos = default, Option<ProjectStatusType> status = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetProjectsApiResponse?> GetProjectsOrDefaultAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> excludeArchivedProject = default, Option<bool> includeSubProjects = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> name = default, Option<ProjectBillingMethod> projectBillingMethod = default, Option<string> projectCodes = default, Option<string> projectManagerEmployeeNos = default, Option<ProjectStatusType> status = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -998,7 +998,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetProjectsApiResponse"/>&gt;</returns>
-        public async Task<IGetProjectsApiResponse> GetProjectsAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> excludeArchivedProject = default, Option<bool> includeSubProjects = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> name = default, Option<ProjectBillingMethod> projectBillingMethod = default, Option<string> projectCodes = default, Option<string> projectManagerEmployeeNos = default, Option<ProjectStatusType> status = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetProjectsApiResponse> GetProjectsAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customerNos = default, Option<string> departmentCodes = default, Option<bool> excludeArchivedProject = default, Option<bool> includeSubProjects = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> name = default, Option<ProjectBillingMethod> projectBillingMethod = default, Option<string> projectCodes = default, Option<string> projectManagerEmployeeNos = default, Option<ProjectStatusType> status = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

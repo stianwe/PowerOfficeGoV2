@@ -121,7 +121,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomDimensionApiResponse"/>&gt;</returns>
-        Task<IGetCustomDimensionApiResponse> GetCustomDimensionAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> ordinal = default, Option<string> externalImportReference = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetCustomDimensionApiResponse> GetCustomDimensionAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> ordinal = default, Option<string> externalImportReference = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the custom dimensions on the client. (Auth roles: CustomDimension,CustomDimension_Full)
@@ -137,7 +137,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomDimensionApiResponse"/>?&gt;</returns>
-        Task<IGetCustomDimensionApiResponse?> GetCustomDimensionOrDefaultAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> ordinal = default, Option<string> externalImportReference = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetCustomDimensionApiResponse?> GetCustomDimensionOrDefaultAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> ordinal = default, Option<string> externalImportReference = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets a custom dimension by id. (Auth roles: CustomDimension,CustomDimension_Full)
@@ -1494,7 +1494,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatGetCustomDimension(ref Option<string> codes, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<string> ordinal, ref Option<string> externalImportReference, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void FormatGetCustomDimension(ref Option<string> codes, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<string> ordinal, ref Option<string> externalImportReference, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1529,7 +1529,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalImportReference"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterGetCustomDimensionDefaultImplementation(IGetCustomDimensionApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> ordinal, Option<string> externalImportReference, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void AfterGetCustomDimensionDefaultImplementation(IGetCustomDimensionApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> ordinal, Option<string> externalImportReference, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterGetCustomDimension(ref suppressDefaultLog, apiResponseLocalVar, codes, createdDateTimeOffsetGreaterThan, ordinal, externalImportReference, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1548,7 +1548,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalImportReference"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterGetCustomDimension(ref bool suppressDefaultLog, IGetCustomDimensionApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> ordinal, Option<string> externalImportReference, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void AfterGetCustomDimension(ref bool suppressDefaultLog, IGetCustomDimensionApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> ordinal, Option<string> externalImportReference, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1562,7 +1562,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalImportReference"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorGetCustomDimensionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> ordinal, Option<string> externalImportReference, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void OnErrorGetCustomDimensionDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> ordinal, Option<string> externalImportReference, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorGetCustomDimension(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, codes, createdDateTimeOffsetGreaterThan, ordinal, externalImportReference, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1583,7 +1583,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalImportReference"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorGetCustomDimension(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> ordinal, Option<string> externalImportReference, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorGetCustomDimension(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> ordinal, Option<string> externalImportReference, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the custom dimensions on the client. (Auth roles: CustomDimension,CustomDimension_Full) 
@@ -1596,7 +1596,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomDimensionApiResponse"/>&gt;</returns>
-        public async Task<IGetCustomDimensionApiResponse?> GetCustomDimensionOrDefaultAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> ordinal = default, Option<string> externalImportReference = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetCustomDimensionApiResponse?> GetCustomDimensionOrDefaultAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> ordinal = default, Option<string> externalImportReference = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -1620,7 +1620,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetCustomDimensionApiResponse"/>&gt;</returns>
-        public async Task<IGetCustomDimensionApiResponse> GetCustomDimensionAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> ordinal = default, Option<string> externalImportReference = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetCustomDimensionApiResponse> GetCustomDimensionAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> ordinal = default, Option<string> externalImportReference = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

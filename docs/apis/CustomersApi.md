@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="customersget"></a>
 # **CustomersGet**
-> List&lt;CustomerDto&gt; CustomersGet (string contactGroupIds = null, DateTime customerCreatedDateTimeOffsetGreaterThan = null, string customerNos = null, string externalImportReference = null, string externalNos = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;CustomerDto&gt; CustomersGet (string contactGroupIds = null, DateTimeOffset customerCreatedDateTimeOffsetGreaterThan = null, string customerNos = null, string externalImportReference = null, string externalNos = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Gets the customers available on the client. Multiple filtering options. (Auth roles: Customer,Customer_Full)
 
@@ -36,11 +36,11 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new CustomersApi(config);
             var contactGroupIds = 41345, 21445, 65457;  // string | Filter by contact group IDs. Separate by comma [,] to filter on multiple contact group IDs. If null or whitespace, all customers with or without contact group IDs are returned (filter is not used). (optional) 
-            var customerCreatedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by the customer created timestamp property. This filtering will return all customers with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
+            var customerCreatedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by the customer created timestamp property. This filtering will return all customers with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
             var customerNos = 10000-11000, 12000, 13000-;  // string | Filter by customer numbers. Separate by comma [,] to filter on multiple customer numbers. A range of numbers can be specified using dash/hyphen [-]. For example \"10000-11000, 12000, 13000-\" will result in customers with numbers from and including 10000 to 11000, 12000, 13000 and all above will be returned. If null or whitespace, the filter is not used. (optional) 
             var externalImportReference = 123ABC;  // string | Filter by external import reference. If null or whitespace, the filter is not used. (optional) 
             var externalNos = 30000, 14153-19534, 150000-;  // string | Filter by customer external numbers. SearchString should be in the form of \"30000, 14153-19534, 150000-\" where values for 30000, between (inclusive) 14153-19534 and all over 150000 (inclusive) will be retrieved. If filterString is null or whitespace, query is returned as is. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by the last changed timestamp property. This filtering will return all customers with a last changed timestamp greater than the timestamp provided. Can be used when polling for new entries. If used, changed customers should replace what was previously stored in the external system. Date not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by the last changed timestamp property. This filtering will return all customers with a last changed timestamp greater than the timestamp provided. Can be used when polling for new entries. If used, changed customers should replace what was previously stored in the external system. Date not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -85,11 +85,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **contactGroupIds** | **string** | Filter by contact group IDs. Separate by comma [,] to filter on multiple contact group IDs. If null or whitespace, all customers with or without contact group IDs are returned (filter is not used). | [optional]  |
-| **customerCreatedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the customer created timestamp property. This filtering will return all customers with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
+| **customerCreatedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the customer created timestamp property. This filtering will return all customers with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
 | **customerNos** | **string** | Filter by customer numbers. Separate by comma [,] to filter on multiple customer numbers. A range of numbers can be specified using dash/hyphen [-]. For example \&quot;10000-11000, 12000, 13000-\&quot; will result in customers with numbers from and including 10000 to 11000, 12000, 13000 and all above will be returned. If null or whitespace, the filter is not used. | [optional]  |
 | **externalImportReference** | **string** | Filter by external import reference. If null or whitespace, the filter is not used. | [optional]  |
 | **externalNos** | **string** | Filter by customer external numbers. SearchString should be in the form of \&quot;30000, 14153-19534, 150000-\&quot; where values for 30000, between (inclusive) 14153-19534 and all over 150000 (inclusive) will be retrieved. If filterString is null or whitespace, query is returned as is. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the last changed timestamp property. This filtering will return all customers with a last changed timestamp greater than the timestamp provided. Can be used when polling for new entries. If used, changed customers should replace what was previously stored in the external system. Date not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the last changed timestamp property. This filtering will return all customers with a last changed timestamp greater than the timestamp provided. Can be used when polling for new entries. If used, changed customers should replace what was previously stored in the external system. Date not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

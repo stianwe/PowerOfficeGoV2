@@ -72,7 +72,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IPayItemsGetApiResponse"/>&gt;</returns>
-        Task<IPayItemsGetApiResponse> PayItemsGetAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<bool> isActive = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IPayItemsGetApiResponse> PayItemsGetAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<bool> isActive = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all pay items for the client. (Auth roles: PayItem,PayItem_Full)
@@ -87,7 +87,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IPayItemsGetApiResponse"/>?&gt;</returns>
-        Task<IPayItemsGetApiResponse?> PayItemsGetOrDefaultAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<bool> isActive = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IPayItemsGetApiResponse?> PayItemsGetOrDefaultAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<bool> isActive = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -533,7 +533,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatPayItemsGet(ref Option<string> codes, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<bool> isActive, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void FormatPayItemsGet(ref Option<string> codes, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<bool> isActive, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -559,7 +559,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="isActive"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterPayItemsGetDefaultImplementation(IPayItemsGetApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<bool> isActive, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void AfterPayItemsGetDefaultImplementation(IPayItemsGetApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<bool> isActive, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterPayItemsGet(ref suppressDefaultLog, apiResponseLocalVar, codes, createdDateTimeOffsetGreaterThan, isActive, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -577,7 +577,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="isActive"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterPayItemsGet(ref bool suppressDefaultLog, IPayItemsGetApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<bool> isActive, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void AfterPayItemsGet(ref bool suppressDefaultLog, IPayItemsGetApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<bool> isActive, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -590,7 +590,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="isActive"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorPayItemsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<bool> isActive, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void OnErrorPayItemsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<bool> isActive, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorPayItemsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, codes, createdDateTimeOffsetGreaterThan, isActive, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -610,7 +610,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="isActive"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorPayItemsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<bool> isActive, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorPayItemsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<bool> isActive, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Get all pay items for the client. (Auth roles: PayItem,PayItem_Full) A pay item is used by the payroll system to identify how an individual salary line should be treated,  in order to report and post the salary in a correct manner on the payroll issued.
@@ -622,7 +622,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IPayItemsGetApiResponse"/>&gt;</returns>
-        public async Task<IPayItemsGetApiResponse?> PayItemsGetOrDefaultAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<bool> isActive = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IPayItemsGetApiResponse?> PayItemsGetOrDefaultAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<bool> isActive = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -645,7 +645,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IPayItemsGetApiResponse"/>&gt;</returns>
-        public async Task<IPayItemsGetApiResponse> PayItemsGetAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<bool> isActive = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IPayItemsGetApiResponse> PayItemsGetAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<bool> isActive = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

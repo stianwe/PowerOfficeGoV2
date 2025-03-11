@@ -38,7 +38,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="fromDate">From date, inclusive.  The user will have access to the client from this date.</param>
         /// <param name="toDate">To date, inclusive.  The user will have access to the client until and including this date.  Afterwards, the user is deactivated on the client.</param>
         [JsonConstructor]
-        public AddPartnerUserPostDto(Guid accessRoleId, Guid partnerUserId, Option<DateOnly?> fromDate = default, Option<DateOnly?> toDate = default)
+        public AddPartnerUserPostDto(Guid accessRoleId, Guid partnerUserId, Option<DateTimeOffset?> fromDate = default, Option<DateTimeOffset?> toDate = default)
         {
             AccessRoleId = accessRoleId;
             PartnerUserId = partnerUserId;
@@ -70,7 +70,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> FromDateOption { get; private set; }
+        public Option<DateTimeOffset?> FromDateOption { get; private set; }
 
         /// <summary>
         /// From date, inclusive.  The user will have access to the client from this date.
@@ -78,14 +78,14 @@ namespace PowerOfficeGoV2.Model
         /// <value>From date, inclusive.  The user will have access to the client from this date.</value>
         /* <example>Mon Jan 01 01:00:00 CET 2024</example> */
         [JsonPropertyName("FromDate")]
-        public DateOnly? FromDate { get { return this.FromDateOption; } set { this.FromDateOption = new(value); } }
+        public DateTimeOffset? FromDate { get { return this.FromDateOption; } set { this.FromDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ToDate
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ToDateOption { get; private set; }
+        public Option<DateTimeOffset?> ToDateOption { get; private set; }
 
         /// <summary>
         /// To date, inclusive.  The user will have access to the client until and including this date.  Afterwards, the user is deactivated on the client.
@@ -93,7 +93,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>To date, inclusive.  The user will have access to the client until and including this date.  Afterwards, the user is deactivated on the client.</value>
         /* <example>Wed Jan 31 01:00:00 CET 2024</example> */
         [JsonPropertyName("ToDate")]
-        public DateOnly? ToDate { get { return this.ToDateOption; } set { this.ToDateOption = new(value); } }
+        public DateTimeOffset? ToDate { get { return this.ToDateOption; } set { this.ToDateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -156,8 +156,8 @@ namespace PowerOfficeGoV2.Model
 
             Option<Guid?> accessRoleId = default;
             Option<Guid?> partnerUserId = default;
-            Option<DateOnly?> fromDate = default;
-            Option<DateOnly?> toDate = default;
+            Option<DateTimeOffset?> fromDate = default;
+            Option<DateTimeOffset?> toDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -184,11 +184,11 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "FromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                fromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                fromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ToDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                toDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                toDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

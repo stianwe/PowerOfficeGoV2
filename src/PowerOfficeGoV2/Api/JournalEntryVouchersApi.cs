@@ -49,7 +49,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IJournalEntryVouchersGetApiResponse"/>&gt;</returns>
-        Task<IJournalEntryVouchersGetApiResponse> JournalEntryVouchersGetAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> inApprovalWorkflow = default, Option<bool> isPosted = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IJournalEntryVouchersGetApiResponse> JournalEntryVouchersGetAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> inApprovalWorkflow = default, Option<bool> isPosted = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// List the journal entry vouchers on the client, returning lightweight journal entry voucher objects and their type. (Auth roles: JournalEntryVoucher,JournalEntryVoucher_Full)
@@ -64,7 +64,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IJournalEntryVouchersGetApiResponse"/>?&gt;</returns>
-        Task<IJournalEntryVouchersGetApiResponse?> JournalEntryVouchersGetOrDefaultAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> inApprovalWorkflow = default, Option<bool> isPosted = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IJournalEntryVouchersGetApiResponse?> JournalEntryVouchersGetOrDefaultAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> inApprovalWorkflow = default, Option<bool> isPosted = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a voucher, the accompanying lines and pages. (Auth roles: JournalEntryVoucher_Full)
@@ -450,7 +450,7 @@ namespace PowerOfficeGoV2.Api
             Events = journalEntryVouchersApiEvents;
         }
 
-        partial void FormatJournalEntryVouchersGet(ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<bool> inApprovalWorkflow, ref Option<bool> isPosted, Option<ResourceParameters> resourceParameter);
+        partial void FormatJournalEntryVouchersGet(ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<bool> inApprovalWorkflow, ref Option<bool> isPosted, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -472,7 +472,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="inApprovalWorkflow"></param>
         /// <param name="isPosted"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterJournalEntryVouchersGetDefaultImplementation(IJournalEntryVouchersGetApiResponse apiResponseLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> inApprovalWorkflow, Option<bool> isPosted, Option<ResourceParameters> resourceParameter)
+        private void AfterJournalEntryVouchersGetDefaultImplementation(IJournalEntryVouchersGetApiResponse apiResponseLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> inApprovalWorkflow, Option<bool> isPosted, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterJournalEntryVouchersGet(ref suppressDefaultLog, apiResponseLocalVar, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, inApprovalWorkflow, isPosted, resourceParameter);
@@ -490,7 +490,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="inApprovalWorkflow"></param>
         /// <param name="isPosted"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterJournalEntryVouchersGet(ref bool suppressDefaultLog, IJournalEntryVouchersGetApiResponse apiResponseLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> inApprovalWorkflow, Option<bool> isPosted, Option<ResourceParameters> resourceParameter);
+        partial void AfterJournalEntryVouchersGet(ref bool suppressDefaultLog, IJournalEntryVouchersGetApiResponse apiResponseLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> inApprovalWorkflow, Option<bool> isPosted, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -503,7 +503,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="inApprovalWorkflow"></param>
         /// <param name="isPosted"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorJournalEntryVouchersGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> inApprovalWorkflow, Option<bool> isPosted, Option<ResourceParameters> resourceParameter)
+        private void OnErrorJournalEntryVouchersGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> inApprovalWorkflow, Option<bool> isPosted, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorJournalEntryVouchersGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, inApprovalWorkflow, isPosted, resourceParameter);
@@ -523,7 +523,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="inApprovalWorkflow"></param>
         /// <param name="isPosted"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorJournalEntryVouchersGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> inApprovalWorkflow, Option<bool> isPosted, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorJournalEntryVouchersGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> inApprovalWorkflow, Option<bool> isPosted, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// List the journal entry vouchers on the client, returning lightweight journal entry voucher objects and their type. (Auth roles: JournalEntryVoucher,JournalEntryVoucher_Full) To get the details, get the voucher by its identifier using the endpoint relevant for the voucher type.
@@ -535,7 +535,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IJournalEntryVouchersGetApiResponse"/>&gt;</returns>
-        public async Task<IJournalEntryVouchersGetApiResponse?> JournalEntryVouchersGetOrDefaultAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> inApprovalWorkflow = default, Option<bool> isPosted = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IJournalEntryVouchersGetApiResponse?> JournalEntryVouchersGetOrDefaultAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> inApprovalWorkflow = default, Option<bool> isPosted = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -558,7 +558,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IJournalEntryVouchersGetApiResponse"/>&gt;</returns>
-        public async Task<IJournalEntryVouchersGetApiResponse> JournalEntryVouchersGetAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> inApprovalWorkflow = default, Option<bool> isPosted = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IJournalEntryVouchersGetApiResponse> JournalEntryVouchersGetAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> inApprovalWorkflow = default, Option<bool> isPosted = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

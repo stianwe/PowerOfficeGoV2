@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **DenyTimeTracking** | **bool** | Value indicating if registration of new time tracking entries should be denied for the project.  Default is false. | [optional] 
 **DepartmentCode** | **string** | The code of the department this project is associated with.  Note that if DepartmentId is set as well in the request, DepartmentId takes precedence and DepartmentCode is ignored. | [optional] 
 **DepartmentId** | **long** | The id of the department this project is associated with. | [optional] 
-**EndDate** | **DateOnly** | The end date of the project.  Only date is used, time is ignored. | [optional] 
+**EndDate** | **DateTimeOffset** | The end date of the project.  Only date is used, time is ignored. | [optional] 
 **ExpenseMarkupDescription** | **string** | The description added to the invoice line when markup of expenses is added.  Relevant only if expenseMarkupEnabled is true. | [optional] 
 **ExpenseMarkupEnabled** | **bool** | Value indicating whether markup of expenses is used when billing the project.  The default value will depend on the time-tracking settings on the client, as the value will inherit from the general time-tracking settings if not overridden. | [optional] 
 **ExpenseMarkupFactor** | **double** | The overridden markup factor used when billing expenses for this project. This value is usually set between 0 and 100.  If using a 50% markup of expenses, this value should be 50. Can only be set if expenseMarkupEnabled is set true.  If not set (null) and expenseMarkupEnabled is true, the default markup value in the time-tracking settings in Go will be used.  Cannot be set negative. | [optional] 
@@ -54,7 +54,7 @@ Name | Type | Description | Notes
 **ProjectManagerEmployeeNo** | **long** | The employee code of the manager of the project.  Note that if ProjectManagerEmployeeId is set as well in the request, ProjectManagerEmployeeId takes precedence and ProjectManagerEmployeeNo is ignored. | [optional] 
 **ProjectStatus** | **ProjectStatusType** |  | [optional] 
 **PurchaseOrderNo** | **string** | The purchase order number for this project.  If set, this purchase order number will also default appear on invoices when billing this project. | [optional] 
-**StartDate** | **DateOnly** | The start date of the project. | [optional] 
+**StartDate** | **DateTimeOffset** | The start date of the project. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -305,7 +305,7 @@ No authorization required
 
 <a id="contactdeliveryaddressesget"></a>
 # **ContactDeliveryAddressesGet**
-> List&lt;ContactDeliveryAddressDto&gt; ContactDeliveryAddressesGet (string contactIds = null, DateTime createdDateTimeOffsetGreaterThan = null, string externalCodes = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;ContactDeliveryAddressDto&gt; ContactDeliveryAddressesGet (string contactIds = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, string externalCodes = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Gets the delivery addresses for a given contact (Auth roles: ContactDeliveryAddress, ContactDeliveryAddress_Full, Customer, Customer_Full, Supplier, Supplier_Full, Employee, Employee_Full)
 
@@ -329,9 +329,9 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new ContactDeliveryAddressesApi(config);
             var contactIds = 12345, 62142, 11235;  // string | Filter by contact IDs. Separate by comma to filter on multiple contact IDs. If filterString is null or whitespace, query is returned as is. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTime | Filter by the contact delivery address' created timestamp property.                  This filtering will return all addresses with a created timestamp greater than the timestamp provided.                  Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTimeOffset | Filter by the contact delivery address' created timestamp property.                  This filtering will return all addresses with a created timestamp greater than the timestamp provided.                  Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
             var externalCodes = 10A, 3B, 69Z;  // string | Filter by contact delivery address external codes.  Separate by comma to filter on multiple external codes. If filterString is null or whitespace, query is returned as is. Case insensitive, ie. ABC == abc. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTime | Filter by the contact delivery address' last changed timestamp property.                  This filtering will return all contact delivery addresses with a last changed timestamp greater than the timestamp provided.                  Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTimeOffset | Filter by the contact delivery address' last changed timestamp property.                  This filtering will return all contact delivery addresses with a last changed timestamp greater than the timestamp provided.                  Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -376,9 +376,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **contactIds** | **string** | Filter by contact IDs. Separate by comma to filter on multiple contact IDs. If filterString is null or whitespace, query is returned as is. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter by the contact delivery address&#39; created timestamp property.                  This filtering will return all addresses with a created timestamp greater than the timestamp provided.                  Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the contact delivery address&#39; created timestamp property.                  This filtering will return all addresses with a created timestamp greater than the timestamp provided.                  Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
 | **externalCodes** | **string** | Filter by contact delivery address external codes.  Separate by comma to filter on multiple external codes. If filterString is null or whitespace, query is returned as is. Case insensitive, ie. ABC &#x3D;&#x3D; abc. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the contact delivery address&#39; last changed timestamp property.                  This filtering will return all contact delivery addresses with a last changed timestamp greater than the timestamp provided.                  Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the contact delivery address&#39; last changed timestamp property.                  This filtering will return all contact delivery addresses with a last changed timestamp greater than the timestamp provided.                  Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

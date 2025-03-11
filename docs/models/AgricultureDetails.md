@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **ProductAnimalId** | **string** | The ID of the animal (Dyre-id) | [optional] 
 **ProductChassisId** | **string** | VIN / Chassis number 17-digits according to iso | [optional] 
 **ProductCode** | **int** | Product code according to Landbrukets dataflyt, can differ from product code voucher line | [optional] 
-**ProductDateOfBirth** | **DateOnly** | Date of birth of the animal, required when information is related to live cattle | [optional] 
+**ProductDateOfBirth** | **DateTimeOffset** | Date of birth of the animal, required when information is related to live cattle | [optional] 
 **ProductDetailCode** | **int** | Product detail code | [optional] 
 **ProductEcological** | **bool** | Whether a product is ecological or not | [optional] 
 **ProductGender** | **LivestockGender** |  | [optional] 

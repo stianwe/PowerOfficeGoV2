@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AdminUserId** | **Guid** | The identifier of the user that will be the client subscription administrator.  This user will automatically be added to the client as an administrator. | 
 **MailAddress** | [**AddressPostDto**](AddressPostDto.md) |  | 
 **ClientName** | **string** | The name of the client. | 
-**ConversionDate** | **DateOnly** | The start date of processing in Go.  The start day will always be set as the first day of the month provided, in the year provided.  The conversion date is the date the client started using Go.  Transactions can only be posted on or after this date.  The date can also be used to identify the date of the start-balance in Go, which will be this date -1 day.  If not set, the conversion date will default to January of the current year. | [optional] 
+**ConversionDate** | **DateTimeOffset** | The start date of processing in Go.  The start day will always be set as the first day of the month provided, in the year provided.  The conversion date is the date the client started using Go.  Transactions can only be posted on or after this date.  The date can also be used to identify the date of the start-balance in Go, which will be this date -1 day.  If not set, the conversion date will default to January of the current year. | [optional] 
 **FinancialYearEndMonth** | **Months** |  | [optional] 
 **IsVatRegistered** | **bool** | Information on whether this this client is registered for Value Added Tax (VAT, norwegian: mva-registrert).  If false, vat is not applied to outgoing invoices. | [optional] 
 **LegalName** | **string** | The legal name of the client.  The legal name is the formal name, and might differ from the marketing name. | 

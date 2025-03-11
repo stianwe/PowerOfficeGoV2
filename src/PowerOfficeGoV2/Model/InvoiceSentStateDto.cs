@@ -41,7 +41,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="lastErrorMessage">If invoice delivery fails this property will contain the last error message.</param>
         /// <param name="sentDateTimeOffset">The date this sales order was invoiced using Go. Will only be set if the order was successfully invoiced.  For integrations using the createAndSendInvoice request, this property having a value will confirm the delivery.  To retrieve any further invoice information, the OutgoingInvoices reporting endpoint should be used.</param>
         [JsonConstructor]
-        public InvoiceSentStateDto(Option<DateOnly?> dueDate = default, Option<Guid?> id = default, Option<InvoiceDeliveryType?> invoiceDeliveryType = default, Option<long?> invoiceNo = default, Option<bool?> isInvoiceBeingProcessed = default, Option<string?> lastErrorMessage = default, Option<DateTime?> sentDateTimeOffset = default)
+        public InvoiceSentStateDto(Option<DateTimeOffset?> dueDate = default, Option<Guid?> id = default, Option<InvoiceDeliveryType?> invoiceDeliveryType = default, Option<long?> invoiceNo = default, Option<bool?> isInvoiceBeingProcessed = default, Option<string?> lastErrorMessage = default, Option<DateTimeOffset?> sentDateTimeOffset = default)
         {
             DueDateOption = dueDate;
             IdOption = id;
@@ -73,7 +73,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> DueDateOption { get; }
+        public Option<DateTimeOffset?> DueDateOption { get; }
 
         /// <summary>
         /// The actual due date of the invoice or credit note.
@@ -81,7 +81,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The actual due date of the invoice or credit note.</value>
         /* <example>Mon Sep 16 02:00:00 CEST 2024</example> */
         [JsonPropertyName("DueDate")]
-        public DateOnly? DueDate { get { return this.DueDateOption; } }
+        public DateTimeOffset? DueDate { get { return this.DueDateOption; } }
 
         /// <summary>
         /// Used to track the state of Id
@@ -148,7 +148,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> SentDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> SentDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The date this sales order was invoiced using Go. Will only be set if the order was successfully invoiced.  For integrations using the createAndSendInvoice request, this property having a value will confirm the delivery.  To retrieve any further invoice information, the OutgoingInvoices reporting endpoint should be used.
@@ -156,7 +156,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date this sales order was invoiced using Go. Will only be set if the order was successfully invoiced.  For integrations using the createAndSendInvoice request, this property having a value will confirm the delivery.  To retrieve any further invoice information, the OutgoingInvoices reporting endpoint should be used.</value>
         /* <example>2024-09-03T11:35:00.867447600Z</example> */
         [JsonPropertyName("SentDateTimeOffset")]
-        public DateTime? SentDateTimeOffset { get { return this.SentDateTimeOffsetOption; } }
+        public DateTimeOffset? SentDateTimeOffset { get { return this.SentDateTimeOffsetOption; } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -220,13 +220,13 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateOnly?> dueDate = default;
+            Option<DateTimeOffset?> dueDate = default;
             Option<Guid?> id = default;
             Option<InvoiceDeliveryType?> invoiceDeliveryType = default;
             Option<long?> invoiceNo = default;
             Option<bool?> isInvoiceBeingProcessed = default;
             Option<string?> lastErrorMessage = default;
-            Option<DateTime?> sentDateTimeOffset = default;
+            Option<DateTimeOffset?> sentDateTimeOffset = default;
 
             while (utf8JsonReader.Read())
             {
@@ -245,7 +245,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "DueDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                dueDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                dueDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Id":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -269,7 +269,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "SentDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                sentDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
+                                sentDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

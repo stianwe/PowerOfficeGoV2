@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="clientbankaccountsget"></a>
 # **ClientBankAccountsGet**
-> List&lt;ClientBankAccountDto&gt; ClientBankAccountsGet (string bankAccountNumbers = null, DateTime createdDateTimeOffsetGreaterThan = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;ClientBankAccountDto&gt; ClientBankAccountsGet (string bankAccountNumbers = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Gets the bank accounts registered on the client. (Auth roles: ClientBankAccount,ClientBankAccount_Full)
 
@@ -33,8 +33,8 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new ClientBankAccountsApi(config);
             var bankAccountNumbers = 67774073962, 83529195381;  // string | Filter by client bank account number. Search string should be separated by comma. If filter string is null or whitespace, query is returned as is. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTime | Filter by the client bank account created timestamp property. This filtering will return all client bank accounts with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTime | Filter by the client bank account last changed timestamp property. This filtering will return all client bank accounts with a last changed timestamp greater than the timestamp provided. Timestamp not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTimeOffset | Filter by the client bank account created timestamp property. This filtering will return all client bank accounts with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTimeOffset | Filter by the client bank account last changed timestamp property. This filtering will return all client bank accounts with a last changed timestamp greater than the timestamp provided. Timestamp not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -79,8 +79,8 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **bankAccountNumbers** | **string** | Filter by client bank account number. Search string should be separated by comma. If filter string is null or whitespace, query is returned as is. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter by the client bank account created timestamp property. This filtering will return all client bank accounts with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the client bank account last changed timestamp property. This filtering will return all client bank accounts with a last changed timestamp greater than the timestamp provided. Timestamp not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the client bank account created timestamp property. This filtering will return all client bank accounts with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the client bank account last changed timestamp property. This filtering will return all client bank accounts with a last changed timestamp greater than the timestamp provided. Timestamp not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

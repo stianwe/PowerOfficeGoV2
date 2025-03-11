@@ -53,7 +53,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="subLedgerNumberSeriesId">The Id of the sub-ledger series this supplier belong in.  Relevant if the client have multiple supplier sub-ledger series, and if so highly relevant in POST calls if the integrating party does not set Number but lets Go assign the next available Number.  In such cases, Go will create the supplier in the default sub-ledger series, unless this property is set.</param>
         /// <param name="websiteUrl">The url to the suppliers website.</param>
         [JsonConstructor]
-        public SupplierPostDto(Option<List<long>?> contactGroupIds = default, Option<string?> currencyCode = default, Option<DateOnly?> dateOfBirth = default, Option<string?> emailAddress = default, Option<string?> externalImportReference = default, Option<long?> externalNumber = default, Option<string?> firstName = default, Option<bool?> isArchived = default, Option<bool?> isPerson = default, Option<string?> lastName = default, Option<string?> legalName = default, Option<ContactAddressPostDto?> mailAddress = default, Option<string?> name = default, Option<long?> number = default, Option<string?> organizationNumber = default, Option<bool?> payout = default, Option<string?> phoneNumber = default, Option<Guid?> subLedgerNumberSeriesId = default, Option<string?> websiteUrl = default)
+        public SupplierPostDto(Option<List<long>?> contactGroupIds = default, Option<string?> currencyCode = default, Option<DateTimeOffset?> dateOfBirth = default, Option<string?> emailAddress = default, Option<string?> externalImportReference = default, Option<long?> externalNumber = default, Option<string?> firstName = default, Option<bool?> isArchived = default, Option<bool?> isPerson = default, Option<string?> lastName = default, Option<string?> legalName = default, Option<ContactAddressPostDto?> mailAddress = default, Option<string?> name = default, Option<long?> number = default, Option<string?> organizationNumber = default, Option<bool?> payout = default, Option<string?> phoneNumber = default, Option<Guid?> subLedgerNumberSeriesId = default, Option<string?> websiteUrl = default)
         {
             ContactGroupIdsOption = contactGroupIds;
             CurrencyCodeOption = currencyCode;
@@ -113,7 +113,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> DateOfBirthOption { get; private set; }
+        public Option<DateTimeOffset?> DateOfBirthOption { get; private set; }
 
         /// <summary>
         /// The date of birth of the supplier.   Relevant only if the supplier is a person (when isPerson is true).
@@ -121,7 +121,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date of birth of the supplier.   Relevant only if the supplier is a person (when isPerson is true).</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("DateOfBirth")]
-        public DateOnly? DateOfBirth { get { return this.DateOfBirthOption; } set { this.DateOfBirthOption = new(value); } }
+        public DateTimeOffset? DateOfBirth { get { return this.DateOfBirthOption; } set { this.DateOfBirthOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of EmailAddress
@@ -432,7 +432,7 @@ namespace PowerOfficeGoV2.Model
 
             Option<List<long>?> contactGroupIds = default;
             Option<string?> currencyCode = default;
-            Option<DateOnly?> dateOfBirth = default;
+            Option<DateTimeOffset?> dateOfBirth = default;
             Option<string?> emailAddress = default;
             Option<string?> externalImportReference = default;
             Option<long?> externalNumber = default;
@@ -474,7 +474,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "DateOfBirth":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                dateOfBirth = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                dateOfBirth = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "EmailAddress":
                             emailAddress = new Option<string?>(utf8JsonReader.GetString());

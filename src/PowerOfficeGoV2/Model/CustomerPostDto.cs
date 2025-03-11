@@ -79,7 +79,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="useInvoiceFee">Value indicating whether invoice fee will be used when sending invoices to this customer.  Default is true, relevant only if the client uses invoice fee, and that information is available in the SalesSettings endpoint.</param>
         /// <param name="websiteUrl">The url to the customers website.</param>
         [JsonConstructor]
-        public CustomerPostDto(Option<double?> allowance = default, Option<double?> billableRate = default, Option<List<long>?> contactGroupIds = default, Option<string?> currencyCode = default, Option<DateOnly?> customerSince = default, Option<DateOnly?> dateOfBirth = default, Option<string?> deliveryTerm = default, Option<long?> deliveryTermId = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<bool?> doNotAddLatePaymentFees = default, Option<bool?> doNotAddLatePaymentInterest = default, Option<bool?> doNotAutomatePaymentNotifications = default, Option<string?> emailAddress = default, Option<string?> externalImportReference = default, Option<long?> externalNumber = default, Option<string?> firstName = default, Option<string?> invoiceBrandingThemeCode = default, Option<long?> invoiceBrandingThemeId = default, Option<InvoiceDeliveryType?> invoiceDeliveryType = default, Option<string?> invoiceEmailAddress = default, Option<string?> invoiceEmailAddressCC = default, Option<bool?> isArchived = default, Option<bool?> isPerson = default, Option<bool?> isVatFree = default, Option<string?> lastName = default, Option<string?> legalName = default, Option<ContactAddressPostDto?> mailAddress = default, Option<string?> name = default, Option<string?> nationalIdNumber = default, Option<NoticeOfDebtCollectionDeliveryType?> noticeOfDebtCollectionDeliveryType = default, Option<long?> number = default, Option<string?> organizationNumber = default, Option<string?> paymentReminderEmailAddress = default, Option<int?> paymentTerm = default, Option<long?> paymentTermId = default, Option<string?> phoneNumber = default, Option<ReminderDeliveryType?> reminderDeliveryType = default, Option<long?> salesPersonEmployeeId = default, Option<long?> salesPersonEmployeeNumber = default, Option<bool?> sendPaymentReminders = default, Option<Guid?> subLedgerNumberSeriesId = default, Option<bool?> transferToDebtCollectionAgency = default, Option<bool?> useInvoiceFee = default, Option<string?> websiteUrl = default)
+        public CustomerPostDto(Option<double?> allowance = default, Option<double?> billableRate = default, Option<List<long>?> contactGroupIds = default, Option<string?> currencyCode = default, Option<DateTimeOffset?> customerSince = default, Option<DateTimeOffset?> dateOfBirth = default, Option<string?> deliveryTerm = default, Option<long?> deliveryTermId = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<bool?> doNotAddLatePaymentFees = default, Option<bool?> doNotAddLatePaymentInterest = default, Option<bool?> doNotAutomatePaymentNotifications = default, Option<string?> emailAddress = default, Option<string?> externalImportReference = default, Option<long?> externalNumber = default, Option<string?> firstName = default, Option<string?> invoiceBrandingThemeCode = default, Option<long?> invoiceBrandingThemeId = default, Option<InvoiceDeliveryType?> invoiceDeliveryType = default, Option<string?> invoiceEmailAddress = default, Option<string?> invoiceEmailAddressCC = default, Option<bool?> isArchived = default, Option<bool?> isPerson = default, Option<bool?> isVatFree = default, Option<string?> lastName = default, Option<string?> legalName = default, Option<ContactAddressPostDto?> mailAddress = default, Option<string?> name = default, Option<string?> nationalIdNumber = default, Option<NoticeOfDebtCollectionDeliveryType?> noticeOfDebtCollectionDeliveryType = default, Option<long?> number = default, Option<string?> organizationNumber = default, Option<string?> paymentReminderEmailAddress = default, Option<int?> paymentTerm = default, Option<long?> paymentTermId = default, Option<string?> phoneNumber = default, Option<ReminderDeliveryType?> reminderDeliveryType = default, Option<long?> salesPersonEmployeeId = default, Option<long?> salesPersonEmployeeNumber = default, Option<bool?> sendPaymentReminders = default, Option<Guid?> subLedgerNumberSeriesId = default, Option<bool?> transferToDebtCollectionAgency = default, Option<bool?> useInvoiceFee = default, Option<string?> websiteUrl = default)
         {
             AllowanceOption = allowance;
             BillableRateOption = billableRate;
@@ -234,7 +234,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> CustomerSinceOption { get; private set; }
+        public Option<DateTimeOffset?> CustomerSinceOption { get; private set; }
 
         /// <summary>
         /// The date the customer first became a customer.  This field is available in the GUI, and is editable at any time. Is thus not the same as customerCreatedDateTimeOffset.
@@ -242,14 +242,14 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date the customer first became a customer.  This field is available in the GUI, and is editable at any time. Is thus not the same as customerCreatedDateTimeOffset.</value>
         /* <example>Thu Jul 15 02:00:00 CEST 2010</example> */
         [JsonPropertyName("CustomerSince")]
-        public DateOnly? CustomerSince { get { return this.CustomerSinceOption; } set { this.CustomerSinceOption = new(value); } }
+        public DateTimeOffset? CustomerSince { get { return this.CustomerSinceOption; } set { this.CustomerSinceOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DateOfBirth
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> DateOfBirthOption { get; private set; }
+        public Option<DateTimeOffset?> DateOfBirthOption { get; private set; }
 
         /// <summary>
         /// The date of birth of the customer.  Relevant only if the customer is a person (when isPerson is true).
@@ -257,7 +257,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date of birth of the customer.  Relevant only if the customer is a person (when isPerson is true).</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("DateOfBirth")]
-        public DateOnly? DateOfBirth { get { return this.DateOfBirthOption; } set { this.DateOfBirthOption = new(value); } }
+        public DateTimeOffset? DateOfBirth { get { return this.DateOfBirthOption; } set { this.DateOfBirthOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DeliveryTerm
@@ -907,8 +907,8 @@ namespace PowerOfficeGoV2.Model
             Option<double?> billableRate = default;
             Option<List<long>?> contactGroupIds = default;
             Option<string?> currencyCode = default;
-            Option<DateOnly?> customerSince = default;
-            Option<DateOnly?> dateOfBirth = default;
+            Option<DateTimeOffset?> customerSince = default;
+            Option<DateTimeOffset?> dateOfBirth = default;
             Option<string?> deliveryTerm = default;
             Option<long?> deliveryTermId = default;
             Option<string?> departmentCode = default;
@@ -981,11 +981,11 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CustomerSince":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                customerSince = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                customerSince = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "DateOfBirth":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                dateOfBirth = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                dateOfBirth = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "DeliveryTerm":
                             deliveryTerm = new Option<string?>(utf8JsonReader.GetString());

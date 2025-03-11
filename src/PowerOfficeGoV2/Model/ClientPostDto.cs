@@ -44,7 +44,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="templateClientId">The unique identifier of the template client to be used, if applicable.  If set, the new client will inherit the setup of general ledger accounts, activities, roles and Altinn settings.  If not provided, a standard Go template is used for the new client.</param>
         /// <param name="useVatCompensation">Information on whether this client are entitled to and uses vat compensation.  If true, vat codes with first letter notation K can be used when relevant for the client.</param>
         [JsonConstructor]
-        public ClientPostDto(Guid adminUserId, AddressPostDto mailAddress, string? clientName = default, Option<DateOnly?> conversionDate = default, Option<Months?> financialYearEndMonth = default, Option<bool?> isVatRegistered = default, string? legalName = default, string? organizationNumber = default, Option<Guid?> templateClientId = default, Option<bool?> useVatCompensation = default)
+        public ClientPostDto(Guid adminUserId, AddressPostDto mailAddress, string? clientName = default, Option<DateTimeOffset?> conversionDate = default, Option<Months?> financialYearEndMonth = default, Option<bool?> isVatRegistered = default, string? legalName = default, string? organizationNumber = default, Option<Guid?> templateClientId = default, Option<bool?> useVatCompensation = default)
         {
             AdminUserId = adminUserId;
             MailAddress = mailAddress;
@@ -101,7 +101,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ConversionDateOption { get; private set; }
+        public Option<DateTimeOffset?> ConversionDateOption { get; private set; }
 
         /// <summary>
         /// The start date of processing in Go.  The start day will always be set as the first day of the month provided, in the year provided.  The conversion date is the date the client started using Go.  Transactions can only be posted on or after this date.  The date can also be used to identify the date of the start-balance in Go, which will be this date -1 day.  If not set, the conversion date will default to January of the current year.
@@ -109,7 +109,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of processing in Go.  The start day will always be set as the first day of the month provided, in the year provided.  The conversion date is the date the client started using Go.  Transactions can only be posted on or after this date.  The date can also be used to identify the date of the start-balance in Go, which will be this date -1 day.  If not set, the conversion date will default to January of the current year.</value>
         /* <example>Mon Jan 01 01:00:00 CET 2024</example> */
         [JsonPropertyName("ConversionDate")]
-        public DateOnly? ConversionDate { get { return this.ConversionDateOption; } set { this.ConversionDateOption = new(value); } }
+        public DateTimeOffset? ConversionDate { get { return this.ConversionDateOption; } set { this.ConversionDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of IsVatRegistered
@@ -235,7 +235,7 @@ namespace PowerOfficeGoV2.Model
             Option<Guid?> adminUserId = default;
             Option<AddressPostDto?> mailAddress = default;
             Option<string?> clientName = default;
-            Option<DateOnly?> conversionDate = default;
+            Option<DateTimeOffset?> conversionDate = default;
             Option<Months?> financialYearEndMonth = default;
             Option<bool?> isVatRegistered = default;
             Option<string?> legalName = default;
@@ -271,7 +271,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ConversionDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                conversionDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                conversionDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "FinancialYearEndMonth":
                             string? financialYearEndMonthRawValue = utf8JsonReader.GetString();

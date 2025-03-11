@@ -42,7 +42,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="saftSourceId">The SAF-T source id. This is the ID of the system that generated the voucher. When this voucher is exported to  SAF-T, this property is mapped on the transactions SourceID in the SAF-T file. If the creating system is  required to export it&#39;s own SAF-T file, this source id should correspond with the SystemID in the SAF-T file of  the external system to ensure an audit trail. Max length is 35 characters.</param>
         /// <param name="voucherLines">The lines of the cash voucher to be posted</param>
         [JsonConstructor]
-        public CashVoucherPostDto(DateOnly voucherDate, string? currencyCode = default, Option<string?> description = default, Option<string?> externalImportReference = default, Option<long?> importedVoucherNo = default, Option<string?> saftBatchId = default, Option<string?> saftSourceId = default, Option<List<CashVoucherLinePostDto>?> voucherLines = default)
+        public CashVoucherPostDto(DateTimeOffset voucherDate, string? currencyCode = default, Option<string?> description = default, Option<string?> externalImportReference = default, Option<long?> importedVoucherNo = default, Option<string?> saftBatchId = default, Option<string?> saftSourceId = default, Option<List<CashVoucherLinePostDto>?> voucherLines = default)
         {
             VoucherDate = voucherDate;
             CurrencyCode = currencyCode;
@@ -63,7 +63,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher.</value>
         /* <example>Wed Mar 20 01:00:00 CET 2024</example> */
         [JsonPropertyName("VoucherDate")]
-        public DateOnly VoucherDate { get; set; }
+        public DateTimeOffset VoucherDate { get; set; }
 
         /// <summary>
         /// The currency code of the voucher header.  The line amounts will default be determined in the currency specified in the header.  For some voucher types, different currency codes can be set on the line level, thus overriding the currency of the head.  Currencies active on the client can be queried using the AccountingSettings service. Currency codes follow the ISO4217 standard.
@@ -232,7 +232,7 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateOnly?> voucherDate = default;
+            Option<DateTimeOffset?> voucherDate = default;
             Option<string?> currencyCode = default;
             Option<string?> description = default;
             Option<string?> externalImportReference = default;
@@ -258,7 +258,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "VoucherDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                voucherDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                voucherDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CurrencyCode":
                             currencyCode = new Option<string?>(utf8JsonReader.GetString());

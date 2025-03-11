@@ -150,7 +150,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEmployeesEmploymentsGetApiResponse"/>&gt;</returns>
-        Task<IEmployeesEmploymentsGetApiResponse> EmployeesEmploymentsGetAsync(Option<bool> activeEmployments = default, Option<string> employmentForm = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IEmployeesEmploymentsGetApiResponse> EmployeesEmploymentsGetAsync(Option<bool> activeEmployments = default, Option<string> employmentForm = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all employments for all employees registered on the client. (Auth roles: Employment,Employment_Full)
@@ -164,7 +164,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEmployeesEmploymentsGetApiResponse"/>?&gt;</returns>
-        Task<IEmployeesEmploymentsGetApiResponse?> EmployeesEmploymentsGetOrDefaultAsync(Option<bool> activeEmployments = default, Option<string> employmentForm = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IEmployeesEmploymentsGetApiResponse?> EmployeesEmploymentsGetOrDefaultAsync(Option<bool> activeEmployments = default, Option<string> employmentForm = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets a specific employment on a given employee. (Auth roles: Employment,Employment_Full)
@@ -1949,7 +1949,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatEmployeesEmploymentsGet(ref Option<bool> activeEmployments, ref Option<string> employmentForm, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void FormatEmployeesEmploymentsGet(ref Option<bool> activeEmployments, ref Option<string> employmentForm, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1974,7 +1974,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="employmentForm"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterEmployeesEmploymentsGetDefaultImplementation(IEmployeesEmploymentsGetApiResponse apiResponseLocalVar, Option<bool> activeEmployments, Option<string> employmentForm, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void AfterEmployeesEmploymentsGetDefaultImplementation(IEmployeesEmploymentsGetApiResponse apiResponseLocalVar, Option<bool> activeEmployments, Option<string> employmentForm, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterEmployeesEmploymentsGet(ref suppressDefaultLog, apiResponseLocalVar, activeEmployments, employmentForm, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1991,7 +1991,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="employmentForm"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterEmployeesEmploymentsGet(ref bool suppressDefaultLog, IEmployeesEmploymentsGetApiResponse apiResponseLocalVar, Option<bool> activeEmployments, Option<string> employmentForm, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void AfterEmployeesEmploymentsGet(ref bool suppressDefaultLog, IEmployeesEmploymentsGetApiResponse apiResponseLocalVar, Option<bool> activeEmployments, Option<string> employmentForm, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -2003,7 +2003,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="employmentForm"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorEmployeesEmploymentsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<bool> activeEmployments, Option<string> employmentForm, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void OnErrorEmployeesEmploymentsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<bool> activeEmployments, Option<string> employmentForm, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorEmployeesEmploymentsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, activeEmployments, employmentForm, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -2022,7 +2022,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="employmentForm"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorEmployeesEmploymentsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<bool> activeEmployments, Option<string> employmentForm, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorEmployeesEmploymentsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<bool> activeEmployments, Option<string> employmentForm, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Get all employments for all employees registered on the client. (Auth roles: Employment,Employment_Full) Returns a lightweight (slimmed down) version of the employment entity.
@@ -2033,7 +2033,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEmployeesEmploymentsGetApiResponse"/>&gt;</returns>
-        public async Task<IEmployeesEmploymentsGetApiResponse?> EmployeesEmploymentsGetOrDefaultAsync(Option<bool> activeEmployments = default, Option<string> employmentForm = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IEmployeesEmploymentsGetApiResponse?> EmployeesEmploymentsGetOrDefaultAsync(Option<bool> activeEmployments = default, Option<string> employmentForm = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -2055,7 +2055,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEmployeesEmploymentsGetApiResponse"/>&gt;</returns>
-        public async Task<IEmployeesEmploymentsGetApiResponse> EmployeesEmploymentsGetAsync(Option<bool> activeEmployments = default, Option<string> employmentForm = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IEmployeesEmploymentsGetApiResponse> EmployeesEmploymentsGetAsync(Option<bool> activeEmployments = default, Option<string> employmentForm = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

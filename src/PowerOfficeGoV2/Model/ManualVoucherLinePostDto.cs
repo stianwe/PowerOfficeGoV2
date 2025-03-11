@@ -53,7 +53,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="vatId">The id of the vat code used for the credit entry.</param>
         /// <param name="vatReturnSpecification">vatReturnSpecification</param>
         [JsonConstructor]
-        public ManualVoucherLinePostDto(DateOnly postingDate, long? accountId = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<double?> currencyExchangeRate = default, Option<string?> customMatchingReference = default, Option<long?> departmentId = default, Option<string?> description = default, Option<long?> dim1Id = default, Option<long?> dim2Id = default, Option<long?> dim3Id = default, Option<string?> externalLineReference = default, Option<long?> locationId = default, Option<long?> productId = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> quantity2 = default, int? vatId = default, Option<VatReturnSpecification?> vatReturnSpecification = default)
+        public ManualVoucherLinePostDto(DateTimeOffset postingDate, long? accountId = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<double?> currencyExchangeRate = default, Option<string?> customMatchingReference = default, Option<long?> departmentId = default, Option<string?> description = default, Option<long?> dim1Id = default, Option<long?> dim2Id = default, Option<long?> dim3Id = default, Option<string?> externalLineReference = default, Option<long?> locationId = default, Option<long?> productId = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> quantity2 = default, int? vatId = default, Option<VatReturnSpecification?> vatReturnSpecification = default)
         {
             PostingDate = postingDate;
             AccountId = accountId;
@@ -98,7 +98,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency  conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions.</value>
         /* <example>Tue Sep 28 02:00:00 CEST 2021</example> */
         [JsonPropertyName("PostingDate")]
-        public DateOnly PostingDate { get; set; }
+        public DateTimeOffset PostingDate { get; set; }
 
         /// <summary>
         /// The id of the general ledger account or the subledger account to post the amount.
@@ -410,7 +410,7 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateOnly?> postingDate = default;
+            Option<DateTimeOffset?> postingDate = default;
             Option<long?> accountId = default;
             Option<double?> currencyAmount = default;
             Option<string?> currencyCode = default;
@@ -447,7 +447,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "PostingDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                postingDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                postingDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "AccountId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

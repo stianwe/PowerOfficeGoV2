@@ -48,7 +48,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="taxRule">taxRule</param>
         /// <param name="workingHoursArrangement">workingHoursArrangement</param>
         [JsonConstructor]
-        public EmploymentPostDto(EmploymentFormType? employmentForm = default, Option<EmploymentSpecificationType?> employmentSpecification = default, EmploymentType? employmentType = default, Option<DateOnly?> endDate = default, Option<EndDateReasonType?> endDateReason = default, long? enterpriseId = default, double? fullTimeHoursPerWeek = default, bool? isDefault = default, string? professionCode = default, Option<string?> reportingId = default, DateOnly? startDate = default, Option<string?> taxCountryCode = default, Option<TaxRuleType?> taxRule = default, WorkingHoursArrangementType? workingHoursArrangement = default)
+        public EmploymentPostDto(EmploymentFormType? employmentForm = default, Option<EmploymentSpecificationType?> employmentSpecification = default, EmploymentType? employmentType = default, Option<DateTimeOffset?> endDate = default, Option<EndDateReasonType?> endDateReason = default, long? enterpriseId = default, double? fullTimeHoursPerWeek = default, bool? isDefault = default, string? professionCode = default, Option<string?> reportingId = default, DateTimeOffset? startDate = default, Option<string?> taxCountryCode = default, Option<TaxRuleType?> taxRule = default, WorkingHoursArrangementType? workingHoursArrangement = default)
         {
             EmploymentForm = employmentForm;
             EmploymentSpecificationOption = employmentSpecification;
@@ -131,7 +131,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> EndDateOption { get; private set; }
+        public Option<DateTimeOffset?> EndDateOption { get; private set; }
 
         /// <summary>
         /// The end date of the employment.
@@ -139,7 +139,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The end date of the employment.</value>
         /* <example>Sun Jul 31 02:00:00 CEST 2022</example> */
         [JsonPropertyName("EndDate")]
-        public DateOnly? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
+        public DateTimeOffset? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
 
         /// <summary>
         /// The identifier of the enterprise for the employment.
@@ -194,7 +194,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of the employment.</value>
         /* <example>Fri Jan 01 01:00:00 CET 2021</example> */
         [JsonPropertyName("StartDate")]
-        public DateOnly? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; set; }
 
         /// <summary>
         /// Used to track the state of TaxCountryCode
@@ -283,14 +283,14 @@ namespace PowerOfficeGoV2.Model
             Option<EmploymentFormType?> employmentForm = default;
             Option<EmploymentSpecificationType?> employmentSpecification = default;
             Option<EmploymentType?> employmentType = default;
-            Option<DateOnly?> endDate = default;
+            Option<DateTimeOffset?> endDate = default;
             Option<EndDateReasonType?> endDateReason = default;
             Option<long?> enterpriseId = default;
             Option<double?> fullTimeHoursPerWeek = default;
             Option<bool?> isDefault = default;
             Option<string?> professionCode = default;
             Option<string?> reportingId = default;
-            Option<DateOnly?> startDate = default;
+            Option<DateTimeOffset?> startDate = default;
             Option<string?> taxCountryCode = default;
             Option<TaxRuleType?> taxRule = default;
             Option<WorkingHoursArrangementType?> workingHoursArrangement = default;
@@ -327,7 +327,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "EndDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                endDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                endDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "EndDateReason":
                             string? endDateReasonRawValue = utf8JsonReader.GetString();
@@ -354,7 +354,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "StartDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                startDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                startDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "TaxCountryCode":
                             taxCountryCode = new Option<string?>(utf8JsonReader.GetString());

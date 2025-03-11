@@ -74,7 +74,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IProductGroupsGetApiResponse"/>&gt;</returns>
-        Task<IProductGroupsGetApiResponse> ProductGroupsGetAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<bool> isArchived = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ProductType> type = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IProductGroupsGetApiResponse> ProductGroupsGetAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<bool> isArchived = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ProductType> type = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get product groups from the client. (Auth roles: Product,Product_Full)
@@ -91,7 +91,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IProductGroupsGetApiResponse"/>?&gt;</returns>
-        Task<IProductGroupsGetApiResponse?> ProductGroupsGetOrDefaultAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<bool> isArchived = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ProductType> type = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IProductGroupsGetApiResponse?> ProductGroupsGetOrDefaultAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<bool> isArchived = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ProductType> type = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes a product group by ID. (Auth roles: Product_Full)
@@ -812,7 +812,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatProductGroupsGet(ref Option<string> codes, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<bool> isArchived, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<string> names, ref Option<ProductType> type, Option<ResourceParameters> resourceParameter);
+        partial void FormatProductGroupsGet(ref Option<string> codes, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<bool> isArchived, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<string> names, ref Option<ProductType> type, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -844,7 +844,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="names"></param>
         /// <param name="type"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterProductGroupsGetDefaultImplementation(IProductGroupsGetApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<bool> isArchived, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ProductType> type, Option<ResourceParameters> resourceParameter)
+        private void AfterProductGroupsGetDefaultImplementation(IProductGroupsGetApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<bool> isArchived, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ProductType> type, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterProductGroupsGet(ref suppressDefaultLog, apiResponseLocalVar, codes, createdDateTimeOffsetGreaterThan, isArchived, lastChangedDateTimeOffsetGreaterThan, names, type, resourceParameter);
@@ -864,7 +864,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="names"></param>
         /// <param name="type"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterProductGroupsGet(ref bool suppressDefaultLog, IProductGroupsGetApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<bool> isArchived, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ProductType> type, Option<ResourceParameters> resourceParameter);
+        partial void AfterProductGroupsGet(ref bool suppressDefaultLog, IProductGroupsGetApiResponse apiResponseLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<bool> isArchived, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ProductType> type, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -879,7 +879,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="names"></param>
         /// <param name="type"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorProductGroupsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<bool> isArchived, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ProductType> type, Option<ResourceParameters> resourceParameter)
+        private void OnErrorProductGroupsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<bool> isArchived, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ProductType> type, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorProductGroupsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, codes, createdDateTimeOffsetGreaterThan, isArchived, lastChangedDateTimeOffsetGreaterThan, names, type, resourceParameter);
@@ -901,7 +901,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="names"></param>
         /// <param name="type"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorProductGroupsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<bool> isArchived, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ProductType> type, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorProductGroupsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> codes, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<bool> isArchived, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ProductType> type, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Get product groups from the client. (Auth roles: Product,Product_Full) 
@@ -915,7 +915,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IProductGroupsGetApiResponse"/>&gt;</returns>
-        public async Task<IProductGroupsGetApiResponse?> ProductGroupsGetOrDefaultAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<bool> isArchived = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ProductType> type = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IProductGroupsGetApiResponse?> ProductGroupsGetOrDefaultAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<bool> isArchived = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ProductType> type = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -940,7 +940,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IProductGroupsGetApiResponse"/>&gt;</returns>
-        public async Task<IProductGroupsGetApiResponse> ProductGroupsGetAsync(Option<string> codes = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<bool> isArchived = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ProductType> type = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IProductGroupsGetApiResponse> ProductGroupsGetAsync(Option<string> codes = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<bool> isArchived = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ProductType> type = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

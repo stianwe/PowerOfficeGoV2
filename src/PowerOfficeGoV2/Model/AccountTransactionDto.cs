@@ -86,7 +86,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="voucherNo">The voucher number. This is the voucher number assigned by Go when the voucher was posted.  Voucher numbers are assigned by Go in sequence.  Always present on transactions.</param>
         /// <param name="voucherType">voucherType</param>
         [JsonConstructor]
-        public AccountTransactionDto(Option<long?> accountId = default, Option<long?> accountNo = default, Option<AgricultureDepartment?> agricultureDepartment = default, Option<double?> amount = default, Option<Guid?> bankTransferId = default, Option<long?> contactId = default, Option<Guid?> correctionOfVoucherId = default, Option<long?> correctionOfVoucherNo = default, Option<DateTime?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<long?> customerAccountNo = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<string?> description = default, Option<string?> dim1Code = default, Option<long?> dim1Id = default, Option<string?> dim2Code = default, Option<long?> dim2Id = default, Option<string?> dim3Code = default, Option<long?> dim3Id = default, Option<long?> employeeAccountNo = default, Option<string?> externalImportReference = default, Option<long?> id = default, Option<long?> importedVoucherNo = default, Option<bool?> isNoteMainEntry = default, Option<bool?> isReversed = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<DateOnly?> postingDate = default, Option<string?> productCode = default, Option<long?> productId = default, Option<string?> projectCode = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> quantity2 = default, Option<Guid?> reversedVoucherId = default, Option<long?> reversedVoucherNo = default, Option<long?> subLedgerEntryId = default, Option<long?> supplierAccountNo = default, Option<double?> vatAmount = default, Option<string?> vatCode = default, Option<int?> vatId = default, Option<double?> vatRate = default, Option<VatReturnSpecification?> vatReturnSpecification = default, Option<DateOnly?> voucherDate = default, Option<string?> voucherDescription = default, Option<Guid?> voucherId = default, Option<long?> voucherNo = default, Option<VoucherType?> voucherType = default)
+        public AccountTransactionDto(Option<long?> accountId = default, Option<long?> accountNo = default, Option<AgricultureDepartment?> agricultureDepartment = default, Option<double?> amount = default, Option<Guid?> bankTransferId = default, Option<long?> contactId = default, Option<Guid?> correctionOfVoucherId = default, Option<long?> correctionOfVoucherNo = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<long?> customerAccountNo = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<string?> description = default, Option<string?> dim1Code = default, Option<long?> dim1Id = default, Option<string?> dim2Code = default, Option<long?> dim2Id = default, Option<string?> dim3Code = default, Option<long?> dim3Id = default, Option<long?> employeeAccountNo = default, Option<string?> externalImportReference = default, Option<long?> id = default, Option<long?> importedVoucherNo = default, Option<bool?> isNoteMainEntry = default, Option<bool?> isReversed = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<DateTimeOffset?> postingDate = default, Option<string?> productCode = default, Option<long?> productId = default, Option<string?> projectCode = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> quantity2 = default, Option<Guid?> reversedVoucherId = default, Option<long?> reversedVoucherNo = default, Option<long?> subLedgerEntryId = default, Option<long?> supplierAccountNo = default, Option<double?> vatAmount = default, Option<string?> vatCode = default, Option<int?> vatId = default, Option<double?> vatRate = default, Option<VatReturnSpecification?> vatReturnSpecification = default, Option<DateTimeOffset?> voucherDate = default, Option<string?> voucherDescription = default, Option<Guid?> voucherId = default, Option<long?> voucherNo = default, Option<VoucherType?> voucherType = default)
         {
             AccountIdOption = accountId;
             AccountNoOption = accountNo;
@@ -294,7 +294,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The created timestamp.  This is the timestamp the transaction was created, and may differ from the timestamp of accounting effect for the transaction (ie the property PostingDate).  Always present on transactions.
@@ -302,7 +302,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The created timestamp.  This is the timestamp the transaction was created, and may differ from the timestamp of accounting effect for the transaction (ie the property PostingDate).  Always present on transactions.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CreatedFromImportJournalId
@@ -594,7 +594,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of the account transaction.  No changes with accounting effect can be made on a posted voucher in Go, making this timestamp equal the created timestamp in most cases.  However, simple changes like the description can be made on a posted voucher, which will effect the last changed timestamp.  This property can be used when polling for new entries and where changes in description are needed from Go - but voucherNo and createdDateTimeOffset are better suited to query new entries if not.  If this property is used, changed transactions should replace what was previously stored in the external system.  Note again that no changes can be made that affects the accounting as such.  Always present on transactions.
@@ -602,7 +602,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of the account transaction.  No changes with accounting effect can be made on a posted voucher in Go, making this timestamp equal the created timestamp in most cases.  However, simple changes like the description can be made on a posted voucher, which will effect the last changed timestamp.  This property can be used when polling for new entries and where changes in description are needed from Go - but voucherNo and createdDateTimeOffset are better suited to query new entries if not.  If this property is used, changed transactions should replace what was previously stored in the external system.  Note again that no changes can be made that affects the accounting as such.  Always present on transactions.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of LocationCode
@@ -639,7 +639,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> PostingDateOption { get; }
+        public Option<DateTimeOffset?> PostingDateOption { get; }
 
         /// <summary>
         /// The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions.
@@ -647,7 +647,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions.</value>
         /* <example>Tue Sep 28 02:00:00 CEST 2021</example> */
         [JsonPropertyName("PostingDate")]
-        public DateOnly? PostingDate { get { return this.PostingDateOption; } }
+        public DateTimeOffset? PostingDate { get { return this.PostingDateOption; } }
 
         /// <summary>
         /// Used to track the state of ProductCode
@@ -864,7 +864,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> VoucherDateOption { get; }
+        public Option<DateTimeOffset?> VoucherDateOption { get; }
 
         /// <summary>
         /// The date of the voucher. This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for the voucher.  Always present on transactions.
@@ -872,7 +872,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date of the voucher. This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for the voucher.  Always present on transactions.</value>
         /* <example>Sat Jul 25 02:00:00 CEST 2020</example> */
         [JsonPropertyName("VoucherDate")]
-        public DateOnly? VoucherDate { get { return this.VoucherDateOption; } }
+        public DateTimeOffset? VoucherDate { get { return this.VoucherDateOption; } }
 
         /// <summary>
         /// Used to track the state of VoucherDescription
@@ -1044,7 +1044,7 @@ namespace PowerOfficeGoV2.Model
             Option<long?> contactId = default;
             Option<Guid?> correctionOfVoucherId = default;
             Option<long?> correctionOfVoucherNo = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<Guid?> createdFromImportJournalId = default;
             Option<double?> currencyAmount = default;
             Option<string?> currencyCode = default;
@@ -1064,10 +1064,10 @@ namespace PowerOfficeGoV2.Model
             Option<long?> importedVoucherNo = default;
             Option<bool?> isNoteMainEntry = default;
             Option<bool?> isReversed = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> locationCode = default;
             Option<long?> locationId = default;
-            Option<DateOnly?> postingDate = default;
+            Option<DateTimeOffset?> postingDate = default;
             Option<string?> productCode = default;
             Option<long?> productId = default;
             Option<string?> projectCode = default;
@@ -1083,7 +1083,7 @@ namespace PowerOfficeGoV2.Model
             Option<int?> vatId = default;
             Option<double?> vatRate = default;
             Option<VatReturnSpecification?> vatReturnSpecification = default;
-            Option<DateOnly?> voucherDate = default;
+            Option<DateTimeOffset?> voucherDate = default;
             Option<string?> voucherDescription = default;
             Option<Guid?> voucherId = default;
             Option<long?> voucherNo = default;
@@ -1139,7 +1139,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CreatedFromImportJournalId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -1212,7 +1212,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "LocationCode":
                             locationCode = new Option<string?>(utf8JsonReader.GetString());
@@ -1223,7 +1223,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "PostingDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                postingDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                postingDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ProductCode":
                             productCode = new Option<string?>(utf8JsonReader.GetString());
@@ -1285,7 +1285,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "VoucherDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                voucherDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                voucherDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "VoucherDescription":
                             voucherDescription = new Option<string?>(utf8JsonReader.GetString());

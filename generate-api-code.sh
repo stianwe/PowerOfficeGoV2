@@ -39,7 +39,7 @@ wget https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/vouche
 wget https://prdm0go0stor0apiv20eurw.z6.web.core.windows.net/openapispecs/voucherposting.json
 
 cd ..
-openapi-generator generate --generator-name csharp --input-spec-root-directory specs --artifact-id PowerOfficeGoV2 --package-name PowerOfficeGoV2
+openapi-generator generate --generator-name csharp --input-spec-root-directory specs --artifact-id PowerOfficeGoV2 --package-name PowerOfficeGoV2 --additional-properties useDateTimeForDate=true,useDateTimeOffset=true
 
 rm -rf
 specs

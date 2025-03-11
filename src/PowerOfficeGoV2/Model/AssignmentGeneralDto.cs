@@ -55,7 +55,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="status">status</param>
         /// <param name="subjectToAudit">subjectToAudit</param>
         [JsonConstructor]
-        public AssignmentGeneralDto(Option<DateOnly?> agreementSignedDate = default, Option<long?> associateSubledgerAccountId = default, Option<long?> auditingCompanyId = default, Option<long?> auditorId = default, Option<DateOnly?> currentAgreementDate = default, Option<long?> customerContactPersonId = default, Option<long?> customerSubledgerAccountId = default, Option<string?> description = default, Option<DateOnly?> endDate = default, Option<long?> id = default, Option<long?> keyAccountManagerSubledgerAccountId = default, Option<long?> managerSubledgerAccountId = default, Option<int?> noticePeriod = default, Option<long?> payrollManagerSubledgerAccountId = default, Option<long?> projectId = default, Option<string?> purposeForContact = default, Option<string?> reasonForContact = default, Option<DateOnly?> revisionDate = default, Option<DateOnly?> startDate = default, Option<AssignmentAgreementStatus?> status = default, Option<SubjectToAuditType?> subjectToAudit = default)
+        public AssignmentGeneralDto(Option<DateTimeOffset?> agreementSignedDate = default, Option<long?> associateSubledgerAccountId = default, Option<long?> auditingCompanyId = default, Option<long?> auditorId = default, Option<DateTimeOffset?> currentAgreementDate = default, Option<long?> customerContactPersonId = default, Option<long?> customerSubledgerAccountId = default, Option<string?> description = default, Option<DateTimeOffset?> endDate = default, Option<long?> id = default, Option<long?> keyAccountManagerSubledgerAccountId = default, Option<long?> managerSubledgerAccountId = default, Option<int?> noticePeriod = default, Option<long?> payrollManagerSubledgerAccountId = default, Option<long?> projectId = default, Option<string?> purposeForContact = default, Option<string?> reasonForContact = default, Option<DateTimeOffset?> revisionDate = default, Option<DateTimeOffset?> startDate = default, Option<AssignmentAgreementStatus?> status = default, Option<SubjectToAuditType?> subjectToAudit = default)
         {
             AgreementSignedDateOption = agreementSignedDate;
             AssociateSubledgerAccountIdOption = associateSubledgerAccountId;
@@ -114,7 +114,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> AgreementSignedDateOption { get; private set; }
+        public Option<DateTimeOffset?> AgreementSignedDateOption { get; private set; }
 
         /// <summary>
         /// The date the assignment agreement was signed.
@@ -122,7 +122,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date the assignment agreement was signed.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("AgreementSignedDate")]
-        public DateOnly? AgreementSignedDate { get { return this.AgreementSignedDateOption; } set { this.AgreementSignedDateOption = new(value); } }
+        public DateTimeOffset? AgreementSignedDate { get { return this.AgreementSignedDateOption; } set { this.AgreementSignedDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of AssociateSubledgerAccountId
@@ -174,7 +174,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> CurrentAgreementDateOption { get; private set; }
+        public Option<DateTimeOffset?> CurrentAgreementDateOption { get; private set; }
 
         /// <summary>
         /// The current date of the quality assignment agreement.
@@ -182,7 +182,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The current date of the quality assignment agreement.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("CurrentAgreementDate")]
-        public DateOnly? CurrentAgreementDate { get { return this.CurrentAgreementDateOption; } set { this.CurrentAgreementDateOption = new(value); } }
+        public DateTimeOffset? CurrentAgreementDate { get { return this.CurrentAgreementDateOption; } set { this.CurrentAgreementDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of CustomerContactPersonId
@@ -234,7 +234,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> EndDateOption { get; private set; }
+        public Option<DateTimeOffset?> EndDateOption { get; private set; }
 
         /// <summary>
         /// The start date of the quality assignment. Date is inclusive.
@@ -242,7 +242,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of the quality assignment. Date is inclusive.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("EndDate")]
-        public DateOnly? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
+        public DateTimeOffset? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Id
@@ -369,7 +369,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> RevisionDateOption { get; private set; }
+        public Option<DateTimeOffset?> RevisionDateOption { get; private set; }
 
         /// <summary>
         /// The date of the last revision of the assignment.
@@ -377,14 +377,14 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date of the last revision of the assignment.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("RevisionDate")]
-        public DateOnly? RevisionDate { get { return this.RevisionDateOption; } set { this.RevisionDateOption = new(value); } }
+        public DateTimeOffset? RevisionDate { get { return this.RevisionDateOption; } set { this.RevisionDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of StartDate
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> StartDateOption { get; private set; }
+        public Option<DateTimeOffset?> StartDateOption { get; private set; }
 
         /// <summary>
         /// The start date of the quality assignment. Date is inclusive.
@@ -392,7 +392,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of the quality assignment. Date is inclusive.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("StartDate")]
-        public DateOnly? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
+        public DateTimeOffset? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -509,15 +509,15 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateOnly?> agreementSignedDate = default;
+            Option<DateTimeOffset?> agreementSignedDate = default;
             Option<long?> associateSubledgerAccountId = default;
             Option<long?> auditingCompanyId = default;
             Option<long?> auditorId = default;
-            Option<DateOnly?> currentAgreementDate = default;
+            Option<DateTimeOffset?> currentAgreementDate = default;
             Option<long?> customerContactPersonId = default;
             Option<long?> customerSubledgerAccountId = default;
             Option<string?> description = default;
-            Option<DateOnly?> endDate = default;
+            Option<DateTimeOffset?> endDate = default;
             Option<long?> id = default;
             Option<long?> keyAccountManagerSubledgerAccountId = default;
             Option<long?> managerSubledgerAccountId = default;
@@ -526,8 +526,8 @@ namespace PowerOfficeGoV2.Model
             Option<long?> projectId = default;
             Option<string?> purposeForContact = default;
             Option<string?> reasonForContact = default;
-            Option<DateOnly?> revisionDate = default;
-            Option<DateOnly?> startDate = default;
+            Option<DateTimeOffset?> revisionDate = default;
+            Option<DateTimeOffset?> startDate = default;
             Option<AssignmentAgreementStatus?> status = default;
             Option<SubjectToAuditType?> subjectToAudit = default;
 
@@ -548,7 +548,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "AgreementSignedDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                agreementSignedDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                agreementSignedDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "AssociateSubledgerAccountId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -564,7 +564,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CurrentAgreementDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                currentAgreementDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                currentAgreementDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CustomerContactPersonId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -579,7 +579,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "EndDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                endDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                endDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Id":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -613,11 +613,11 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "RevisionDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                revisionDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                revisionDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "StartDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                startDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                startDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Status":
                             string? statusRawValue = utf8JsonReader.GetString();

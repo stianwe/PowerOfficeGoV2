@@ -301,7 +301,7 @@ No authorization required
 
 <a id="contactbankaccountsget"></a>
 # **ContactBankAccountsGet**
-> List&lt;ContactBankAccountDto&gt; ContactBankAccountsGet (string bankAccountNumbers = null, string contactIds = null, DateTime createdDateTimeOffsetGreaterThan = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;ContactBankAccountDto&gt; ContactBankAccountsGet (string bankAccountNumbers = null, string contactIds = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Gets the bank accounts set on the client contacts (customer/employee/supplier). (Auth roles: ContactBankAccount, ContactBankAccount_Full, Customer, Customer_Full, Supplier, Supplier_Full, Employee, Employee_Full)
 
@@ -326,8 +326,8 @@ namespace Example
             var apiInstance = new ContactBankAccountsApi(config);
             var bankAccountNumbers = 12345678901, 98765432101;  // string | Filter by bank account numbers. Separate by comma to filter on multiple bank accounts. If filterString is null or whitespace, query is returned as is. (optional) 
             var contactIds = 12345, 67890;  // string | Filter contact bank accounts by the contact id's. Separate by comma to filter on multiple id's. If filterString is null or whitespace, the query will lookup all the contacts the integration has access and privileges for. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2023-11-29T14:00:00.1234567Z;  // DateTime | Filter by the contact bank account created timestamp property.                  This filtering will return all bank accounts with a created timestamp greater than the timestamp provided.                  Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-11-29T14:00:00.1234567Z;  // DateTime | Filter by the contact bank account last changed timestamp property.                  This filtering will return all bank accounts with a last changed timestamp greater than the timestamp provided.                  Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2023-11-29T14:00:00.1234567Z;  // DateTimeOffset | Filter by the contact bank account created timestamp property.                  This filtering will return all bank accounts with a created timestamp greater than the timestamp provided.                  Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-11-29T14:00:00.1234567Z;  // DateTimeOffset | Filter by the contact bank account last changed timestamp property.                  This filtering will return all bank accounts with a last changed timestamp greater than the timestamp provided.                  Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -373,8 +373,8 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **bankAccountNumbers** | **string** | Filter by bank account numbers. Separate by comma to filter on multiple bank accounts. If filterString is null or whitespace, query is returned as is. | [optional]  |
 | **contactIds** | **string** | Filter contact bank accounts by the contact id&#39;s. Separate by comma to filter on multiple id&#39;s. If filterString is null or whitespace, the query will lookup all the contacts the integration has access and privileges for. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter by the contact bank account created timestamp property.                  This filtering will return all bank accounts with a created timestamp greater than the timestamp provided.                  Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the contact bank account last changed timestamp property.                  This filtering will return all bank accounts with a last changed timestamp greater than the timestamp provided.                  Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the contact bank account created timestamp property.                  This filtering will return all bank accounts with a created timestamp greater than the timestamp provided.                  Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the contact bank account last changed timestamp property.                  This filtering will return all bank accounts with a last changed timestamp greater than the timestamp provided.                  Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

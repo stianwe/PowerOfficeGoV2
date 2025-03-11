@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **LocationId** | **long** | The id of the location dimension associated with the voucher header.  The lines will inherit the location from the voucher head if not specified on the lines. | [optional] 
 **ManualVoucherLines** | [**List&lt;ManualJournalEntryVoucherLinePostDto&gt;**](ManualJournalEntryVoucherLinePostDto.md) | The lines of the manual voucher | [optional] 
 **ProjectId** | **long** | The id of the project associated with the voucher header.  The lines will inherit the project from the voucher head if not specified on the lines. | [optional] 
-**VoucherDate** | **DateOnly** | The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher. | 
+**VoucherDate** | **DateTimeOffset** | The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher. | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

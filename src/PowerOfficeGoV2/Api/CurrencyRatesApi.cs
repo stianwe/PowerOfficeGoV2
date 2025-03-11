@@ -47,7 +47,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="asOnDate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ICurrencyRatesGetApiResponse"/>&gt;</returns>
-        Task<ICurrencyRatesGetApiResponse> CurrencyRatesGetAsync(string fromCurrency, string toCurrency, DateTime asOnDate, System.Threading.CancellationToken cancellationToken = default);
+        Task<ICurrencyRatesGetApiResponse> CurrencyRatesGetAsync(string fromCurrency, string toCurrency, DateTimeOffset asOnDate, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get currency rate. (Auth roles: CommonServices,CommonServices_Full)
@@ -60,7 +60,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="asOnDate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ICurrencyRatesGetApiResponse"/>?&gt;</returns>
-        Task<ICurrencyRatesGetApiResponse?> CurrencyRatesGetOrDefaultAsync(string fromCurrency, string toCurrency, DateTime asOnDate, System.Threading.CancellationToken cancellationToken = default);
+        Task<ICurrencyRatesGetApiResponse?> CurrencyRatesGetOrDefaultAsync(string fromCurrency, string toCurrency, DateTimeOffset asOnDate, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -171,7 +171,7 @@ namespace PowerOfficeGoV2.Api
             Events = currencyRatesApiEvents;
         }
 
-        partial void FormatCurrencyRatesGet(ref string fromCurrency, ref string toCurrency, ref DateTime asOnDate);
+        partial void FormatCurrencyRatesGet(ref string fromCurrency, ref string toCurrency, ref DateTimeOffset asOnDate);
 
         /// <summary>
         /// Validates the request parameters
@@ -195,7 +195,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="fromCurrency"></param>
         /// <param name="toCurrency"></param>
         /// <param name="asOnDate"></param>
-        private void AfterCurrencyRatesGetDefaultImplementation(ICurrencyRatesGetApiResponse apiResponseLocalVar, string fromCurrency, string toCurrency, DateTime asOnDate)
+        private void AfterCurrencyRatesGetDefaultImplementation(ICurrencyRatesGetApiResponse apiResponseLocalVar, string fromCurrency, string toCurrency, DateTimeOffset asOnDate)
         {
             bool suppressDefaultLog = false;
             AfterCurrencyRatesGet(ref suppressDefaultLog, apiResponseLocalVar, fromCurrency, toCurrency, asOnDate);
@@ -211,7 +211,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="fromCurrency"></param>
         /// <param name="toCurrency"></param>
         /// <param name="asOnDate"></param>
-        partial void AfterCurrencyRatesGet(ref bool suppressDefaultLog, ICurrencyRatesGetApiResponse apiResponseLocalVar, string fromCurrency, string toCurrency, DateTime asOnDate);
+        partial void AfterCurrencyRatesGet(ref bool suppressDefaultLog, ICurrencyRatesGetApiResponse apiResponseLocalVar, string fromCurrency, string toCurrency, DateTimeOffset asOnDate);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -222,7 +222,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="fromCurrency"></param>
         /// <param name="toCurrency"></param>
         /// <param name="asOnDate"></param>
-        private void OnErrorCurrencyRatesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string fromCurrency, string toCurrency, DateTime asOnDate)
+        private void OnErrorCurrencyRatesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string fromCurrency, string toCurrency, DateTimeOffset asOnDate)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorCurrencyRatesGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, fromCurrency, toCurrency, asOnDate);
@@ -240,7 +240,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="fromCurrency"></param>
         /// <param name="toCurrency"></param>
         /// <param name="asOnDate"></param>
-        partial void OnErrorCurrencyRatesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string fromCurrency, string toCurrency, DateTime asOnDate);
+        partial void OnErrorCurrencyRatesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, string fromCurrency, string toCurrency, DateTimeOffset asOnDate);
 
         /// <summary>
         /// Get currency rate. (Auth roles: CommonServices,CommonServices_Full) Get a currency exchange rate between two currencies for a given date.  Currency rate for a future date is not available, and will return the newest available rate.  The rates are updated daily around 1600 CET.  Rates originate from European Central Bank [https://data.ecb.europa.eu/currency-converter]
@@ -250,7 +250,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="asOnDate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ICurrencyRatesGetApiResponse"/>&gt;</returns>
-        public async Task<ICurrencyRatesGetApiResponse?> CurrencyRatesGetOrDefaultAsync(string fromCurrency, string toCurrency, DateTime asOnDate, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ICurrencyRatesGetApiResponse?> CurrencyRatesGetOrDefaultAsync(string fromCurrency, string toCurrency, DateTimeOffset asOnDate, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -271,7 +271,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="asOnDate"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ICurrencyRatesGetApiResponse"/>&gt;</returns>
-        public async Task<ICurrencyRatesGetApiResponse> CurrencyRatesGetAsync(string fromCurrency, string toCurrency, DateTime asOnDate, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ICurrencyRatesGetApiResponse> CurrencyRatesGetAsync(string fromCurrency, string toCurrency, DateTimeOffset asOnDate, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

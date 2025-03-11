@@ -71,7 +71,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="voucherNo">The voucher number.  This is the voucher number assigned by Go when the voucher was posted.  Voucher numbers are assigned by Go in sequence.  Always present on transactions.</param>
         /// <param name="voucherType">voucherType</param>
         [JsonConstructor]
-        public SupplierLedgerEntryDto(Option<double?> amount = default, Option<double?> balance = default, Option<string?> cid = default, Option<DateTime?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<string?> customMatchingReference = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<string?> dim1Code = default, Option<long?> dim1Id = default, Option<string?> dim2Code = default, Option<long?> dim2Id = default, Option<string?> dim3Code = default, Option<long?> dim3Id = default, Option<DateOnly?> dueDate = default, Option<string?> externalImportReference = default, Option<long?> id = default, Option<string?> invoiceNo = default, Option<bool?> isCreatedByCurrentIntegration = default, Option<bool?> isWriteOff = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<long?> matchId = default, Option<DateOnly?> postingDate = default, Option<string?> projectCode = default, Option<long?> projectId = default, Option<long?> supplierAccountNo = default, Option<long?> supplierExternalNo = default, Option<long?> supplierId = default, Option<string?> supplierName = default, Option<DateOnly?> voucherDate = default, Option<Guid?> voucherId = default, Option<long?> voucherNo = default, Option<VoucherType?> voucherType = default)
+        public SupplierLedgerEntryDto(Option<double?> amount = default, Option<double?> balance = default, Option<string?> cid = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<string?> customMatchingReference = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<string?> dim1Code = default, Option<long?> dim1Id = default, Option<string?> dim2Code = default, Option<long?> dim2Id = default, Option<string?> dim3Code = default, Option<long?> dim3Id = default, Option<DateTimeOffset?> dueDate = default, Option<string?> externalImportReference = default, Option<long?> id = default, Option<string?> invoiceNo = default, Option<bool?> isCreatedByCurrentIntegration = default, Option<bool?> isWriteOff = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<long?> matchId = default, Option<DateTimeOffset?> postingDate = default, Option<string?> projectCode = default, Option<long?> projectId = default, Option<long?> supplierAccountNo = default, Option<long?> supplierExternalNo = default, Option<long?> supplierId = default, Option<string?> supplierName = default, Option<DateTimeOffset?> voucherDate = default, Option<Guid?> voucherId = default, Option<long?> voucherNo = default, Option<VoucherType?> voucherType = default)
         {
             AmountOption = amount;
             BalanceOption = balance;
@@ -178,7 +178,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The created timestamp.  This is the timestamp the transaction was created, and may differ from the timestamp of accounting effect for the transaction (ie the property PostingDate).  Always present on transactions.
@@ -186,7 +186,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The created timestamp.  This is the timestamp the transaction was created, and may differ from the timestamp of accounting effect for the transaction (ie the property PostingDate).  Always present on transactions.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CreatedFromImportJournalId
@@ -373,7 +373,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> DueDateOption { get; private set; }
+        public Option<DateTimeOffset?> DueDateOption { get; private set; }
 
         /// <summary>
         /// The due date of the entry. Relevant only for voucher types IncomingInvoice and IncomingCreditNote. The date represent when the amount is due to be paid to the supplier.
@@ -381,7 +381,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The due date of the entry. Relevant only for voucher types IncomingInvoice and IncomingCreditNote. The date represent when the amount is due to be paid to the supplier.</value>
         /* <example>Tue Sep 28 02:00:00 CEST 2021</example> */
         [JsonPropertyName("DueDate")]
-        public DateOnly? DueDate { get { return this.DueDateOption; } set { this.DueDateOption = new(value); } }
+        public DateTimeOffset? DueDate { get { return this.DueDateOption; } set { this.DueDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExternalImportReference
@@ -463,7 +463,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of this entry.  The accounting entry in itself cannot change, but the match state of the sub-ledger entry might change.  Using last changed filtering is one way of retrieving new matched items and as such the payment status of invoices.
@@ -471,7 +471,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of this entry.  The accounting entry in itself cannot change, but the match state of the sub-ledger entry might change.  Using last changed filtering is one way of retrieving new matched items and as such the payment status of invoices.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of LocationCode
@@ -523,7 +523,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> PostingDateOption { get; }
+        public Option<DateTimeOffset?> PostingDateOption { get; }
 
         /// <summary>
         /// The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions.
@@ -531,7 +531,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions.</value>
         /* <example>Tue Sep 28 02:00:00 CEST 2021</example> */
         [JsonPropertyName("PostingDate")]
-        public DateOnly? PostingDate { get { return this.PostingDateOption; } }
+        public DateTimeOffset? PostingDate { get { return this.PostingDateOption; } }
 
         /// <summary>
         /// Used to track the state of ProjectCode
@@ -628,7 +628,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> VoucherDateOption { get; }
+        public Option<DateTimeOffset?> VoucherDateOption { get; }
 
         /// <summary>
         /// The date of the voucher.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for the voucher.  Always present on transactions.
@@ -636,7 +636,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date of the voucher.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for the voucher.  Always present on transactions.</value>
         /* <example>Sat Jul 25 02:00:00 CEST 2020</example> */
         [JsonPropertyName("VoucherDate")]
-        public DateOnly? VoucherDate { get { return this.VoucherDateOption; } }
+        public DateTimeOffset? VoucherDate { get { return this.VoucherDateOption; } }
 
         /// <summary>
         /// Used to track the state of VoucherId
@@ -778,7 +778,7 @@ namespace PowerOfficeGoV2.Model
             Option<double?> amount = default;
             Option<double?> balance = default;
             Option<string?> cid = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<Guid?> createdFromImportJournalId = default;
             Option<double?> currencyAmount = default;
             Option<string?> currencyCode = default;
@@ -791,24 +791,24 @@ namespace PowerOfficeGoV2.Model
             Option<long?> dim2Id = default;
             Option<string?> dim3Code = default;
             Option<long?> dim3Id = default;
-            Option<DateOnly?> dueDate = default;
+            Option<DateTimeOffset?> dueDate = default;
             Option<string?> externalImportReference = default;
             Option<long?> id = default;
             Option<string?> invoiceNo = default;
             Option<bool?> isCreatedByCurrentIntegration = default;
             Option<bool?> isWriteOff = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> locationCode = default;
             Option<long?> locationId = default;
             Option<long?> matchId = default;
-            Option<DateOnly?> postingDate = default;
+            Option<DateTimeOffset?> postingDate = default;
             Option<string?> projectCode = default;
             Option<long?> projectId = default;
             Option<long?> supplierAccountNo = default;
             Option<long?> supplierExternalNo = default;
             Option<long?> supplierId = default;
             Option<string?> supplierName = default;
-            Option<DateOnly?> voucherDate = default;
+            Option<DateTimeOffset?> voucherDate = default;
             Option<Guid?> voucherId = default;
             Option<long?> voucherNo = default;
             Option<VoucherType?> voucherType = default;
@@ -841,7 +841,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CreatedFromImportJournalId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -887,7 +887,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "DueDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                dueDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                dueDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ExternalImportReference":
                             externalImportReference = new Option<string?>(utf8JsonReader.GetString());
@@ -909,7 +909,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "LocationCode":
                             locationCode = new Option<string?>(utf8JsonReader.GetString());
@@ -924,7 +924,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "PostingDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                postingDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                postingDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ProjectCode":
                             projectCode = new Option<string?>(utf8JsonReader.GetString());
@@ -950,7 +950,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "VoucherDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                voucherDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                voucherDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "VoucherId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

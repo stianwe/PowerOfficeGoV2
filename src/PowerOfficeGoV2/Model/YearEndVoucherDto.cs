@@ -46,7 +46,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="voucherLines">The lines of the year end voucher</param>
         /// <param name="voucherNo">The voucher number. This is the voucher number assigned by Go when the voucher was posted. Voucher numbers are  assigned by Go in sequence.</param>
         [JsonConstructor]
-        public YearEndVoucherDto(Option<DateTime?> createdDateTimeOffset = default, Option<string?> currencyCode = default, Option<string?> description = default, Option<string?> externalImportReference = default, Option<Guid?> id = default, Option<long?> importedVoucherNo = default, Option<bool?> isReversed = default, Option<string?> saftBatchId = default, Option<string?> saftSourceId = default, Option<DateOnly?> voucherDate = default, Option<List<YearEndVoucherLineDto>?> voucherLines = default, Option<long?> voucherNo = default)
+        public YearEndVoucherDto(Option<DateTimeOffset?> createdDateTimeOffset = default, Option<string?> currencyCode = default, Option<string?> description = default, Option<string?> externalImportReference = default, Option<Guid?> id = default, Option<long?> importedVoucherNo = default, Option<bool?> isReversed = default, Option<string?> saftBatchId = default, Option<string?> saftSourceId = default, Option<DateTimeOffset?> voucherDate = default, Option<List<YearEndVoucherLineDto>?> voucherLines = default, Option<long?> voucherNo = default)
         {
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
             CurrencyCodeOption = currencyCode;
@@ -70,7 +70,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp the year end voucher entity was created.
@@ -78,7 +78,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp the year end voucher entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CurrencyCode
@@ -205,7 +205,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> VoucherDateOption { get; private set; }
+        public Option<DateTimeOffset?> VoucherDateOption { get; private set; }
 
         /// <summary>
         /// The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher.
@@ -213,7 +213,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher.</value>
         /* <example>Wed Mar 20 01:00:00 CET 2024</example> */
         [JsonPropertyName("VoucherDate")]
-        public DateOnly? VoucherDate { get { return this.VoucherDateOption; } set { this.VoucherDateOption = new(value); } }
+        public DateTimeOffset? VoucherDate { get { return this.VoucherDateOption; } set { this.VoucherDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of VoucherLines
@@ -323,7 +323,7 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<string?> currencyCode = default;
             Option<string?> description = default;
             Option<string?> externalImportReference = default;
@@ -332,7 +332,7 @@ namespace PowerOfficeGoV2.Model
             Option<bool?> isReversed = default;
             Option<string?> saftBatchId = default;
             Option<string?> saftSourceId = default;
-            Option<DateOnly?> voucherDate = default;
+            Option<DateTimeOffset?> voucherDate = default;
             Option<List<YearEndVoucherLineDto>?> voucherLines = default;
             Option<long?> voucherNo = default;
 
@@ -353,7 +353,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CurrencyCode":
                             currencyCode = new Option<string?>(utf8JsonReader.GetString());
@@ -384,7 +384,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "VoucherDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                voucherDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                voucherDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "VoucherLines":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

@@ -56,7 +56,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="quantity">The quantity dimension set on the line.  Usually associated with the product set on the line.  If the client is an agriculture client, the quantity is associated with the unit1 of the general ledger account.</param>
         /// <param name="quantity2">The quantity2 dimension set on the line.  Relevant only for agriculture clients, where the quantity2 is associated with the unit2 of the general ledger account.</param>
         [JsonConstructor]
-        public ManualJournalEntryVoucherLinePostDto(Option<AccrualBase?> accrual = default, Option<AgricultureDetails?> agricultureDetails = default, Option<long?> creditAccountId = default, Option<int?> creditVatId = default, Option<VatReturnSpecification?> creditVatReturnSpecification = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<double?> currencyExchangeRate = default, Option<long?> debitAccountId = default, Option<int?> debitVatId = default, Option<VatReturnSpecification?> debitVatReturnSpecification = default, Option<long?> departmentId = default, Option<string?> description = default, Option<long?> dim1Id = default, Option<long?> dim2Id = default, Option<long?> dim3Id = default, Option<long?> locationId = default, Option<DateOnly?> postingDate = default, Option<long?> productId = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> quantity2 = default)
+        public ManualJournalEntryVoucherLinePostDto(Option<AccrualBase?> accrual = default, Option<AgricultureDetails?> agricultureDetails = default, Option<long?> creditAccountId = default, Option<int?> creditVatId = default, Option<VatReturnSpecification?> creditVatReturnSpecification = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<double?> currencyExchangeRate = default, Option<long?> debitAccountId = default, Option<int?> debitVatId = default, Option<VatReturnSpecification?> debitVatReturnSpecification = default, Option<long?> departmentId = default, Option<string?> description = default, Option<long?> dim1Id = default, Option<long?> dim2Id = default, Option<long?> dim3Id = default, Option<long?> locationId = default, Option<DateTimeOffset?> postingDate = default, Option<long?> productId = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> quantity2 = default)
         {
             AccrualOption = accrual;
             AgricultureDetailsOption = agricultureDetails;
@@ -337,7 +337,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> PostingDateOption { get; private set; }
+        public Option<DateTimeOffset?> PostingDateOption { get; private set; }
 
         /// <summary>
         /// The posting date and transaction date of the line. This is the date of effect in the accounting system for the Amount when the voucher is posted.  If not set, the posting date will inherit the voucher date set in the header.  The posting date is also the currency conversion date used by Go if the currency rate is not set explicit.
@@ -345,7 +345,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The posting date and transaction date of the line. This is the date of effect in the accounting system for the Amount when the voucher is posted.  If not set, the posting date will inherit the voucher date set in the header.  The posting date is also the currency conversion date used by Go if the currency rate is not set explicit.</value>
         /* <example>Wed Sep 18 02:00:00 CEST 2024</example> */
         [JsonPropertyName("PostingDate")]
-        public DateOnly? PostingDate { get { return this.PostingDateOption; } set { this.PostingDateOption = new(value); } }
+        public DateTimeOffset? PostingDate { get { return this.PostingDateOption; } set { this.PostingDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ProductId
@@ -496,7 +496,7 @@ namespace PowerOfficeGoV2.Model
             Option<long?> dim2Id = default;
             Option<long?> dim3Id = default;
             Option<long?> locationId = default;
-            Option<DateOnly?> postingDate = default;
+            Option<DateTimeOffset?> postingDate = default;
             Option<long?> productId = default;
             Option<long?> projectId = default;
             Option<double?> quantity = default;
@@ -587,7 +587,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "PostingDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                postingDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                postingDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ProductId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

@@ -142,7 +142,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetGeneralLedgerAccountsApiResponse"/>&gt;</returns>
-        Task<IGetGeneralLedgerAccountsApiResponse> GetGeneralLedgerAccountsAsync(Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetGeneralLedgerAccountsApiResponse> GetGeneralLedgerAccountsAsync(Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get a list of general ledger accounts. (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full)
@@ -156,7 +156,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetGeneralLedgerAccountsApiResponse"/>?&gt;</returns>
-        Task<IGetGeneralLedgerAccountsApiResponse?> GetGeneralLedgerAccountsOrDefaultAsync(Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IGetGeneralLedgerAccountsApiResponse?> GetGeneralLedgerAccountsOrDefaultAsync(Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -1751,7 +1751,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatGetGeneralLedgerAccounts(ref Option<string> accountNos, ref Option<string> agricultureDepartments, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void FormatGetGeneralLedgerAccounts(ref Option<string> accountNos, ref Option<string> agricultureDepartments, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1780,7 +1780,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="agricultureDepartments"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterGetGeneralLedgerAccountsDefaultImplementation(IGetGeneralLedgerAccountsApiResponse apiResponseLocalVar, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void AfterGetGeneralLedgerAccountsDefaultImplementation(IGetGeneralLedgerAccountsApiResponse apiResponseLocalVar, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterGetGeneralLedgerAccounts(ref suppressDefaultLog, apiResponseLocalVar, accountNos, agricultureDepartments, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1797,7 +1797,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="agricultureDepartments"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterGetGeneralLedgerAccounts(ref bool suppressDefaultLog, IGetGeneralLedgerAccountsApiResponse apiResponseLocalVar, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void AfterGetGeneralLedgerAccounts(ref bool suppressDefaultLog, IGetGeneralLedgerAccountsApiResponse apiResponseLocalVar, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1809,7 +1809,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="agricultureDepartments"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorGetGeneralLedgerAccountsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void OnErrorGetGeneralLedgerAccountsDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorGetGeneralLedgerAccounts(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, accountNos, agricultureDepartments, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1828,7 +1828,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="agricultureDepartments"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorGetGeneralLedgerAccounts(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorGetGeneralLedgerAccounts(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Get a list of general ledger accounts. (Auth roles: GeneralLedgerAccount,GeneralLedgerAccount_Full) 
@@ -1839,7 +1839,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetGeneralLedgerAccountsApiResponse"/>&gt;</returns>
-        public async Task<IGetGeneralLedgerAccountsApiResponse?> GetGeneralLedgerAccountsOrDefaultAsync(Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetGeneralLedgerAccountsApiResponse?> GetGeneralLedgerAccountsOrDefaultAsync(Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -1861,7 +1861,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetGeneralLedgerAccountsApiResponse"/>&gt;</returns>
-        public async Task<IGetGeneralLedgerAccountsApiResponse> GetGeneralLedgerAccountsAsync(Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IGetGeneralLedgerAccountsApiResponse> GetGeneralLedgerAccountsAsync(Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

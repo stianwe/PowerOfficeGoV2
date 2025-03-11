@@ -50,7 +50,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="phoneNumber">The phone number registered on the client.</param>
         /// <param name="websiteUrl">The website url registered on the client.</param>
         [JsonConstructor]
-        public OrganizationSettingDto(Option<AgricultureDepartment?> defaultAgricultureDepartment = default, Option<Address?> deliveryAddress = default, Option<string?> emailAddress = default, Option<Guid?> id = default, Option<bool?> invoiceInboxEhf = default, Option<bool?> invoiceInboxEmail = default, Option<string?> invoiceInboxEmailAddress = default, Option<bool?> isAgricultureClient = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> legalName = default, Option<Address?> mailAddress = default, Option<bool?> mailAddressIsDeliveryAddress = default, Option<string?> name = default, Option<string?> organizationNumber = default, Option<string?> phoneNumber = default, Option<string?> websiteUrl = default)
+        public OrganizationSettingDto(Option<AgricultureDepartment?> defaultAgricultureDepartment = default, Option<Address?> deliveryAddress = default, Option<string?> emailAddress = default, Option<Guid?> id = default, Option<bool?> invoiceInboxEhf = default, Option<bool?> invoiceInboxEmail = default, Option<string?> invoiceInboxEmailAddress = default, Option<bool?> isAgricultureClient = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> legalName = default, Option<Address?> mailAddress = default, Option<bool?> mailAddressIsDeliveryAddress = default, Option<string?> name = default, Option<string?> organizationNumber = default, Option<string?> phoneNumber = default, Option<string?> websiteUrl = default)
         {
             DefaultAgricultureDepartmentOption = defaultAgricultureDepartment;
             DeliveryAddressOption = deliveryAddress;
@@ -194,7 +194,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change. Last changed will update when the settings are created, or whenever the settings are changed.
@@ -202,7 +202,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change. Last changed will update when the settings are created, or whenever the settings are changed.</value>
         /* <example>2022-07-11T11:32:59.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of LegalName
@@ -381,7 +381,7 @@ namespace PowerOfficeGoV2.Model
             Option<bool?> invoiceInboxEmail = default;
             Option<string?> invoiceInboxEmailAddress = default;
             Option<bool?> isAgricultureClient = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> legalName = default;
             Option<Address?> mailAddress = default;
             Option<bool?> mailAddressIsDeliveryAddress = default;
@@ -438,7 +438,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "LegalName":
                             legalName = new Option<string?>(utf8JsonReader.GetString());

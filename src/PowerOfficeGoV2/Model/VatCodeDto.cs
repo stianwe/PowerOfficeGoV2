@@ -47,7 +47,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="vatBasisRatioValidFrom">The date this vat basis ratio is active from.  If no vat basis ratio is set, this date will default to the vat code valid from date.</param>
         /// <param name="vatBasisRatios">A collection of VatBasisRatios for a custom vat code.</param>
         [JsonConstructor]
-        public VatCodeDto(Option<long?> baseVatCodeId = default, Option<string?> code = default, Option<string?> description = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isCustom = default, Option<string?> name = default, Option<double?> rate = default, Option<DateOnly?> validFrom = default, Option<DateOnly?> validTo = default, Option<double?> vatBasisRatio = default, Option<DateTime?> vatBasisRatioValidFrom = default, Option<List<VatBasisRatios>?> vatBasisRatios = default)
+        public VatCodeDto(Option<long?> baseVatCodeId = default, Option<string?> code = default, Option<string?> description = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isCustom = default, Option<string?> name = default, Option<double?> rate = default, Option<DateTimeOffset?> validFrom = default, Option<DateTimeOffset?> validTo = default, Option<double?> vatBasisRatio = default, Option<DateTimeOffset?> vatBasisRatioValidFrom = default, Option<List<VatBasisRatios>?> vatBasisRatios = default)
         {
             BaseVatCodeIdOption = baseVatCodeId;
             CodeOption = code;
@@ -192,7 +192,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ValidFromOption { get; }
+        public Option<DateTimeOffset?> ValidFromOption { get; }
 
         /// <summary>
         /// The date this vat code is active from, inclusive.
@@ -200,14 +200,14 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date this vat code is active from, inclusive.</value>
         /* <example>Fri Jul 01 02:00:00 CEST 2022</example> */
         [JsonPropertyName("ValidFrom")]
-        public DateOnly? ValidFrom { get { return this.ValidFromOption; } }
+        public DateTimeOffset? ValidFrom { get { return this.ValidFromOption; } }
 
         /// <summary>
         /// Used to track the state of ValidTo
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ValidToOption { get; }
+        public Option<DateTimeOffset?> ValidToOption { get; }
 
         /// <summary>
         /// The date this vat code expires. Inclusive.
@@ -215,7 +215,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date this vat code expires. Inclusive.</value>
         /* <example>Sat Dec 31 01:00:00 CET 2022</example> */
         [JsonPropertyName("ValidTo")]
-        public DateOnly? ValidTo { get { return this.ValidToOption; } }
+        public DateTimeOffset? ValidTo { get { return this.ValidToOption; } }
 
         /// <summary>
         /// Used to track the state of VatBasisRatio
@@ -237,14 +237,14 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> VatBasisRatioValidFromOption { get; }
+        public Option<DateTimeOffset?> VatBasisRatioValidFromOption { get; }
 
         /// <summary>
         /// The date this vat basis ratio is active from.  If no vat basis ratio is set, this date will default to the vat code valid from date.
         /// </summary>
         /// <value>The date this vat basis ratio is active from.  If no vat basis ratio is set, this date will default to the vat code valid from date.</value>
         [JsonPropertyName("VatBasisRatioValidFrom")]
-        public DateTime? VatBasisRatioValidFrom { get { return this.VatBasisRatioValidFromOption; } }
+        public DateTimeOffset? VatBasisRatioValidFrom { get { return this.VatBasisRatioValidFromOption; } }
 
         /// <summary>
         /// Used to track the state of VatBasisRatios
@@ -341,10 +341,10 @@ namespace PowerOfficeGoV2.Model
             Option<bool?> isCustom = default;
             Option<string?> name = default;
             Option<double?> rate = default;
-            Option<DateOnly?> validFrom = default;
-            Option<DateOnly?> validTo = default;
+            Option<DateTimeOffset?> validFrom = default;
+            Option<DateTimeOffset?> validTo = default;
             Option<double?> vatBasisRatio = default;
-            Option<DateTime?> vatBasisRatioValidFrom = default;
+            Option<DateTimeOffset?> vatBasisRatioValidFrom = default;
             Option<List<VatBasisRatios>?> vatBasisRatios = default;
 
             while (utf8JsonReader.Read())
@@ -393,11 +393,11 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ValidFrom":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                validFrom = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                validFrom = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ValidTo":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                validTo = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                validTo = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "VatBasisRatio":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -405,7 +405,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "VatBasisRatioValidFrom":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                vatBasisRatioValidFrom = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
+                                vatBasisRatioValidFrom = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "VatBasisRatios":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

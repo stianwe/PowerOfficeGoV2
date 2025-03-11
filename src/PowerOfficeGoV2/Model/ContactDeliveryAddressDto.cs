@@ -45,7 +45,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="lastChangedDateTimeOffset">The last changed timestamp of this address.</param>
         /// <param name="zipCode">The zip code (postal code).</param>
         [JsonConstructor]
-        public ContactDeliveryAddressDto(Option<string?> addressLine1 = default, Option<string?> addressLine2 = default, Option<string?> city = default, Option<long?> contactId = default, Option<string?> countryCode = default, Option<DateTime?> createdDateTimeOffset = default, Option<string?> externalCode = default, Option<long?> id = default, Option<bool?> isPrimary = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> zipCode = default)
+        public ContactDeliveryAddressDto(Option<string?> addressLine1 = default, Option<string?> addressLine2 = default, Option<string?> city = default, Option<long?> contactId = default, Option<string?> countryCode = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<string?> externalCode = default, Option<long?> id = default, Option<bool?> isPrimary = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> zipCode = default)
         {
             AddressLine1Option = addressLine1;
             AddressLine2Option = addressLine2;
@@ -143,7 +143,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of when this address was created.
@@ -151,7 +151,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of when this address was created.</value>
         /* <example>2022-07-11T12:46:59.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of ExternalCode
@@ -203,7 +203,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The last changed timestamp of this address.
@@ -211,7 +211,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The last changed timestamp of this address.</value>
         /* <example>2022-07-11T12:46:59.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of ZipCode
@@ -329,11 +329,11 @@ namespace PowerOfficeGoV2.Model
             Option<string?> city = default;
             Option<long?> contactId = default;
             Option<string?> countryCode = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<string?> externalCode = default;
             Option<long?> id = default;
             Option<bool?> isPrimary = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> zipCode = default;
 
             while (utf8JsonReader.Read())
@@ -369,7 +369,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ExternalCode":
                             externalCode = new Option<string?>(utf8JsonReader.GetString());
@@ -384,7 +384,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ZipCode":
                             zipCode = new Option<string?>(utf8JsonReader.GetString());

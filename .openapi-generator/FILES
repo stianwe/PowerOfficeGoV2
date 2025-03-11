@@ -377,8 +377,6 @@ src/PowerOfficeGoV2/Client/ApiResponseEventArgs.cs
 src/PowerOfficeGoV2/Client/ApiResponse`1.cs
 src/PowerOfficeGoV2/Client/ClientUtils.cs
 src/PowerOfficeGoV2/Client/CookieContainer.cs
-src/PowerOfficeGoV2/Client/DateOnlyJsonConverter.cs
-src/PowerOfficeGoV2/Client/DateOnlyNullableJsonConverter.cs
 src/PowerOfficeGoV2/Client/DateTimeJsonConverter.cs
 src/PowerOfficeGoV2/Client/DateTimeNullableJsonConverter.cs
 src/PowerOfficeGoV2/Client/ExceptionEventArgs.cs
@@ -611,4 +609,3 @@ src/PowerOfficeGoV2/Model/YearEndVoucherDto.cs
 src/PowerOfficeGoV2/Model/YearEndVoucherLineDto.cs
 src/PowerOfficeGoV2/Model/YearEndVoucherLinePostDto.cs
 src/PowerOfficeGoV2/Model/YearEndVoucherPostDto.cs
-src/PowerOfficeGoV2/PowerOfficeGoV2.csproj

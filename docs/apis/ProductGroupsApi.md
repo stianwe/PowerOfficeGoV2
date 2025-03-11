@@ -106,7 +106,7 @@ No authorization required
 
 <a id="productgroupsget"></a>
 # **ProductGroupsGet**
-> List&lt;ProductGroupDto&gt; ProductGroupsGet (string codes = null, DateTime createdDateTimeOffsetGreaterThan = null, bool isArchived = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, string names = null, ProductType type = null, ResourceParameters resourceParameter = null)
+> List&lt;ProductGroupDto&gt; ProductGroupsGet (string codes = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, bool isArchived = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, string names = null, ProductType type = null, ResourceParameters resourceParameter = null)
 
 Get product groups from the client. (Auth roles: Product,Product_Full)
 
@@ -128,9 +128,9 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new ProductGroupsApi(config);
             var codes = "codes_example";  // string | Filter by product group codes. SearchString should be in the form of \"1, ABC, 10B\" (codes separated by comma). If filterString is null or whitespace, query is returned as is. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2023-09-07 08:46:00.1234567;  // DateTime | Find product groups created after this timestamp. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2023-09-07 08:46:00.1234567;  // DateTimeOffset | Find product groups created after this timestamp. (optional) 
             var isArchived = false;  // bool | Gets a value indicating whether the product group is archived (set inactive). Archived product groups will be unavailable for usage in the GUI. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-09-07 08:46:00.1234567;  // DateTime | Find product groups that have been changed after this timestamp. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-09-07 08:46:00.1234567;  // DateTimeOffset | Find product groups that have been changed after this timestamp. (optional) 
             var names = 10, B1, A42;  // string | Filter by product group names. SearchString should be in the form of \"1, ABC, 10B\" (codes separated by comma). If filterString is null or whitespace, query is returned as is. (optional) 
             var type = (ProductType) "Product";  // ProductType | Filter product groups by product type. Available values: Product, Service (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
@@ -177,9 +177,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **codes** | **string** | Filter by product group codes. SearchString should be in the form of \&quot;1, ABC, 10B\&quot; (codes separated by comma). If filterString is null or whitespace, query is returned as is. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Find product groups created after this timestamp. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Find product groups created after this timestamp. | [optional]  |
 | **isArchived** | **bool** | Gets a value indicating whether the product group is archived (set inactive). Archived product groups will be unavailable for usage in the GUI. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Find product groups that have been changed after this timestamp. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Find product groups that have been changed after this timestamp. | [optional]  |
 | **names** | **string** | Filter by product group names. SearchString should be in the form of \&quot;1, ABC, 10B\&quot; (codes separated by comma). If filterString is null or whitespace, query is returned as is. | [optional]  |
 | **type** | **ProductType** | Filter product groups by product type. Available values: Product, Service | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |

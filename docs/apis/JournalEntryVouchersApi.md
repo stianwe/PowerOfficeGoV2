@@ -11,7 +11,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="journalentryvouchersget"></a>
 # **JournalEntryVouchersGet**
-> List&lt;JournalEntryVoucherListItem&gt; JournalEntryVouchersGet (DateTime createdDateTimeOffsetGreaterThan = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, bool inApprovalWorkflow = null, bool isPosted = null, ResourceParameters resourceParameter = null)
+> List&lt;JournalEntryVoucherListItem&gt; JournalEntryVouchersGet (DateTimeOffset createdDateTimeOffsetGreaterThan = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, bool inApprovalWorkflow = null, bool isPosted = null, ResourceParameters resourceParameter = null)
 
 List the journal entry vouchers on the client, returning lightweight journal entry voucher objects and their type. (Auth roles: JournalEntryVoucher,JournalEntryVoucher_Full)
 
@@ -34,8 +34,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080";
             var apiInstance = new JournalEntryVouchersApi(config);
-            var createdDateTimeOffsetGreaterThan = 2023-11-29T14:00:00.1234567Z;  // DateTime | Filter vouchers with created timestamp greater than the provided timestamp. Timestamp not inclusive. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-11-29T14:00:00.1234567Z;  // DateTime | Filter vouchers with last changed timestamp greater than the provided timestamp. Timestamp not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2023-11-29T14:00:00.1234567Z;  // DateTimeOffset | Filter vouchers with created timestamp greater than the provided timestamp. Timestamp not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-11-29T14:00:00.1234567Z;  // DateTimeOffset | Filter vouchers with last changed timestamp greater than the provided timestamp. Timestamp not inclusive. (optional) 
             var inApprovalWorkflow = true;  // bool | Filter by the approval state. (optional) 
             var isPosted = false;  // bool | Filter by the posted state. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
@@ -81,8 +81,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter vouchers with created timestamp greater than the provided timestamp. Timestamp not inclusive. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter vouchers with last changed timestamp greater than the provided timestamp. Timestamp not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter vouchers with created timestamp greater than the provided timestamp. Timestamp not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter vouchers with last changed timestamp greater than the provided timestamp. Timestamp not inclusive. | [optional]  |
 | **inApprovalWorkflow** | **bool** | Filter by the approval state. | [optional]  |
 | **isPosted** | **bool** | Filter by the posted state. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |

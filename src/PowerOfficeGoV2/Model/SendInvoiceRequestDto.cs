@@ -39,7 +39,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="overrideDueDate">Override the due date of the invoice.  If not set, the due date will be determined by the payment term of the sales order.</param>
         /// <param name="voucherDate">The date the invoice voucher will get. If not provided, the voucher date will be set to the current date.  This represents the date of the voucher and the document date of the invoice (ie. the invoice date).</param>
         [JsonConstructor]
-        public SendInvoiceRequestDto(Option<SendInvoiceDeliveryType?> deliveryType = default, Option<string?> emailAddress = default, Option<Guid?> id = default, Option<DateOnly?> overrideDueDate = default, Option<DateOnly?> voucherDate = default)
+        public SendInvoiceRequestDto(Option<SendInvoiceDeliveryType?> deliveryType = default, Option<string?> emailAddress = default, Option<Guid?> id = default, Option<DateTimeOffset?> overrideDueDate = default, Option<DateTimeOffset?> voucherDate = default)
         {
             DeliveryTypeOption = deliveryType;
             EmailAddressOption = emailAddress;
@@ -99,7 +99,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> OverrideDueDateOption { get; private set; }
+        public Option<DateTimeOffset?> OverrideDueDateOption { get; private set; }
 
         /// <summary>
         /// Override the due date of the invoice.  If not set, the due date will be determined by the payment term of the sales order.
@@ -107,14 +107,14 @@ namespace PowerOfficeGoV2.Model
         /// <value>Override the due date of the invoice.  If not set, the due date will be determined by the payment term of the sales order.</value>
         /* <example>Mon Sep 23 02:00:00 CEST 2024</example> */
         [JsonPropertyName("OverrideDueDate")]
-        public DateOnly? OverrideDueDate { get { return this.OverrideDueDateOption; } set { this.OverrideDueDateOption = new(value); } }
+        public DateTimeOffset? OverrideDueDate { get { return this.OverrideDueDateOption; } set { this.OverrideDueDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of VoucherDate
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> VoucherDateOption { get; private set; }
+        public Option<DateTimeOffset?> VoucherDateOption { get; private set; }
 
         /// <summary>
         /// The date the invoice voucher will get. If not provided, the voucher date will be set to the current date.  This represents the date of the voucher and the document date of the invoice (ie. the invoice date).
@@ -122,7 +122,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date the invoice voucher will get. If not provided, the voucher date will be set to the current date.  This represents the date of the voucher and the document date of the invoice (ie. the invoice date).</value>
         /* <example>Thu Aug 29 02:00:00 CEST 2024</example> */
         [JsonPropertyName("VoucherDate")]
-        public DateOnly? VoucherDate { get { return this.VoucherDateOption; } set { this.VoucherDateOption = new(value); } }
+        public DateTimeOffset? VoucherDate { get { return this.VoucherDateOption; } set { this.VoucherDateOption = new(value); } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -187,8 +187,8 @@ namespace PowerOfficeGoV2.Model
             Option<SendInvoiceDeliveryType?> deliveryType = default;
             Option<string?> emailAddress = default;
             Option<Guid?> id = default;
-            Option<DateOnly?> overrideDueDate = default;
-            Option<DateOnly?> voucherDate = default;
+            Option<DateTimeOffset?> overrideDueDate = default;
+            Option<DateTimeOffset?> voucherDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -219,11 +219,11 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "OverrideDueDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                overrideDueDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                overrideDueDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "VoucherDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                voucherDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                voucherDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

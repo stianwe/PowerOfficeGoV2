@@ -43,7 +43,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="name">The name of the custom dimension</param>
         /// <param name="ordinal">The custom dimension ordinal, providing information on which of the available custom dimension sets this custom dimension belong to (1&#x3D;Dim1, 2&#x3D;Dim3, 3&#x3D;Dim3).</param>
         [JsonConstructor]
-        public CustomDimensionDto(Option<string?> code = default, Option<DateTime?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<string?> externalImportReference = default, Option<long?> id = default, Option<bool?> isActive = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> name = default, Option<int?> ordinal = default)
+        public CustomDimensionDto(Option<string?> code = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<Guid?> createdFromImportJournalId = default, Option<string?> externalImportReference = default, Option<long?> id = default, Option<bool?> isActive = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> name = default, Option<int?> ordinal = default)
         {
             CodeOption = code;
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
@@ -79,7 +79,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the created date of the custom dimension. UTC time.
@@ -87,7 +87,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the created date of the custom dimension. UTC time.</value>
         /* <example>2023-06-05T12:31:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of CreatedFromImportJournalId
@@ -154,7 +154,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of the custom dimension. UTC time.
@@ -162,7 +162,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of the custom dimension. UTC time.</value>
         /* <example>2023-06-05T12:31:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -289,12 +289,12 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<string?> code = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<Guid?> createdFromImportJournalId = default;
             Option<string?> externalImportReference = default;
             Option<long?> id = default;
             Option<bool?> isActive = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> name = default;
             Option<int?> ordinal = default;
 
@@ -318,7 +318,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CreatedFromImportJournalId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -337,7 +337,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Name":
                             name = new Option<string?>(utf8JsonReader.GetString());

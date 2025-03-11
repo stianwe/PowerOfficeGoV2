@@ -36,7 +36,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="temporaryUrl">The temporary Url to be used in the process of user authentication and user authorization of onboarding the integrated application.</param>
         /// <param name="validUntilDateTimeOffset">The timestamp of when the temporary Url will expire.</param>
         [JsonConstructor]
-        internal InitiateOnboardingResponseDto(Option<string?> temporaryUrl = default, Option<DateTime?> validUntilDateTimeOffset = default)
+        internal InitiateOnboardingResponseDto(Option<string?> temporaryUrl = default, Option<DateTimeOffset?> validUntilDateTimeOffset = default)
         {
             TemporaryUrlOption = temporaryUrl;
             ValidUntilDateTimeOffsetOption = validUntilDateTimeOffset;
@@ -65,7 +65,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> ValidUntilDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> ValidUntilDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of when the temporary Url will expire.
@@ -73,7 +73,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of when the temporary Url will expire.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("ValidUntilDateTimeOffset")]
-        public DateTime? ValidUntilDateTimeOffset { get { return this.ValidUntilDateTimeOffsetOption; } }
+        public DateTimeOffset? ValidUntilDateTimeOffset { get { return this.ValidUntilDateTimeOffsetOption; } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -128,7 +128,7 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<string?> temporaryUrl = default;
-            Option<DateTime?> validUntilDateTimeOffset = default;
+            Option<DateTimeOffset?> validUntilDateTimeOffset = default;
 
             while (utf8JsonReader.Read())
             {
@@ -150,7 +150,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ValidUntilDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                validUntilDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                validUntilDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

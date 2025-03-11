@@ -19,10 +19,10 @@ Name | Type | Description | Notes
 **Dim1Id** | **long** | The id of the dimension 1 associated with the voucher header.  The lines will inherit the dim1 from the voucher head if not specified on the lines. | [optional] 
 **Dim2Id** | **long** | The id of the dimension 2 associated with the voucher header.  The lines will inherit the dim2 from the voucher head if not specified on the lines. | [optional] 
 **Dim3Id** | **long** | The id of the dimension 3 associated with the voucher header.  The lines will inherit the dim3 from the voucher head if not specified on the lines. | [optional] 
-**DueDate** | **DateOnly** | The due date of the supplier invoice (i.e. when it is due paid).  Must be greater or equal to the voucher date. | [optional] 
+**DueDate** | **DateTimeOffset** | The due date of the supplier invoice (i.e. when it is due paid).  Must be greater or equal to the voucher date. | [optional] 
 **InvoiceNo** | **string** | The invoice number of the supplier invoice. | 
 **LocationId** | **long** | The id of the location dimension associated with the voucher header.  The lines will inherit the location from the voucher head if not specified on the lines. | [optional] 
-**PaymentDate** | **DateOnly** | The suggested payment date if this voucher is to be subject of remittance.  Relevant if payout is set true.  If not set in POST or PATCH operations, the field will default to the due date of supplier invoices and the voucher date of supplier credit notes.  To remove any value from PaymentDate in PATCH, both PaymentDate and DueDate must be removed. | [optional] 
+**PaymentDate** | **DateTimeOffset** | The suggested payment date if this voucher is to be subject of remittance.  Relevant if payout is set true.  If not set in POST or PATCH operations, the field will default to the due date of supplier invoices and the voucher date of supplier credit notes.  To remove any value from PaymentDate in PATCH, both PaymentDate and DueDate must be removed. | [optional] 
 **PaymentOnHold** | **bool** | Property indicating whether the voucher remittance should be on hold.  Default false, and if true a remittance draft will be created when the voucher is posted, but with no payment date suggested - rather the state &#39;on hold&#39;. | [optional] 
 **Payout** | **bool** | Property indicating whether the voucher should be paid using remittance.  Default true, and if true a remittance draft will be created when the voucher is posted. | [optional] 
 **ProjectId** | **long** | The id of the project associated with the voucher header.  The lines will inherit the project from the voucher head if not specified on the lines. | [optional] 
@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **SupplierAccountId** | **long** | The id of the supplier subledger account. | [optional] 
 **SupplierBankAccountId** | **long** | The identifier of the supplier bank account associated with the voucher. | [optional] 
 **SupplierVoucherLines** | [**List&lt;SupplierVoucherLineDto&gt;**](SupplierVoucherLineDto.md) | The lines of the supplier invoice. | [optional] 
-**VoucherDate** | **DateOnly** | The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher. | 
+**VoucherDate** | **DateTimeOffset** | The voucher date.  This represents the date of the voucher, the document date of an invoice for instance,  and may differ from the transaction dates for lines the voucher, depending on the type of voucher. | 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

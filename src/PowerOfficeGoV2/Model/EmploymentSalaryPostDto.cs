@@ -38,7 +38,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="hourlyRate">The hourly rate of the employment salary.  Relevant to set for hourly wage salary and commission salary.  For fixed wage salary, the hourly rate is automatically calculated if null, but can be overridden.  The calculation is based on the full time hours per week property on the employment general information, multiplied by 52 weeks.  Relevant for fixed wage in terms of overtime/extra hours, for instance.</param>
         /// <param name="remunerationType">remunerationType</param>
         [JsonConstructor]
-        public EmploymentSalaryPostDto(Option<double?> annualSalary = default, DateOnly? fromDate = default, Option<double?> hourlyRate = default, SalaryRemunerationType? remunerationType = default)
+        public EmploymentSalaryPostDto(Option<double?> annualSalary = default, DateTimeOffset? fromDate = default, Option<double?> hourlyRate = default, SalaryRemunerationType? remunerationType = default)
         {
             AnnualSalaryOption = annualSalary;
             FromDate = fromDate;
@@ -76,7 +76,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The from-date for the effect of the employment salary.</value>
         /* <example>Fri Jan 01 01:00:00 CET 2021</example> */
         [JsonPropertyName("FromDate")]
-        public DateOnly? FromDate { get; set; }
+        public DateTimeOffset? FromDate { get; set; }
 
         /// <summary>
         /// Used to track the state of HourlyRate
@@ -148,7 +148,7 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<double?> annualSalary = default;
-            Option<DateOnly?> fromDate = default;
+            Option<DateTimeOffset?> fromDate = default;
             Option<double?> hourlyRate = default;
             Option<SalaryRemunerationType?> remunerationType = default;
 
@@ -173,7 +173,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "FromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                fromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                fromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "HourlyRate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

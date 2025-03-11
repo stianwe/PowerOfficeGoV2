@@ -37,7 +37,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="id">The identifier of the voucher page.</param>
         /// <param name="voucherId">The identifier of the voucher draft the page belongs to.</param>
         [JsonConstructor]
-        internal VoucherPage(Option<DateTime?> createdDateTimeOffset = default, Option<long?> id = default, Option<Guid?> voucherId = default)
+        internal VoucherPage(Option<DateTimeOffset?> createdDateTimeOffset = default, Option<long?> id = default, Option<Guid?> voucherId = default)
         {
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
             IdOption = id;
@@ -52,14 +52,14 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The creation date and time of the voucher page.
         /// </summary>
         /// <value>The creation date and time of the voucher page.</value>
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of Id
@@ -144,7 +144,7 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<long?> id = default;
             Option<Guid?> voucherId = default;
 
@@ -165,7 +165,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Id":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

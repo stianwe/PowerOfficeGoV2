@@ -42,7 +42,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="startDate">The start date of the leave.</param>
         /// <param name="typeOfLeave">typeOfLeave</param>
         [JsonConstructor]
-        public EmploymentLeavePostDto(Option<bool?> adjustFixedWage = default, Option<DateOnly?> endDate = default, Option<bool?> endedAndReported = default, Option<bool?> excludeEmployeeFromPayroll = default, double? leavePercentage = default, Option<string?> reportingId = default, DateOnly? startDate = default, LeaveType? typeOfLeave = default)
+        public EmploymentLeavePostDto(Option<bool?> adjustFixedWage = default, Option<DateTimeOffset?> endDate = default, Option<bool?> endedAndReported = default, Option<bool?> excludeEmployeeFromPayroll = default, double? leavePercentage = default, Option<string?> reportingId = default, DateTimeOffset? startDate = default, LeaveType? typeOfLeave = default)
         {
             AdjustFixedWageOption = adjustFixedWage;
             EndDateOption = endDate;
@@ -83,7 +83,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> EndDateOption { get; private set; }
+        public Option<DateTimeOffset?> EndDateOption { get; private set; }
 
         /// <summary>
         /// The end date of the leave.
@@ -91,7 +91,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The end date of the leave.</value>
         /* <example>Sun Jan 10 01:00:00 CET 2021</example> */
         [JsonPropertyName("EndDate")]
-        public DateOnly? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
+        public DateTimeOffset? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of EndedAndReported
@@ -152,7 +152,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The start date of the leave.</value>
         /* <example>Fri Jan 01 01:00:00 CET 2021</example> */
         [JsonPropertyName("StartDate")]
-        public DateOnly? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -218,12 +218,12 @@ namespace PowerOfficeGoV2.Model
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
             Option<bool?> adjustFixedWage = default;
-            Option<DateOnly?> endDate = default;
+            Option<DateTimeOffset?> endDate = default;
             Option<bool?> endedAndReported = default;
             Option<bool?> excludeEmployeeFromPayroll = default;
             Option<double?> leavePercentage = default;
             Option<string?> reportingId = default;
-            Option<DateOnly?> startDate = default;
+            Option<DateTimeOffset?> startDate = default;
             Option<LeaveType?> typeOfLeave = default;
 
             while (utf8JsonReader.Read())
@@ -247,7 +247,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "EndDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                endDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                endDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "EndedAndReported":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -266,7 +266,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "StartDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                startDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                startDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "TypeOfLeave":
                             string? typeOfLeaveRawValue = utf8JsonReader.GetString();

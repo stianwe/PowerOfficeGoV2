@@ -48,7 +48,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactGroupsGetApiResponse"/>&gt;</returns>
-        Task<IContactGroupsGetApiResponse> ContactGroupsGetAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IContactGroupsGetApiResponse> ContactGroupsGetAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get contact groups. (Auth roles: ContactGroup,ContactGroup_Full)
@@ -62,7 +62,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactGroupsGetApiResponse"/>?&gt;</returns>
-        Task<IContactGroupsGetApiResponse?> ContactGroupsGetOrDefaultAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IContactGroupsGetApiResponse?> ContactGroupsGetOrDefaultAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Deletes a contact group by ID. (Auth roles: ContactGroup_Full)
@@ -545,7 +545,7 @@ namespace PowerOfficeGoV2.Api
             Events = contactGroupsApiEvents;
         }
 
-        partial void FormatContactGroupsGet(ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<string> names, Option<ResourceParameters> resourceParameter);
+        partial void FormatContactGroupsGet(ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<string> names, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -570,7 +570,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="names"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterContactGroupsGetDefaultImplementation(IContactGroupsGetApiResponse apiResponseLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ResourceParameters> resourceParameter)
+        private void AfterContactGroupsGetDefaultImplementation(IContactGroupsGetApiResponse apiResponseLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterContactGroupsGet(ref suppressDefaultLog, apiResponseLocalVar, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, names, resourceParameter);
@@ -587,7 +587,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="names"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterContactGroupsGet(ref bool suppressDefaultLog, IContactGroupsGetApiResponse apiResponseLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ResourceParameters> resourceParameter);
+        partial void AfterContactGroupsGet(ref bool suppressDefaultLog, IContactGroupsGetApiResponse apiResponseLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -599,7 +599,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="names"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorContactGroupsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ResourceParameters> resourceParameter)
+        private void OnErrorContactGroupsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorContactGroupsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, names, resourceParameter);
@@ -618,7 +618,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="names"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorContactGroupsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorContactGroupsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> names, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Get contact groups. (Auth roles: ContactGroup,ContactGroup_Full) 
@@ -629,7 +629,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactGroupsGetApiResponse"/>&gt;</returns>
-        public async Task<IContactGroupsGetApiResponse?> ContactGroupsGetOrDefaultAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IContactGroupsGetApiResponse?> ContactGroupsGetOrDefaultAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -651,7 +651,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactGroupsGetApiResponse"/>&gt;</returns>
-        public async Task<IContactGroupsGetApiResponse> ContactGroupsGetAsync(Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IContactGroupsGetApiResponse> ContactGroupsGetAsync(Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> names = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

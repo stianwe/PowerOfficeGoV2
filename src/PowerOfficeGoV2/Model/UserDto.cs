@@ -42,7 +42,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="status">status</param>
         /// <param name="toDate">To date, inclusive.  The user will have access to the client until and including this date.  Afterwards, the user is deactivated on the client.  If null, the to date is undefined and unrestricted.</param>
         [JsonConstructor]
-        public UserDto(Option<Guid?> accessRoleId = default, Option<string?> emailAddress = default, Option<string?> firstName = default, Option<DateOnly?> fromDate = default, Option<Guid?> id = default, Option<string?> lastName = default, Option<UserStatus?> status = default, Option<DateOnly?> toDate = default)
+        public UserDto(Option<Guid?> accessRoleId = default, Option<string?> emailAddress = default, Option<string?> firstName = default, Option<DateTimeOffset?> fromDate = default, Option<Guid?> id = default, Option<string?> lastName = default, Option<UserStatus?> status = default, Option<DateTimeOffset?> toDate = default)
         {
             AccessRoleIdOption = accessRoleId;
             EmailAddressOption = emailAddress;
@@ -120,7 +120,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> FromDateOption { get; }
+        public Option<DateTimeOffset?> FromDateOption { get; }
 
         /// <summary>
         /// From date, inclusive.  The user will have access to the client from this date.  If null, the from date is undefined.
@@ -128,7 +128,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>From date, inclusive.  The user will have access to the client from this date.  If null, the from date is undefined.</value>
         /* <example>Mon Jan 01 01:00:00 CET 2024</example> */
         [JsonPropertyName("FromDate")]
-        public DateOnly? FromDate { get { return this.FromDateOption; } }
+        public DateTimeOffset? FromDate { get { return this.FromDateOption; } }
 
         /// <summary>
         /// Used to track the state of Id
@@ -165,7 +165,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> ToDateOption { get; }
+        public Option<DateTimeOffset?> ToDateOption { get; }
 
         /// <summary>
         /// To date, inclusive.  The user will have access to the client until and including this date.  Afterwards, the user is deactivated on the client.  If null, the to date is undefined and unrestricted.
@@ -173,7 +173,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>To date, inclusive.  The user will have access to the client until and including this date.  Afterwards, the user is deactivated on the client.  If null, the to date is undefined and unrestricted.</value>
         /* <example>Wed Jan 31 01:00:00 CET 2024</example> */
         [JsonPropertyName("ToDate")]
-        public DateOnly? ToDate { get { return this.ToDateOption; } }
+        public DateTimeOffset? ToDate { get { return this.ToDateOption; } }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -241,11 +241,11 @@ namespace PowerOfficeGoV2.Model
             Option<Guid?> accessRoleId = default;
             Option<string?> emailAddress = default;
             Option<string?> firstName = default;
-            Option<DateOnly?> fromDate = default;
+            Option<DateTimeOffset?> fromDate = default;
             Option<Guid?> id = default;
             Option<string?> lastName = default;
             Option<UserStatus?> status = default;
-            Option<DateOnly?> toDate = default;
+            Option<DateTimeOffset?> toDate = default;
 
             while (utf8JsonReader.Read())
             {
@@ -274,7 +274,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "FromDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                fromDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                fromDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Id":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -290,7 +290,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "ToDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                toDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                toDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         default:
                             break;

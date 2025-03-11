@@ -52,7 +52,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="vatCodeId">The id of the VAT Code associated with the account.  VatCode or VatCodeId must be supplied when creating a general ledger account.</param>
         /// <param name="vatReturnSpecification">vatReturnSpecification</param>
         [JsonConstructor]
-        public GeneralLedgerAccountDto(Option<long?> accountNo = default, Option<AgricultureDepartment?> agricultureDepartment = default, Option<string?> currencyCode = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<GeneralLedgerAccountType?> generalLedgerAccountType = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isDepartmentRequired = default, Option<bool?> isProjectRequired = default, Option<bool?> isVatCodeLocked = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> name = default, Option<UnitOfMeasureType?> unit1 = default, Option<UnitOfMeasureType?> unit2 = default, Option<string?> vatCode = default, Option<int?> vatCodeId = default, Option<VatReturnSpecification?> vatReturnSpecification = default)
+        public GeneralLedgerAccountDto(Option<long?> accountNo = default, Option<AgricultureDepartment?> agricultureDepartment = default, Option<string?> currencyCode = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<GeneralLedgerAccountType?> generalLedgerAccountType = default, Option<long?> id = default, Option<bool?> isActive = default, Option<bool?> isDepartmentRequired = default, Option<bool?> isProjectRequired = default, Option<bool?> isVatCodeLocked = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> name = default, Option<UnitOfMeasureType?> unit1 = default, Option<UnitOfMeasureType?> unit2 = default, Option<string?> vatCode = default, Option<int?> vatCodeId = default, Option<VatReturnSpecification?> vatReturnSpecification = default)
         {
             AccountNoOption = accountNo;
             AgricultureDepartmentOption = agricultureDepartment;
@@ -282,7 +282,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp when the last change in settings for this account occurred.
@@ -290,7 +290,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp when the last change in settings for this account occurred.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of Name
@@ -415,7 +415,7 @@ namespace PowerOfficeGoV2.Model
             Option<bool?> isDepartmentRequired = default;
             Option<bool?> isProjectRequired = default;
             Option<bool?> isVatCodeLocked = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> name = default;
             Option<UnitOfMeasureType?> unit1 = default;
             Option<UnitOfMeasureType?> unit2 = default;
@@ -484,7 +484,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Name":
                             name = new Option<string?>(utf8JsonReader.GetString());

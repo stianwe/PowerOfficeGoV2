@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **Code** | **string** | The code of the project.  When creating a sub-project in POST operations, the parentProjectCode property must be set as well and equal to the main project code that the sub-project will be a part of.  The response from the POST will return the notation code of main project.code of sub-project as the code of the created sub-project. | [optional] 
 **ContactPersonId** | **long** | The id of the customer contact person for this project.  Can only be set if customerNo is set, and the contact person entity must exist and be related to the customer set on the project. | [optional] 
 **ContractNo** | **string** | The contract number for this project. | [optional] 
-**CreatedDateTimeOffset** | **DateTime** | The timestamp the project entity was created. | [optional] [readonly] 
+**CreatedDateTimeOffset** | **DateTimeOffset** | The timestamp the project entity was created. | [optional] [readonly] 
 **CreatedFromImportJournalId** | **Guid** | The created from import journal identifier (guid).  If the project was created from an import, this property will contain the Id of the Import that created this entity. | [optional] [readonly] 
 **CustomerId** | **long** | The id of the customer this project is related to. | [optional] 
 **CustomerNo** | **long** | The number of the customer this project is related to. | [optional] [readonly] 
@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **DenyTimeTracking** | **bool** | Value indicating if registration of new time tracking entries should be denied for the project.  Default is false. | [optional] 
 **DepartmentCode** | **string** | The code of the department this project is associated with. | [optional] [readonly] 
 **DepartmentId** | **long** | The id of the department this project is associated with. | [optional] 
-**EndDate** | **DateOnly** | The end date of the project.  Only date is used, time is ignored. | [optional] 
+**EndDate** | **DateTimeOffset** | The end date of the project.  Only date is used, time is ignored. | [optional] 
 **ExpenseMarkupDescription** | **string** | The description added to the invoice line when markup of expenses is added.  Relevant only if expenseMarkupEnabled is true. | [optional] 
 **ExpenseMarkupEnabled** | **bool** | Value indicating whether markup of expenses is used when billing the project.  The default value will depend on the time-tracking settings on the client, as the value will inherit from the general time-tracking settings if not overridden. | [optional] 
 **ExpenseMarkupFactor** | **double** | The overridden markup factor used when billing expenses for this project. This value is usually set between 0 and 100.  If using a 50% markup of expenses, this value should be 50. Can only be set if expenseMarkupEnabled is set true.  If not set (null) and expenseMarkupEnabled is true, the default markup value in the time-tracking settings in Go will be used.  Cannot be set negative. | [optional] 
@@ -44,7 +44,7 @@ Name | Type | Description | Notes
 **IsActive** | **bool** | Value indicating whether this instance is active.  Inactive projects disable the usage of that projects in the GUI. | [optional] 
 **IsBillable** | **bool** | Value indicating whether the project is billable. | [optional] 
 **IsInternal** | **bool** | Value indicating whether the project is internal.  Internal projects are usually not associated with a paying customer, and only internal time-tracking activities can be used | [optional] 
-**LastChangedDateTimeOffset** | **DateTime** | The timestamp of the last change of the project. | [optional] [readonly] 
+**LastChangedDateTimeOffset** | **DateTimeOffset** | The timestamp of the last change of the project. | [optional] [readonly] 
 **LocationCode** | **string** | The code of the location dimension this project is associated with. | [optional] [readonly] 
 **LocationId** | **long** | The id of the location dimension this project is associated with. | [optional] 
 **Name** | **string** | The name of the project. | [optional] 
@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 **ProjectManagerEmployeeNo** | **long** | The (employee) code of the project manager. | [optional] [readonly] 
 **ProjectStatus** | **ProjectStatusType** |  | [optional] 
 **PurchaseOrderNo** | **string** | The purchase order number for this project.  If set, this purchase order number will also default appear on invoices when billing this project. | [optional] 
-**StartDate** | **DateOnly** | The start date of the project. | [optional] 
+**StartDate** | **DateTimeOffset** | The start date of the project. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

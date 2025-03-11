@@ -126,7 +126,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactDeliveryAddressesGetApiResponse"/>&gt;</returns>
-        Task<IContactDeliveryAddressesGetApiResponse> ContactDeliveryAddressesGetAsync(Option<string> contactIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> externalCodes = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IContactDeliveryAddressesGetApiResponse> ContactDeliveryAddressesGetAsync(Option<string> contactIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> externalCodes = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the delivery addresses for a given contact (Auth roles: ContactDeliveryAddress, ContactDeliveryAddress_Full, Customer, Customer_Full, Supplier, Supplier_Full, Employee, Employee_Full)
@@ -141,7 +141,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactDeliveryAddressesGetApiResponse"/>?&gt;</returns>
-        Task<IContactDeliveryAddressesGetApiResponse?> ContactDeliveryAddressesGetOrDefaultAsync(Option<string> contactIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> externalCodes = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IContactDeliveryAddressesGetApiResponse?> ContactDeliveryAddressesGetOrDefaultAsync(Option<string> contactIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> externalCodes = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets a delivery address by id for a given contact (Auth roles: ContactDeliveryAddress, ContactDeliveryAddress_Full, Customer, Customer_Full, Supplier, Supplier_Full, Employee, Employee_Full)
@@ -1521,7 +1521,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatContactDeliveryAddressesGet(ref Option<string> contactIds, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<string> externalCodes, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void FormatContactDeliveryAddressesGet(ref Option<string> contactIds, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<string> externalCodes, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1551,7 +1551,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalCodes"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterContactDeliveryAddressesGetDefaultImplementation(IContactDeliveryAddressesGetApiResponse apiResponseLocalVar, Option<string> contactIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> externalCodes, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void AfterContactDeliveryAddressesGetDefaultImplementation(IContactDeliveryAddressesGetApiResponse apiResponseLocalVar, Option<string> contactIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> externalCodes, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterContactDeliveryAddressesGet(ref suppressDefaultLog, apiResponseLocalVar, contactIds, createdDateTimeOffsetGreaterThan, externalCodes, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1569,7 +1569,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalCodes"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterContactDeliveryAddressesGet(ref bool suppressDefaultLog, IContactDeliveryAddressesGetApiResponse apiResponseLocalVar, Option<string> contactIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> externalCodes, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void AfterContactDeliveryAddressesGet(ref bool suppressDefaultLog, IContactDeliveryAddressesGetApiResponse apiResponseLocalVar, Option<string> contactIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> externalCodes, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1582,7 +1582,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalCodes"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorContactDeliveryAddressesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> externalCodes, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void OnErrorContactDeliveryAddressesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> externalCodes, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorContactDeliveryAddressesGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, contactIds, createdDateTimeOffsetGreaterThan, externalCodes, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1602,7 +1602,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalCodes"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorContactDeliveryAddressesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> externalCodes, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorContactDeliveryAddressesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> externalCodes, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the delivery addresses for a given contact (Auth roles: ContactDeliveryAddress, ContactDeliveryAddress_Full, Customer, Customer_Full, Supplier, Supplier_Full, Employee, Employee_Full) Gets the delivery addresses for a given contact (customer/employee/supplier identifier).  The common use case of an delivery address is to set it on sales orders for customers.
@@ -1614,7 +1614,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactDeliveryAddressesGetApiResponse"/>&gt;</returns>
-        public async Task<IContactDeliveryAddressesGetApiResponse?> ContactDeliveryAddressesGetOrDefaultAsync(Option<string> contactIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> externalCodes = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IContactDeliveryAddressesGetApiResponse?> ContactDeliveryAddressesGetOrDefaultAsync(Option<string> contactIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> externalCodes = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -1637,7 +1637,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IContactDeliveryAddressesGetApiResponse"/>&gt;</returns>
-        public async Task<IContactDeliveryAddressesGetApiResponse> ContactDeliveryAddressesGetAsync(Option<string> contactIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> externalCodes = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IContactDeliveryAddressesGetApiResponse> ContactDeliveryAddressesGetAsync(Option<string> contactIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> externalCodes = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

@@ -85,7 +85,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerOpenItemsGetApiResponse"/>&gt;</returns>
-        Task<ISupplierledgerOpenItemsGetApiResponse> SupplierledgerOpenItemsGetAsync(DateOnly date, Option<string> contactGroupIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISupplierledgerOpenItemsGetApiResponse> SupplierledgerOpenItemsGetAsync(DateTimeOffset date, Option<string> contactGroupIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets all supplier sub-ledger transactions that are open items at a given date (inclusive). Multiple filtering options. (Auth roles: SupplierLedger,SupplierLedger_Full)
@@ -111,7 +111,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerOpenItemsGetApiResponse"/>?&gt;</returns>
-        Task<ISupplierledgerOpenItemsGetApiResponse?> SupplierledgerOpenItemsGetOrDefaultAsync(DateOnly date, Option<string> contactGroupIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISupplierledgerOpenItemsGetApiResponse?> SupplierledgerOpenItemsGetOrDefaultAsync(DateTimeOffset date, Option<string> contactGroupIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets all supplier sub-ledger transactions between two dates (inclusive). The dates represent the posted date (date of accounting effect). Multiple filtering options. (Auth roles: SupplierLedger,SupplierLedger_Full)
@@ -139,7 +139,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerStatementGetApiResponse"/>&gt;</returns>
-        Task<ISupplierledgerStatementGetApiResponse> SupplierledgerStatementGetAsync(DateOnly fromDate, DateOnly toDate, Option<string> contactGroupIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISupplierledgerStatementGetApiResponse> SupplierledgerStatementGetAsync(DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> contactGroupIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets all supplier sub-ledger transactions between two dates (inclusive). The dates represent the posted date (date of accounting effect). Multiple filtering options. (Auth roles: SupplierLedger,SupplierLedger_Full)
@@ -166,7 +166,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerStatementGetApiResponse"/>?&gt;</returns>
-        Task<ISupplierledgerStatementGetApiResponse?> SupplierledgerStatementGetOrDefaultAsync(DateOnly fromDate, DateOnly toDate, Option<string> contactGroupIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISupplierledgerStatementGetApiResponse?> SupplierledgerStatementGetOrDefaultAsync(DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> contactGroupIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the supplier balances at a given date (inclusive).  The balances represent the sum of accounts payable for the suppliers at the given date.  NOTE: Suppliers without any ledger entries are not shown.  Multiple filtering options. (Auth roles: SupplierLedger,SupplierLedger_Full)
@@ -182,7 +182,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerSupplierBalancesGetApiResponse"/>&gt;</returns>
-        Task<ISupplierledgerSupplierBalancesGetApiResponse> SupplierledgerSupplierBalancesGetAsync(DateOnly date, Option<string> contactGroupIds = default, Option<bool> includeOnlyOpenItems = default, Option<string> subLedgerNumberSeriesIds = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISupplierledgerSupplierBalancesGetApiResponse> SupplierledgerSupplierBalancesGetAsync(DateTimeOffset date, Option<string> contactGroupIds = default, Option<bool> includeOnlyOpenItems = default, Option<string> subLedgerNumberSeriesIds = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the supplier balances at a given date (inclusive).  The balances represent the sum of accounts payable for the suppliers at the given date.  NOTE: Suppliers without any ledger entries are not shown.  Multiple filtering options. (Auth roles: SupplierLedger,SupplierLedger_Full)
@@ -197,7 +197,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerSupplierBalancesGetApiResponse"/>?&gt;</returns>
-        Task<ISupplierledgerSupplierBalancesGetApiResponse?> SupplierledgerSupplierBalancesGetOrDefaultAsync(DateOnly date, Option<string> contactGroupIds = default, Option<bool> includeOnlyOpenItems = default, Option<string> subLedgerNumberSeriesIds = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISupplierledgerSupplierBalancesGetApiResponse?> SupplierledgerSupplierBalancesGetOrDefaultAsync(DateTimeOffset date, Option<string> contactGroupIds = default, Option<bool> includeOnlyOpenItems = default, Option<string> subLedgerNumberSeriesIds = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -880,7 +880,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatSupplierledgerOpenItemsGet(ref DateOnly date, ref Option<string> contactGroupIds, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<string> customMatchingReferences, ref Option<string> departmentCodes, ref Option<string> externalNos, ref Option<bool> includeSubProject, ref Option<string> invoiceNos, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<bool> onlyBalancesGreaterThanAmount, ref Option<bool> onlyCreatedByCurrentIntegration, ref Option<string> projectCodes, ref Option<string> subLedgerNumberSeriesIds, ref Option<string> supplierNos, ref Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void FormatSupplierledgerOpenItemsGet(ref DateTimeOffset date, ref Option<string> contactGroupIds, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<string> customMatchingReferences, ref Option<string> departmentCodes, ref Option<string> externalNos, ref Option<bool> includeSubProject, ref Option<string> invoiceNos, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<bool> onlyBalancesGreaterThanAmount, ref Option<bool> onlyCreatedByCurrentIntegration, ref Option<string> projectCodes, ref Option<string> subLedgerNumberSeriesIds, ref Option<string> supplierNos, ref Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -949,7 +949,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterSupplierledgerOpenItemsGetDefaultImplementation(ISupplierledgerOpenItemsGetApiResponse apiResponseLocalVar, DateOnly date, Option<string> contactGroupIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
+        private void AfterSupplierledgerOpenItemsGetDefaultImplementation(ISupplierledgerOpenItemsGetApiResponse apiResponseLocalVar, DateTimeOffset date, Option<string> contactGroupIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterSupplierledgerOpenItemsGet(ref suppressDefaultLog, apiResponseLocalVar, date, contactGroupIds, createdDateTimeOffsetGreaterThan, customMatchingReferences, departmentCodes, externalNos, includeSubProject, invoiceNos, lastChangedDateTimeOffsetGreaterThan, onlyBalancesGreaterThanAmount, onlyCreatedByCurrentIntegration, projectCodes, subLedgerNumberSeriesIds, supplierNos, voucherTypes, resourceParameter);
@@ -978,7 +978,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterSupplierledgerOpenItemsGet(ref bool suppressDefaultLog, ISupplierledgerOpenItemsGetApiResponse apiResponseLocalVar, DateOnly date, Option<string> contactGroupIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void AfterSupplierledgerOpenItemsGet(ref bool suppressDefaultLog, ISupplierledgerOpenItemsGetApiResponse apiResponseLocalVar, DateTimeOffset date, Option<string> contactGroupIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1002,7 +1002,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorSupplierledgerOpenItemsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly date, Option<string> contactGroupIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
+        private void OnErrorSupplierledgerOpenItemsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset date, Option<string> contactGroupIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorSupplierledgerOpenItemsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, date, contactGroupIds, createdDateTimeOffsetGreaterThan, customMatchingReferences, departmentCodes, externalNos, includeSubProject, invoiceNos, lastChangedDateTimeOffsetGreaterThan, onlyBalancesGreaterThanAmount, onlyCreatedByCurrentIntegration, projectCodes, subLedgerNumberSeriesIds, supplierNos, voucherTypes, resourceParameter);
@@ -1033,7 +1033,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorSupplierledgerOpenItemsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly date, Option<string> contactGroupIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorSupplierledgerOpenItemsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset date, Option<string> contactGroupIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets all supplier sub-ledger transactions that are open items at a given date (inclusive). Multiple filtering options. (Auth roles: SupplierLedger,SupplierLedger_Full) 
@@ -1056,7 +1056,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerOpenItemsGetApiResponse"/>&gt;</returns>
-        public async Task<ISupplierledgerOpenItemsGetApiResponse?> SupplierledgerOpenItemsGetOrDefaultAsync(DateOnly date, Option<string> contactGroupIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISupplierledgerOpenItemsGetApiResponse?> SupplierledgerOpenItemsGetOrDefaultAsync(DateTimeOffset date, Option<string> contactGroupIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -1090,7 +1090,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerOpenItemsGetApiResponse"/>&gt;</returns>
-        public async Task<ISupplierledgerOpenItemsGetApiResponse> SupplierledgerOpenItemsGetAsync(DateOnly date, Option<string> contactGroupIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISupplierledgerOpenItemsGetApiResponse> SupplierledgerOpenItemsGetAsync(DateTimeOffset date, Option<string> contactGroupIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1380,7 +1380,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatSupplierledgerStatementGet(ref DateOnly fromDate, ref DateOnly toDate, ref Option<string> contactGroupIds, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<string> customMatchingReferences, ref Option<string> departmentCodes, ref Option<string> externalNos, ref Option<bool> includeSubProject, ref Option<string> invoiceNos, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<bool> onlyBalancesGreaterThanAmount, ref Option<bool> onlyCreatedByCurrentIntegration, ref Option<string> projectCodes, ref Option<string> subLedgerNumberSeriesIds, ref Option<string> supplierNos, ref Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void FormatSupplierledgerStatementGet(ref DateTimeOffset fromDate, ref DateTimeOffset toDate, ref Option<string> contactGroupIds, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<string> customMatchingReferences, ref Option<string> departmentCodes, ref Option<string> externalNos, ref Option<bool> includeSubProject, ref Option<string> invoiceNos, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<bool> onlyBalancesGreaterThanAmount, ref Option<bool> onlyCreatedByCurrentIntegration, ref Option<string> projectCodes, ref Option<string> subLedgerNumberSeriesIds, ref Option<string> supplierNos, ref Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1450,7 +1450,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterSupplierledgerStatementGetDefaultImplementation(ISupplierledgerStatementGetApiResponse apiResponseLocalVar, DateOnly fromDate, DateOnly toDate, Option<string> contactGroupIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
+        private void AfterSupplierledgerStatementGetDefaultImplementation(ISupplierledgerStatementGetApiResponse apiResponseLocalVar, DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> contactGroupIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterSupplierledgerStatementGet(ref suppressDefaultLog, apiResponseLocalVar, fromDate, toDate, contactGroupIds, createdDateTimeOffsetGreaterThan, customMatchingReferences, departmentCodes, externalNos, includeSubProject, invoiceNos, lastChangedDateTimeOffsetGreaterThan, onlyBalancesGreaterThanAmount, onlyCreatedByCurrentIntegration, projectCodes, subLedgerNumberSeriesIds, supplierNos, voucherTypes, resourceParameter);
@@ -1480,7 +1480,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterSupplierledgerStatementGet(ref bool suppressDefaultLog, ISupplierledgerStatementGetApiResponse apiResponseLocalVar, DateOnly fromDate, DateOnly toDate, Option<string> contactGroupIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void AfterSupplierledgerStatementGet(ref bool suppressDefaultLog, ISupplierledgerStatementGetApiResponse apiResponseLocalVar, DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> contactGroupIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1505,7 +1505,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorSupplierledgerStatementGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly fromDate, DateOnly toDate, Option<string> contactGroupIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
+        private void OnErrorSupplierledgerStatementGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> contactGroupIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorSupplierledgerStatementGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, fromDate, toDate, contactGroupIds, createdDateTimeOffsetGreaterThan, customMatchingReferences, departmentCodes, externalNos, includeSubProject, invoiceNos, lastChangedDateTimeOffsetGreaterThan, onlyBalancesGreaterThanAmount, onlyCreatedByCurrentIntegration, projectCodes, subLedgerNumberSeriesIds, supplierNos, voucherTypes, resourceParameter);
@@ -1537,7 +1537,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorSupplierledgerStatementGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly fromDate, DateOnly toDate, Option<string> contactGroupIds, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorSupplierledgerStatementGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> contactGroupIds, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> customMatchingReferences, Option<string> departmentCodes, Option<string> externalNos, Option<bool> includeSubProject, Option<string> invoiceNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<bool> onlyBalancesGreaterThanAmount, Option<bool> onlyCreatedByCurrentIntegration, Option<string> projectCodes, Option<string> subLedgerNumberSeriesIds, Option<string> supplierNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets all supplier sub-ledger transactions between two dates (inclusive). The dates represent the posted date (date of accounting effect). Multiple filtering options. (Auth roles: SupplierLedger,SupplierLedger_Full) 
@@ -1561,7 +1561,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerStatementGetApiResponse"/>&gt;</returns>
-        public async Task<ISupplierledgerStatementGetApiResponse?> SupplierledgerStatementGetOrDefaultAsync(DateOnly fromDate, DateOnly toDate, Option<string> contactGroupIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISupplierledgerStatementGetApiResponse?> SupplierledgerStatementGetOrDefaultAsync(DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> contactGroupIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -1596,7 +1596,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerStatementGetApiResponse"/>&gt;</returns>
-        public async Task<ISupplierledgerStatementGetApiResponse> SupplierledgerStatementGetAsync(DateOnly fromDate, DateOnly toDate, Option<string> contactGroupIds = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISupplierledgerStatementGetApiResponse> SupplierledgerStatementGetAsync(DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> contactGroupIds = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> customMatchingReferences = default, Option<string> departmentCodes = default, Option<string> externalNos = default, Option<bool> includeSubProject = default, Option<string> invoiceNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<bool> onlyBalancesGreaterThanAmount = default, Option<bool> onlyCreatedByCurrentIntegration = default, Option<string> projectCodes = default, Option<string> subLedgerNumberSeriesIds = default, Option<string> supplierNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 
@@ -1887,7 +1887,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatSupplierledgerSupplierBalancesGet(ref DateOnly date, ref Option<string> contactGroupIds, ref Option<bool> includeOnlyOpenItems, ref Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter);
+        partial void FormatSupplierledgerSupplierBalancesGet(ref DateTimeOffset date, ref Option<string> contactGroupIds, ref Option<bool> includeOnlyOpenItems, ref Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1917,7 +1917,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="includeOnlyOpenItems"></param>
         /// <param name="subLedgerNumberSeriesIds"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterSupplierledgerSupplierBalancesGetDefaultImplementation(ISupplierledgerSupplierBalancesGetApiResponse apiResponseLocalVar, DateOnly date, Option<string> contactGroupIds, Option<bool> includeOnlyOpenItems, Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter)
+        private void AfterSupplierledgerSupplierBalancesGetDefaultImplementation(ISupplierledgerSupplierBalancesGetApiResponse apiResponseLocalVar, DateTimeOffset date, Option<string> contactGroupIds, Option<bool> includeOnlyOpenItems, Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterSupplierledgerSupplierBalancesGet(ref suppressDefaultLog, apiResponseLocalVar, date, contactGroupIds, includeOnlyOpenItems, subLedgerNumberSeriesIds, resourceParameter);
@@ -1935,7 +1935,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="includeOnlyOpenItems"></param>
         /// <param name="subLedgerNumberSeriesIds"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterSupplierledgerSupplierBalancesGet(ref bool suppressDefaultLog, ISupplierledgerSupplierBalancesGetApiResponse apiResponseLocalVar, DateOnly date, Option<string> contactGroupIds, Option<bool> includeOnlyOpenItems, Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter);
+        partial void AfterSupplierledgerSupplierBalancesGet(ref bool suppressDefaultLog, ISupplierledgerSupplierBalancesGetApiResponse apiResponseLocalVar, DateTimeOffset date, Option<string> contactGroupIds, Option<bool> includeOnlyOpenItems, Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1948,7 +1948,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="includeOnlyOpenItems"></param>
         /// <param name="subLedgerNumberSeriesIds"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorSupplierledgerSupplierBalancesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly date, Option<string> contactGroupIds, Option<bool> includeOnlyOpenItems, Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter)
+        private void OnErrorSupplierledgerSupplierBalancesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset date, Option<string> contactGroupIds, Option<bool> includeOnlyOpenItems, Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorSupplierledgerSupplierBalancesGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, date, contactGroupIds, includeOnlyOpenItems, subLedgerNumberSeriesIds, resourceParameter);
@@ -1968,7 +1968,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="includeOnlyOpenItems"></param>
         /// <param name="subLedgerNumberSeriesIds"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorSupplierledgerSupplierBalancesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly date, Option<string> contactGroupIds, Option<bool> includeOnlyOpenItems, Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorSupplierledgerSupplierBalancesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset date, Option<string> contactGroupIds, Option<bool> includeOnlyOpenItems, Option<string> subLedgerNumberSeriesIds, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the supplier balances at a given date (inclusive).  The balances represent the sum of accounts payable for the suppliers at the given date.  NOTE: Suppliers without any ledger entries are not shown.  Multiple filtering options. (Auth roles: SupplierLedger,SupplierLedger_Full) 
@@ -1980,7 +1980,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerSupplierBalancesGetApiResponse"/>&gt;</returns>
-        public async Task<ISupplierledgerSupplierBalancesGetApiResponse?> SupplierledgerSupplierBalancesGetOrDefaultAsync(DateOnly date, Option<string> contactGroupIds = default, Option<bool> includeOnlyOpenItems = default, Option<string> subLedgerNumberSeriesIds = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISupplierledgerSupplierBalancesGetApiResponse?> SupplierledgerSupplierBalancesGetOrDefaultAsync(DateTimeOffset date, Option<string> contactGroupIds = default, Option<bool> includeOnlyOpenItems = default, Option<string> subLedgerNumberSeriesIds = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -2003,7 +2003,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISupplierledgerSupplierBalancesGetApiResponse"/>&gt;</returns>
-        public async Task<ISupplierledgerSupplierBalancesGetApiResponse> SupplierledgerSupplierBalancesGetAsync(DateOnly date, Option<string> contactGroupIds = default, Option<bool> includeOnlyOpenItems = default, Option<string> subLedgerNumberSeriesIds = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISupplierledgerSupplierBalancesGetApiResponse> SupplierledgerSupplierBalancesGetAsync(DateTimeOffset date, Option<string> contactGroupIds = default, Option<bool> includeOnlyOpenItems = default, Option<string> subLedgerNumberSeriesIds = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

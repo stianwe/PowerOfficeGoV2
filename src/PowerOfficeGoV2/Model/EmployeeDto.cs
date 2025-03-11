@@ -70,7 +70,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="subledgerAccountId">The identifier of the subledger account associated with the employee.</param>
         /// <param name="travelExpenseBankAccountId">The identifier of the bank account used for travel expense payments to the employee (norwegian: \&quot;reiseregninger\&quot;)</param>
         [JsonConstructor]
-        public EmployeeDto(Option<DateTime?> contactCreatedDateTimeOffset = default, Option<List<long>?> contactGroupIds = default, Option<Guid?> createdFromImportJournalId = default, Option<DateOnly?> dateOfBirth = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<string?> emailAddress = default, Option<DateTime?> employeeCreatedDateTimeOffset = default, Option<DateOnly?> endDate = default, Option<long?> expenseBankAccountId = default, Option<string?> externalImportReference = default, Option<long?> externalNumber = default, Option<string?> firstName = default, Option<Gender?> gender = default, Option<DateOnly?> hiredDate = default, Option<long?> id = default, Option<string?> internationalIdCountryCode = default, Option<string?> internationalIdNumber = default, Option<bool?> internationalIdReportToAltinn = default, Option<InternationalIdType?> internationalIdType = default, Option<bool?> isArchived = default, Option<string?> jobTitle = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<string?> lastName = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<ContactAddressDto?> mailAddress = default, Option<long?> managerEmployeeId = default, Option<long?> managerEmployeeNo = default, Option<string?> nationalIdNumber = default, Option<long?> number = default, Option<string?> phoneNumber = default, Option<long?> salaryBankAccountId = default, Option<DateOnly?> startDate = default, Option<long?> subledgerAccountId = default, Option<long?> travelExpenseBankAccountId = default)
+        public EmployeeDto(Option<DateTimeOffset?> contactCreatedDateTimeOffset = default, Option<List<long>?> contactGroupIds = default, Option<Guid?> createdFromImportJournalId = default, Option<DateTimeOffset?> dateOfBirth = default, Option<string?> departmentCode = default, Option<long?> departmentId = default, Option<string?> emailAddress = default, Option<DateTimeOffset?> employeeCreatedDateTimeOffset = default, Option<DateTimeOffset?> endDate = default, Option<long?> expenseBankAccountId = default, Option<string?> externalImportReference = default, Option<long?> externalNumber = default, Option<string?> firstName = default, Option<Gender?> gender = default, Option<DateTimeOffset?> hiredDate = default, Option<long?> id = default, Option<string?> internationalIdCountryCode = default, Option<string?> internationalIdNumber = default, Option<bool?> internationalIdReportToAltinn = default, Option<InternationalIdType?> internationalIdType = default, Option<bool?> isArchived = default, Option<string?> jobTitle = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<string?> lastName = default, Option<string?> locationCode = default, Option<long?> locationId = default, Option<ContactAddressDto?> mailAddress = default, Option<long?> managerEmployeeId = default, Option<long?> managerEmployeeNo = default, Option<string?> nationalIdNumber = default, Option<long?> number = default, Option<string?> phoneNumber = default, Option<long?> salaryBankAccountId = default, Option<DateTimeOffset?> startDate = default, Option<long?> subledgerAccountId = default, Option<long?> travelExpenseBankAccountId = default)
         {
             ContactCreatedDateTimeOffsetOption = contactCreatedDateTimeOffset;
             ContactGroupIdsOption = contactGroupIds;
@@ -144,7 +144,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> ContactCreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> ContactCreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp the contact entity was created.  This might differ from the employee created timestamp, if the contact was first created as a customer/supplier.
@@ -152,7 +152,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp the contact entity was created.  This might differ from the employee created timestamp, if the contact was first created as a customer/supplier.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("ContactCreatedDateTimeOffset")]
-        public DateTime? ContactCreatedDateTimeOffset { get { return this.ContactCreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? ContactCreatedDateTimeOffset { get { return this.ContactCreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of ContactGroupIds
@@ -188,7 +188,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> DateOfBirthOption { get; private set; }
+        public Option<DateTimeOffset?> DateOfBirthOption { get; private set; }
 
         /// <summary>
         /// The date of birth of the employee.
@@ -196,7 +196,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date of birth of the employee.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("DateOfBirth")]
-        public DateOnly? DateOfBirth { get { return this.DateOfBirthOption; } set { this.DateOfBirthOption = new(value); } }
+        public DateTimeOffset? DateOfBirth { get { return this.DateOfBirthOption; } set { this.DateOfBirthOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of DepartmentCode
@@ -248,7 +248,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> EmployeeCreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> EmployeeCreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp the contact first became an employee.  For contacts being only employees, this property will be equal to the contactCreatedDateTimeOffset property.
@@ -256,14 +256,14 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp the contact first became an employee.  For contacts being only employees, this property will be equal to the contactCreatedDateTimeOffset property.</value>
         /* <example>2021-09-30T00:00Z</example> */
         [JsonPropertyName("EmployeeCreatedDateTimeOffset")]
-        public DateTime? EmployeeCreatedDateTimeOffset { get { return this.EmployeeCreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? EmployeeCreatedDateTimeOffset { get { return this.EmployeeCreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of EndDate
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> EndDateOption { get; private set; }
+        public Option<DateTimeOffset?> EndDateOption { get; private set; }
 
         /// <summary>
         /// The end date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).
@@ -271,7 +271,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The end date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("EndDate")]
-        public DateOnly? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
+        public DateTimeOffset? EndDate { get { return this.EndDateOption; } set { this.EndDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of ExpenseBankAccountId
@@ -338,7 +338,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> HiredDateOption { get; private set; }
+        public Option<DateTimeOffset?> HiredDateOption { get; private set; }
 
         /// <summary>
         /// The date the employee was hired.
@@ -346,7 +346,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The date the employee was hired.</value>
         /* <example>Tue Jul 15 02:00:00 CEST 2003</example> */
         [JsonPropertyName("HiredDate")]
-        public DateOnly? HiredDate { get { return this.HiredDateOption; } set { this.HiredDateOption = new(value); } }
+        public DateTimeOffset? HiredDate { get { return this.HiredDateOption; } set { this.HiredDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Id
@@ -443,7 +443,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of the employee.  Note that this property do not reflect changes in sub-entities (address, employment relationship settings etc.) related to the contact.
@@ -451,7 +451,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of the employee.  Note that this property do not reflect changes in sub-entities (address, employment relationship settings etc.) related to the contact.</value>
         /* <example>2021-09-30T15:12:11.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of LastName
@@ -606,14 +606,14 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateOnly?> StartDateOption { get; private set; }
+        public Option<DateTimeOffset?> StartDateOption { get; private set; }
 
         /// <summary>
         /// The start date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).
         /// </summary>
         /// <value>The start date of the employment of this employee.  Note that this field has no relation to the employment entity that is reported (a-melding).</value>
         [JsonPropertyName("StartDate")]
-        public DateOnly? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
+        public DateTimeOffset? StartDate { get { return this.StartDateOption; } set { this.StartDateOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SubledgerAccountId
@@ -761,21 +761,21 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateTime?> contactCreatedDateTimeOffset = default;
+            Option<DateTimeOffset?> contactCreatedDateTimeOffset = default;
             Option<List<long>?> contactGroupIds = default;
             Option<Guid?> createdFromImportJournalId = default;
-            Option<DateOnly?> dateOfBirth = default;
+            Option<DateTimeOffset?> dateOfBirth = default;
             Option<string?> departmentCode = default;
             Option<long?> departmentId = default;
             Option<string?> emailAddress = default;
-            Option<DateTime?> employeeCreatedDateTimeOffset = default;
-            Option<DateOnly?> endDate = default;
+            Option<DateTimeOffset?> employeeCreatedDateTimeOffset = default;
+            Option<DateTimeOffset?> endDate = default;
             Option<long?> expenseBankAccountId = default;
             Option<string?> externalImportReference = default;
             Option<long?> externalNumber = default;
             Option<string?> firstName = default;
             Option<Gender?> gender = default;
-            Option<DateOnly?> hiredDate = default;
+            Option<DateTimeOffset?> hiredDate = default;
             Option<long?> id = default;
             Option<string?> internationalIdCountryCode = default;
             Option<string?> internationalIdNumber = default;
@@ -783,7 +783,7 @@ namespace PowerOfficeGoV2.Model
             Option<InternationalIdType?> internationalIdType = default;
             Option<bool?> isArchived = default;
             Option<string?> jobTitle = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<string?> lastName = default;
             Option<string?> locationCode = default;
             Option<long?> locationId = default;
@@ -794,7 +794,7 @@ namespace PowerOfficeGoV2.Model
             Option<long?> number = default;
             Option<string?> phoneNumber = default;
             Option<long?> salaryBankAccountId = default;
-            Option<DateOnly?> startDate = default;
+            Option<DateTimeOffset?> startDate = default;
             Option<long?> subledgerAccountId = default;
             Option<long?> travelExpenseBankAccountId = default;
 
@@ -815,7 +815,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "ContactCreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                contactCreatedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                contactCreatedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ContactGroupIds":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -827,7 +827,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "DateOfBirth":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                dateOfBirth = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                dateOfBirth = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "DepartmentCode":
                             departmentCode = new Option<string?>(utf8JsonReader.GetString());
@@ -841,11 +841,11 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "EmployeeCreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                employeeCreatedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                employeeCreatedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "EndDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                endDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                endDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "ExpenseBankAccountId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -868,7 +868,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "HiredDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                hiredDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                hiredDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Id":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -898,7 +898,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "LastName":
                             lastName = new Option<string?>(utf8JsonReader.GetString());
@@ -938,7 +938,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "StartDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                startDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly?>(ref utf8JsonReader, jsonSerializerOptions));
+                                startDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime?>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "SubledgerAccountId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

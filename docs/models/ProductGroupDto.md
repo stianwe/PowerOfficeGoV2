@@ -6,12 +6,12 @@ DTO for ProductGroup read operations.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Code** | **string** | The code of the product group. | [optional] 
-**CreatedDateTimeOffset** | **DateTime** | The timestamp the product group entity was created. | [optional] [readonly] 
+**CreatedDateTimeOffset** | **DateTimeOffset** | The timestamp the product group entity was created. | [optional] [readonly] 
 **CreatedFromImportJournalId** | **Guid** | The created from import journal identifier (guid).  If the product group was created from an import, this property will contain the Id of the Import that created this entity. | [optional] [readonly] 
 **Description** | **string** | The description of the product group. | [optional] 
 **Id** | **long** | The ID of the product group. | [optional] [readonly] 
 **IsArchived** | **bool** | Value indicating whether the product group is archived (set inactive).  Default is false.  Archived product groups will be unavailable for usage in the GUI. | [optional] 
-**LastChangedDateTimeOffset** | **DateTime** | The timestamp of the last change of the product group. | [optional] [readonly] 
+**LastChangedDateTimeOffset** | **DateTimeOffset** | The timestamp of the last change of the product group. | [optional] [readonly] 
 **Name** | **string** | The name of the product group. | [optional] 
 **OptionalSalesAccount** | **long** | The code of the optional sales account of the product group.  The optional sales account is the account the sale will be posted to, if the product is included on a sales order line that is invoiced, and that sales order line is set to trigger the use of the optional sales account.  If null, the product group will inherit the optional sales account from the the general sales settings on the client. | [optional] [readonly] 
 **OptionalSalesAccountAgricultureDepartment** | **AgricultureDepartment** |  | [optional] 

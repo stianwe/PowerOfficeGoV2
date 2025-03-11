@@ -406,7 +406,7 @@ No authorization required
 
 <a id="employeesemploymentsget"></a>
 # **EmployeesEmploymentsGet**
-> List&lt;EmploymentLightDto&gt; EmployeesEmploymentsGet (bool activeEmployments = null, string employmentForm = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;EmploymentLightDto&gt; EmployeesEmploymentsGet (bool activeEmployments = null, string employmentForm = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Get all employments for all employees registered on the client. (Auth roles: Employment,Employment_Full)
 
@@ -431,7 +431,7 @@ namespace Example
             var apiInstance = new EmploymentsApi(config);
             var activeEmployments = true;  // bool | Filter employments based on active status.  An employment is considered active if no endDate is set, or if the endDate set is at a future date.  The filter do not consider the EndedAndReported property, as a future endDate and reason might be reported on an employment still active until the end date.  True to only get employments with active status, false to only get employments with inactive status. If empty the filter is not used. (optional) 
             var employmentForm = Temporary;  // string | Filter by employment form. If null or whitespace, the filter is not used. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by the last changed timestamp property.  This filtering will return all employments with a last changed timestamp greater than the timestamp provided.  Can be used when polling for new entries or when changes has occured.  Note that the last changed property is unaffected by changes in sub entities of an employment (salary, leave, fixed salary lines and other \"lists\")  Date not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by the last changed timestamp property.  This filtering will return all employments with a last changed timestamp greater than the timestamp provided.  Can be used when polling for new entries or when changes has occured.  Note that the last changed property is unaffected by changes in sub entities of an employment (salary, leave, fixed salary lines and other \"lists\")  Date not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -477,7 +477,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **activeEmployments** | **bool** | Filter employments based on active status.  An employment is considered active if no endDate is set, or if the endDate set is at a future date.  The filter do not consider the EndedAndReported property, as a future endDate and reason might be reported on an employment still active until the end date.  True to only get employments with active status, false to only get employments with inactive status. If empty the filter is not used. | [optional]  |
 | **employmentForm** | **string** | Filter by employment form. If null or whitespace, the filter is not used. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the last changed timestamp property.  This filtering will return all employments with a last changed timestamp greater than the timestamp provided.  Can be used when polling for new entries or when changes has occured.  Note that the last changed property is unaffected by changes in sub entities of an employment (salary, leave, fixed salary lines and other \&quot;lists\&quot;)  Date not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the last changed timestamp property.  This filtering will return all employments with a last changed timestamp greater than the timestamp provided.  Can be used when polling for new entries or when changes has occured.  Note that the last changed property is unaffected by changes in sub entities of an employment (salary, leave, fixed salary lines and other \&quot;lists\&quot;)  Date not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

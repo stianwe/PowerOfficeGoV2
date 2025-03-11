@@ -26,6 +26,9 @@
 README.md
 src/PowerOfficeGoV2/PowerOfficeGoV2.csproj
 src/PowerOfficeGoV2/README.md
+src/PowerOfficeGoV2/Client/ClientUtils.cs
+src/PowerOfficeGoV2/Client/HostConfiguration.cs
 src/PowerOfficeGoV2/Extensions/IHostBuilderExtensions.cs
 src/PowerOfficeGoV2/Extensions/IServiceCollectionExtensions.cs
+src/PowerOfficeGoV2.Test/Api/DependencyInjectionTests.cs
 PowerOfficeGoV2.sln

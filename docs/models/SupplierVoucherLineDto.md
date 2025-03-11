@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Accrual** | [**AccrualBase**](AccrualBase.md) |  | [optional] 
 **AgricultureDetails** | [**AgricultureDetails**](AgricultureDetails.md) |  | [optional] 
-**CreatedDateTimeOffset** | **DateTime** | The timestamp of when the line was created. | [optional] [readonly] 
+**CreatedDateTimeOffset** | **DateTimeOffset** | The timestamp of when the line was created. | [optional] [readonly] 
 **CreditAccountAgricultureDepartment** | **AgricultureDepartment** |  | [optional] 
 **CreditAccountId** | **long** | The id of the general ledger account or the subledger account to post the credit amount. | [optional] 
 **CreditAccountType** | **AccountType** |  | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **Id** | **long** | A value that uniquely identifies this journal entry voucher line.  The Id is assigned by Go when the entry is created. | [optional] [readonly] 
 **ItemDescription** | **string** | The suppliers item description, as stated in the ehf xml. Only available if the voucher was received by ehf, and  the ehf coding \&quot;itemize by product\&quot; is in use. | [optional] [readonly] 
 **ItemName** | **string** | The suppliers item name, as stated in the ehf xml. Only available if the voucher was received by ehf, and the  ehf coding \&quot;itemize by product\&quot; is in use. | [optional] [readonly] 
-**LastChangedDateTimeOffset** | **DateTime** | The timestamp of the last change of the line. | [optional] [readonly] 
+**LastChangedDateTimeOffset** | **DateTimeOffset** | The timestamp of the last change of the line. | [optional] [readonly] 
 **LocationId** | **long** | The id of the location dimension associated with the line.  Will inherit locationId from the voucher head if not specifically set on the line.  LocationId &#x3D; -1 means no location. | [optional] 
 **ProductId** | **long** | The product id associated with the line. | [optional] 
 **ProjectId** | **long** | The id of the project associated with the line.  Will inherit projectId from the voucher head if not specifically set on the line.  ProjectId &#x3D; -1 means no project. | [optional] 

@@ -42,7 +42,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="originatedFromEhf">Indicates whether the journal entry voucher was received by EHF. If true, the journal entry voucher have an EHF XML file.</param>
         /// <param name="voucherType">voucherType</param>
         [JsonConstructor]
-        public JournalEntryVoucherListItem(Option<DateTime?> createdDateTimeOffset = default, Option<Guid?> id = default, Option<bool?> inApprovalWorkflow = default, Option<bool?> isCreatedByCurrentIntegration = default, Option<bool?> isPosted = default, Option<DateTime?> lastChangedDateTimeOffset = default, Option<bool?> originatedFromEhf = default, Option<VoucherType?> voucherType = default)
+        public JournalEntryVoucherListItem(Option<DateTimeOffset?> createdDateTimeOffset = default, Option<Guid?> id = default, Option<bool?> inApprovalWorkflow = default, Option<bool?> isCreatedByCurrentIntegration = default, Option<bool?> isPosted = default, Option<DateTimeOffset?> lastChangedDateTimeOffset = default, Option<bool?> originatedFromEhf = default, Option<VoucherType?> voucherType = default)
         {
             CreatedDateTimeOffsetOption = createdDateTimeOffset;
             IdOption = id;
@@ -75,7 +75,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of when the voucher object was created.
@@ -83,7 +83,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of when the voucher object was created.</value>
         /* <example>2024-06-25T12:06:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of Id
@@ -150,7 +150,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> LastChangedDateTimeOffsetOption { get; }
+        public Option<DateTimeOffset?> LastChangedDateTimeOffsetOption { get; }
 
         /// <summary>
         /// The timestamp of the last change of voucher.
@@ -158,7 +158,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp of the last change of voucher.</value>
         /* <example>2024-07-09T13:03:00.123456700Z</example> */
         [JsonPropertyName("LastChangedDateTimeOffset")]
-        public DateTime? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
+        public DateTimeOffset? LastChangedDateTimeOffset { get { return this.LastChangedDateTimeOffsetOption; } }
 
         /// <summary>
         /// Used to track the state of OriginatedFromEhf
@@ -238,12 +238,12 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<Guid?> id = default;
             Option<bool?> inApprovalWorkflow = default;
             Option<bool?> isCreatedByCurrentIntegration = default;
             Option<bool?> isPosted = default;
-            Option<DateTime?> lastChangedDateTimeOffset = default;
+            Option<DateTimeOffset?> lastChangedDateTimeOffset = default;
             Option<bool?> originatedFromEhf = default;
             Option<VoucherType?> voucherType = default;
 
@@ -264,7 +264,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "Id":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -284,7 +284,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "LastChangedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                lastChangedDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                lastChangedDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "OriginatedFromEhf":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

@@ -55,7 +55,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="vatId">The id of the vat code used for the credit entry.</param>
         /// <param name="vatReturnSpecification">vatReturnSpecification</param>
         [JsonConstructor]
-        public CashVoucherLineDto(DateOnly postingDate, Option<long?> accountId = default, Option<DateTime?> createdDateTimeOffset = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<double?> currencyExchangeRate = default, Option<string?> customMatchingReference = default, Option<long?> departmentId = default, Option<string?> description = default, Option<long?> dim1Id = default, Option<long?> dim2Id = default, Option<long?> dim3Id = default, Option<string?> externalLineReference = default, Option<long?> id = default, Option<long?> locationId = default, Option<long?> productId = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> quantity2 = default, Option<int?> vatId = default, Option<VatReturnSpecification?> vatReturnSpecification = default)
+        public CashVoucherLineDto(DateTimeOffset postingDate, Option<long?> accountId = default, Option<DateTimeOffset?> createdDateTimeOffset = default, Option<double?> currencyAmount = default, Option<string?> currencyCode = default, Option<double?> currencyExchangeRate = default, Option<string?> customMatchingReference = default, Option<long?> departmentId = default, Option<string?> description = default, Option<long?> dim1Id = default, Option<long?> dim2Id = default, Option<long?> dim3Id = default, Option<string?> externalLineReference = default, Option<long?> id = default, Option<long?> locationId = default, Option<long?> productId = default, Option<long?> projectId = default, Option<double?> quantity = default, Option<double?> quantity2 = default, Option<int?> vatId = default, Option<VatReturnSpecification?> vatReturnSpecification = default)
         {
             PostingDate = postingDate;
             AccountIdOption = accountId;
@@ -102,7 +102,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency  conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions.</value>
         /* <example>Tue Sep 28 02:00:00 CEST 2021</example> */
         [JsonPropertyName("PostingDate")]
-        public DateOnly PostingDate { get; set; }
+        public DateTimeOffset PostingDate { get; set; }
 
         /// <summary>
         /// Used to track the state of AccountId
@@ -124,7 +124,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<DateTime?> CreatedDateTimeOffsetOption { get; private set; }
+        public Option<DateTimeOffset?> CreatedDateTimeOffsetOption { get; private set; }
 
         /// <summary>
         /// The timestamp the year end voucher entity was created.
@@ -132,7 +132,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The timestamp the year end voucher entity was created.</value>
         /* <example>2021-09-30T08:03:00.123456700Z</example> */
         [JsonPropertyName("CreatedDateTimeOffset")]
-        public DateTime? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } set { this.CreatedDateTimeOffsetOption = new(value); } }
+        public DateTimeOffset? CreatedDateTimeOffset { get { return this.CreatedDateTimeOffsetOption; } set { this.CreatedDateTimeOffsetOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of CurrencyAmount
@@ -464,9 +464,9 @@ namespace PowerOfficeGoV2.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<DateOnly?> postingDate = default;
+            Option<DateTimeOffset?> postingDate = default;
             Option<long?> accountId = default;
-            Option<DateTime?> createdDateTimeOffset = default;
+            Option<DateTimeOffset?> createdDateTimeOffset = default;
             Option<double?> currencyAmount = default;
             Option<string?> currencyCode = default;
             Option<double?> currencyExchangeRate = default;
@@ -503,7 +503,7 @@ namespace PowerOfficeGoV2.Model
                     {
                         case "PostingDate":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                postingDate = new Option<DateOnly?>(JsonSerializer.Deserialize<DateOnly>(ref utf8JsonReader, jsonSerializerOptions));
+                                postingDate = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "AccountId":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
@@ -511,7 +511,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "CreatedDateTimeOffset":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                createdDateTimeOffset = new Option<DateTime?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
+                                createdDateTimeOffset = new Option<DateTimeOffset?>(JsonSerializer.Deserialize<DateTime>(ref utf8JsonReader, jsonSerializerOptions));
                             break;
                         case "CurrencyAmount":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)

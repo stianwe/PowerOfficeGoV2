@@ -5,10 +5,10 @@ The lines of the bank voucher
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PostingDate** | **DateOnly** | The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency  conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions. | 
+**PostingDate** | **DateTimeOffset** | The posting date.  This is the date of effect in the accounting system for the Amount and CurrencyAmount (also the currency  conversion date used by Go if the currency rate was not set explicit when posted).  Always present on transactions. | 
 **AccountId** | **long** | The id of the general ledger account or the subledger account to post the amount. | [optional] 
 **Cid** | **string** | The cid number (norwegian: KID), if present.  Entries with the opposite amounts and the same cid will be matched on the sub-ledger account, if the client use cid and the items are not already matched out. | [optional] [readonly] 
-**CreatedDateTimeOffset** | **DateTime** | The timestamp the year end voucher entity was created. | [optional] 
+**CreatedDateTimeOffset** | **DateTimeOffset** | The timestamp the year end voucher entity was created. | [optional] 
 **CurrencyAmount** | **double** | The amount on the line, in the currency specified by the currency code of the voucher or the currency of the voucher line if available.  Gross amounts should be provided, along with the relevant vat code. The amount must be a positive or negative number not 0. | [optional] 
 **CurrencyCode** | **string** | The currency code of the voucher line. Will inherit the currency code of the voucher head if not set.  The line currency amounts will be determined in the currency specified on the line. Currencies active on the  client can be queried using the AccountingSettings service. Currency codes follow the ISO4217 standard. | [optional] 
 **CurrencyExchangeRate** | **double** | The normalized currency exchange rate. Always base 1.                Relevant to set if the voucher line have a foreign currency with a specific currency exchange rate.  If not set, the field will inherit the rate in Go for the posting date set. The rates in Go are retrieved  from ECB via api. | [optional] 

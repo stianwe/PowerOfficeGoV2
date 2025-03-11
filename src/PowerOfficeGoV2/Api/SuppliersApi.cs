@@ -74,7 +74,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISuppliersGetApiResponse"/>&gt;</returns>
-        Task<ISuppliersGetApiResponse> SuppliersGetAsync(Option<string> contactGroupIds = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan = default, Option<string> supplierNos = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISuppliersGetApiResponse> SuppliersGetAsync(Option<string> contactGroupIds = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan = default, Option<string> supplierNos = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the suppliers available on the client. Multiple filtering options. (Auth roles: Supplier,Supplier_Full)
@@ -91,7 +91,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISuppliersGetApiResponse"/>?&gt;</returns>
-        Task<ISuppliersGetApiResponse?> SuppliersGetOrDefaultAsync(Option<string> contactGroupIds = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan = default, Option<string> supplierNos = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<ISuppliersGetApiResponse?> SuppliersGetOrDefaultAsync(Option<string> contactGroupIds = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan = default, Option<string> supplierNos = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete a supplier entity with a given id. (Auth roles: Supplier_Full)
@@ -818,7 +818,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatSuppliersGet(ref Option<string> contactGroupIds, ref Option<string> externalImportReference, ref Option<string> externalNos, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan, ref Option<string> supplierNos, Option<ResourceParameters> resourceParameter);
+        partial void FormatSuppliersGet(ref Option<string> contactGroupIds, ref Option<string> externalImportReference, ref Option<string> externalNos, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan, ref Option<string> supplierNos, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -858,7 +858,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierCreatedDateTimeOffsetGreaterThan"></param>
         /// <param name="supplierNos"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterSuppliersGetDefaultImplementation(ISuppliersGetApiResponse apiResponseLocalVar, Option<string> contactGroupIds, Option<string> externalImportReference, Option<string> externalNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan, Option<string> supplierNos, Option<ResourceParameters> resourceParameter)
+        private void AfterSuppliersGetDefaultImplementation(ISuppliersGetApiResponse apiResponseLocalVar, Option<string> contactGroupIds, Option<string> externalImportReference, Option<string> externalNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan, Option<string> supplierNos, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterSuppliersGet(ref suppressDefaultLog, apiResponseLocalVar, contactGroupIds, externalImportReference, externalNos, lastChangedDateTimeOffsetGreaterThan, supplierCreatedDateTimeOffsetGreaterThan, supplierNos, resourceParameter);
@@ -878,7 +878,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierCreatedDateTimeOffsetGreaterThan"></param>
         /// <param name="supplierNos"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterSuppliersGet(ref bool suppressDefaultLog, ISuppliersGetApiResponse apiResponseLocalVar, Option<string> contactGroupIds, Option<string> externalImportReference, Option<string> externalNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan, Option<string> supplierNos, Option<ResourceParameters> resourceParameter);
+        partial void AfterSuppliersGet(ref bool suppressDefaultLog, ISuppliersGetApiResponse apiResponseLocalVar, Option<string> contactGroupIds, Option<string> externalImportReference, Option<string> externalNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan, Option<string> supplierNos, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -893,7 +893,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierCreatedDateTimeOffsetGreaterThan"></param>
         /// <param name="supplierNos"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorSuppliersGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactGroupIds, Option<string> externalImportReference, Option<string> externalNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan, Option<string> supplierNos, Option<ResourceParameters> resourceParameter)
+        private void OnErrorSuppliersGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactGroupIds, Option<string> externalImportReference, Option<string> externalNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan, Option<string> supplierNos, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorSuppliersGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, contactGroupIds, externalImportReference, externalNos, lastChangedDateTimeOffsetGreaterThan, supplierCreatedDateTimeOffsetGreaterThan, supplierNos, resourceParameter);
@@ -915,7 +915,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="supplierCreatedDateTimeOffsetGreaterThan"></param>
         /// <param name="supplierNos"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorSuppliersGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactGroupIds, Option<string> externalImportReference, Option<string> externalNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan, Option<string> supplierNos, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorSuppliersGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactGroupIds, Option<string> externalImportReference, Option<string> externalNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan, Option<string> supplierNos, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the suppliers available on the client. Multiple filtering options. (Auth roles: Supplier,Supplier_Full) The supplier object is a contact entity, meaning the id might be shared with a customer and/or an employee if the contact is registered as both a supplier and customer/employee in Go.
@@ -929,7 +929,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISuppliersGetApiResponse"/>&gt;</returns>
-        public async Task<ISuppliersGetApiResponse?> SuppliersGetOrDefaultAsync(Option<string> contactGroupIds = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan = default, Option<string> supplierNos = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISuppliersGetApiResponse?> SuppliersGetOrDefaultAsync(Option<string> contactGroupIds = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan = default, Option<string> supplierNos = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -954,7 +954,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="ISuppliersGetApiResponse"/>&gt;</returns>
-        public async Task<ISuppliersGetApiResponse> SuppliersGetAsync(Option<string> contactGroupIds = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan = default, Option<string> supplierNos = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<ISuppliersGetApiResponse> SuppliersGetAsync(Option<string> contactGroupIds = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan = default, Option<string> supplierNos = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

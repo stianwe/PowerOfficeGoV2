@@ -58,7 +58,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IAccountTransactionsGetApiResponse"/>&gt;</returns>
-        Task<IAccountTransactionsGetApiResponse> AccountTransactionsGetAsync(DateOnly fromDate, DateOnly toDate, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> productCodes = default, Option<string> projectCodes = default, Option<string> vatCodes = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IAccountTransactionsGetApiResponse> AccountTransactionsGetAsync(DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> productCodes = default, Option<string> projectCodes = default, Option<string> vatCodes = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets all account transactions between two dates (inclusive). The dates represent the posted date (date of accounting effect). Multiple filtering options. (Auth roles: AccountTransaction,AccountTransaction_Full)
@@ -82,7 +82,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IAccountTransactionsGetApiResponse"/>?&gt;</returns>
-        Task<IAccountTransactionsGetApiResponse?> AccountTransactionsGetOrDefaultAsync(DateOnly fromDate, DateOnly toDate, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> productCodes = default, Option<string> projectCodes = default, Option<string> vatCodes = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IAccountTransactionsGetApiResponse?> AccountTransactionsGetOrDefaultAsync(DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> productCodes = default, Option<string> projectCodes = default, Option<string> vatCodes = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
     }
 
     /// <summary>
@@ -205,7 +205,7 @@ namespace PowerOfficeGoV2.Api
             Events = accountTransactionsApiEvents;
         }
 
-        partial void FormatAccountTransactionsGet(ref DateOnly fromDate, ref DateOnly toDate, ref Option<string> accountNos, ref Option<string> agricultureDepartments, ref Option<DateTime> createdDateTimeOffsetGreaterThan, ref Option<string> departmentCodes, ref Option<bool> includeSubProject, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, ref Option<string> productCodes, ref Option<string> projectCodes, ref Option<string> vatCodes, ref Option<string> voucherNos, ref Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void FormatAccountTransactionsGet(ref DateTimeOffset fromDate, ref DateTimeOffset toDate, ref Option<string> accountNos, ref Option<string> agricultureDepartments, ref Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, ref Option<string> departmentCodes, ref Option<bool> includeSubProject, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, ref Option<string> productCodes, ref Option<string> projectCodes, ref Option<string> vatCodes, ref Option<string> voucherNos, ref Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -268,7 +268,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="voucherNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterAccountTransactionsGetDefaultImplementation(IAccountTransactionsGetApiResponse apiResponseLocalVar, DateOnly fromDate, DateOnly toDate, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> productCodes, Option<string> projectCodes, Option<string> vatCodes, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
+        private void AfterAccountTransactionsGetDefaultImplementation(IAccountTransactionsGetApiResponse apiResponseLocalVar, DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> productCodes, Option<string> projectCodes, Option<string> vatCodes, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterAccountTransactionsGet(ref suppressDefaultLog, apiResponseLocalVar, fromDate, toDate, accountNos, agricultureDepartments, createdDateTimeOffsetGreaterThan, departmentCodes, includeSubProject, lastChangedDateTimeOffsetGreaterThan, productCodes, projectCodes, vatCodes, voucherNos, voucherTypes, resourceParameter);
@@ -295,7 +295,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="voucherNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterAccountTransactionsGet(ref bool suppressDefaultLog, IAccountTransactionsGetApiResponse apiResponseLocalVar, DateOnly fromDate, DateOnly toDate, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> productCodes, Option<string> projectCodes, Option<string> vatCodes, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void AfterAccountTransactionsGet(ref bool suppressDefaultLog, IAccountTransactionsGetApiResponse apiResponseLocalVar, DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> productCodes, Option<string> projectCodes, Option<string> vatCodes, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -317,7 +317,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="voucherNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorAccountTransactionsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly fromDate, DateOnly toDate, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> productCodes, Option<string> projectCodes, Option<string> vatCodes, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
+        private void OnErrorAccountTransactionsGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> productCodes, Option<string> projectCodes, Option<string> vatCodes, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorAccountTransactionsGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, fromDate, toDate, accountNos, agricultureDepartments, createdDateTimeOffsetGreaterThan, departmentCodes, includeSubProject, lastChangedDateTimeOffsetGreaterThan, productCodes, projectCodes, vatCodes, voucherNos, voucherTypes, resourceParameter);
@@ -346,7 +346,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="voucherNos"></param>
         /// <param name="voucherTypes"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorAccountTransactionsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateOnly fromDate, DateOnly toDate, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTime> createdDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<string> productCodes, Option<string> projectCodes, Option<string> vatCodes, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorAccountTransactionsGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> accountNos, Option<string> agricultureDepartments, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan, Option<string> departmentCodes, Option<bool> includeSubProject, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<string> productCodes, Option<string> projectCodes, Option<string> vatCodes, Option<string> voucherNos, Option<string> voucherTypes, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets all account transactions between two dates (inclusive). The dates represent the posted date (date of accounting effect). Multiple filtering options. (Auth roles: AccountTransaction,AccountTransaction_Full) 
@@ -367,7 +367,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IAccountTransactionsGetApiResponse"/>&gt;</returns>
-        public async Task<IAccountTransactionsGetApiResponse?> AccountTransactionsGetOrDefaultAsync(DateOnly fromDate, DateOnly toDate, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> productCodes = default, Option<string> projectCodes = default, Option<string> vatCodes = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IAccountTransactionsGetApiResponse?> AccountTransactionsGetOrDefaultAsync(DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> productCodes = default, Option<string> projectCodes = default, Option<string> vatCodes = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -399,7 +399,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IAccountTransactionsGetApiResponse"/>&gt;</returns>
-        public async Task<IAccountTransactionsGetApiResponse> AccountTransactionsGetAsync(DateOnly fromDate, DateOnly toDate, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTime> createdDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<string> productCodes = default, Option<string> projectCodes = default, Option<string> vatCodes = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IAccountTransactionsGetApiResponse> AccountTransactionsGetAsync(DateTimeOffset fromDate, DateTimeOffset toDate, Option<string> accountNos = default, Option<string> agricultureDepartments = default, Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default, Option<string> departmentCodes = default, Option<bool> includeSubProject = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<string> productCodes = default, Option<string> projectCodes = default, Option<string> vatCodes = default, Option<string> voucherNos = default, Option<string> voucherTypes = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

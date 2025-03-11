@@ -124,7 +124,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEmployeesGetApiResponse"/>&gt;</returns>
-        Task<IEmployeesGetApiResponse> EmployeesGetAsync(Option<string> contactGroupIds = default, Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan = default, Option<string> employeeNos = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IEmployeesGetApiResponse> EmployeesGetAsync(Option<string> contactGroupIds = default, Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan = default, Option<string> employeeNos = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Gets the employees available on the client. Multiple filtering options. (Auth roles: Employee,Employee_Full)
@@ -141,7 +141,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEmployeesGetApiResponse"/>?&gt;</returns>
-        Task<IEmployeesGetApiResponse?> EmployeesGetOrDefaultAsync(Option<string> contactGroupIds = default, Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan = default, Option<string> employeeNos = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
+        Task<IEmployeesGetApiResponse?> EmployeesGetOrDefaultAsync(Option<string> contactGroupIds = default, Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan = default, Option<string> employeeNos = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create one new employee entity. (Auth roles: Employee_Full)
@@ -1593,7 +1593,7 @@ namespace PowerOfficeGoV2.Api
             partial void OnDeserializationError(ref bool suppressDefaultLog, Exception exception, HttpStatusCode httpStatusCode);
         }
 
-        partial void FormatEmployeesGet(ref Option<string> contactGroupIds, ref Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan, ref Option<string> employeeNos, ref Option<string> externalImportReference, ref Option<string> externalNos, ref Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void FormatEmployeesGet(ref Option<string> contactGroupIds, ref Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan, ref Option<string> employeeNos, ref Option<string> externalImportReference, ref Option<string> externalNos, ref Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Validates the request parameters
@@ -1633,7 +1633,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalNos"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void AfterEmployeesGetDefaultImplementation(IEmployeesGetApiResponse apiResponseLocalVar, Option<string> contactGroupIds, Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan, Option<string> employeeNos, Option<string> externalImportReference, Option<string> externalNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void AfterEmployeesGetDefaultImplementation(IEmployeesGetApiResponse apiResponseLocalVar, Option<string> contactGroupIds, Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan, Option<string> employeeNos, Option<string> externalImportReference, Option<string> externalNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLog = false;
             AfterEmployeesGet(ref suppressDefaultLog, apiResponseLocalVar, contactGroupIds, employeeCreatedDateTimeOffsetGreaterThan, employeeNos, externalImportReference, externalNos, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1653,7 +1653,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalNos"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void AfterEmployeesGet(ref bool suppressDefaultLog, IEmployeesGetApiResponse apiResponseLocalVar, Option<string> contactGroupIds, Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan, Option<string> employeeNos, Option<string> externalImportReference, Option<string> externalNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void AfterEmployeesGet(ref bool suppressDefaultLog, IEmployeesGetApiResponse apiResponseLocalVar, Option<string> contactGroupIds, Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan, Option<string> employeeNos, Option<string> externalImportReference, Option<string> externalNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Logs exceptions that occur while retrieving the server response
@@ -1668,7 +1668,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalNos"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        private void OnErrorEmployeesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactGroupIds, Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan, Option<string> employeeNos, Option<string> externalImportReference, Option<string> externalNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
+        private void OnErrorEmployeesGetDefaultImplementation(Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactGroupIds, Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan, Option<string> employeeNos, Option<string> externalImportReference, Option<string> externalNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter)
         {
             bool suppressDefaultLogLocalVar = false;
             OnErrorEmployeesGet(ref suppressDefaultLogLocalVar, exceptionLocalVar, pathFormatLocalVar, pathLocalVar, contactGroupIds, employeeCreatedDateTimeOffsetGreaterThan, employeeNos, externalImportReference, externalNos, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
@@ -1690,7 +1690,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="externalNos"></param>
         /// <param name="lastChangedDateTimeOffsetGreaterThan"></param>
         /// <param name="resourceParameter"></param>
-        partial void OnErrorEmployeesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactGroupIds, Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan, Option<string> employeeNos, Option<string> externalImportReference, Option<string> externalNos, Option<DateTime> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
+        partial void OnErrorEmployeesGet(ref bool suppressDefaultLogLocalVar, Exception exceptionLocalVar, string pathFormatLocalVar, string pathLocalVar, Option<string> contactGroupIds, Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan, Option<string> employeeNos, Option<string> externalImportReference, Option<string> externalNos, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan, Option<ResourceParameters> resourceParameter);
 
         /// <summary>
         /// Gets the employees available on the client. Multiple filtering options. (Auth roles: Employee,Employee_Full) The employee object is a contact entity, meaning the id might be shared with a customer and/or a supplier if the contact is registered as both an employee and customer/supplier in Go.
@@ -1704,7 +1704,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEmployeesGetApiResponse"/>&gt;</returns>
-        public async Task<IEmployeesGetApiResponse?> EmployeesGetOrDefaultAsync(Option<string> contactGroupIds = default, Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan = default, Option<string> employeeNos = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IEmployeesGetApiResponse?> EmployeesGetOrDefaultAsync(Option<string> contactGroupIds = default, Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan = default, Option<string> employeeNos = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             try
             {
@@ -1729,7 +1729,7 @@ namespace PowerOfficeGoV2.Api
         /// <param name="resourceParameter"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IEmployeesGetApiResponse"/>&gt;</returns>
-        public async Task<IEmployeesGetApiResponse> EmployeesGetAsync(Option<string> contactGroupIds = default, Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan = default, Option<string> employeeNos = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
+        public async Task<IEmployeesGetApiResponse> EmployeesGetAsync(Option<string> contactGroupIds = default, Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan = default, Option<string> employeeNos = default, Option<string> externalImportReference = default, Option<string> externalNos = default, Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default, Option<ResourceParameters> resourceParameter = default, System.Threading.CancellationToken cancellationToken = default)
         {
             UriBuilder uriBuilderLocalVar = new UriBuilder();
 

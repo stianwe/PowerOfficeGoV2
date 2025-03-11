@@ -301,7 +301,7 @@ No authorization required
 
 <a id="contactpersonsget"></a>
 # **ContactPersonsGet**
-> List&lt;ContactPersonDto&gt; ContactPersonsGet (string contactIds = null, DateTime createdDateTimeOffsetGreaterThan = null, string externalCodes = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;ContactPersonDto&gt; ContactPersonsGet (string contactIds = null, DateTimeOffset createdDateTimeOffsetGreaterThan = null, string externalCodes = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Gets the contact persons associated with a given contact. (Auth roles: ContactPerson, ContactPerson_Full, Customer, Customer_Full, Supplier, Supplier_Full)
 
@@ -325,9 +325,9 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new ContactPersonsApi(config);
             var contactIds = 12345, 62142, 11235;  // string | Filter by contact IDs. Separate by comma to filter on multiple contact IDs. If filterString is null or whitespace, query is returned as is. (optional) 
-            var createdDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTime | Filter by the contact person created timestamp property.              This filtering will return all contact persons with a created timestamp greater than the timestamp provided.              Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTimeOffset | Filter by the contact person created timestamp property.              This filtering will return all contact persons with a created timestamp greater than the timestamp provided.              Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
             var externalCodes = A69, B420, C1337;  // string | Filter by contact person external codes. SearchString should be separated by comma.              If filterString is null or whitespace, query is returned as is. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTime | Filter by the contact person last changed timestamp property.              This filtering will return all contact persons with a last changed timestamp greater than the timestamp provided.Can be used when polling for new and/or changed entries from Go.              Timestamp not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-10-19T11:05:00.1234567Z;  // DateTimeOffset | Filter by the contact person last changed timestamp property.              This filtering will return all contact persons with a last changed timestamp greater than the timestamp provided.Can be used when polling for new and/or changed entries from Go.              Timestamp not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -372,9 +372,9 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **contactIds** | **string** | Filter by contact IDs. Separate by comma to filter on multiple contact IDs. If filterString is null or whitespace, query is returned as is. | [optional]  |
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter by the contact person created timestamp property.              This filtering will return all contact persons with a created timestamp greater than the timestamp provided.              Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the contact person created timestamp property.              This filtering will return all contact persons with a created timestamp greater than the timestamp provided.              Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
 | **externalCodes** | **string** | Filter by contact person external codes. SearchString should be separated by comma.              If filterString is null or whitespace, query is returned as is. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the contact person last changed timestamp property.              This filtering will return all contact persons with a last changed timestamp greater than the timestamp provided.Can be used when polling for new and/or changed entries from Go.              Timestamp not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the contact person last changed timestamp property.              This filtering will return all contact persons with a last changed timestamp greater than the timestamp provided.Can be used when polling for new and/or changed entries from Go.              Timestamp not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="getincominginvoicelistitem"></a>
 # **GetIncomingInvoiceListItem**
-> List&lt;IncomingInvoiceListItemDto&gt; GetIncomingInvoiceListItem (DateOnly fromDate = null, DateOnly toDate = null, DateTime balanceLastChangedDateTimeOffsetGreaterThan = null, string departmentCodes = null, bool includeSubProject = null, bool onlyUnpaidInvoices = null, string projectCodes = null, string supplierNos = null, string voucherNos = null, string voucherTypes = null, ResourceParameters resourceParameter = null)
+> List&lt;IncomingInvoiceListItemDto&gt; GetIncomingInvoiceListItem (DateTimeOffset fromDate = null, DateTimeOffset toDate = null, DateTimeOffset balanceLastChangedDateTimeOffsetGreaterThan = null, string departmentCodes = null, bool includeSubProject = null, bool onlyUnpaidInvoices = null, string projectCodes = null, string supplierNos = null, string voucherNos = null, string voucherTypes = null, ResourceParameters resourceParameter = null)
 
 Gets the posted incoming invoices from the client. The returned objects are a lightweight version of a supplier invoice (or credit note), not containing the cost transaction lines. Use the endpoint AccountTransactions if all voucher lines are needed. Multiple filtering options. (Auth roles: IncomingInvoice,IncomingInvoice_Full)
 
@@ -30,9 +30,9 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080";
             var apiInstance = new IncomingInvoicesApi(config);
-            var fromDate = 2023-01-26;  // DateOnly | From date, inclusive. Get all invoices with an voucher (invoice) date from this date (inclusive). Note that (date time) offsets (if provided) is not taken into account, only date is used. (optional) 
-            var toDate = 2023-02-28;  // DateOnly | To date, inclusive. Get all invoices with an voucher (invoice) date up to this date (inclusive). Note that (date time) offsets (if provided) is not taken into account, only date is used. (optional) 
-            var balanceLastChangedDateTimeOffsetGreaterThan = 2023-01-26 13:20:16.1234567 -00:00;  // DateTime | Filter invoices with last changed timestamp in balance (remaining amount to be paid) greater than the provided timestamp. Can be used as a lightweight version of retrieving payment states of invoices. Timestamp not inclusive. (optional) 
+            var fromDate = 2023-01-26;  // DateTimeOffset | From date, inclusive. Get all invoices with an voucher (invoice) date from this date (inclusive). Note that (date time) offsets (if provided) is not taken into account, only date is used. (optional) 
+            var toDate = 2023-02-28;  // DateTimeOffset | To date, inclusive. Get all invoices with an voucher (invoice) date up to this date (inclusive). Note that (date time) offsets (if provided) is not taken into account, only date is used. (optional) 
+            var balanceLastChangedDateTimeOffsetGreaterThan = 2023-01-26 13:20:16.1234567 -00:00;  // DateTimeOffset | Filter invoices with last changed timestamp in balance (remaining amount to be paid) greater than the provided timestamp. Can be used as a lightweight version of retrieving payment states of invoices. Timestamp not inclusive. (optional) 
             var departmentCodes = 1, Development;  // string | Filter invoices on department codes. Note that this selects invoices with department set in the header of the invoice. The invoice costlines might specify other departments or no department. Separate by comma to filter on multiple codes. If blank, all invoices with or without department codes are returned (no filter). If -1, then all invoices without department codes are included. (optional) 
             var includeSubProject = true;  // bool | Include Sub-project(s) for specified project. If projectCodes is null, all (sub)projects are included (regardless of this variable). (optional) 
             var onlyUnpaidInvoices = true;  // bool | Filter on invoices that are unpaid (ie balance != 0). No filter set will provide all invoices regardless of balance state, depending on other filters set. (optional) 
@@ -83,9 +83,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **fromDate** | **DateOnly** | From date, inclusive. Get all invoices with an voucher (invoice) date from this date (inclusive). Note that (date time) offsets (if provided) is not taken into account, only date is used. | [optional]  |
-| **toDate** | **DateOnly** | To date, inclusive. Get all invoices with an voucher (invoice) date up to this date (inclusive). Note that (date time) offsets (if provided) is not taken into account, only date is used. | [optional]  |
-| **balanceLastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter invoices with last changed timestamp in balance (remaining amount to be paid) greater than the provided timestamp. Can be used as a lightweight version of retrieving payment states of invoices. Timestamp not inclusive. | [optional]  |
+| **fromDate** | **DateTimeOffset** | From date, inclusive. Get all invoices with an voucher (invoice) date from this date (inclusive). Note that (date time) offsets (if provided) is not taken into account, only date is used. | [optional]  |
+| **toDate** | **DateTimeOffset** | To date, inclusive. Get all invoices with an voucher (invoice) date up to this date (inclusive). Note that (date time) offsets (if provided) is not taken into account, only date is used. | [optional]  |
+| **balanceLastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter invoices with last changed timestamp in balance (remaining amount to be paid) greater than the provided timestamp. Can be used as a lightweight version of retrieving payment states of invoices. Timestamp not inclusive. | [optional]  |
 | **departmentCodes** | **string** | Filter invoices on department codes. Note that this selects invoices with department set in the header of the invoice. The invoice costlines might specify other departments or no department. Separate by comma to filter on multiple codes. If blank, all invoices with or without department codes are returned (no filter). If -1, then all invoices without department codes are included. | [optional]  |
 | **includeSubProject** | **bool** | Include Sub-project(s) for specified project. If projectCodes is null, all (sub)projects are included (regardless of this variable). | [optional]  |
 | **onlyUnpaidInvoices** | **bool** | Filter on invoices that are unpaid (ie balance !&#x3D; 0). No filter set will provide all invoices regardless of balance state, depending on other filters set. | [optional]  |

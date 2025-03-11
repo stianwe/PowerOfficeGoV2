@@ -302,7 +302,7 @@ No authorization required
 
 <a id="employeesget"></a>
 # **EmployeesGet**
-> List&lt;EmployeeDto&gt; EmployeesGet (string contactGroupIds = null, DateTime employeeCreatedDateTimeOffsetGreaterThan = null, string employeeNos = null, string externalImportReference = null, string externalNos = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
+> List&lt;EmployeeDto&gt; EmployeesGet (string contactGroupIds = null, DateTimeOffset employeeCreatedDateTimeOffsetGreaterThan = null, string employeeNos = null, string externalImportReference = null, string externalNos = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, ResourceParameters resourceParameter = null)
 
 Gets the employees available on the client. Multiple filtering options. (Auth roles: Employee,Employee_Full)
 
@@ -326,11 +326,11 @@ namespace Example
             config.BasePath = "http://localhost:8080";
             var apiInstance = new EmployeesApi(config);
             var contactGroupIds = 41345, 21445, 65457;  // string | Filter by contact group IDs. Separate by comma [,] to filter on multiple contact group IDs. If null or whitespace, the filter is not used. (optional) 
-            var employeeCreatedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by the employee created timestamp. This filtering will return all employees with a created timestamp greater than the timestamp provided. Can be used when polling for new entries. Date not inclusive. (optional) 
+            var employeeCreatedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by the employee created timestamp. This filtering will return all employees with a created timestamp greater than the timestamp provided. Can be used when polling for new entries. Date not inclusive. (optional) 
             var employeeNos = 1, 100-200, 500-;  // string | Filter by employee numbers. Separate by comma [,] to filter on multiple employee numbers. A range of numbers can be specified using dash/hyphen [-]. For example \"1, 100-200, 500-\" will result in employees with number 1, from and including 100 to 200, 500 and all above will be returned. If null or whitespace, the filter is not used. (optional) 
             var externalImportReference = 123ABC;  // string | Filter by external import reference. If null or whitespace, the filter is not used. (optional) 
             var externalNos = 30000, 14153-19534, 150000-;  // string | Filter by employee external numbers. Separate by comma [,] to filter on multiple employee external numbers. A range of numbers can be specified using dash/hyphen [-]. For example \"30000, 14153-19534, 150000-\" will result in employees with external number 30000, from and including 14153 to 19534, 150000 and all above will be returned. If null or whitespace, the filter is not used. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTime | Filter by the last changed timestamp. This filtering will return all employees with a last changed timestamp greater than the timestamp provided. Can be used when polling for new entries. If used, changed employees should replace what was previously stored in the external system. Date not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2021-09-25 08:03:00.1234567 -00:00;  // DateTimeOffset | Filter by the last changed timestamp. This filtering will return all employees with a last changed timestamp greater than the timestamp provided. Can be used when polling for new entries. If used, changed employees should replace what was previously stored in the external system. Date not inclusive. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
             try
@@ -375,11 +375,11 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **contactGroupIds** | **string** | Filter by contact group IDs. Separate by comma [,] to filter on multiple contact group IDs. If null or whitespace, the filter is not used. | [optional]  |
-| **employeeCreatedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the employee created timestamp. This filtering will return all employees with a created timestamp greater than the timestamp provided. Can be used when polling for new entries. Date not inclusive. | [optional]  |
+| **employeeCreatedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the employee created timestamp. This filtering will return all employees with a created timestamp greater than the timestamp provided. Can be used when polling for new entries. Date not inclusive. | [optional]  |
 | **employeeNos** | **string** | Filter by employee numbers. Separate by comma [,] to filter on multiple employee numbers. A range of numbers can be specified using dash/hyphen [-]. For example \&quot;1, 100-200, 500-\&quot; will result in employees with number 1, from and including 100 to 200, 500 and all above will be returned. If null or whitespace, the filter is not used. | [optional]  |
 | **externalImportReference** | **string** | Filter by external import reference. If null or whitespace, the filter is not used. | [optional]  |
 | **externalNos** | **string** | Filter by employee external numbers. Separate by comma [,] to filter on multiple employee external numbers. A range of numbers can be specified using dash/hyphen [-]. For example \&quot;30000, 14153-19534, 150000-\&quot; will result in employees with external number 30000, from and including 14153 to 19534, 150000 and all above will be returned. If null or whitespace, the filter is not used. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the last changed timestamp. This filtering will return all employees with a last changed timestamp greater than the timestamp provided. Can be used when polling for new entries. If used, changed employees should replace what was previously stored in the external system. Date not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the last changed timestamp. This filtering will return all employees with a last changed timestamp greater than the timestamp provided. Can be used when polling for new entries. If used, changed employees should replace what was previously stored in the external system. Date not inclusive. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
 ### Return type

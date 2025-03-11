@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **HolidayPayPercentage** | **double** | The holiday pay percentage. | [optional] [readonly] 
 **HolidayPayResultAccountId** | **long** | The identifier of the general ledger result account used for the cost of holiday pay. | [optional] [readonly] 
 **HoursPerYearFno** | **long** | The number of hours per year for a full time employment, in terms of FNO reporting. | [optional] [readonly] 
-**IncludeTimeTransactionsFromDate** | **DateTime** | The date define which time transactions from the time tracking module in PowerOffice that can be included in payrolls. | [optional] [readonly] 
+**IncludeTimeTransactionsFromDate** | **DateTimeOffset** | The date define which time transactions from the time tracking module in PowerOffice that can be included in payrolls. | [optional] [readonly] 
 **LimitHolidayPayAbove60To6G** | **bool** | Property indicating whether holiday pay above 60 years is limited to 6G. | [optional] [readonly] 
 **MergeImportedSalaryLines** | **bool** | Property indicating whether imported salary lines will be merged (if the lines have similar attributes)  when payrolls are created and imported salary lines included in the payroll. | [optional] [readonly] 
 **MonthlyPayDay** | **long** | The day in a month for the salary pay.  Relevant if monthly remuneration is used.  Must be an integer between 1 and 31.  If 31 is used, the salary will always be paid on the last day of the month. | [optional] [readonly] 

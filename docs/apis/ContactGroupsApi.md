@@ -12,7 +12,7 @@ All URIs are relative to *http://localhost:8080*
 
 <a id="contactgroupsget"></a>
 # **ContactGroupsGet**
-> List&lt;ContactGroupDto&gt; ContactGroupsGet (DateTime createdDateTimeOffsetGreaterThan = null, DateTime lastChangedDateTimeOffsetGreaterThan = null, string names = null, ResourceParameters resourceParameter = null)
+> List&lt;ContactGroupDto&gt; ContactGroupsGet (DateTimeOffset createdDateTimeOffsetGreaterThan = null, DateTimeOffset lastChangedDateTimeOffsetGreaterThan = null, string names = null, ResourceParameters resourceParameter = null)
 
 Get contact groups. (Auth roles: ContactGroup,ContactGroup_Full)
 
@@ -33,8 +33,8 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "http://localhost:8080";
             var apiInstance = new ContactGroupsApi(config);
-            var createdDateTimeOffsetGreaterThan = 2023-09-2 09:39:00.1234567Z;  // DateTime | Filter by the contact group created timestamp property. This filtering will return all contact groups with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
-            var lastChangedDateTimeOffsetGreaterThan = 2023-09-2 09:39:00.1234567Z;  // DateTime | Filter by the contact group last changed timestamp property. This filtering will return all contact groups with a last changed timestamp greater than the timestamp provided. Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. (optional) 
+            var createdDateTimeOffsetGreaterThan = 2023-09-2 09:39:00.1234567Z;  // DateTimeOffset | Filter by the contact group created timestamp property. This filtering will return all contact groups with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. (optional) 
+            var lastChangedDateTimeOffsetGreaterThan = 2023-09-2 09:39:00.1234567Z;  // DateTimeOffset | Filter by the contact group last changed timestamp property. This filtering will return all contact groups with a last changed timestamp greater than the timestamp provided. Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. (optional) 
             var names = Customer, Employees, Suppliers;  // string | Filter by contact group names. SearchString should be separated by comma. If filterString is null or whitespace, query is returned as is. (optional) 
             var resourceParameter = new ResourceParameters(); // ResourceParameters |  (optional) 
 
@@ -79,8 +79,8 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **createdDateTimeOffsetGreaterThan** | **DateTime** | Filter by the contact group created timestamp property. This filtering will return all contact groups with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
-| **lastChangedDateTimeOffsetGreaterThan** | **DateTime** | Filter by the contact group last changed timestamp property. This filtering will return all contact groups with a last changed timestamp greater than the timestamp provided. Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. | [optional]  |
+| **createdDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the contact group created timestamp property. This filtering will return all contact groups with a created timestamp greater than the timestamp provided. Can be used when polling for new entries from Go. Timestamp not inclusive. | [optional]  |
+| **lastChangedDateTimeOffsetGreaterThan** | **DateTimeOffset** | Filter by the contact group last changed timestamp property. This filtering will return all contact groups with a last changed timestamp greater than the timestamp provided. Can be used when polling for new and/or changed entries from Go. Timestamp not inclusive. | [optional]  |
 | **names** | **string** | Filter by contact group names. SearchString should be separated by comma. If filterString is null or whitespace, query is returned as is. | [optional]  |
 | **resourceParameter** | [**ResourceParameters**](ResourceParameters.md) |  | [optional]  |
 
