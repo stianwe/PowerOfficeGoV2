@@ -42,7 +42,7 @@ namespace PowerOfficeGoV2.Test.Api
         private readonly IHost _hostUsingAddWithoutAClient =
             Host.CreateDefaultBuilder([]).ConfigureServices((host, services) =>
             {
-                services.AddApi(options =>
+                services.AddPowerOfficeGoApi(options =>
                 {
 
                 });
@@ -52,7 +52,7 @@ namespace PowerOfficeGoV2.Test.Api
         private readonly IHost _hostUsingAddWithAClient =
             Host.CreateDefaultBuilder([]).ConfigureServices((host, services) =>
             {
-                services.AddApi(options =>
+                services.AddPowerOfficeGoApi(options =>
                 {
 
                     options.AddApiHttpClients(client => client.BaseAddress = new Uri(ClientUtils.BASE_ADDRESS));
