@@ -12,7 +12,7 @@
     <Description>A library for interacting with the PowerOffice V2 API</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>PowerOfficeGoV2</RootNamespace>
-    <Version>1.1.4</Version>
+    <Version>1.2.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\PowerOfficeGoV2.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/stianwe/PowerOfficeGoV2.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
