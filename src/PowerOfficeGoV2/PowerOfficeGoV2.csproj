@@ -12,13 +12,12 @@
     <Description>A library for interacting with the PowerOffice V2 API</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>PowerOfficeGoV2</RootNamespace>
-    <Version>1.1.3</Version>
+    <Version>1.1.4</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\PowerOfficeGoV2.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/stianwe/PowerOfficeGoV2.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Make UseDemoApi configurable during DI.
-Don't use DateOnly as the API sometimes returns time part even where DateOnly is specified.
-Fix broken voucher page upload.</PackageReleaseNotes>
+    <PackageReleaseNotes>Allow getting api without bearer token and support CancellationToken.
+Provide mapping extension methods for some DTOs.</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Nullable>enable</Nullable>
