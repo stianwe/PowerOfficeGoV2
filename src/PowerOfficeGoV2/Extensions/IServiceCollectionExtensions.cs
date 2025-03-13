@@ -51,7 +51,7 @@ namespace PowerOfficeGoV2.Extensions
             }
 
             services.AddSingleton<CookieContainer>();
-            services.AddScoped<IPowerOfficeGoApiService, PowerOfficeGoApiService>();
+            services.AddSingleton<IPowerOfficeGoApiService, PowerOfficeGoApiService>();
             ClientUtils.UseDemoApi = host.UseDemoApi;
 
             // ensure that a token provider was provided for this token type
