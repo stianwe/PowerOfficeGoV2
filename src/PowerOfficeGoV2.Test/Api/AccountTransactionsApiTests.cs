@@ -56,14 +56,14 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task AccountTransactionsGetAsyncTest()
         {
-            DateOnly fromDate = default!;
-            DateOnly toDate = default!;
+            DateTimeOffset fromDate = default!;
+            DateTimeOffset toDate = default!;
             Client.Option<string> accountNos = default!;
             Client.Option<string> agricultureDepartments = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<string> departmentCodes = default!;
             Client.Option<bool> includeSubProject = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<string> productCodes = default!;
             Client.Option<string> projectCodes = default!;
             Client.Option<string> vatCodes = default!;

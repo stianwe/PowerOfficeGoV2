@@ -69,10 +69,10 @@ namespace PowerOfficeGoV2.Test.Api
         public async Task GetProductsAsyncTest()
         {
             Client.Option<string> codes = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<bool> isArchived = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
-            Client.Option<DateTime> stockOnHandLastChangedDatetimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> stockOnHandLastChangedDatetimeOffsetGreaterThan = default!;
             Client.Option<string> names = default!;
             Client.Option<string> productGroupCodes = default!;
             Client.Option<ProductType> type = default!;

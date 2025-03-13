@@ -68,12 +68,12 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task GetProjectsAsyncTest()
         {
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<string> customerNos = default!;
             Client.Option<string> departmentCodes = default!;
             Client.Option<bool> excludeArchivedProject = default!;
             Client.Option<bool> includeSubProjects = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<string> name = default!;
             Client.Option<ProjectBillingMethod> projectBillingMethod = default!;
             Client.Option<string> projectCodes = default!;

@@ -69,15 +69,15 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task SupplierledgerOpenItemsGetAsyncTest()
         {
-            DateOnly date = default!;
+            DateTimeOffset date = default!;
             Client.Option<string> contactGroupIds = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<string> customMatchingReferences = default!;
             Client.Option<string> departmentCodes = default!;
             Client.Option<string> externalNos = default!;
             Client.Option<bool> includeSubProject = default!;
             Client.Option<string> invoiceNos = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<bool> onlyBalancesGreaterThanAmount = default!;
             Client.Option<bool> onlyCreatedByCurrentIntegration = default!;
             Client.Option<string> projectCodes = default!;
@@ -96,16 +96,16 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task SupplierledgerStatementGetAsyncTest()
         {
-            DateOnly fromDate = default!;
-            DateOnly toDate = default!;
+            DateTimeOffset fromDate = default!;
+            DateTimeOffset toDate = default!;
             Client.Option<string> contactGroupIds = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<string> customMatchingReferences = default!;
             Client.Option<string> departmentCodes = default!;
             Client.Option<string> externalNos = default!;
             Client.Option<bool> includeSubProject = default!;
             Client.Option<string> invoiceNos = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<bool> onlyBalancesGreaterThanAmount = default!;
             Client.Option<bool> onlyCreatedByCurrentIntegration = default!;
             Client.Option<string> projectCodes = default!;
@@ -124,7 +124,7 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task SupplierledgerSupplierBalancesGetAsyncTest()
         {
-            DateOnly date = default!;
+            DateTimeOffset date = default!;
             Client.Option<string> contactGroupIds = default!;
             Client.Option<bool> includeOnlyOpenItems = default!;
             Client.Option<string> subLedgerNumberSeriesIds = default!;

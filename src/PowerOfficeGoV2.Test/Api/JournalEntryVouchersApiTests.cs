@@ -56,8 +56,8 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task JournalEntryVouchersGetAsyncTest()
         {
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<bool> inApprovalWorkflow = default!;
             Client.Option<bool> isPosted = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;

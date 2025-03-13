@@ -69,9 +69,9 @@ namespace PowerOfficeGoV2.Test.Api
         public async Task PayItemsGetAsyncTest()
         {
             Client.Option<string> codes = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<bool> isActive = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.PayItemsGetAsync(codes, createdDateTimeOffsetGreaterThan, isActive, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
             var model = response.Ok();

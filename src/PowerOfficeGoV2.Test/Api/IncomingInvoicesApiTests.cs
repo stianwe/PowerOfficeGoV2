@@ -56,9 +56,9 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task GetIncomingInvoiceListItemAsyncTest()
         {
-            Client.Option<DateOnly> fromDate = default!;
-            Client.Option<DateOnly> toDate = default!;
-            Client.Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> fromDate = default!;
+            Client.Option<DateTimeOffset> toDate = default!;
+            Client.Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<string> departmentCodes = default!;
             Client.Option<bool> includeSubProject = default!;
             Client.Option<bool> onlyUnpaidInvoices = default!;

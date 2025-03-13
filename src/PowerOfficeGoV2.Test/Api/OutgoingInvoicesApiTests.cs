@@ -68,19 +68,19 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task OutgoingInvoicesGetAsyncTest()
         {
-            Client.Option<DateTime> balanceLastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> balanceLastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<string> customerNos = default!;
             Client.Option<string> customMatchingReferences = default!;
             Client.Option<string> departmentCodes = default!;
-            Client.Option<DateOnly> fromDate = default!;
+            Client.Option<DateTimeOffset> fromDate = default!;
             Client.Option<bool> includeSubProject = default!;
             Client.Option<string> invoiceIds = default!;
             Client.Option<string> invoiceNos = default!;
             Client.Option<bool> onlyCreatedByCurrentIntegration = default!;
             Client.Option<bool> onlyUnpaidInvoices = default!;
             Client.Option<string> projectCodes = default!;
-            Client.Option<DateTime> sentDateTimeOffsetGreaterThan = default!;
-            Client.Option<DateOnly> toDate = default!;
+            Client.Option<DateTimeOffset> sentDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> toDate = default!;
             Client.Option<string> voucherNos = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.OutgoingInvoicesGetAsync(balanceLastChangedDateTimeOffsetGreaterThan, customerNos, customMatchingReferences, departmentCodes, fromDate, includeSubProject, invoiceIds, invoiceNos, onlyCreatedByCurrentIntegration, onlyUnpaidInvoices, projectCodes, sentDateTimeOffsetGreaterThan, toDate, voucherNos, resourceParameter);

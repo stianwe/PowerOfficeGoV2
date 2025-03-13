@@ -68,7 +68,7 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task GetLocationsAsyncTest()
         {
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<string> codes = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.GetLocationsAsync(createdDateTimeOffsetGreaterThan, codes, resourceParameter);

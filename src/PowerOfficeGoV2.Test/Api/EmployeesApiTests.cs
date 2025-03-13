@@ -93,11 +93,11 @@ namespace PowerOfficeGoV2.Test.Api
         public async Task EmployeesGetAsyncTest()
         {
             Client.Option<string> contactGroupIds = default!;
-            Client.Option<DateTime> employeeCreatedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> employeeCreatedDateTimeOffsetGreaterThan = default!;
             Client.Option<string> employeeNos = default!;
             Client.Option<string> externalImportReference = default!;
             Client.Option<string> externalNos = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.EmployeesGetAsync(contactGroupIds, employeeCreatedDateTimeOffsetGreaterThan, employeeNos, externalImportReference, externalNos, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
             var model = response.Ok();

@@ -92,10 +92,10 @@ namespace PowerOfficeGoV2.Test.Api
         public async Task GetCustomDimensionAsyncTest()
         {
             Client.Option<string> codes = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<string> ordinal = default!;
             Client.Option<string> externalImportReference = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.GetCustomDimensionAsync(codes, createdDateTimeOffsetGreaterThan, ordinal, externalImportReference, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
             var model = response.Ok();

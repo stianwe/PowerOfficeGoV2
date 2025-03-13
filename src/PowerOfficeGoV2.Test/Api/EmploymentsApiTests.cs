@@ -109,7 +109,7 @@ namespace PowerOfficeGoV2.Test.Api
         {
             Client.Option<bool> activeEmployments = default!;
             Client.Option<string> employmentForm = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.EmployeesEmploymentsGetAsync(activeEmployments, employmentForm, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
             var model = response.Ok();

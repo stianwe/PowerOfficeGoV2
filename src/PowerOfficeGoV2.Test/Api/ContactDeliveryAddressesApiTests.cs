@@ -95,9 +95,9 @@ namespace PowerOfficeGoV2.Test.Api
         public async Task ContactDeliveryAddressesGetAsyncTest()
         {
             Client.Option<string> contactIds = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<string> externalCodes = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.ContactDeliveryAddressesGetAsync(contactIds, createdDateTimeOffsetGreaterThan, externalCodes, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
             var model = response.Ok();

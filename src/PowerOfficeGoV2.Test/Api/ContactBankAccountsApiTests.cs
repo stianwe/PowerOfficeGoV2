@@ -96,8 +96,8 @@ namespace PowerOfficeGoV2.Test.Api
         {
             Client.Option<string> bankAccountNumbers = default!;
             Client.Option<string> contactIds = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.ContactBankAccountsGetAsync(bankAccountNumbers, contactIds, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
             var model = response.Ok();

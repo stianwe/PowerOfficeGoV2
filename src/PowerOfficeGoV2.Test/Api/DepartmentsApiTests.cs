@@ -100,10 +100,10 @@ namespace PowerOfficeGoV2.Test.Api
         public async Task GetDepartmentsAsyncTest()
         {
             Client.Option<string> codes = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
             Client.Option<Guid> createdFromImportJournalId = default!;
             Client.Option<bool> isActive = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<long> managerEmployeeNo = default!;
             Client.Option<string> name = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;

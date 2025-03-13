@@ -72,7 +72,7 @@ namespace PowerOfficeGoV2.Test.Api
             Client.Option<string> customerNos = default!;
             Client.Option<string> departmentCodes = default!;
             Client.Option<bool> includeSubProject = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<bool> onlyCreatedByCurrentIntegration = default!;
             Client.Option<OrderStatus> orderStatus = default!;
             Client.Option<string> projectCodes = default!;

@@ -57,7 +57,7 @@ namespace PowerOfficeGoV2.Test.Api
         public async Task VoucherApprovalGetAsyncTest()
         {
             Client.Option<ResourceParameters> resourceParameter = default!;
-            Client.Option<DateTime> availableFromDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> availableFromDateTimeOffsetGreaterThan = default!;
             var response = await _instance.VoucherApprovalGetAsync(resourceParameter, availableFromDateTimeOffsetGreaterThan);
             var model = response.Ok();
             Assert.IsType<List<VoucherForApprovalDto>>(model);

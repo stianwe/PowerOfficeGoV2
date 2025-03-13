@@ -57,8 +57,8 @@ namespace PowerOfficeGoV2.Test.Api
         public async Task EnterprisesGetAsyncTest()
         {
             Client.Option<string> enterpriseNos = default!;
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.EnterprisesGetAsync(enterpriseNos, createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
             var model = response.Ok();

@@ -56,8 +56,8 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task ContactGroupsGetAsyncTest()
         {
-            Client.Option<DateTime> createdDateTimeOffsetGreaterThan = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> createdDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<string> names = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.ContactGroupsGetAsync(createdDateTimeOffsetGreaterThan, lastChangedDateTimeOffsetGreaterThan, names, resourceParameter);

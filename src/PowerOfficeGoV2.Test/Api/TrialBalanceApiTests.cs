@@ -56,7 +56,7 @@ namespace PowerOfficeGoV2.Test.Api
         [Fact (Skip = "not implemented")]
         public async Task TrialBalanceGetAsyncTest()
         {
-            DateOnly date = default!;
+            DateTimeOffset date = default!;
             Client.Option<string> accountNos = default!;
             Client.Option<string> agricultureDepartments = default!;
             Client.Option<string> departmentCodes = default!;

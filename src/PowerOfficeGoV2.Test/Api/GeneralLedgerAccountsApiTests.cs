@@ -105,7 +105,7 @@ namespace PowerOfficeGoV2.Test.Api
         {
             Client.Option<string> accountNos = default!;
             Client.Option<string> agricultureDepartments = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.GetGeneralLedgerAccountsAsync(accountNos, agricultureDepartments, lastChangedDateTimeOffsetGreaterThan, resourceParameter);
             var model = response.Ok();

@@ -71,8 +71,8 @@ namespace PowerOfficeGoV2.Test.Api
             Client.Option<string> contactGroupIds = default!;
             Client.Option<string> externalImportReference = default!;
             Client.Option<string> externalNos = default!;
-            Client.Option<DateTime> lastChangedDateTimeOffsetGreaterThan = default!;
-            Client.Option<DateTime> supplierCreatedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> lastChangedDateTimeOffsetGreaterThan = default!;
+            Client.Option<DateTimeOffset> supplierCreatedDateTimeOffsetGreaterThan = default!;
             Client.Option<string> supplierNos = default!;
             Client.Option<ResourceParameters> resourceParameter = default!;
             var response = await _instance.SuppliersGetAsync(contactGroupIds, externalImportReference, externalNos, lastChangedDateTimeOffsetGreaterThan, supplierCreatedDateTimeOffsetGreaterThan, supplierNos, resourceParameter);
