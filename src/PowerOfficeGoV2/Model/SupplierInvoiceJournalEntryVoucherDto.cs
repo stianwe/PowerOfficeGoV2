@@ -555,7 +555,7 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<long?> SupplierContactIdOption { get; }
+        public Option<long?> SupplierContactIdOption { get; private set; }
 
         /// <summary>
         /// The contact ID of the supplier.
@@ -563,7 +563,7 @@ namespace PowerOfficeGoV2.Model
         /// <value>The contact ID of the supplier.</value>
         /* <example>123456</example> */
         [JsonPropertyName("SupplierContactId")]
-        public long? SupplierContactId { get { return this.SupplierContactIdOption; } }
+        public long? SupplierContactId { get { return this.SupplierContactIdOption; } set { this.SupplierContactIdOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SupplierVoucherLines
