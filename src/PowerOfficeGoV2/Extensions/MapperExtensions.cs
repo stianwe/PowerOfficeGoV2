@@ -90,7 +90,9 @@ public static class MapperExtensions
             source.Dim2IdOption,
             source.Dim3IdOption,
             source.LocationIdOption,
-            source.ManualVoucherLines?.Select(line => line.ToPost()).ToList());
+            source.ManualVoucherLines?.Select(line => line.ToPost()).ToList(),
+            source.ProjectIdOption,
+            source.VoucherDateOption);
 
     /// <summary>
     /// Converts the given <see cref="ManualJournalEntryVoucherLineDto"/> to a <see cref="ManualJournalEntryVoucherLinePostDto"/>

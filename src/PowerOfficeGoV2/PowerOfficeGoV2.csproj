@@ -12,12 +12,13 @@
     <Description>A library for interacting with the PowerOffice V2 API</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>PowerOfficeGoV2</RootNamespace>
-    <Version>1.2.3</Version>
+    <Version>1.2.4</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\PowerOfficeGoV2.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/stianwe/PowerOfficeGoV2.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Inject Api service as singleton.
-Make SupplierInvoiceJournalEntryVoucherDto.SupplierContactId setable.</PackageReleaseNotes>
+Make SupplierInvoiceJournalEntryVoucherDto.SupplierContactId setable.
+Fix missing properties when mapping ManualJournalEntryVoucherDto to Post object.</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Nullable>enable</Nullable>
