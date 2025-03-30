@@ -57,10 +57,11 @@ public class YourService
   Use the provided On and After methods in the Api class from the namespace PowerOfficeGoV2.Rest.DefaultApi.
   Or provide your own class by using the generic ConfigureApi method.
 
-## Authorization
-Auth is supported through the IPowerOfficeGoApiService, which currently requires that your PowerOfficeGo extension is manually added to clients, and that the client secrets are passed when resolving apis through IPowerOfficeGoApiService.
+## Authorization and onboarding clients to your integration
+You can either handle auth by:
+1. You can have your integration added manually to your client(s) through the PowerOffice Go portal, and providing the client key in the GetApiAsync() calls. 
+2. Using the onboarding library: https://www.nuget.org/packages/PowerOfficeGoV2Onboarding/
 
-In the future, the onboarding flow will be supported. See [#1](https://github.com/stianwe/PowerOfficeGoV2/issues/1).
 
 ## How to re-generate the code
 1. Install [openapi-generator](https://github.com/OpenAPITools/openapi-generator?tab=readme-ov-file#1---installation)
