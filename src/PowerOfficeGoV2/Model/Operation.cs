@@ -38,7 +38,7 @@ namespace PowerOfficeGoV2.Model
         /// <param name="value">value</param>
         /// <param name="from">from</param>
         [JsonConstructor]
-        public Operation(Option<string?> op = default, Option<string?> path = default, Option<Object?> value = default, Option<string?> from = default)
+        public Operation(Option<string?> op = default, Option<string?> path = default, Option<string?> value = default, Option<string?> from = default)
         {
             OpOption = op;
             PathOption = path;
@@ -80,13 +80,13 @@ namespace PowerOfficeGoV2.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<Object?> ValueOption { get; private set; }
+        public Option<string?> ValueOption { get; private set; }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
         [JsonPropertyName("value")]
-        public Object? Value { get { return this.ValueOption; } set { this.ValueOption = new(value); } }
+        public string? Value { get { return this.ValueOption; } set { this.ValueOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of From
@@ -152,7 +152,7 @@ namespace PowerOfficeGoV2.Model
 
             Option<string?> op = default;
             Option<string?> path = default;
-            Option<Object?> value = default;
+            Option<string?> value = default;
             Option<string?> from = default;
 
             while (utf8JsonReader.Read())
@@ -178,7 +178,7 @@ namespace PowerOfficeGoV2.Model
                             break;
                         case "value":
                             if (utf8JsonReader.TokenType != JsonTokenType.Null)
-                                value = new Option<Object?>(JsonSerializer.Deserialize<Object>(ref utf8JsonReader, jsonSerializerOptions));
+                                value = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
                         case "from":
                             from = new Option<string?>(utf8JsonReader.GetString());
@@ -235,13 +235,7 @@ namespace PowerOfficeGoV2.Model
                 writer.WriteString("path", operation.Path);
 
             if (operation.ValueOption.IsSet)
-                if (operation.ValueOption.Value != null)
-                {
-                    writer.WritePropertyName("value");
-                    JsonSerializer.Serialize(writer, operation.Value, jsonSerializerOptions);
-                }
-                else
-                    writer.WriteNull("value");
+                writer.WriteString("value", operation.Value);
             if (operation.FromOption.IsSet)
                 if (operation.FromOption.Value != null)
                     writer.WriteString("from", operation.From);
